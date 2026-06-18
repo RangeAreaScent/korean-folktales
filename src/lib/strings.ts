@@ -15,12 +15,32 @@ export const UI = {
     en: "Create your own storybook",
   },
   pickerSubtitle1: {
-    ko: "한 장씩 색칠하고 선택하면 나만의 그림책이 완성돼요.",
-    en: "Color each page and choose your path —",
+    ko: "진짜 한국 옛이야기 8편 · 색칠하고 분기 선택 · 한/영 이중언어.",
+    en: "Eight real Korean folktales · color each scene · pick your own ending · 한/EN.",
   },
   pickerSubtitle2: {
-    ko: "어떤 이야기를 떠나볼까요?",
-    en: "build your own picture book from a Korean folktale.",
+    ko: "다 색칠하면 PDF와 인스타 공유 이미지로 받아갈 수 있어요.",
+    en: "When you finish, take it home as a PDF or share it as an Instagram-ready image.",
+  },
+  trustFree: {
+    ko: "무료",
+    en: "Free",
+  },
+  trustNoSignup: {
+    ko: "회원가입 없음",
+    en: "No sign-up",
+  },
+  trustBilingual: {
+    ko: "한/영 이중언어",
+    en: "Bilingual",
+  },
+  trustPrintable: {
+    ko: "PDF 인쇄 가능",
+    en: "Printable PDF",
+  },
+  pickATale: {
+    ko: "이야기를 골라보세요",
+    en: "Pick a tale to begin",
   },
   pickerMoreSoon: {
     ko: "더 많은 이야기는 곧 추가됩니다",

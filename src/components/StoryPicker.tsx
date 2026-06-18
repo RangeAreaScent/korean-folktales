@@ -72,20 +72,31 @@ export function StoryPicker({ onPick }: Props) {
   return (
     <main className="flex min-h-screen flex-col bg-gradient-to-b from-amber-50 via-rose-50/30 to-amber-50">
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col items-center justify-center px-6 py-12 md:py-16">
-        <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.32em] text-amber-700/80">
-          {t(UI.brandTagline)}
-        </p>
+        <div className="mb-3 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.32em] text-amber-700/80">
+          <span className="h-px w-8 bg-amber-700/40" />
+          {t(UI.brandTagline).replace(/^✦\s*|\s*✦$/g, "")}
+          <span className="h-px w-8 bg-amber-700/40" />
+        </div>
         <h1
-          className="mb-4 text-center font-display text-[44px] font-bold leading-[1.05] text-gray-900 md:text-[60px]"
+          className="mb-5 text-center font-display text-[44px] font-bold leading-[1.05] text-gray-900 md:text-[64px]"
           style={{ fontFamily: "var(--font-display)" }}
         >
           {t(UI.pickerTitle)}
         </h1>
-        <p className="mb-10 max-w-xl text-center text-sm leading-relaxed text-gray-600 md:mb-12 md:text-base">
+        <p className="mb-3 max-w-2xl text-center text-[15px] font-medium leading-relaxed text-gray-800 md:text-[17px]">
           {t(UI.pickerSubtitle1)}
-          <br />
+        </p>
+        <p className="mb-7 max-w-xl text-center text-sm leading-relaxed text-gray-600 md:mb-8 md:text-base">
           {t(UI.pickerSubtitle2)}
         </p>
+
+        {/* ─── Trust pills ─── */}
+        <div className="mb-10 flex flex-wrap items-center justify-center gap-2 md:mb-14">
+          <TrustPill icon="🆓">{t(UI.trustFree)}</TrustPill>
+          <TrustPill icon="👶">{t(UI.trustNoSignup)}</TrustPill>
+          <TrustPill icon="🌏">{t(UI.trustBilingual)}</TrustPill>
+          <TrustPill icon="🖨️">{t(UI.trustPrintable)}</TrustPill>
+        </div>
 
         {/* ─── Gallery (only when books saved) ─── */}
         {savedBooks.length > 0 && (
@@ -109,6 +120,13 @@ export function StoryPicker({ onPick }: Props) {
             </div>
           </section>
         )}
+
+        {/* ─── Picker guide ─── */}
+        <div className="mb-5 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-amber-700/70">
+          <span className="h-px w-6 bg-amber-700/30" />
+          {t(UI.pickATale)}
+          <span className="text-amber-700/60">↓</span>
+        </div>
 
         {/* ─── Tales grid ─── */}
         <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-4">
@@ -195,6 +213,21 @@ function SavedBookThumb({
   )
 }
 
+function TrustPill({
+  icon,
+  children,
+}: {
+  icon: string
+  children: React.ReactNode
+}) {
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-200/80 bg-white/70 px-3 py-1.5 text-[12px] font-medium text-amber-900/80 shadow-sm backdrop-blur md:text-[13px]">
+      <span aria-hidden>{icon}</span>
+      {children}
+    </span>
+  )
+}
+
 function StoryCard({
   story,
   onPick,
@@ -217,12 +250,15 @@ function StoryCard({
       />
 
       <div className="relative z-20 flex items-start justify-between">
-        <span
-          className="text-6xl leading-none drop-shadow-sm"
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`/coloring/icons/${story.id}.png`}
+          alt=""
           aria-hidden
-        >
-          {story.emoji}
-        </span>
+          width={96}
+          height={96}
+          className="h-24 w-24 object-contain drop-shadow-sm transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105"
+        />
         <span className="rounded-full bg-white/60 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-amber-800/80 backdrop-blur">
           {Object.keys(story.scenes).length} {t(UI.scenesSuffix)}
         </span>
