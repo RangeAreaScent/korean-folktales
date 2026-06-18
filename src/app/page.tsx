@@ -957,7 +957,7 @@ function shareCoverHtml(opts: {
         font-size: 16px;
         letter-spacing: 0.18em;
         color: #9c8866;
-      ">korean-folktales · ${dateStr}</div>
+      ">koreanfolktales.ink · ${dateStr}</div>
     </div>
   `
 }
@@ -1050,7 +1050,7 @@ function sceneShareHtml(opts: {
         font-size: 13px;
         letter-spacing: 0.16em;
         color: #9c8866;
-      ">korean-folktales · ${dateStr}</div>
+      ">koreanfolktales.ink · ${dateStr}</div>
     </div>
   `
 }

@@ -22,10 +22,55 @@ const gowunBatang = Gowun_Batang({
   weight: ["400", "700"],
 });
 
+const SITE_URL = "https://koreanfolktales.ink"
+const SITE_NAME = "Korean Folktales"
+const SITE_TITLE = "Korean Folktales — A Bilingual Coloring Storybook"
+const SITE_DESC =
+  "Color real Korean folktales — eight stories, bilingual (한/EN), branching endings, free and printable. For kids, parents, and K-content lovers."
+
 export const metadata: Metadata = {
-  title: "Korean Folktales — A Coloring Storybook",
-  description:
-    "A bilingual coloring storybook of Korean folktales. Color each page, choose your path, and build your own picture book.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: "%s · Korean Folktales",
+  },
+  description: SITE_DESC,
+  applicationName: SITE_NAME,
+  keywords: [
+    "Korean folktales",
+    "coloring book",
+    "한국 전래동화",
+    "색칠공부",
+    "bilingual storybook",
+    "kids activity",
+    "K-content for kids",
+    "printable coloring pages",
+  ],
+  authors: [{ name: SITE_NAME }],
+  category: "education",
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESC,
+    locale: "en_US",
+    alternateLocale: ["ko_KR"],
+    // image auto-injected by src/app/opengraph-image.tsx (Next.js convention)
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESC,
+    // image auto-injected by Next.js convention
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
