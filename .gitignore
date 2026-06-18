@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local artifacts
+.playwright-mcp/
+/coloring images/
+*.png
+!public/**/*.png
+!src/**/*.png
