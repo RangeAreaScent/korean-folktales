@@ -28,13 +28,18 @@ export default async function Image() {
           style={{
             fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
             fontSize: 26,
-            letterSpacing: "0.32em",
+            letterSpacing: "0.34em",
             color: "#b76d2a",
             textTransform: "uppercase",
-            marginBottom: 28,
+            marginBottom: 32,
+            display: "flex",
+            alignItems: "center",
+            gap: 24,
           }}
         >
-          ✦ Korean Folktales ✦
+          <span style={{ width: 50, height: 2, background: "#b76d2a" }} />
+          <span>Korean Folktales</span>
+          <span style={{ width: 50, height: 2, background: "#b76d2a" }} />
         </div>
 
         <div
