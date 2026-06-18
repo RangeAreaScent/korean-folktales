@@ -18,6 +18,7 @@ import { UI } from "@/lib/strings"
 import {
   getScene,
   getStory,
+  STORIES,
   type SceneId,
   type Story,
   type StoryId,
@@ -76,6 +77,21 @@ export default function Home() {
     setFinalPagesCache([])
     setHint(null)
   }, [])
+
+  // Deep-link: /?start=<storyId> auto-picks the story (used by /folktales/[slug] CTAs)
+  useEffect(() => {
+    if (storyId) return
+    if (typeof window === "undefined") return
+    const params = new URLSearchParams(window.location.search)
+    const startParam = params.get("start")
+    if (!startParam) return
+    const candidate = STORIES[startParam as StoryId]
+    if (!candidate) return
+    handlePickStory(candidate.id)
+    const url = new URL(window.location.href)
+    url.searchParams.delete("start")
+    window.history.replaceState(null, "", url.pathname + url.search)
+  }, [storyId, handlePickStory])
 
   const handlePick = useCallback((c: Hsl) => {
     setColor(c)

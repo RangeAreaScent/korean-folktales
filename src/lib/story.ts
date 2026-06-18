@@ -1130,3 +1130,27 @@ export function isEnding(storyId: StoryId, sceneId: SceneId): boolean {
 
 // Backward-compat for any old callers
 export const STORY_TITLE = "Korean Folktales — Coloring Storybook"
+
+// ──────────────────────────────────────────────────────────────
+//  Slug mapping for SEO-friendly URLs (used by /folktale/[slug])
+// ──────────────────────────────────────────────────────────────
+
+export const STORY_SLUGS: Record<StoryId, string> = {
+  folktale: "sun-and-moon",
+  haenyeo: "haenyeo-and-the-mermaid",
+  woodcutter: "fairy-and-the-woodcutter",
+  dokkaebi: "old-man-and-the-goblins",
+  kongjwi: "kongjwi-and-the-toad",
+  byeoljubu: "hare-and-the-dragon-king",
+  heungbu: "heungbu-and-nolbu",
+  woodman: "gold-axe-and-silver-axe",
+}
+
+export const SLUG_TO_STORY: Record<string, StoryId> = Object.fromEntries(
+  Object.entries(STORY_SLUGS).map(([id, slug]) => [slug, id as StoryId]),
+)
+
+export function getStoryBySlug(slug: string): Story | null {
+  const id = SLUG_TO_STORY[slug]
+  return id ? STORIES[id] : null
+}
