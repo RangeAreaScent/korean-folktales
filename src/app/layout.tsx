@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Gowun_Batang } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { LocaleProvider } from "@/lib/i18n";
 import { SoundProvider } from "@/lib/sound-provider";
@@ -96,6 +97,7 @@ export default function RootLayout({
             </div>
           </SoundProvider>
         </LocaleProvider>
+        <Analytics />
       </body>
     </html>
   );
