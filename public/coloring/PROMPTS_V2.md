@@ -36,17 +36,17 @@ CLOSED REGIONS RULE (most important)
 - Every region the colorist might want to fill (sky, ground, hair, hat, leaf, water, garment fold, animal body, building, etc.) MUST be a fully enclosed shape with no gaps.
 - Mentally trace each outline with a pen — if you would have to lift the pen and re-draw to close it, the line art is WRONG.
 
-DECORATIVE BORDER — every scene MUST include this identical frame
+DECORATIVE BORDER — every scene MUST include this identical SIMPLE frame
 - Position: ~60px inside each canvas edge, forming a square inner frame
-- Outer line: thin black uniform stroke matching the rest of the line art
-- Inner band ~28px tall with Korean traditional meander pattern (반자 무늬 / Greek-key style):
-  repeating right-angle hooks at uniform spacing along all four sides
-- Four corner medallions (~80×80px), identical at each corner, formed by the meander
-  coiling into a 3-curl spiral then continuing
+- Two thin parallel black lines (outer + inner), ~10px apart, same uniform stroke as the rest of the line art
+- KEEP IT MINIMAL — NO meander pattern, NO Greek-key, NO repeating motifs along the sides. Just two clean thin parallel rectangles.
+- Four small corner ornaments only: a tiny Korean cloud curl (구름 무늬) about 50×50px at each corner, formed by 2-3 nested curved strokes. Each ornament sits in the empty space between the two parallel border lines, at the corner.
 - Border itself is line-art only (no fills, no shading)
 - The border closes off any subject line that would otherwise reach the canvas edge
 - Subject illustration sits entirely INSIDE this border with ~40px breathing room
-- Same border on EVERY scene of EVERY story — this is brand-level consistency
+- Same simple border on EVERY scene of EVERY story — this is brand-level consistency
+
+REJECT and re-render if the border has any continuous repeating pattern along the four sides (meanders, hooks, dots, dashes, key patterns, etc.). The four sides should just be CLEAN PARALLEL THIN LINES with corner ornaments only.
 
 COMPOSITION
 - Square 1024 × 1024 pixels, centered subject inside the inner border.
@@ -84,7 +84,8 @@ OUTPUT
 - 닫히지 않은 선이 있을 때: `"Re-render. Every outline MUST close — overlap meeting strokes by 4px or more."`
 - 회색·해칭이 섞일 때: `"Re-render. Remove all gray fills, hatching, and shading. Only pure black outlines on pure white."`
 - 솔리드 검정이 나올 때: `"Re-render. NO filled black regions — silhouettes must be hollow outlines only."`
-- 보더 없거나 불규칙할 때: `"Re-render. Add the decorative Korean meander border 60px from each edge, uniform along all four sides, with 4 identical corner cloud-spiral medallions."`
+- 보더 없거나 불규칙할 때: `"Re-render. Add a SIMPLE border 60px from each edge: just two thin parallel rectangles, with a small cloud-curl ornament at each of the 4 corners. NO repeating pattern along the sides."`
+- 보더가 너무 복잡하거나 메안더가 나올 때: `"Re-render. The border is too busy. Make it just two clean thin parallel lines around the canvas with a small 2-3 stroke cloud-curl in each corner — nothing else. NO meander, NO Greek-key, NO repeating motifs."`
 
 ---
 
