@@ -513,74 +513,10 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
             </div>
           )}
         </div>
-
-        <DecorativeFrame />
       </div>
     )
   },
 )
-
-function DecorativeFrame() {
-  // Korean traditional double-line frame with cloud-knot motifs in 4 corners.
-  // Sits over the canvas, lets clicks through (pointer-events-none),
-  // sits beneath the bottom toolbar (z-[5] vs toolbar z-10).
-  const stroke = "#b08147"
-  return (
-    <svg
-      aria-hidden
-      className="pointer-events-none absolute inset-0 z-[5] h-full w-full"
-      viewBox="0 0 100 100"
-      preserveAspectRatio="none"
-    >
-      {/* outer rectangle */}
-      <rect
-        x="1.8"
-        y="1.8"
-        width="96.4"
-        height="96.4"
-        fill="none"
-        stroke={stroke}
-        strokeWidth="0.35"
-        rx="2"
-        ry="2"
-      />
-      {/* inner rectangle */}
-      <rect
-        x="3.6"
-        y="3.6"
-        width="92.8"
-        height="92.8"
-        fill="none"
-        stroke={stroke}
-        strokeWidth="0.18"
-        rx="1.4"
-        ry="1.4"
-      />
-      {/* 4 corner cloud-knot motifs (rotated copies of one path) */}
-      {[
-        { x: 3.6, y: 3.6, r: 0 },
-        { x: 96.4, y: 3.6, r: 90 },
-        { x: 96.4, y: 96.4, r: 180 },
-        { x: 3.6, y: 96.4, r: 270 },
-      ].map((c, i) => (
-        <g
-          key={i}
-          transform={`translate(${c.x} ${c.y}) rotate(${c.r})`}
-          fill="none"
-          stroke={stroke}
-          strokeWidth="0.28"
-          strokeLinecap="round"
-        >
-          {/* small Korean-style cloud curl into the corner */}
-          <path d="M 0 4.5 Q 0 0 4.5 0" />
-          <path d="M 1.4 4.5 Q 1.4 1.4 4.5 1.4" />
-          {/* tiny dot ornament */}
-          <circle cx="2.6" cy="2.6" r="0.3" fill={stroke} stroke="none" />
-        </g>
-      ))}
-    </svg>
-  )
-}
 
 function ToolbarButton({
   onClick,

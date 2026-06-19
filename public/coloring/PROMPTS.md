@@ -5,17 +5,70 @@
 ## 공통 베이스 프롬프트 (모든 장면에 붙여 쓰기)
 
 ```
-Black-and-white coloring book page for all ages.
-Style: simple flat line art, thick uniform black outlines (4–5px), bold clean strokes.
-NO shading, NO gradients, NO gray fills, NO cross-hatching, NO color.
-Pure white background. All regions MUST be fully enclosed by lines (no broken outlines, no gaps where lines meet).
-Friendly storybook style, medium detail (not too busy, not too sparse).
-Output exactly 1024×1024 pixels, square aspect ratio, centered composition, generous white space around the subject.
+COLORING BOOK PAGE — strict technical requirements below. Failure to follow any line item disqualifies the image.
+
+PURPOSE
+A printable / clickable digital coloring page for ages 4-10. Every enclosed white region must be paintable by a single click-to-fill bucket tool.
+
+LINE WORK
+- Style: simple flat line art only.
+- Stroke: uniform thickness 5–6 pixels, pure black (#000000), zero variation.
+- Strokes have rounded ends (lineCap: round) and clean joins. NO tapering, NO thin-to-thick variation, NO sketchy double lines.
+- Every shape outline is ONE continuous closed loop. Two strokes that should meet MUST overlap by at least 4 pixels — never gap, never just touch.
+- NO stray marks, dust speckles, loose end whiskers, signature, watermark, or texture noise.
+
+FORBIDDEN — render NONE of these
+- NO shading, NO hatching, NO cross-hatching, NO stippling, NO dotted shading.
+- NO gradients, NO gray fills, NO color of any kind.
+- NO black solid fills (e.g., filled silhouettes). Only outlines on white.
+- NO photo-realistic rendering, NO 3D depth shading.
+- NO text, NO captions, NO speech bubbles, NO numbers.
+
+CLOSED REGIONS RULE (most important)
+- Every region the colorist might want to fill (sky, ground, hair, hat, leaf, water, garment fold, animal body, building, etc.) MUST be a fully enclosed shape with no gaps.
+- Mentally trace each outline with a pen — if you would have to lift the pen and re-draw to close it, the line art is WRONG.
+- Lines crossing the edge of the image MUST be terminated by the border (see BORDER below) — never by trailing off into white space.
+
+BORDER (mandatory inner frame)
+- Draw a clean thin rectangular border ~24px from each canvas edge, in the same black uniform-stroke style. This border closes any line that would otherwise reach the edge.
+- The border itself is plain — no decorations on it. Korean-pattern decoration belongs to the subject, not the border.
+
+COMPOSITION
+- Square 1024 × 1024 pixels, centered subject.
+- Generous breathing room: subject occupies ~70% of the inner border, leaving white margin.
+- Medium detail — friendly, readable shapes that a 5-year-old can recognize and a 10-year-old finds interesting. Not too busy, not too sparse.
+
+BACKGROUND
+- Pure white (#FFFFFF). No texture, no off-white tint, no shadow.
+
+OUTPUT
+- 1024 × 1024 PNG.
+- High-resolution square. If the model wants to output smaller, override: "render at full 1024×1024, do not downscale".
 ```
 
 **해상도 주의** — 1024×1024 정사각형 PNG로 출력해 주세요. 작은 해상도로 나오면 캔버스에서 확대 시 흐릿해질 수 있어요. Gemini에서 "1024x1024 PNG", "high resolution square image" 같은 표현을 함께 넣으면 더 잘 나옵니다.
 
 위 베이스 + 아래 장면 설명을 합쳐서 한 번에 넣으세요.
+
+---
+
+## 🔁 결과물 검수 체크리스트 (각 PNG 받자마자)
+
+1. **줌 인 (300%)** — 모든 윤곽선 닫혀 있나? 두 선이 만나는 곳에 갭이 있으면 ❌ → 재생성
+2. **자동 색칠 테스트** — 인접 영역 한 곳에 단색으로 바켓 채우기 시도. 의도하지 않은 영역까지 색이 새면 ❌
+3. **스트로크 두께** — 같은 굵기인가? 어떤 선만 가늘면 그 부분에서 누출 위험 → 재생성
+4. **검정 채움** — 솔리드 검정 영역 있으면 ❌. 칠할 곳을 닫아버림
+5. **그림자/해칭** — 회색 점·선 있으면 ❌. 채색 시 톤 충돌
+6. **테두리 프레임** — 24px 근처 균일한 검정 사각 테두리 있나?
+7. **흰 여백** — 최소 5% 여백 있나? 너무 빽빽하면 ❌
+8. **연결되지 않은 선** — 어디에 닿지도 않고 멈춘 짧은 선이 있으면 ❌
+9. **워터마크/사인** — 어디에도 없어야 함
+
+→ 한 항목이라도 ❌면 재생성. 후속 프롬프트 한 줄 추가 팁:
+   - 닫히지 않은 선이 있을 때: `"Re-render. Every outline MUST close — overlap meeting strokes by 4px or more."`
+   - 회색·해칭이 섞일 때: `"Re-render. Remove all gray fills, hatching, and shading. Only pure black outlines on pure white."`
+   - 솔리드 검정이 나올 때: `"Re-render. NO filled black regions — silhouettes must be hollow outlines only."`
+   - 테두리 없을 때: `"Re-render. Add a clean thin rectangular black border 24px from each edge."`
 
 ---
 
