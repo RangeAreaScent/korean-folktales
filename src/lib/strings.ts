@@ -104,6 +104,10 @@ export const UI = {
     ko: "선 위 또는 같은 색이라 채워지지 않았어요.",
     en: "Can't fill — that spot is on a line or already the same color.",
   },
+  fillLeakHint: {
+    ko: "선이 살짝 끊어진 곳 같아요. 다른 위치를 눌러보세요.",
+    en: "Looks like the line has a gap there — try a nearby spot.",
+  },
 
   // ─── Final / Export ───
   finalEyebrow: {

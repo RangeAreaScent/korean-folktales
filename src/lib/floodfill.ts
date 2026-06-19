@@ -46,10 +46,20 @@ export function floodFill(
   startX: number,
   startY: number,
   style: FillStyle,
-  options: { tolerance?: number; animateMs?: number } = {},
+  options: {
+    tolerance?: number
+    animateMs?: number
+    maxFillRatio?: number
+    onLeak?: (ratio: number) => void
+  } = {},
 ): FloodFillHandle | null {
   const tolerance = options.tolerance ?? 60
   const animateMs = options.animateMs ?? 0
+  // If a single fill would cover more than this fraction of the canvas,
+  // the line art almost certainly has a gap and the fill is escaping the
+  // intended region. Bail out before painting so the user can undo and try
+  // a different click.
+  const maxFillRatio = options.maxFillRatio ?? 0.55
 
   const sx = Math.floor(startX)
   const sy = Math.floor(startY)
@@ -89,6 +99,7 @@ export function floodFill(
   let minY = sy
   let maxX = sx
   let maxY = sy
+  let visitedCount = 0
 
   while (stack.length) {
     const y = stack.pop()!
@@ -101,6 +112,7 @@ export function floodFill(
     if (colorDistanceSq(data, i, startColor) > tolSq) continue
 
     visited[pix] = 1
+    visitedCount++
     if (x < minX) minX = x
     if (x > maxX) maxX = x
     if (y < minY) minY = y
@@ -110,6 +122,13 @@ export function floodFill(
     stack.push(x - 1, y)
     stack.push(x, y + 1)
     stack.push(x, y - 1)
+  }
+
+  // ─── Leak detection: bail if fill engulfed too much of the canvas ───
+  const ratio = visitedCount / (width * height)
+  if (ratio > maxFillRatio) {
+    options.onLeak?.(ratio)
+    return null
   }
 
   // Center for radial / linear gradient eval
