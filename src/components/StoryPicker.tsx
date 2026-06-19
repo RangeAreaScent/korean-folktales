@@ -255,7 +255,7 @@ function StoryCard({
         aria-label={`${t(story.title)} — ${t(UI.startStory)}`}
       />
 
-      <div className="relative z-20 flex items-start justify-between">
+      <div className="pointer-events-none relative z-20 flex items-start justify-between">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={`/coloring/icons/${story.id}.png`}
@@ -271,21 +271,21 @@ function StoryCard({
       </div>
 
       <h2
-        className="relative z-20 mt-5 font-display text-[22px] font-bold leading-tight text-gray-900 md:text-[26px]"
+        className="pointer-events-none relative z-20 mt-5 font-display text-[22px] font-bold leading-tight text-gray-900 md:text-[26px]"
         style={{ fontFamily: "var(--font-display)" }}
       >
         {t(story.title)}
       </h2>
       <p
-        className="relative z-20 mt-1 font-display text-[13px] italic text-gray-700 md:text-sm"
+        className="pointer-events-none relative z-20 mt-1 font-display text-[13px] italic text-gray-700 md:text-sm"
         style={{ fontFamily: "var(--font-display)" }}
       >
         {t(story.subtitle)}
       </p>
 
-      <div className="relative z-20 my-4 h-px w-12 bg-amber-900/15" />
+      <div className="pointer-events-none relative z-20 my-4 h-px w-12 bg-amber-900/15" />
 
-      <p className="relative z-20 text-[13px] leading-relaxed text-gray-700">
+      <p className="pointer-events-none relative z-20 text-[13px] leading-relaxed text-gray-700">
         {t(story.tagline)}
       </p>
 
@@ -309,7 +309,7 @@ function StoryCard({
             🔗 Read the tale
           </Link>
         </div>
-        <span className="flex items-center gap-1 rounded-full bg-gray-900/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white shadow-sm transition group-hover:bg-gray-900">
+        <span className="pointer-events-none flex items-center gap-1 rounded-full bg-gray-900/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white shadow-sm transition group-hover:bg-gray-900">
           {t(UI.startStory)}
           <span className="transition-transform group-hover:translate-x-0.5">
             →
