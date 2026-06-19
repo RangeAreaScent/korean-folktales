@@ -138,10 +138,33 @@ OUTPUT
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-Subject: Inside a small Korean thatched-roof cottage at night. A traditional paper-paneled door (한지문) on the right, closed. To the left, an older brother (~10 years old) in plain hanbok holds his younger sister (~6 years old, hanbok with a small ribbon) protectively in his arms — both looking nervously toward the door. On a low wooden tea table foreground-left, a small traditional Korean oil lamp (호롱불) with a single visible flame. On a wooden chest in the back-left, a small empty bamboo basket. Through the bottom gap of the paper door, a single ominous large clawed paw shadow visible on the floor (do NOT draw the tiger itself — only the shadow shape on the wood floor). A small folded blanket (이불) near the children.
+SHOT TYPE: Wide interior establishing shot — show the whole one-room cottage.
+The camera is pulled BACK, taking in the full room. Door is small in the background.
 
-Mood: hushed, late-night suspense, like a bedtime story moment.
-Composition: paper door on the right occupying ~35% of the canvas height, siblings center-left, oil lamp foreground left, ominous paw shadow at the door's base extending onto the floor.
+Subject: Inside a cozy small Korean thatched-roof cottage at deep night. The full
+room is visible: traditional wood-plank floor, a small paper-screen window
+(한지창) on the LEFT wall through which a large round full moon is clearly
+visible outside, with three small distant mountain silhouettes. A low wooden tea
+table (소반) center-front with a small traditional Korean oil lamp (호롱불 —
+oil bowl + wick + small flame). Behind the table, the older brother (~10,
+hanbok) sits cross-legged on the floor, gently cradling his drowsy younger
+sister (~6, hanbok with ribbon) against his shoulder — the sister's eyes are
+half-closed but the brother is awake and watchful. Back wall has: a tall wooden
+chest of drawers with an EMPTY bamboo rice-cake basket on top (signaling mother
+hasn't returned). A small paper-paneled door (한지문 — visible grid of paper
+panels) is at the BACK-RIGHT of the canvas, smaller than the window, closed.
+A folded blanket (이불) on the floor near the children. A few clay water bowls
+on a low shelf. The thatched roof beams (서까래) visible at the very top of
+the interior view.
+
+Mood: domestic intimacy + quiet loneliness + the long wait — pre-tension, not
+yet alarmed. This scene is about ABSENCE (mother gone) and ATMOSPHERE, not
+about confrontation yet.
+
+Composition: WIDE interior, low-medium camera angle. Window with moon on the
+LEFT (~25% of frame), siblings and tea table CENTER (occupying middle 50%), the
+small back door visible at BACK-RIGHT in the distance (~15%). Lots of room
+detail filling the space — chest, blanket, bowls, beams.
 ```
 
 ---
@@ -163,10 +186,34 @@ Composition: paper door on the right occupying ~35% of the canvas height, siblin
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-Subject: Inside the same Korean cottage, now closer to the paper-paneled door. The brother (~10) stands center holding the little sister's (~6) hand, both in hanbok. The brother is reaching out with his free hand toward the bottom of the paper door, palm up — gesturing as if about to ask the visitor to show a hand. The sister is on her tiptoes leaning slightly with one ear toward the door, hand near her mouth, eyes wide — as if listening for a voice. Show both gestures clearly because the colorist needs to feel "two tests are possible here". Through the paper door panels, a soft silhouette of a large crouched tiger visible (NOT clearly drawn — show only the outline of its rounded back and one pointed ear above the door's bottom rail). The oil lamp (호롱불) glows on the table foreground-left.
+SHOT TYPE: Tight close-up at the threshold. The paper-paneled door (한지문)
+fills MOST of the canvas — large, looming, dominant. Camera angle slightly LOW,
+looking up toward the door. Completely different composition from Scene 1 —
+this is claustrophobic, vertical, confrontational.
 
-Mood: tense decision moment, two children quietly working together to outsmart the unknown.
-Composition: paper door right side (40%), siblings center performing the two gesture-tests, oil lamp foreground left, tiger silhouette behind door.
+Subject: The closed paper-paneled door (한지문) dominates the canvas, occupying
+~70% of the frame. Show the door's full panel grid (3 columns × 5 rows of
+paper-paneled squares) with subtle wood frame between panels. Behind the door's
+translucent paper panels, a LARGER, more menacing tiger silhouette than Scene 1
+— show the curve of a hulking back, two pointed ears, the outline of a snout
+pressing slightly against one panel from outside. The silhouette is hinted-at
+but unmistakably a big tiger. At the BOTTOM of the canvas, small in the
+foreground, the brother (~10, hanbok, from BEHIND — we see his back and
+hair) crouches with one arm extended toward the door's lower edge, palm up
+— performing the "show me your hand" gesture. Right beside him, the sister
+(~6, hanbok, also from a 3/4 back view) leans with her ear toward the door
+panels, hands clasped in front of her — listening for the "lullaby" voice
+test. Show BOTH gestures clearly. Tiny details on the door: small metal ring
+handle, lower wooden threshold board with subtle grain. A bit of the cottage
+floor visible in the foreground, with the oil lamp glow casting up onto the
+door from below-left (lamp itself is OFF-FRAME this time).
+
+Mood: dread, threshold confrontation, the children small against the looming
+door — TIGHT and DRAMATIC, not the cozy wide of Scene 1.
+
+Composition: VERTICAL emphasis — towering door fills the middle-and-upper
+canvas, children small at the bottom seen from behind/3-quarter back. The
+tiger silhouette behind the paper panels is the visual climax.
 ```
 
 ---
