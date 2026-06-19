@@ -36,17 +36,27 @@ CLOSED REGIONS RULE (most important)
 - Every region the colorist might want to fill (sky, ground, hair, hat, leaf, water, garment fold, animal body, building, etc.) MUST be a fully enclosed shape with no gaps.
 - Mentally trace each outline with a pen — if you would have to lift the pen and re-draw to close it, the line art is WRONG.
 
-DECORATIVE BORDER — every scene MUST include this identical SIMPLE frame
+DECORATIVE BORDER — every scene MUST include this identical frame
 - Position: ~60px inside each canvas edge, forming a square inner frame
-- Two thin parallel black lines (outer + inner), ~10px apart, same uniform stroke as the rest of the line art
-- KEEP IT MINIMAL — NO meander pattern, NO Greek-key, NO repeating motifs along the sides. Just two clean thin parallel rectangles.
-- Four small corner ornaments only: a tiny Korean cloud curl (구름 무늬) about 50×50px at each corner, formed by 2-3 nested curved strokes. Each ornament sits in the empty space between the two parallel border lines, at the corner.
+- TWO CONTINUOUS thin parallel rectangle lines:
+  * Outer rectangle ~60px from canvas edges
+  * Inner rectangle ~14px inside the outer (parallel to it)
+  * Both UNBROKEN, going fully around all four sides — never dashed, never gapped
+  * Same uniform black stroke as the rest of the line art
+- FOUR CORNER MOTIFS: small geometric right-angle meander pattern (반자 무늬) at each corner only:
+  * Each corner motif ~70×70px, sitting in the space inside the inner border line
+  * Geometric ONLY — nested right-angle hooks, like a small "L" turning into another "L" inward, 2-3 right-angle steps
+  * NO curls, NO spirals, NO curves — pure right-angle geometry, like a tiny Greek-key fragment confined to the corner
+- The four SIDES of the border are PLAIN — no repeating pattern, just the two clean parallel lines
 - Border itself is line-art only (no fills, no shading)
 - The border closes off any subject line that would otherwise reach the canvas edge
 - Subject illustration sits entirely INSIDE this border with ~40px breathing room
-- Same simple border on EVERY scene of EVERY story — this is brand-level consistency
+- Same border on EVERY scene of EVERY story — brand-level consistency
 
-REJECT and re-render if the border has any continuous repeating pattern along the four sides (meanders, hooks, dots, dashes, key patterns, etc.). The four sides should just be CLEAN PARALLEL THIN LINES with corner ornaments only.
+REJECT and re-render if:
+- The parallel border lines are broken, dashed, or have gaps (must be continuous)
+- The corner motifs use curves, curls, or spirals (must be right-angle hooks)
+- A repeating pattern runs along the four sides (sides must be plain lines)
 
 COMPOSITION
 - Square 1024 × 1024 pixels, centered subject inside the inner border.
@@ -58,6 +68,14 @@ BACKGROUND
 ART STYLE
 - Korean traditional / minhwa folk-art sensibility — slightly stylized, friendly, big round eyes for characters and animals, NOT photo-realistic, NOT anime/chibi.
 - Hanbok-clad children, traditional Korean architectural elements (한지문, 초가집, 한옥 지붕, 장독, 우물, 호롱불, 소나무, 수수밭) when relevant.
+
+DETAIL LEVEL — DO NOT oversimplify
+- Hanbok must show: collar (깃) line, ribbon (고름), sleeve cuff line, gathered hem fold line — at minimum 4–5 visible garment lines per character. NOT a plain dress silhouette.
+- Faces must show: eyes with iris + pupil circles, small nose line, mouth line, hair strands (3–5 lines), ear shape.
+- Architecture must show: wood grain lines on doors, individual paper panels (한지문 grid pattern), roof straw texture (slanted lines), woven basket pattern (criss-cross weave), oil lamp wick + flame shape.
+- Environment must show: ground texture, individual leaf/flower shapes (not just outlines of bushes), distinct objects with their own outlines.
+- Target: a 5-year-old should see "many things to color" — at least 12–15 distinct enclosed regions per scene including small detail areas.
+- AVOID the "minimal flat sticker" look. Aim for "traditional Korean picture book illustration with delicate line work".
 
 OUTPUT
 - 1024 × 1024 PNG.
@@ -84,8 +102,10 @@ OUTPUT
 - 닫히지 않은 선이 있을 때: `"Re-render. Every outline MUST close — overlap meeting strokes by 4px or more."`
 - 회색·해칭이 섞일 때: `"Re-render. Remove all gray fills, hatching, and shading. Only pure black outlines on pure white."`
 - 솔리드 검정이 나올 때: `"Re-render. NO filled black regions — silhouettes must be hollow outlines only."`
-- 보더 없거나 불규칙할 때: `"Re-render. Add a SIMPLE border 60px from each edge: just two thin parallel rectangles, with a small cloud-curl ornament at each of the 4 corners. NO repeating pattern along the sides."`
-- 보더가 너무 복잡하거나 메안더가 나올 때: `"Re-render. The border is too busy. Make it just two clean thin parallel lines around the canvas with a small 2-3 stroke cloud-curl in each corner — nothing else. NO meander, NO Greek-key, NO repeating motifs."`
+- 보더 없거나 불규칙할 때: `"Re-render. Add a border 60px from each edge: TWO CONTINUOUS thin parallel rectangle lines (~14px apart, unbroken all the way around) plus a small right-angle meander hook (~70×70px) at each of the 4 corners only. NO pattern along the sides."`
+- 보더 선이 끊겨 있을 때: `"Re-render. The two parallel border rectangles must be CONTINUOUS lines all the way around — no dashes, no gaps. Only the 4 corner motifs are separate."`
+- 코너에 곡선이 나올 때: `"Re-render. The 4 corner motifs must be RIGHT-ANGLE geometric hooks only (반자 무늬) — small nested L-shapes turning inward. NO curls, NO spirals, NO curves."`
+- 그림이 너무 단순할 때: `"Re-render with more detail. Hanbok must show collar, ribbon, sleeve cuff, and hem lines. Faces must show iris pupils, nose, mouth, hair strands, ears. Architectural elements need wood grain, paper panel grids, and weave patterns. Add background environment details (ground texture, individual leaves/flowers). Target 12-15 distinct enclosed regions per scene."`
 
 ---
 
