@@ -58,7 +58,6 @@ export default async function FolktalePage({
   const story = getStoryBySlug(slug)
   if (!story) notFound()
 
-  const sceneEntries = Object.entries(story.scenes)
   const otherStories = STORY_LIST.filter((s) => s.id !== story.id).slice(0, 4)
 
   return (
@@ -160,50 +159,6 @@ export default async function FolktalePage({
                 <p className="mt-2 text-[13px] leading-relaxed text-gray-700">
                   {g.meaning.en}
                 </p>
-              </li>
-            ))}
-          </ul>
-        </Section>
-
-        {/* ─── Scenes ─── */}
-        <Section
-          eyebrow="Scenes"
-          title="Color each moment of the story"
-        >
-          <p className="mb-6 text-gray-700">
-            This folktale becomes a {sceneEntries.length}-page coloring
-            storybook in the app. Two of these pages branch — you choose
-            which path the story takes.
-          </p>
-          <ul className="space-y-6">
-            {sceneEntries.map(([sceneId, scene]) => (
-              <li
-                key={sceneId}
-                className="overflow-hidden rounded-2xl border border-amber-100/80 bg-white/60"
-              >
-                <div className="aspect-square w-full bg-white">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={scene.image}
-                    alt={`${story.title.en} — ${scene.title.en}`}
-                    className="h-full w-full object-contain"
-                    width={800}
-                    height={800}
-                    loading="lazy"
-                  />
-                </div>
-                <div className="px-5 py-4">
-                  <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.22em] text-amber-700/70">
-                    {scene.title.en.replace(
-                      /^(Chapter\s*\d+\s*[—-]\s*|Final\s*[—-]\s*)/,
-                      "",
-                    )}
-                    {scene.endingLabel ? ` · ${scene.endingLabel.en}` : ""}
-                  </p>
-                  <p className="text-[14px] leading-relaxed text-gray-700">
-                    {scene.narration.en}
-                  </p>
-                </div>
               </li>
             ))}
           </ul>

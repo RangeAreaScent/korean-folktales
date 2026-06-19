@@ -10,13 +10,7 @@ import {
   type SavedBook,
 } from "@/lib/gallery"
 import { UI } from "@/lib/strings"
-import {
-  getStory,
-  STORY_LIST,
-  STORY_SLUGS,
-  type Story,
-  type StoryId,
-} from "@/lib/story"
+import { getStory, STORY_LIST, type Story, type StoryId } from "@/lib/story"
 import { OriginalTaleModal } from "./OriginalTaleModal"
 import { SavedBookViewer } from "./SavedBookViewer"
 
@@ -170,6 +164,7 @@ export function StoryPicker({ onPick }: Props) {
         <OriginalTaleModal
           story={aboutStory}
           onClose={() => setAboutStory(null)}
+          onStartColoring={() => onPick(aboutStory.id)}
         />
       )}
 
@@ -289,32 +284,17 @@ function StoryCard({
         {t(story.tagline)}
       </p>
 
-      <div className="relative z-20 mt-5 flex items-center justify-between gap-3">
-        <div className="flex flex-col gap-1.5">
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation()
-              onAbout()
-            }}
-            className="self-start text-[11px] font-medium text-amber-900/60 transition hover:text-amber-900 hover:underline"
-          >
-            📖 {t(UI.aboutThisTale).replace("📖 ", "")}
-          </button>
-          <Link
-            href={`/folktales/${STORY_SLUGS[story.id]}`}
-            onClick={(e) => e.stopPropagation()}
-            className="self-start text-[11px] font-medium text-amber-900/60 transition hover:text-amber-900 hover:underline"
-          >
-            🔗 Read the tale
-          </Link>
-        </div>
-        <span className="pointer-events-none flex items-center gap-1 rounded-full bg-gray-900/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white shadow-sm transition group-hover:bg-gray-900">
-          {t(UI.startStory)}
-          <span className="transition-transform group-hover:translate-x-0.5">
-            →
-          </span>
-        </span>
+      <div className="relative z-20 mt-5">
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation()
+            onAbout()
+          }}
+          className="inline-flex items-center gap-1.5 rounded-full border border-amber-200/80 bg-white/70 px-3 py-1.5 text-[12px] font-medium text-amber-900/80 shadow-sm backdrop-blur transition hover:border-amber-300 hover:bg-white hover:text-amber-900"
+        >
+          📖 {t(UI.aboutThisTale).replace("📖 ", "")}
+        </button>
       </div>
     </div>
   )

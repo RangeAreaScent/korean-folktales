@@ -1,13 +1,15 @@
 "use client"
 
+import Link from "next/link"
 import { useEffect } from "react"
 import { useLocale } from "@/lib/i18n"
 import { UI } from "@/lib/strings"
-import type { Story } from "@/lib/story"
+import { STORY_SLUGS, type Story } from "@/lib/story"
 
 type Props = {
   story: Story
   onClose: () => void
+  onStartColoring?: () => void
 }
 
 function speakKorean(text: string) {
@@ -25,8 +27,8 @@ function speakKorean(text: string) {
   }
 }
 
-export function OriginalTaleModal({ story, onClose }: Props) {
-  const { t } = useLocale()
+export function OriginalTaleModal({ story, onClose, onStartColoring }: Props) {
+  const { t, locale } = useLocale()
   const tale = story.originalTale
 
   useEffect(() => {
@@ -155,6 +157,29 @@ export function OriginalTaleModal({ story, onClose }: Props) {
           </span>
           {t(tale.ourVersion)}
         </p>
+
+        {/* CTAs */}
+        {onStartColoring && (
+          <div className="mt-6 flex flex-col items-center gap-3 border-t border-amber-100 pt-5">
+            <button
+              type="button"
+              onClick={() => {
+                onStartColoring()
+                onClose()
+              }}
+              className="w-full rounded-full bg-gray-900 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-gray-800 hover:shadow-lg sm:w-auto sm:px-8"
+            >
+              🎨 {locale === "ko" ? "이 이야기 색칠하기" : "Start coloring this folktale"}
+            </button>
+            <Link
+              href={`/folktales/${STORY_SLUGS[story.id]}`}
+              onClick={onClose}
+              className="text-[12px] font-medium text-amber-900/60 underline-offset-4 transition hover:text-amber-900 hover:underline"
+            >
+              🔗 {locale === "ko" ? "공유용 페이지로 보기" : "View as shareable page"}
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   )
