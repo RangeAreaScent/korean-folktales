@@ -246,6 +246,11 @@ export const UI = {
 
   // ─── Original-tale modal ───
   modalEyebrow: { ko: "원작 옛이야기", en: "The original folktale" },
+  modalOriginalTale: { ko: "원작 이야기", en: "The original tale" },
+  modalKoreanWords: {
+    ko: "한국어 단어들",
+    en: "Korean words you'll meet",
+  },
   modalAlsoCalled: { ko: "이렇게도 불러요", en: "Also known as" },
   modalAbout: { ko: "이야기 배경", en: "Background" },
   modalSummary: { ko: "줄거리", en: "The story" },

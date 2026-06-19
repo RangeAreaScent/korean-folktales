@@ -107,40 +107,43 @@ export default async function FolktalePage({
           </Link>
         </div>
 
-        {/* ─── Summary ─── */}
+        {/* ─── The original tale (origin + summary combined, matches modal) ─── */}
         <Section
-          eyebrow="The story"
+          eyebrow="The original tale"
           title={`The tale of ${story.title.en}`}
         >
-          <p className="mb-4">{story.originalTale.summary.en}</p>
-          <details className="mt-4 rounded-lg border border-amber-100/80 bg-white/60 p-4 text-[13px] text-gray-600">
+          <p className="mb-4 text-[14px] leading-relaxed text-gray-700">
+            {story.originalTale.origin.en}
+          </p>
+          <p
+            className="font-display text-[15px] leading-relaxed text-gray-800"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            {story.originalTale.summary.en}
+          </p>
+          <details className="mt-5 rounded-lg border border-amber-100/80 bg-white/60 p-4 text-[13px] text-gray-600">
             <summary className="cursor-pointer font-medium text-amber-800">
               한국어로 읽기
             </summary>
+            <p className="mt-3 leading-relaxed">
+              {story.originalTale.origin.ko}
+            </p>
             <p className="mt-3 leading-relaxed">
               {story.originalTale.summary.ko}
             </p>
           </details>
         </Section>
 
-        {/* ─── Origin ─── */}
-        <Section eyebrow="Origin" title="Where this tale comes from">
-          <p>{story.originalTale.origin.en}</p>
-          <p className="mt-3 text-[13px] text-gray-500">
-            {story.originalTale.origin.ko}
-          </p>
-        </Section>
-
-        {/* ─── Glossary ─── */}
+        {/* ─── Korean words you'll meet (matches modal) ─── */}
         <Section
-          eyebrow="Vocabulary"
-          title={`Korean words you'll meet in "${story.title.en}"`}
+          eyebrow="Korean words you'll meet"
+          title={`Vocabulary from "${story.title.en}"`}
         >
           <ul className="grid gap-3 md:grid-cols-2">
             {story.originalTale.glossary.map((g) => (
               <li
                 key={g.korean}
-                className="rounded-xl border border-amber-100/80 bg-white/70 p-4"
+                className="rounded-2xl border border-amber-100/80 bg-white/70 p-4"
               >
                 <div className="flex items-baseline gap-2">
                   <span
@@ -149,13 +152,13 @@ export default async function FolktalePage({
                   >
                     {g.korean}
                   </span>
-                  <span className="font-mono text-xs text-amber-700/80">
+                  <span className="ml-auto font-mono text-[10px] italic text-amber-800/60">
                     {g.romanized}
                   </span>
                 </div>
-                <div className="mt-0.5 font-mono text-[11px] uppercase tracking-wider text-gray-400">
-                  /{g.pronunciation}/
-                </div>
+                <p className="mt-0.5 font-mono text-[11px] text-gray-500">
+                  {g.pronunciation}
+                </p>
                 <p className="mt-2 text-[13px] leading-relaxed text-gray-700">
                   {g.meaning.en}
                 </p>
@@ -164,13 +167,21 @@ export default async function FolktalePage({
           </ul>
         </Section>
 
-        {/* ─── Our version ─── */}
-        <Section eyebrow="Our version" title="What's different in the app">
-          <p>{story.originalTale.ourVersion.en}</p>
-          <p className="mt-3 text-[13px] text-gray-500">
+        {/* ─── Our version (footer-style, matches modal) ─── */}
+        <div className="border-t border-amber-100 pt-5">
+          <p className="text-[13px] leading-relaxed text-gray-600">
+            <span className="font-semibold text-amber-800/80">
+              Our version —{" "}
+            </span>
+            {story.originalTale.ourVersion.en}
+          </p>
+          <p className="mt-2 text-[12px] leading-relaxed text-gray-500">
+            <span className="font-semibold text-amber-800/60">
+              우리 버전 —{" "}
+            </span>
             {story.originalTale.ourVersion.ko}
           </p>
-        </Section>
+        </div>
 
         {/* ─── CTA bottom ─── */}
         <div className="my-14 rounded-3xl border border-amber-200/60 bg-gradient-to-br from-amber-50 to-rose-50 p-8 text-center shadow-sm md:p-10">

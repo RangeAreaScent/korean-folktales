@@ -93,10 +93,10 @@ export function OriginalTaleModal({ story, onClose, onStartColoring }: Props) {
           <p className="mt-2 text-base text-gray-700">{tale.englishTitle}</p>
         </header>
 
-        {/* Combined: about + summary */}
+        {/* The original tale — origin + summary combined (matches SEO page) */}
         <section className="mb-7 space-y-4">
           <h3 className="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-700/80">
-            {t(UI.modalAbout)}
+            {t(UI.modalOriginalTale)}
           </h3>
           <p className="text-[15px] leading-relaxed text-gray-800">
             {t(tale.origin)}
@@ -109,10 +109,10 @@ export function OriginalTaleModal({ story, onClose, onStartColoring }: Props) {
           </p>
         </section>
 
-        {/* Glossary */}
+        {/* Korean words you'll meet */}
         <section className="mb-6">
           <h3 className="mb-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-700/80">
-            {t(UI.modalGlossary)}
+            {t(UI.modalKoreanWords)}
           </h3>
           <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {tale.glossary.map((g) => (
