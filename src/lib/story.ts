@@ -78,7 +78,7 @@ const folktale: Story = {
         ko: "깊은 산속 작은 초가집. 어머니는 떡을 팔러 장에 가시고, 오누이가 집을 지키고 있었다. 늦은 밤 누군가 문을 두드린다. '얘들아, 엄마야. 떡을 가져왔단다.' 그런데 그 목소리가 어딘가 이상하다.",
         en: "A small thatched-roof house in the deep mountains. Mother had gone to the market to sell rice cakes. Two siblings stayed home alone. Late at night, someone knocks. \"Children, it's Mother. I've brought rice cakes.\" But something about the voice sounds strange.",
       },
-      image: "/coloring/folktale/start.png",
+      image: "/coloring/01-folktale/start.png",
       choices: [
         { label: { ko: "🪟 창문 틈으로 손을 확인한다", en: "🪟 Check the hand through the window" }, nextId: "forest" },
         { label: { ko: "🚪 그래도 문을 열어준다", en: "🚪 Open the door anyway" }, nextId: "well" },
@@ -91,7 +91,7 @@ const folktale: Story = {
         ko: "어머니의 손이 아니라 호랑이의 발이었다. 오누이는 뒷문으로 빠져나와 깊은 숲으로 도망친다. 달빛 아래 거대한 소나무 한 그루가 가지를 펼치고 서 있다.",
         en: "It wasn't Mother's hand — it was a tiger's paw. The siblings slipped out the back door and fled deep into the forest. Under the moonlight, a giant pine tree spread its branches wide.",
       },
-      image: "/coloring/folktale/forest.png",
+      image: "/coloring/01-folktale/forest.png",
       choices: [
         { label: { ko: "🌳 나무 위로 올라간다", en: "🌳 Climb up the tree" }, nextId: "ending-sky" },
         { label: { ko: "🙏 하늘에 도움을 청한다", en: "🙏 Pray to the heavens" }, nextId: "ending-mountain" },
@@ -104,7 +104,7 @@ const folktale: Story = {
         ko: "문을 열자 커다란 호랑이가 들이닥쳤다. 오누이는 부엌을 빠져나와 뒤뜰의 깊은 우물 곁으로 달려간다. 보름달이 우물 속에 동그랗게 비친다.",
         en: "As the door opened, a great tiger burst in. The siblings dashed out through the kitchen to the deep well in the back yard. The full moon shone round in the water.",
       },
-      image: "/coloring/folktale/well.png",
+      image: "/coloring/01-folktale/well.png",
       choices: [
         { label: { ko: "🌑 우물에 비친 그림자를 호랑이에게 보여준다", en: "🌑 Show the tiger the reflection in the well" }, nextId: "ending-mountain" },
         { label: { ko: "✨ 우물에 비친 달을 보며 하늘에 기도한다", en: "✨ Pray to the heavens by the moon's reflection" }, nextId: "ending-sky" },
@@ -117,7 +117,7 @@ const folktale: Story = {
         ko: "하늘에서 금빛 동아줄이 내려왔다. 오누이는 동아줄을 잡고 별 사이로 올라갔다. 그날부터 오빠는 해님이 되어 낮을 밝히고, 누이는 달님이 되어 밤을 비추게 되었다.",
         en: "A golden rope descended from the sky. The siblings grasped it and climbed up among the stars. From that day on, the brother became the Sun who lights the day, and the sister became the Moon who lights the night.",
       },
-      image: "/coloring/folktale/ending-sky.png",
+      image: "/coloring/01-folktale/ending-sky.png",
       endingLabel: { ko: "☀️ 해님 달님의 엔딩", en: "☀️ The Sun-and-Moon ending" },
     },
     "ending-mountain": {
@@ -127,7 +127,7 @@ const folktale: Story = {
         ko: "달빛 아래 흰 수염의 산신령이 나타나 호랑이를 산 너머로 멀리 쫓아냈다. 산신령은 오누이에게 작은 호리병 두 개를 건넸다. 호리병 안에는 산의 시간이 천천히 흐르고 있었다.",
         en: "Under the moonlight a white-bearded mountain spirit appeared and chased the tiger far over the ridge. He gave the children two small gourds. Inside the gourds, the mountain's slow time was flowing quietly.",
       },
-      image: "/coloring/folktale/ending-mountain.png",
+      image: "/coloring/01-folktale/ending-mountain.png",
       endingLabel: { ko: "🏔️ 산신령의 엔딩", en: "🏔️ The Mountain Spirit ending" },
     },
   },
@@ -205,7 +205,7 @@ const haenyeo: Story = {
         ko: "제주 바다에서 물질을 하던 해녀가 어두운 바닷속에서 희미하게 빛나는 무언가를 발견한다. 그 빛을 따라 내려가니 길이 두 갈래로 갈라진다. 어느 쪽으로 갈까?",
         en: "A haenyeo diving in the Jeju sea spots something glowing faintly in the dark water. Following the light, she finds two paths splitting before her. Which way should she go?",
       },
-      image: "/coloring/haenyeo/start.png",
+      image: "/coloring/02-haenyeo/start.png",
       choices: [
         { label: { ko: "🪸 산호 미로로 들어간다", en: "🪸 Enter the coral maze" }, nextId: "coral" },
         { label: { ko: "🌿 해초 숲으로 들어간다", en: "🌿 Enter the kelp forest" }, nextId: "kelp" },
@@ -218,7 +218,7 @@ const haenyeo: Story = {
         ko: "색색의 산호 사이로 길이 다시 갈라진다. 깊은 곳에서 누군가의 노래가 들려온다. 그림자 사이로 인어가 모습을 드러내며 작은 진주를 내민다.",
         en: "The path branches again among colorful corals. A song drifts from somewhere deep. A mermaid emerges from the shadows, holding out a small pearl.",
       },
-      image: "/coloring/haenyeo/coral.png",
+      image: "/coloring/02-haenyeo/coral.png",
       choices: [
         { label: { ko: "🪙 진주를 받아 든다", en: "🪙 Take the pearl" }, nextId: "ending-village" },
         { label: { ko: "🐚 진주를 인어에게 돌려준다", en: "🐚 Return the pearl to the mermaid" }, nextId: "ending-guardian" },
@@ -231,7 +231,7 @@ const haenyeo: Story = {
         ko: "흔들리는 해초 숲 사이, 거대한 바다거북이 잠들어 있다. 등껍질 위로 작은 진주 하나가 놓여 빛난다. 어디선가 인어가 조용히 다가온다.",
         en: "Between the swaying kelp, a great sea turtle sleeps. A small pearl glows on its shell. A mermaid drifts quietly into view.",
       },
-      image: "/coloring/haenyeo/kelp.png",
+      image: "/coloring/02-haenyeo/kelp.png",
       choices: [
         { label: { ko: "🐢 거북을 깨우지 않고 진주를 챙긴다", en: "🐢 Quietly take the pearl without waking the turtle" }, nextId: "ending-village" },
         { label: { ko: "🌊 인어와 함께 진주를 거북이에게 돌려준다", en: "🌊 Return the pearl with the mermaid's help" }, nextId: "ending-guardian" },
@@ -244,7 +244,7 @@ const haenyeo: Story = {
         ko: "해녀가 진주를 제자리에 돌려놓자 바다 깊은 곳에서 푸른 빛이 천천히 퍼졌다. 그날부터 해녀는 마을과 바다를 잇는 수호자가 되어, 보름달이 뜨는 밤마다 인어와 만나게 되었다.",
         en: "When the haenyeo returned the pearl, a soft blue light spread through the depths. From that day she became a guardian between village and sea, meeting the mermaid every full moon.",
       },
-      image: "/coloring/haenyeo/ending-guardian.png",
+      image: "/coloring/02-haenyeo/ending-guardian.png",
       endingLabel: { ko: "🌊 바다의 수호자 엔딩", en: "🌊 The Sea Guardian ending" },
     },
     "ending-village": {
@@ -254,7 +254,7 @@ const haenyeo: Story = {
         ko: "진주를 들고 바다 위로 솟아오른 해녀는 마을 사람들의 환영을 받았다. 진주는 마을의 보물이 되었다. 그러나 밤이 되면 멀리서 바다가 그녀의 이름을 부르는 듯한 소리가 들렸다.",
         en: "She surfaced with the pearl and was welcomed by the villagers as a hero. The pearl became the village's treasure. But at night, the sea seemed to call her name from far away.",
       },
-      image: "/coloring/haenyeo/ending-village.png",
+      image: "/coloring/02-haenyeo/ending-village.png",
       endingLabel: { ko: "🏝️ 마을의 영웅 엔딩", en: "🏝️ The Village Hero ending" },
     },
   },
@@ -332,7 +332,7 @@ const woodcutter: Story = {
         ko: "나무꾼이 폭포 옆에서 물을 마시던 중, 사냥꾼에게 쫓기는 사슴을 만났다. 나무꾼은 사슴을 큰 바위 뒤에 숨겨주었다. 곧 사냥꾼이 달려와 묻는다. '사슴을 봤소?'",
         en: "A young woodcutter pauses to drink at a waterfall and meets a deer fleeing a hunter. He hides the deer behind a great boulder. Moments later the hunter arrives, breathless: \"Have you seen a deer?\"",
       },
-      image: "/coloring/woodcutter/start.png",
+      image: "/coloring/03-woodcutter/start.png",
       choices: [
         { label: { ko: "🤫 북쪽으로 갔다고 거짓말한다", en: "🤫 Lie and say it ran north" }, nextId: "sage" },
         { label: { ko: "🙏 사슴이 스스로 나서길 빈다", en: "🙏 Hope the deer steps out on its own" }, nextId: "forest" },
@@ -345,7 +345,7 @@ const woodcutter: Story = {
         ko: "사슴은 고마움의 표시로 산속 비밀 연못을 알려주었다. 별이 비치는 그 연못가에 곱게 펼쳐진 한복 한 벌이 놓여있다. 물 안엔 선녀가 있다. 어떻게 할까?",
         en: "Grateful, the deer tells him of a secret pond high in the mountain. Beneath the stars, a folded hanbok lies on the bank. A fairy bathes in the water. What should he do?",
       },
-      image: "/coloring/woodcutter/sage.png",
+      image: "/coloring/03-woodcutter/sage.png",
       choices: [
         { label: { ko: "💖 옷을 그대로 두고 인사를 건넨다", en: "💖 Leave the clothes alone and greet her" }, nextId: "ending-sky" },
         { label: { ko: "🌿 옷을 잠시 숨기고 약속을 청한다", en: "🌿 Hide the clothes and ask for a promise" }, nextId: "ending-mountain" },
@@ -358,7 +358,7 @@ const woodcutter: Story = {
         ko: "사슴은 사냥꾼에게 잡혀가는 듯 보였으나, 곧 깊은 숲에서 흰 사슴 한 마리가 나타나 나무꾼을 안개 너머로 인도한다. 그곳에 한복을 곱게 차려입은 선녀가 손을 내민다. '함께 가겠는가?'",
         en: "The deer seemed lost to the hunter, but soon a pure white deer appears in the deep forest and leads the woodcutter through the mist. There, a fairy in flowing robes offers her hand. \"Will you come with me?\"",
       },
-      image: "/coloring/woodcutter/forest.png",
+      image: "/coloring/03-woodcutter/forest.png",
       choices: [
         { label: { ko: "🤝 선녀의 손을 잡고 길을 나선다", en: "🤝 Take her hand and follow" }, nextId: "ending-sky" },
         { label: { ko: "🍃 산에 남아 사슴을 보살피겠다 답한다", en: "🍃 Stay in the mountain and care for the deer" }, nextId: "ending-mountain" },
@@ -371,7 +371,7 @@ const woodcutter: Story = {
         ko: "사슴이 이끈 길 끝에 하늘로 오르는 무지개 다리가 놓여 있었다. 선녀와 나무꾼은 손을 잡고 별 사이로 걸어 들어갔다. 그날 이후, 맑은 밤마다 나란히 빛나는 두 별을 볼 수 있다.",
         en: "At the end of the deer's path, a rainbow bridge rose into the sky. Hand in hand, the woodcutter and the fairy walked among the stars. From that day on, on clear nights, two stars shine side by side.",
       },
-      image: "/coloring/woodcutter/ending-sky.png",
+      image: "/coloring/03-woodcutter/ending-sky.png",
       endingLabel: { ko: "☁️ 하늘로 오른 엔딩", en: "☁️ The Sky-bound ending" },
     },
     "ending-mountain": {
@@ -381,7 +381,7 @@ const woodcutter: Story = {
         ko: "나무꾼은 산을 떠나지 않았다. 사슴과 함께 작은 집을 짓고 짐승들을 보살폈다. 시간이 흐르며 그의 모습은 산의 안개에 녹아들었고, 사람들은 그를 산신령이라 부르기 시작했다.",
         en: "The woodcutter never left the mountain. With the deer, he built a small hut and cared for the animals. Over the years his figure blurred into the mountain mist, and people began to call him the Mountain Spirit.",
       },
-      image: "/coloring/woodcutter/ending-mountain.png",
+      image: "/coloring/03-woodcutter/ending-mountain.png",
       endingLabel: { ko: "🌲 산의 정령 엔딩", en: "🌲 The Mountain Spirit ending" },
     },
   },
@@ -459,7 +459,7 @@ const dokkaebi: Story = {
         ko: "혹부리 영감이 산에서 나무를 하다 길을 잃었다. 어둠 속 등불이 새어 나오는 작은 집을 발견한다. 살그머니 들여다보니 도깨비들이 방망이를 두드리며 떠들썩하게 놀고 있다.",
         en: "An old man with a lump on his cheek gets lost while gathering wood. In the dark, he finds a small hut glowing with lantern light. Peeking inside, he sees dokkaebi pounding their clubs and having a noisy feast.",
       },
-      image: "/coloring/dokkaebi/start.png",
+      image: "/coloring/04-dokkaebi/start.png",
       choices: [
         { label: { ko: "🎵 함께 노래를 부른다", en: "🎵 Step in and sing along" }, nextId: "sing" },
         { label: { ko: "👀 살짝 숨어서 지켜본다", en: "👀 Stay hidden and watch" }, nextId: "hide" },
@@ -472,7 +472,7 @@ const dokkaebi: Story = {
         ko: "영감이 흥겨운 가락을 뽑자 도깨비들이 박수치며 좋아한다. 한 도깨비가 묻는다. '그렇게 좋은 노래가 어디서 나오시오?'",
         en: "He breaks into a cheerful tune. The dokkaebi clap and roar with delight. One of them asks, \"Where does such a fine song come from, old man?\"",
       },
-      image: "/coloring/dokkaebi/sing.png",
+      image: "/coloring/04-dokkaebi/sing.png",
       choices: [
         { label: { ko: "🌟 '내 혹에서 나오는 노래라오' 농담한다", en: "🌟 Joke: \"It comes right out of this lump!\"" }, nextId: "ending-blessing" },
         { label: { ko: "🌫️ '도깨비님들과 함께라야 흥이 납니다' 답한다", en: "🌫️ Answer: \"Only with you good fellows can I sing this well.\"" }, nextId: "ending-wander" },
@@ -485,7 +485,7 @@ const dokkaebi: Story = {
         ko: "영감이 숨어서 지켜보니 도깨비들이 보물을 산처럼 쌓아두고 놀고 있다. 그러나 한 도깨비가 영감을 발견하고 손가락을 흔든다. '훔치러 왔소, 놀러 왔소?'",
         en: "Hidden, he watches the dokkaebi play among heaps of treasure. One of them spots him and wags a finger. \"Did you come to steal, or to play?\"",
       },
-      image: "/coloring/dokkaebi/hide.png",
+      image: "/coloring/04-dokkaebi/hide.png",
       choices: [
         { label: { ko: "🎤 '신나는 이야기 하나 해드리오리다' 답한다", en: "🎤 \"I came to tell you a wonderful tale.\"" }, nextId: "ending-blessing" },
         { label: { ko: "🤝 '함께 놀러왔다오' 답한다", en: "🤝 \"I came to play with you.\"" }, nextId: "ending-wander" },
@@ -498,7 +498,7 @@ const dokkaebi: Story = {
         ko: "도깨비들이 크게 웃으며 영감의 혹을 만져 떼어주고, 그 자리에 빛나는 비단 주머니를 채워주었다. 새벽 산길을 가벼운 발걸음으로 내려온 영감은 마을의 이야기꾼이 되었다. 아이들이 줄을 서서 그의 이야기를 들었다.",
         en: "Laughing, the dokkaebi plucked the lump from his cheek and filled his pocket with a shining silk purse. He walked home down the dawn path light-footed. He became the village storyteller, and children lined up to hear his tales.",
       },
-      image: "/coloring/dokkaebi/ending-blessing.png",
+      image: "/coloring/04-dokkaebi/ending-blessing.png",
       endingLabel: { ko: "🎁 이야기꾼의 엔딩", en: "🎁 The Storyteller ending" },
     },
     "ending-wander": {
@@ -508,7 +508,7 @@ const dokkaebi: Story = {
         ko: "그날 밤부터 영감은 도깨비들과 친구가 되었다. 달이 뜨는 밤이면 산자락에서 함께 부르는 노랫소리가 들렸다. 마을 사람들은 가끔 산길에서 영감과 도깨비들이 어깨동무하고 걸어가는 모습을 보았다고 했다.",
         en: "From that night on, the old man counted the dokkaebi as friends. On nights when the moon was full, their singing drifted down from the ridge. Travelers said they sometimes spotted him on the mountain road, arms around his goblin companions.",
       },
-      image: "/coloring/dokkaebi/ending-wander.png",
+      image: "/coloring/04-dokkaebi/ending-wander.png",
       endingLabel: { ko: "🌫️ 도깨비 친구의 엔딩", en: "🌫️ The Goblin Friends ending" },
     },
   },
@@ -586,7 +586,7 @@ const kongjwi: Story = {
         ko: "콩쥐가 잔치 갈 준비를 하고 있는데, 새어머니가 잔치 가기 전에 큰 항아리에 물을 가득 채워놓으라 시킨다. 그런데 항아리는 바닥이 깨져있다. 콩쥐는 어떻게 할까?",
         en: "Kongjwi is getting ready for the festival when her stepmother orders her to fill a giant clay jar with water first. But the jar has a crack at its base. What should she do?",
       },
-      image: "/coloring/kongjwi/start.png",
+      image: "/coloring/05-kongjwi/start.png",
       choices: [
         { label: { ko: "🐸 두꺼비에게 도와달라 부탁한다", en: "🐸 Ask the toad for help" }, nextId: "toad" },
         { label: { ko: "🌿 풀잎을 모아 손으로 막아본다", en: "🌿 Try to plug it with grass and hands" }, nextId: "cow" },
@@ -599,7 +599,7 @@ const kongjwi: Story = {
         ko: "큰 두꺼비가 항아리 바닥을 막아주었다. 잔치 가기 전, 새어머니는 한 가지 일을 더 시켰다. 베틀 앞에서 막막해진 콩쥐 곁으로 참새 떼가 모여든다. '도와드릴게요. 그런데 무엇을 주실 수 있나요?'",
         en: "A great toad sealed the jar's crack. But before the festival, her stepmother gave her another task. Stuck at the loom, Kongjwi sees a flock of sparrows gather. \"We'll help you. But what will you give us?\"",
       },
-      image: "/coloring/kongjwi/toad.png",
+      image: "/coloring/05-kongjwi/toad.png",
       choices: [
         { label: { ko: "🌾 '들에서 거둔 곡식을 나눠드리겠다' 답한다", en: "🌾 \"I'll share my grain with you.\"" }, nextId: "ending-banquet" },
         { label: { ko: "🕊 '대신 노래 한 곡 불러드리겠다' 답한다", en: "🕊 \"I'll sing you a song instead.\"" }, nextId: "ending-village" },
@@ -612,7 +612,7 @@ const kongjwi: Story = {
         ko: "풀잎으로 가까스로 항아리를 채웠다. 잔치에 가려는데 입을 옷이 없다. 검은 소가 천천히 다가와 말한다. '비단옷을 가져다 줄까, 평범한 베옷을 입고 갈까. 어느 것이 좋은가?'",
         en: "She barely filled the jar with bundles of grass. With no festival clothes, a black ox approaches and speaks slowly: \"Shall I bring you a silk hanbok, or will plain hemp do? Which would you prefer?\"",
       },
-      image: "/coloring/kongjwi/cow.png",
+      image: "/coloring/05-kongjwi/cow.png",
       choices: [
         { label: { ko: "👘 '비단옷을 입겠다' 답한다", en: "👘 \"I'll take the silk hanbok.\"" }, nextId: "ending-banquet" },
         { label: { ko: "🌾 '베옷도 충분합니다' 답한다", en: "🌾 \"Plain hemp will do.\"" }, nextId: "ending-village" },
@@ -625,7 +625,7 @@ const kongjwi: Story = {
         ko: "콩쥐가 잔치에 도착했을 때, 마침 사또가 마당 한가운데서 잃어버린 꽃신을 발견했다. 신을 신어보자 꼭 맞았다. 사또는 콩쥐의 손을 잡고 꽃 사이로 함께 걸었다. 사람들이 박수를 쳤다.",
         en: "When Kongjwi arrived at the feast, the magistrate had just picked up a lost flower shoe. She slipped it on, and it fit. The magistrate took her hand and walked with her through the petals. The crowd burst into applause.",
       },
-      image: "/coloring/kongjwi/ending-banquet.png",
+      image: "/coloring/05-kongjwi/ending-banquet.png",
       endingLabel: { ko: "👑 잔치의 엔딩", en: "👑 The Festival ending" },
     },
     "ending-village": {
@@ -635,7 +635,7 @@ const kongjwi: Story = {
         ko: "잔치에서 별다른 일은 일어나지 않았다. 그러나 돌아오는 길, 도와줬던 두꺼비와 참새와 검은 소가 마을 어귀에 마중 나와 있었다. 콩쥐의 작은 집이 보름달 아래 따스하게 빛났다. 짐승들과 함께 평화로운 밤이 시작되었다.",
         en: "Nothing remarkable happened at the feast. But on the way home, the toad, the sparrows, and the black ox were waiting at the village gate. Her little cottage glowed warm under the full moon. A peaceful night began among her animal friends.",
       },
-      image: "/coloring/kongjwi/ending-village.png",
+      image: "/coloring/05-kongjwi/ending-village.png",
       endingLabel: { ko: "🌾 따뜻한 이웃 엔딩", en: "🌾 The Warm Village ending" },
     },
   },
@@ -713,7 +713,7 @@ const byeoljubu: Story = {
         ko: "산속 토끼가 풀을 뜯고 있는데 바다에서 자라 한 마리가 헐레벌떡 올라왔다. 자라는 용왕님이 사는 용궁의 화려함을 자랑하며 토끼를 초대한다. 어쩐지 자라의 눈빛이 흔들린다.",
         en: "A hare nibbles grass on the mountainside when a turtle scrambles up from the sea. The turtle boasts of the Dragon King's gleaming palace and invites the hare to visit. But something flickers in the turtle's eyes.",
       },
-      image: "/coloring/byeoljubu/start.png",
+      image: "/coloring/06-byeoljubu/start.png",
       choices: [
         { label: { ko: "🐢 자라를 따라 바다로 간다", en: "🐢 Follow the turtle into the sea" }, nextId: "palace" },
         { label: { ko: "🌲 산에 남아 더 알아본다", en: "🌲 Stay on the mountain and learn more" }, nextId: "forest" },
@@ -726,7 +726,7 @@ const byeoljubu: Story = {
         ko: "휘황찬란한 용궁에 도착하자 용왕이 침대에 누워 있다. 신하들이 말한다. '토끼의 간이 있어야 용왕님이 살 수 있소.' 토끼는 깜짝 놀랐다. 어떻게 대답할까?",
         en: "Inside the dazzling Dragon Palace the Dragon King lies in bed. \"We need a hare's liver to save His Majesty,\" the ministers say. The hare freezes. What will he answer?",
       },
-      image: "/coloring/byeoljubu/palace.png",
+      image: "/coloring/06-byeoljubu/palace.png",
       choices: [
         { label: { ko: "🧠 '간은 산에 두고 왔습니다' 기지를 부린다", en: "🧠 \"My liver is back on the mountain — let me fetch it.\"" }, nextId: "ending-clever" },
         { label: { ko: "🙏 '함께 길을 찾아봅시다' 약을 권한다", en: "🙏 \"Let us look for another medicine together.\"" }, nextId: "ending-honor" },
@@ -739,7 +739,7 @@ const byeoljubu: Story = {
         ko: "산속에 남은 토끼에게 도깨비가 다가와 귀띔한다. '용왕이 네 간을 원한단다.' 자라가 다시 토끼를 부르러 산을 오른다. 토끼는 두 가지 길 사이에서 망설인다.",
         en: "A dokkaebi sidles up to the hare and whispers, \"The Dragon King wants your liver.\" The turtle is climbing the mountain again to fetch him. The hare hesitates between two paths.",
       },
-      image: "/coloring/byeoljubu/forest.png",
+      image: "/coloring/06-byeoljubu/forest.png",
       choices: [
         { label: { ko: "🎭 자라에게 수수께끼를 내어 돌려보낸다", en: "🎭 Send the turtle home with a riddle" }, nextId: "ending-clever" },
         { label: { ko: "🤝 자라에게 사과하고 용궁에 친구로 간다", en: "🤝 Apologize to the turtle and visit the palace as a friend" }, nextId: "ending-honor" },
@@ -752,7 +752,7 @@ const byeoljubu: Story = {
         ko: "용궁에서 빠져나온 토끼는 산속 큰 바위에 올라 크게 웃었다. '간이라니, 그건 내 머릿속에 잘 있단다!' 그 뒤로 토끼는 산짐승들 사이에서 가장 영리한 자로 이름이 났다. 자라는 빈손으로 바다로 돌아갔다.",
         en: "Back on his mountain, the hare leapt onto a great boulder and laughed. \"My liver? Right where it always was — in my head!\" From then on he was known throughout the forest as the cleverest of all creatures. The turtle returned empty-handed to the sea.",
       },
-      image: "/coloring/byeoljubu/ending-clever.png",
+      image: "/coloring/06-byeoljubu/ending-clever.png",
       endingLabel: { ko: "🧠 기지의 엔딩", en: "🧠 The Clever ending" },
     },
     "ending-honor": {
@@ -762,7 +762,7 @@ const byeoljubu: Story = {
         ko: "토끼는 용왕에게 산속 약초를 가르쳐주었고, 용왕은 깊이 감사했다. 그날부터 토끼와 자라는 산과 바다를 오가는 절친한 사이가 되었고, 어느 동물이 아프면 둘이 함께 약을 찾으러 다닌다고 한다.",
         en: "The hare taught the Dragon King about mountain herbs, and the king was deeply grateful. From that day, the hare and the turtle became fast friends crossing land and sea — and whenever an animal fell sick, the two would set out together to find medicine.",
       },
-      image: "/coloring/byeoljubu/ending-honor.png",
+      image: "/coloring/06-byeoljubu/ending-honor.png",
       endingLabel: { ko: "🤝 의리의 엔딩", en: "🤝 The Loyal Friendship ending" },
     },
   },
@@ -840,7 +840,7 @@ const heungbu: Story = {
         ko: "옛날 어느 마을, 욕심 많은 형 놀부와 마음 착한 동생 흥부가 살았다. 놀부는 부자였지만 인색했고, 흥부는 가난해도 따뜻했다. 어느 봄날, 처마 밑에 제비 한 마리가 둥지를 짓는다. 누구의 시점으로 이야기를 따라갈까?",
         en: "Long ago in a small village lived two brothers — greedy elder Nolbu and kindhearted younger Heungbu. Nolbu was rich but stingy; Heungbu was poor but warm of heart. One spring, a swallow builds a nest under a roof. Whose story shall we follow?",
       },
-      image: "/coloring/heungbu/start.png",
+      image: "/coloring/07-heungbu/start.png",
       choices: [
         { label: { ko: "🪺 흥부의 처마 밑으로", en: "🪺 Follow Heungbu's roof" }, nextId: "swallow" },
         { label: { ko: "💰 놀부의 큰 집으로", en: "💰 Follow Nolbu's grand house" }, nextId: "greed" },
@@ -853,7 +853,7 @@ const heungbu: Story = {
         ko: "흥부의 처마 밑 제비 새끼 한 마리가 떨어져 다리를 다쳤다. 흥부가 살펴보니 작은 다리가 부러져 있다. 어떻게 할까?",
         en: "A baby swallow falls from Heungbu's eaves and breaks its tiny leg. Heungbu cradles it carefully. What should he do?",
       },
-      image: "/coloring/heungbu/swallow.png",
+      image: "/coloring/07-heungbu/swallow.png",
       choices: [
         { label: { ko: "🩹 정성껏 다리를 고치고 풀어준다", en: "🩹 Bandage the leg and set it free" }, nextId: "ending-blessing" },
         { label: { ko: "🌾 그냥 부드러운 둥지에 다시 올려준다", en: "🌾 Place it gently back in the nest" }, nextId: "ending-lesson" },
@@ -866,7 +866,7 @@ const heungbu: Story = {
         ko: "흥부가 박씨로 부자가 됐다는 소문을 들은 놀부. 자기 집 처마에도 제비를 잡아다 일부러 다리를 부러뜨렸다. 거짓으로 치료하던 손이 순간 멈춘다. 놀부는 무엇을 할까?",
         en: "Hearing Heungbu grew rich from a magic gourd seed, Nolbu catches a swallow under his eaves and deliberately breaks its leg, planning to \"heal\" it and earn the same reward. As he wraps the leg, his hand pauses. What will he do?",
       },
-      image: "/coloring/heungbu/greed.png",
+      image: "/coloring/07-heungbu/greed.png",
       choices: [
         { label: { ko: "💎 그대로 보물을 기대하며 마저 치료한다", en: "💎 Keep going, hoping for the same treasure" }, nextId: "ending-lesson" },
         { label: { ko: "🌱 잘못을 깨닫고 진심으로 보살핀다", en: "🌱 Realize his mistake and tend the bird with genuine care" }, nextId: "ending-blessing" },
@@ -879,7 +879,7 @@ const heungbu: Story = {
         ko: "이듬해 봄, 제비가 박씨 하나를 물어다 주었다. 정성껏 심으니 큰 박이 자랐고, 박을 톱으로 자르자 안에서 비단과 금화가 쏟아져 나왔다. 흥부의 마당에선 동네 사람들과 잔치가 벌어졌다.",
         en: "The next spring, the swallow returned with a single gourd seed. He planted it carefully, and from the great gourd that grew, silks and gold coins tumbled out. Heungbu's yard filled with neighbors at a great feast.",
       },
-      image: "/coloring/heungbu/ending-blessing.png",
+      image: "/coloring/07-heungbu/ending-blessing.png",
       endingLabel: { ko: "🎁 박씨의 엔딩", en: "🎁 The Magic Gourd ending" },
     },
     "ending-lesson": {
@@ -889,7 +889,7 @@ const heungbu: Story = {
         ko: "다음 봄, 제비가 박씨를 가져다 주었다. 박이 자라 톱으로 자르자, 안에서 도깨비들이 우르르 쏟아져 나와 욕심을 부드럽게 흔들어 보였다. 보물은 없었지만, 놀부의 마음 한구석이 천천히 따뜻해지기 시작했다.",
         en: "The next spring, the swallow brought a gourd seed. As the great gourd was sawn open, dokkaebi tumbled out and gently shook loose his greedy heart. There was no treasure inside, but slowly a corner of Nolbu's heart began to warm.",
       },
-      image: "/coloring/heungbu/ending-lesson.png",
+      image: "/coloring/07-heungbu/ending-lesson.png",
       endingLabel: { ko: "🌱 가르침의 엔딩", en: "🌱 The Lesson ending" },
     },
   },
@@ -967,7 +967,7 @@ const woodman: Story = {
         ko: "성실한 나무꾼이 산속 깊은 연못가에서 나무를 베고 있었다. 그만 손에서 도끼가 미끄러져 연못 속으로 풍덩 가라앉았다. 가난한 그에게 단 하나뿐인 도끼였다. 수면 위로 작은 동심원만 천천히 퍼져나간다.",
         en: "An honest woodcutter is chopping by a deep mountain pond. The axe slips from his hand and plunges into the water — his only axe, and he is a poor man. Small ripples spread quietly across the surface.",
       },
-      image: "/coloring/woodman/start.png",
+      image: "/coloring/08-woodman/start.png",
       choices: [
         {
           label: { ko: "🙏 잃어버린 도끼를 받아들인다", en: "🙏 Accept that it's lost" },
@@ -986,7 +986,7 @@ const woodman: Story = {
         ko: "체념하고 자리에 앉으려는 순간, 연못 중앙에서 빛이 솟아 흰 수염의 산신령이 떠올랐다. 손엔 금도끼·은도끼·그리고 그가 잃어버린 쇠도끼 세 자루. '이 중 어느 것이 그대의 것인가?'",
         en: "As he sat down to rest, light surged from the center of the pond and a white-bearded Mountain Spirit rose up. In his hands — a gold axe, a silver axe, and the iron axe the woodcutter had lost. \"Which one is yours?\"",
       },
-      image: "/coloring/woodman/trial.png",
+      image: "/coloring/08-woodman/trial.png",
       choices: [
         {
           label: { ko: "🪓 '오직 쇠도끼만이 제 것입니다' 답한다", en: "🪓 \"Only the iron one is mine.\"" },
@@ -1005,7 +1005,7 @@ const woodman: Story = {
         ko: "한참을 한숨 쉬며 앉아 있는데, 연못이 잔잔히 빛났다. 산신령이 떠올라 세 자루의 도끼를 차례로 내보인다. 황금 도끼가 햇살에 반짝인다. '이 중 어느 것이 그대의 도끼인가?'",
         en: "As he sighed and waited, the pond began to glow softly. The Mountain Spirit rose and held out three axes in turn. The gold one shimmered in the sunlight. \"Which is yours?\"",
       },
-      image: "/coloring/woodman/temptation.png",
+      image: "/coloring/08-woodman/temptation.png",
       choices: [
         {
           label: { ko: "🌱 마음을 가다듬고 '쇠도끼만이 제 것' 답한다", en: "🌱 Steady his heart: \"Only the iron one is mine.\"" },
@@ -1024,7 +1024,7 @@ const woodman: Story = {
         ko: "나무꾼은 마을로 내려와 정직의 가치를 사람들에게 나눠 가르쳤다. 마을의 아이들은 그의 이야기를 들으며 자랐고, 산신령의 도끼는 연못 옆 작은 사당에 모셔져 모두의 보물이 되었다.",
         en: "The woodcutter went home and shared the lesson of honesty with everyone. The village children grew up on his story, and the gifted axes were enshrined in a small wooden hall beside the pond — a treasure belonging to all.",
       },
-      image: "/coloring/woodman/ending-share.png",
+      image: "/coloring/08-woodman/ending-share.png",
       endingLabel: { ko: "🌟 나눔의 엔딩", en: "🌟 The Sharing ending" },
     },
     "ending-quiet": {
@@ -1034,7 +1034,7 @@ const woodman: Story = {
         ko: "산신령은 황금과 은의 도끼를 다시 거두어 갔다. 나무꾼의 손에는 처음의 쇠도끼만 남았다. 그러나 그 도끼를 들고 산을 오르는 나무꾼의 발걸음에는, 전과 다른 깊은 무언가가 묻어 있었다.",
         en: "The mountain spirit took back the gold and the silver. Only the simple iron axe remained in the woodcutter's hand. Yet as he climbed the mountain with it, his step carried something deeper than before — a quiet understanding.",
       },
-      image: "/coloring/woodman/ending-quiet.png",
+      image: "/coloring/08-woodman/ending-quiet.png",
       endingLabel: { ko: "🌿 깨달음의 엔딩", en: "🌿 The Quiet Lesson ending" },
     },
   },

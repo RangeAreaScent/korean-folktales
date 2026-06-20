@@ -136,7 +136,7 @@ OUTPUT
 
 ---
 
-## Scene 1 — `folktale/scene-1-knock.png`
+## Scene 1 — `01-folktale/scene-1-knock.png`
 
 **제목 ko**: 1장. 늦은 밤의 문 두드림
 **제목 en**: Chapter 1 — Late-Night Knock
@@ -182,7 +182,7 @@ detail filling the space — chest, blanket, bowls, beams.
 
 ---
 
-## Scene 2 — `folktale/scene-2-decision.png`
+## Scene 2 — `01-folktale/scene-2-decision.png`
 
 **제목 ko**: 2장. 두 가지 시험
 **제목 en**: Chapter 2 — Two Tests
@@ -231,7 +231,7 @@ tiger silhouette behind the paper panels is the visual climax.
 
 ---
 
-## Scene 3a — `folktale/scene-3a-pine.png` (소나무 분기)
+## Scene 3a — `01-folktale/scene-3a-pine.png` (소나무 분기)
 
 **제목 ko**: 3장. 달빛 아래 소나무
 **제목 en**: Chapter 3 — Under the Moonlit Pine
@@ -254,7 +254,7 @@ Composition: massive pine tree filling center vertical, siblings on a branch upp
 
 ---
 
-## Scene 3b — `folktale/scene-3b-well.png` (우물 분기)
+## Scene 3b — `01-folktale/scene-3b-well.png` (우물 분기)
 
 **제목 ko**: 3장. 우물에 비친 보름달
 **제목 en**: Chapter 3 — The Full Moon in the Well
@@ -303,7 +303,7 @@ rooftop and moon spanning the upper band, ground tufts the lower band.
 
 ---
 
-## Scene 4 — `folktale/scene-4-rope.png` (정통 결말)
+## Scene 4 — `01-folktale/scene-4-rope.png` (정통 결말)
 
 **제목 ko**: 마지막 장. 하늘로 오른 동아줄
 **제목 en**: Final — The Rope That Climbed to the Sky
@@ -370,7 +370,7 @@ unifying horizon, stars across the whole upper background.
 
 # 📋 받은 PNG 체크리스트 (해님 달님)
 
-배치 위치: `public/coloring/folktale/` (기존 폴더에 덮어쓰기 또는 별도 백업 후 교체)
+배치 위치: `public/coloring/01-folktale/` (기존 폴더에 덮어쓰기 또는 별도 백업 후 교체)
 
 - [ ] `scene-1-knock.png` — 1장. 늦은 밤의 문 두드림
 - [ ] `scene-2-decision.png` — 2장. 두 가지 시험 (분기 시작)
@@ -412,7 +412,7 @@ unifying horizon, stars across the whole upper background.
 
 ---
 
-## Scene 1 — `haenyeo/scene-1-shore.png`
+## Scene 1 — `02-haenyeo/scene-1-shore.png`
 
 **제목 ko**: 1장. 새벽 바다 앞에서
 **제목 en**: Chapter 1 — At the Dawn-Lit Shore
@@ -483,7 +483,7 @@ seagull upper-right.
 
 ---
 
-## Scene 2 — `haenyeo/scene-2-deep.png`
+## Scene 2 — `02-haenyeo/scene-2-deep.png`
 
 **제목 ko**: 2장. 두 갈래 빛
 **제목 en**: Chapter 2 — The Two Lights
@@ -559,7 +559,7 @@ lower-right, broken surface light streaming down from the top.
 
 ---
 
-## Scene 3a — `haenyeo/scene-3a-coral.png` (산호 미로 분기)
+## Scene 3a — `02-haenyeo/scene-3a-coral.png` (산호 미로 분기)
 
 **제목 ko**: 3장. 산호 사이의 인어
 **제목 en**: Chapter 3 — The Mermaid Among the Corals
@@ -634,7 +634,7 @@ above.
 
 ---
 
-## Scene 3b — `haenyeo/scene-3b-kelp.png` (해초 숲 분기)
+## Scene 3b — `02-haenyeo/scene-3b-kelp.png` (해초 숲 분기)
 
 **제목 ko**: 3장. 해초 숲의 잠든 자라
 **제목 en**: Chapter 3 — The Sleeping Turtle in the Kelp
@@ -705,7 +705,7 @@ the right, haenyeo small in upper-left.
 
 ---
 
-## Scene 4 — `haenyeo/scene-4-guardian.png` (정통 결말)
+## Scene 4 — `02-haenyeo/scene-4-guardian.png` (정통 결말)
 
 **제목 ko**: 마지막 장. 바다의 수호자
 **제목 en**: Final — Guardian of the Sea
@@ -815,7 +815,7 @@ band as small far-away echoes of Scenes 3a and 3b.
 
 # 📋 받은 PNG 체크리스트 (해녀와 인어)
 
-배치 위치: `public/coloring/haenyeo/`
+배치 위치: `public/coloring/02-haenyeo/`
 
 - [ ] `scene-1-shore.png` — 1장. 새벽 바다 앞에서
 - [ ] `scene-2-deep.png` — 2장. 두 갈래 빛 (분기 시작)
@@ -849,7 +849,7 @@ band as small far-away echoes of Scenes 3a and 3b.
 
 ---
 
-## Scene 1 — `woodcutter/scene-1-deer.png` (기)
+## Scene 1 — `03-woodcutter/scene-1-deer.png` (기)
 
 **제목 ko**: 1장. 사슴을 구한 날
 **제목 en**: Chapter 1 — The Day He Saved the Deer
@@ -936,7 +936,7 @@ stream in the lower band.
 
 ---
 
-## Scene 2 — `woodcutter/scene-2-pond.png` (승)
+## Scene 2 — `03-woodcutter/scene-2-pond.png` (승)
 
 **제목 ko**: 2장. 별빛 연못의 비밀
 **제목 en**: Chapter 2 — The Secret of the Starlit Pond
@@ -1039,7 +1039,7 @@ fairy lower-left foreground, woodcutter hidden lower-right, pines + moon
 
 ---
 
-## Scene 3a — `woodcutter/scene-3a-hut.png` (전 · 산속 분기)
+## Scene 3a — `03-woodcutter/scene-3a-hut.png` (전 · 산속 분기)
 
 **제목 ko**: 3장. 산속 오두막의 두 자녀
 **제목 en**: Chapter 3 — Two Children in the Mountain Hut
@@ -1125,7 +1125,7 @@ carrier upper-back-left as the visual cue.
 
 ---
 
-## Scene 3b — `woodcutter/scene-3b-village.png` (전 · 마을 분기)
+## Scene 3b — `03-woodcutter/scene-3b-village.png` (전 · 마을 분기)
 
 **제목 ko**: 3장. 마을 어머니 곁의 두 자녀
 **제목 en**: Chapter 3 — Two Children at Grandmother's House
@@ -1216,7 +1216,7 @@ upper-left as the visual cue.
 
 ---
 
-## Scene 4 — `woodcutter/scene-4-dawn.png` (결 · 정통 결말)
+## Scene 4 — `03-woodcutter/scene-4-dawn.png` (결 · 정통 결말)
 
 **제목 ko**: 마지막 장. 새벽 빛이 된 그리움
 **제목 en**: Final — The Dawn Light of Longing
@@ -1343,7 +1343,7 @@ beam of light is the central vertical axis of the canvas.
 
 # 📋 받은 PNG 체크리스트 (선녀와 나무꾼)
 
-배치 위치: `public/coloring/woodcutter/`
+배치 위치: `public/coloring/03-woodcutter/`
 
 - [ ] `scene-1-deer.png` — 1장. 사슴을 구한 날 (기)
 - [ ] `scene-2-pond.png` — 2장. 별빛 연못의 비밀 (승 + 분기)
@@ -1375,7 +1375,7 @@ beam of light is the central vertical axis of the canvas.
 
 ---
 
-## Scene 1 — `dokkaebi/scene-1-hut.png` (기)
+## Scene 1 — `04-dokkaebi/scene-1-hut.png` (기)
 
 **제목 ko**: 1장. 노래하는 영감과 외딴 빈집
 **제목 en**: Chapter 1 — The Singing Old Man and the Lonely Hut
@@ -1447,7 +1447,7 @@ crescent moon and dusk sky upper, gentle ground details lower.
 
 ---
 
-## Scene 2 — `dokkaebi/scene-2-feast.png` (승)
+## Scene 2 — `04-dokkaebi/scene-2-feast.png` (승)
 
 **제목 ko**: 2장. 한밤중 도깨비들의 잔치
 **제목 en**: Chapter 2 — The Goblins' Midnight Feast
@@ -1530,7 +1530,7 @@ wall, simple ceiling beam line at the top.
 
 ---
 
-## Scene 3a — `dokkaebi/scene-3a-dance.png` (전 · 흥겨운 노래)
+## Scene 3a — `04-dokkaebi/scene-3a-dance.png` (전 · 흥겨운 노래)
 
 **제목 ko**: 3장. 도깨비들과 함께 춤추는 밤
 **제목 en**: Chapter 3 — A Night of Dancing with the Goblins
@@ -1607,7 +1607,7 @@ each, the cauldron + jar pushed to one side, dust puffs at feet, window
 
 ---
 
-## Scene 3b — `dokkaebi/scene-3b-lullaby.png` (전 · 자장가)
+## Scene 3b — `04-dokkaebi/scene-3b-lullaby.png` (전 · 자장가)
 
 **제목 ko**: 3장. 자장가에 잠드는 도깨비들
 **제목 en**: Chapter 3 — Goblins Drowsing to a Lullaby
@@ -1683,7 +1683,7 @@ floor as a soft accent, paper window + moon back wall.
 
 ---
 
-## Scene 4 — `dokkaebi/scene-4-lump.png` (결 · 정통 결말)
+## Scene 4 — `04-dokkaebi/scene-4-lump.png` (결 · 정통 결말)
 
 **제목 ko**: 마지막 장. 혹과 보물, 그리고 욕심쟁이의 길
 **제목 en**: Final — The Lump, the Treasure, and the Greedy Man's Road
@@ -1802,7 +1802,7 @@ halves at the top.
 
 # 📋 받은 PNG 체크리스트 (혹부리 영감)
 
-배치 위치: `public/coloring/dokkaebi/`
+배치 위치: `public/coloring/04-dokkaebi/`
 
 - [ ] `scene-1-hut.png` — 1장. 노래하는 영감과 외딴 빈집 (기)
 - [ ] `scene-2-feast.png` — 2장. 한밤중 도깨비들의 잔치 (승 + 분기)
@@ -1834,7 +1834,7 @@ halves at the top.
 
 ---
 
-## Scene 1 — `kongjwi/scene-1-jar.png` (기)
+## Scene 1 — `05-kongjwi/scene-1-jar.png` (기)
 
 **제목 ko**: 1장. 깨진 항아리와 작은 두꺼비
 **제목 en**: Chapter 1 — The Cracked Jar and the Little Toad
@@ -1929,7 +1929,7 @@ sky and sun upper band.
 
 ---
 
-## Scene 2 — `kongjwi/scene-2-tasks.png` (승)
+## Scene 2 — `05-kongjwi/scene-2-tasks.png` (승)
 
 **제목 ko**: 2장. 잔치는 다가오고, 두 가지 일거리
 **제목 en**: Chapter 2 — The Feast Approaches, and Two Tasks
@@ -2016,7 +2016,7 @@ quiet helpers in the background.
 
 ---
 
-## Scene 3a — `kongjwi/scene-3a-sparrows.png` (전 · 참새 베틀)
+## Scene 3a — `05-kongjwi/scene-3a-sparrows.png` (전 · 참새 베틀)
 
 **제목 ko**: 3장. 참새 떼와 베틀 앞에서
 **제목 en**: Chapter 3 — At the Loom with a Flock of Sparrows
@@ -2110,7 +2110,7 @@ and quiet jar+toad background-right.
 
 ---
 
-## Scene 3b — `kongjwi/scene-3b-ox.png` (전 · 검은 소의 선물)
+## Scene 3b — `05-kongjwi/scene-3b-ox.png` (전 · 검은 소의 선물)
 
 **제목 ko**: 3장. 검은 소의 선물
 **제목 en**: Chapter 3 — The Black Ox's Gift
@@ -2207,7 +2207,7 @@ left-background, gate behind the ox, golden sky upper.
 
 ---
 
-## Scene 4 — `kongjwi/scene-4-banquet.png` (결 · 정통 결말)
+## Scene 4 — `05-kongjwi/scene-4-banquet.png` (결 · 정통 결말)
 
 **제목 ko**: 마지막 장. 잔치, 꽃신, 그리고 사또의 가마
 **제목 en**: Final — The Feast, the Flowered Shoe, and the Magistrate's Sedan
@@ -2327,7 +2327,7 @@ above.
 
 # 📋 받은 PNG 체크리스트 (콩쥐와 두꺼비)
 
-배치 위치: `public/coloring/kongjwi/`
+배치 위치: `public/coloring/05-kongjwi/`
 
 - [ ] `scene-1-jar.png` — 1장. 깨진 항아리와 작은 두꺼비 (기)
 - [ ] `scene-2-tasks.png` — 2장. 잔치는 다가오고, 두 가지 일거리 (승 + 분기)
@@ -2359,7 +2359,7 @@ above.
 
 ---
 
-## Scene 1 — `byeoljubu/scene-1-palace.png` (기)
+## Scene 1 — `06-byeoljubu/scene-1-palace.png` (기)
 
 **제목 ko**: 1장. 용궁의 큰 시름
 **제목 en**: Chapter 1 — A Great Worry at the Dragon Palace
@@ -2454,7 +2454,7 @@ filling background.
 
 ---
 
-## Scene 2 — `byeoljubu/scene-2-meeting.png` (승)
+## Scene 2 — `06-byeoljubu/scene-2-meeting.png` (승)
 
 **제목 ko**: 2장. 산속 토끼와 자라의 만남
 **제목 en**: Chapter 2 — Turtle Meets Hare on the Mountain
@@ -2550,7 +2550,7 @@ right, grass and flowers in the lower band.
 
 ---
 
-## Scene 3a — `byeoljubu/scene-3a-undersea.png` (전 · 용궁의 위기)
+## Scene 3a — `06-byeoljubu/scene-3a-undersea.png` (전 · 용궁의 위기)
 
 **제목 ko**: 3장. 용궁에서 알게 된 비밀
 **제목 en**: Chapter 3 — The Secret He Learned in the Palace
@@ -2644,7 +2644,7 @@ soft fill.
 
 ---
 
-## Scene 3b — `byeoljubu/scene-3b-whisper.png` (전 · 산속 귀띔)
+## Scene 3b — `06-byeoljubu/scene-3b-whisper.png` (전 · 산속 귀띔)
 
 **제목 ko**: 3장. 산속 도깨비의 귀띔
 **제목 en**: Chapter 3 — A Whisper from a Mountain Spirit
@@ -2736,7 +2736,7 @@ hare LEFT, midground gap, patient turtle RIGHT, mountain background.
 
 ---
 
-## Scene 4 — `byeoljubu/scene-4-return.png` (결 · 정통 결말)
+## Scene 4 — `06-byeoljubu/scene-4-return.png` (결 · 정통 결말)
 
 **제목 ko**: 마지막 장. 토끼의 기지와 자라의 충성
 **제목 en**: Final — The Hare's Wit and the Turtle's Loyalty
@@ -2850,7 +2850,7 @@ ground details lower.
 
 # 📋 받은 PNG 체크리스트 (별주부전)
 
-배치 위치: `public/coloring/byeoljubu/`
+배치 위치: `public/coloring/06-byeoljubu/`
 
 - [ ] `scene-1-palace.png` — 1장. 용궁의 큰 시름 (기)
 - [ ] `scene-2-meeting.png` — 2장. 산속 토끼와 자라의 만남 (승 + 분기)
@@ -2882,7 +2882,7 @@ ground details lower.
 
 ---
 
-## Scene 1 — `heungbu/scene-1-brothers.png` (기)
+## Scene 1 — `07-heungbu/scene-1-brothers.png` (기)
 
 **제목 ko**: 1장. 두 형제, 두 마당
 **제목 en**: Chapter 1 — Two Brothers, Two Yards
@@ -2975,7 +2975,7 @@ empty and grand RIGHT (~50%), unified sky above.
 
 ---
 
-## Scene 2 — `heungbu/scene-2-swallow.png` (승)
+## Scene 2 — `07-heungbu/scene-2-swallow.png` (승)
 
 **제목 ko**: 2장. 다친 제비를 만난 날
 **제목 en**: Chapter 2 — The Day He Found the Injured Swallow
@@ -3066,7 +3066,7 @@ swallows in the sky above.
 
 ---
 
-## Scene 3a — `heungbu/scene-3a-family.png` (전 · 가족과 함께)
+## Scene 3a — `07-heungbu/scene-3a-family.png` (전 · 가족과 함께)
 
 **제목 ko**: 3장. 식구들의 따뜻한 손길
 **제목 en**: Chapter 3 — The Family's Warm Hands
@@ -3154,7 +3154,7 @@ upper-right.
 
 ---
 
-## Scene 3b — `heungbu/scene-3b-medicine.png` (전 · 어머니의 약방문)
+## Scene 3b — `07-heungbu/scene-3b-medicine.png` (전 · 어머니의 약방문)
 
 **제목 ko**: 3장. 어머니가 가르쳐 주신 약방문
 **제목 en**: Chapter 3 — The Remedy His Mother Taught Him
@@ -3252,7 +3252,7 @@ upper-right with dawn light hint, swallow + oil lamp corner-right.
 
 ---
 
-## Scene 4 — `heungbu/scene-4-justice.png` (결 · 정통 결말)
+## Scene 4 — `07-heungbu/scene-4-justice.png` (결 · 정통 결말)
 
 **제목 ko**: 마지막 장. 박씨가 가져온 두 마당의 결말
 **제목 en**: Final — Two Yards, Two Gourds, Two Endings
@@ -3396,7 +3396,7 @@ unifies both halves.
 
 # 📋 받은 PNG 체크리스트 (흥부와 놀부)
 
-배치 위치: `public/coloring/heungbu/`
+배치 위치: `public/coloring/07-heungbu/`
 
 - [ ] `scene-1-brothers.png` — 1장. 두 형제, 두 마당 (기)
 - [ ] `scene-2-swallow.png` — 2장. 다친 제비를 만난 날 (승 + 분기)
@@ -3428,7 +3428,7 @@ unifies both halves.
 
 ---
 
-## Scene 1 — `woodman/scene-1-mother.png` (기)
+## Scene 1 — `08-woodman/scene-1-mother.png` (기)
 
 **제목 ko**: 1장. 나무꾼과 늙으신 어머니
 **제목 en**: Chapter 1 — The Woodcutter and His Aged Mother
@@ -3525,7 +3525,7 @@ with falling axe LOWER-RIGHT, autumn sky upper.
 
 ---
 
-## Scene 2 — `woodman/scene-2-pond.png` (승)
+## Scene 2 — `08-woodman/scene-2-pond.png` (승)
 
 **제목 ko**: 2장. 연못가에 나타난 산신령
 **제목 en**: Chapter 2 — The Mountain Spirit at the Pond
@@ -3627,7 +3627,7 @@ upper background.
 
 ---
 
-## Scene 3a — `woodman/scene-3a-firm.png` (전 · 단호한 정직)
+## Scene 3a — `08-woodman/scene-3a-firm.png` (전 · 단호한 정직)
 
 **제목 ko**: 3장. 단숨에 답한 정직
 **제목 en**: Chapter 3 — The Quick Honest Answer
@@ -3735,7 +3735,7 @@ upper background.
 
 ---
 
-## Scene 3b — `woodman/scene-3b-honest.png` (전 · 흔들리는 마음의 정직)
+## Scene 3b — `08-woodman/scene-3b-honest.png` (전 · 흔들리는 마음의 정직)
 
 **제목 ko**: 3장. 흔들리는 마음까지 솔직히
 **제목 en**: Chapter 3 — Honest Even About the Flicker
@@ -3844,7 +3844,7 @@ woodcutter, mountains and sky backdrop.
 
 ---
 
-## Scene 4 — `woodman/scene-4-justice.png` (결 · 정통 결말)
+## Scene 4 — `08-woodman/scene-4-justice.png` (결 · 정통 결말)
 
 **제목 ko**: 마지막 장. 세 도끼와 욕심쟁이의 길
 **제목 en**: Final — The Three Axes and the Greedy Man's Road
@@ -3996,7 +3996,7 @@ CENTER (~10%), greedy woodcutter + bare path + mocking magpies RIGHT
 
 # 📋 받은 PNG 체크리스트 (금도끼 은도끼)
 
-배치 위치: `public/coloring/woodman/`
+배치 위치: `public/coloring/08-woodman/`
 
 - [ ] `scene-1-mother.png` — 1장. 나무꾼과 늙으신 어머니 (기)
 - [ ] `scene-2-pond.png` — 2장. 연못가에 나타난 산신령 (승 + 분기)
