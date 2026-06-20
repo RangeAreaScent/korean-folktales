@@ -69,13 +69,26 @@ ART STYLE
 - Korean traditional / minhwa folk-art sensibility — slightly stylized, friendly, big round eyes for characters and animals, NOT photo-realistic, NOT anime/chibi.
 - Hanbok-clad children, traditional Korean architectural elements (한지문, 초가집, 한옥 지붕, 장독, 우물, 호롱불, 소나무, 수수밭) when relevant.
 
-DETAIL LEVEL — DO NOT oversimplify
+DETAIL LEVEL — DO NOT oversimplify CHARACTERS or ARCHITECTURE
 - Hanbok must show: collar (깃) line, ribbon (고름), sleeve cuff line, gathered hem fold line — at minimum 4–5 visible garment lines per character. NOT a plain dress silhouette.
 - Faces must show: eyes with iris + pupil circles, small nose line, mouth line, hair strands (3–5 lines), ear shape.
 - Architecture must show: wood grain lines on doors, individual paper panels (한지문 grid pattern), roof straw texture (slanted lines), woven basket pattern (criss-cross weave), oil lamp wick + flame shape.
-- Environment must show: ground texture, individual leaf/flower shapes (not just outlines of bushes), distinct objects with their own outlines.
-- Target: a 5-year-old should see "many things to color" — at least 12–15 distinct enclosed regions per scene including small detail areas.
-- AVOID the "minimal flat sticker" look. Aim for "traditional Korean picture book illustration with delicate line work".
+- Target: a 5-year-old should see "many things to color" — at least 12–15 distinct enclosed regions per scene.
+- AVOID the "minimal flat sticker" look. Aim for "traditional Korean picture book illustration".
+
+GROUPED NATURAL TEXTURES — DO NOT oversummate small elements
+Natural textures with many small repeating units (tree foliage, pine needles, grass, leaves, water ripples, grain stalks, clouds, stars) MUST be drawn as a few LARGE grouped clusters, NOT as individual elements. The colorist should be able to fill each group with ONE click.
+
+- Pine tree foliage: 6–10 large fluffy "cloud-shaped" or fan-shaped foliage clusters, NOT individual needles. Each cluster is one fill-able region.
+- Leafy tree foliage: 4–8 rounded blob clusters, NOT individual leaves.
+- Tree trunk: only 2–4 vertical wood-grain lines, NO detailed bark texture, NO heavy hatching.
+- Grass / bushes: small fan-shaped tufts (3–5 strokes each), spaced apart with white between them. Don't carpet the ground.
+- Grain field (sorghum 수수, rice, etc.): bundled stalks — show as 5–8 GROUPS of 3–5 vertical stems sharing one grain head per group, NOT 30 individual stalks.
+- Clouds: 2–4 simple billowy outlines per scene, big and soft, NOT detailed wisps.
+- Water ripples: 2–3 concentric arcs around a single point, not many.
+- Stars: simple 5-point shapes, 8–15 scattered, all the same simple star icon — not detailed sparkles.
+
+REJECT if any individual leaf / needle / blade of grass / single grain stalk is drawn as its own enclosed region — that means too many tiny clicks. Group them.
 
 OUTPUT
 - 1024 × 1024 PNG.
@@ -256,10 +269,36 @@ Composition: massive pine tree filling center vertical, siblings on a branch upp
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-Subject: An outdoor moonlit Korean backyard. A traditional Korean round stone well (우물) center foreground, low circular stone wall with a single wooden crossbeam above. Inside the well's dark water surface, a perfectly round reflection of the full moon — show it as a bright clear circle inside the dark well opening. Behind the well to the left, a large traditional Korean fermenting jar (장독 — wide rounded body, narrow top) where the little sister (~6, hanbok) hides crouched, only her face peeking around the jar's side. To the right of the well, the older brother (~10, hanbok) stands close to the well's edge casting a shadow downward into the water. From the right side of the canvas, a stylized minhwa-style tiger (cute round eyes, bold stripes, friendly proportions) leans its head down into the well, peering at the reflection with a puzzled expression. Up in the night sky upper-right: the real full moon, large and round. In the background: parts of a Korean traditional rooftop with curved tile eaves and a few hanok wall lines.
+SHOT TYPE: Mid-range outdoor night shot, balanced composition with the stone
+well as the central focal anchor. Horizontal/symmetrical emphasis.
+
+Subject: An outdoor moonlit Korean backyard. A traditional Korean round stone
+well (우물) at the center foreground — low circular wall built of clearly
+defined individual stones (show ~10-14 distinct stones, each its own enclosed
+region — NOT a blurred mass), single wooden crossbeam across the top with a
+small wooden bucket-pulley. Inside the well opening, on the dark water surface,
+a perfectly round bright reflection of the full moon (one clean fill-able
+region). Behind the well to the LEFT, a large traditional Korean fermenting
+jar (장독 — wide rounded body with subtle horizontal banding at the shoulder).
+The little sister (~6, hanbok with ribbon) hides crouched behind the jar — only
+her face and one hand peeking around its side. To the RIGHT of the well, the
+older brother (~10, hanbok) stands close to the well's edge in a quiet,
+careful pose. From the FAR RIGHT, a stylized minhwa-style tiger (cute round
+eyes, bold flat stripes — same style as Scene 3a, friendly proportions, NOT
+realistic) leans its head and front paws down into the well opening, eyes
+fixed puzzled on the moon-reflection. UPPER-RIGHT sky: the real full moon,
+large and round (one circle). UPPER-LEFT: 2-3 simple cloud shapes. BACKGROUND
+behind the jar and brother: a section of traditional hanok rooftop with curved
+tile eaves (show ~6-8 visible roof tiles as repeated curved units), and a few
+straight horizontal lines suggesting the wall. AT GROUND LEVEL around the
+well: 3-4 small fan-shaped grass tufts (spaced apart, NOT a carpet), one or
+two small pebbles. Apply the GROUPED NATURAL TEXTURES rule strictly — clouds
+simple, grass in tufts, NO individual leaves.
 
 Mood: clever hide-and-seek — children outwitting the tiger by the moonlight.
-Composition: stone well center foreground, sister hiding behind jar left, brother by well's edge, tiger leaning into well right, real moon upper-right, hanok background top.
+Composition: BALANCED HORIZONTAL — stone well dead center foreground, sister-and-jar
+forming the left pillar, brother-and-tiger forming the right pillar, hanok
+rooftop and moon spanning the upper band, ground tufts the lower band.
 ```
 
 ---
@@ -279,10 +318,52 @@ Composition: stone well center foreground, sister hiding behind jar left, brothe
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-Subject: A magical night sky scene with two destinies side by side. LEFT HALF: a thick, twisted, well-braided golden rope (동아줄) descends from large billowing stylized clouds at the top to the brother (~10) and sister (~6) in hanbok in the mid-left, holding the rope together as they rise — brother gripping the rope with one hand and gently lifting the sister with the other. Above the clouds at upper-left, a stylized smiling sun face (round face with short straight rays around it) and beside it a calm crescent moon face (gentle expression). RIGHT HALF: in the upper-right sky, a separate frayed broken rope dangling in mid-air, the end clearly snapped. Below it, a stylized minhwa-style tiger (cute round eyes, bold flat stripes) shown mid-fall, paws up, surprised expression. At the bottom-right of the canvas, a field of tall sorghum stalks (수수 — show as tall vertical thin plants with bushy grain heads at the top, in a row), the tiger falling toward them. In the middle-bottom horizon, a distant Korean village with a few small thatched roofs. Lots of small simple five-pointed stars scattered across the night sky.
+SHOT TYPE: Mythic split-canvas night sky scene. Vertical movement (rising vs
+falling). The canvas reads in two halves — left/right — telling two destinies
+at once.
+
+Subject: A magical night sky climax with two parallel destinies.
+
+LEFT HALF (the saved):
+- A thick, well-braided golden rope (동아줄 — show clear twist/braid pattern,
+  4-5 visible plait lines along its length) descending from billowing clouds
+  at the TOP-LEFT down toward mid-left
+- The brother (~10) and sister (~6) in hanbok hold the rope together as they
+  rise — brother above, gripping the rope with one hand and steadying the
+  sister below him with the other. Both look UP toward the clouds.
+- ABOVE the clouds at the very upper-left corner: a stylized smiling SUN FACE
+  (round face with ~8 short straight rays around it) and beside it a calm
+  CRESCENT MOON FACE (gentle expression) — both as simple single-region
+  shapes, NOT detailed.
+- 2-3 LARGE billowing cloud shapes around the rope's upper end (simple
+  outlines, no wispy detail).
+
+RIGHT HALF (the fallen):
+- UPPER-RIGHT sky: a separate frayed broken rope dangling mid-air, end clearly
+  snapped (~3-4 splintered fiber lines at the break, not many).
+- MID-RIGHT to LOWER-RIGHT: a stylized minhwa-style tiger (same style as
+  Scenes 3a and 3b — cute round eyes, bold flat stripes, friendly proportions)
+  shown mid-fall, paws up, mouth in surprised "O", tail flipping.
+- BOTTOM-RIGHT corner: a field of sorghum (수수) — show as 5-7 BUNDLED GROUPS
+  of stalks. Each group is 3-4 vertical lines sharing one bushy grain head at
+  the top. Each group is ONE fill-able region. Do NOT draw 30 individual
+  stalks. The tiger is falling toward these groups.
+
+BACKGROUND across both halves:
+- MIDDLE-BOTTOM horizon: a small distant Korean village (3-4 simple thatched
+  roof silhouettes with curved eaves, one or two hanok walls)
+- NIGHT SKY across the whole canvas: 10-15 simple 5-point stars scattered
+  evenly, all the SAME simple star icon (one region each, not detailed
+  sparkles)
+
+Apply GROUPED NATURAL TEXTURES rule strictly: sorghum in bundled groups,
+clouds as 2-4 big shapes, stars as simple repeating icon.
 
 Mood: cosmic justice, transformation, awe — the climax of a Korean folktale.
-Composition: split-feel canvas — siblings ascending on the left with sun & moon faces above clouds, tiger falling on the right toward sorghum field below, distant village center-bottom, stars filling the night sky background.
+Composition: SPLIT-CANVAS — ascending column on the LEFT (rope + siblings +
+sun/moon faces + clouds), descending column on the RIGHT (broken rope + tiger
+mid-fall + sorghum field), distant village across the lower middle as a
+unifying horizon, stars across the whole upper background.
 ```
 
 ---
