@@ -824,3 +824,531 @@ band as small far-away echoes of Scenes 3a and 3b.
 - [ ] `scene-4-guardian.png` — 마지막 장. 바다의 수호자 (정통 결말)
 
 기존 `start.png`, `coral.png`, `kelp.png`, `ending-guardian.png`, `ending-village.png`는 `Backup_v1/`에 그대로 유지 (롤백용).
+
+---
+
+# 🦌 Story 3 — 선녀와 나무꾼 (The Fairy and the Woodcutter)
+
+**원작 배경**: 한국 옛이야기 중 가장 사랑받는 작품 중 하나. 사슴의 보은(報恩) + 하늘의 선녀 + 깨진 약속 + 새벽 빛의 etiology가 한 이야기에 엮인다.
+
+**기승전결 매핑** (Y-구조 5장면):
+- **기 (起)** Scene 1 — 나무꾼이 사슴을 구함 (자비)
+- **승 (承)** Scene 2 — 사슴의 보은, 별빛 연못, 선녀 만남 + 분기
+- **전 (轉)** Scene 3a/3b — 두 자녀와의 삶, 선녀의 그리움이 깊어짐
+- **결 (結)** Scene 4 — 약속이 깨짐 → 하늘 가족 재회 → 새벽 빛이 된 그리움
+
+```
+                ┌── 3a (산속 오두막) ──┐
+1 → 2 (선택) ──┤                     ├── 4 (정통 결말: 새벽 빛)
+                └── 3b (마을 어머니 곁) ──┘
+```
+
+**정통 결말**: 두 자녀를 안고 하늘로 올라간 선녀. 사슴의 두레박 도움으로 나무꾼도 하늘 가족과 재회. 그러나 산골 어머니에 대한 그리움이 매일 새벽 첫 빛이 되어 어머니의 창문에 내려앉음. (한국 옛이야기 특유의 원인설화 — 새벽 빛이 왜 부드러운가)
+
+5장면, 한 회 플레이 시 4장면. 분기 1회. 두 길 모두 "약속이 깨지고 선녀가 떠남"이라는 운명으로 수렴.
+
+---
+
+## Scene 1 — `woodcutter/scene-1-deer.png` (기)
+
+**제목 ko**: 1장. 사슴을 구한 날
+**제목 en**: Chapter 1 — The Day He Saved the Deer
+
+**Narration KO**:
+> 옛날, 깊은 산 아래 작은 초가집에서 늙은 어머니와 단둘이 사는 나무꾼이 있었더라. 가난했지만 마음씨가 따뜻한 청년이었다. 새벽이면 지게를 지고 산에 올라 나무를 하고, 해질녘이면 어머니가 기다리는 집으로 돌아왔다.
+>
+> 그날도 산에서 나무를 하고 있는데, 어디선가 거친 발소리가 들렸다. 흰 사슴 한 마리가 헐떡이며 그의 발 앞에 무릎을 꿇었다.
+>
+> "구해 주세요. 사냥꾼이 쫓아오고 있어요."
+>
+> 사슴은 사람처럼 말했다. 나무꾼은 놀랐지만, 그 까만 눈에 비친 두려움을 보고 망설이지 않았다. 자기가 베어 둔 나뭇더미 뒤에 사슴을 숨겨 주고, 그 위에 다시 나뭇잎을 덮어 주었다.
+>
+> 곧 험상궂은 사냥꾼이 활을 들고 나타났다.
+>
+> "여기 흰 사슴 한 마리 못 보았소?"
+>
+> 나무꾼은 손가락으로 반대편 산봉우리를 가리켰다.
+>
+> "방금 저쪽으로 뛰어 올라갔습니다요."
+>
+> 사냥꾼이 멀어진 뒤, 나뭇잎을 들춰 보니 사슴이 두 눈에 눈물이 그렁그렁한 채 바라보고 있었다.
+
+**Narration EN**:
+> Long ago, in a small thatched-roof house at the foot of a high mountain, there lived a young woodcutter with his elderly mother. They were poor, but he was kind-hearted. Each dawn he shouldered his A-frame carrier and climbed the mountain for firewood; each dusk he returned to the house where his mother waited.
+>
+> One such day, as he was at his work, heavy footsteps came crashing through the brush. A white deer staggered up to him and dropped to its knees.
+>
+> "Please, hide me. A hunter is coming."
+>
+> The deer spoke like a person. The woodcutter was startled, but seeing the fear in those dark eyes, he did not hesitate. He hid the deer behind the firewood he had cut and covered it with fallen leaves.
+>
+> A grim-faced hunter soon appeared, bow in hand.
+>
+> "Have you seen a white deer come this way?"
+>
+> The woodcutter pointed to the far ridge. "Just now, it bounded up that mountain over there, sir."
+>
+> When the hunter had gone, he brushed the leaves aside. The deer was looking up at him, its two eyes brimming with tears.
+
+**다음 장면**: → Scene 2 (linear)
+
+**Gemini Prompt** (베이스 + 아래):
+```
+SHOT TYPE: Wide outdoor mountain forest scene, mid-morning. Horizontal
+composition with a moment of stillness right after a chase. The woodcutter
+and pile-of-firewood form the left mass; the approaching hunter is on the
+right edge.
+
+Subject: A Korean mountain forest scene. CENTER-LEFT: a young woodcutter
+(~25, plain hanbok with a short jeogori and baji, head-cloth tied around
+his forehead, an A-frame carrier 지게 standing upright beside him with
+several bundles of cut firewood strapped on). He stands with one hand
+gently lowered, palm down — the gesture of "shush" — while looking with
+soft alarm toward the right. At his feet behind the firewood pile, a
+white deer (slender Korean spotted deer, two delicate antlers, gentle
+face, large dark eyes) crouches half-hidden, with fallen leaves draped
+over its back as makeshift cover. Show one of the deer's eyes peeking out
+clearly — visibly tearful.
+
+RIGHT EDGE OF CANVAS: a hunter (older man, simple traditional hunting
+clothes, fur cap, leather belt) approaching with a wooden bow held in
+one hand and an arrow nocked. His face is suspicious, scanning the trees.
+He is mid-stride.
+
+BACKGROUND: a few large old Korean pine trees (소나무) standing tall —
+apply GROUPED NATURAL TEXTURES strictly: each pine has 5-7 large cloud-
+shaped foliage clusters (NOT individual needles), trunk has 2-4 vertical
+wood-grain lines only. Behind the trees: distant mountain ridges in the
+horizon (2-3 simple curved silhouettes). On the ground: scattered fallen
+leaves (in 3-4 SMALL GROUPS, not a carpet), a few mushrooms, one or two
+fan-shaped grass tufts. A small stream visible in the lower-left corner
+with 2-3 simple wave lines suggesting flow.
+
+UPPER-LEFT sky: 2-3 simple cloud shapes, a single bird in the distance.
+
+Mood: held breath, the quiet right after danger has passed close. The
+moment of unspoken kindness.
+Composition: WIDE landscape. Woodcutter + firewood + hidden deer occupy
+the left-center (~50% of canvas), hunter entering from right (~25%),
+mountain ridges and pines spanning the upper band, ground details and
+stream in the lower band.
+```
+
+---
+
+## Scene 2 — `woodcutter/scene-2-pond.png` (승)
+
+**제목 ko**: 2장. 별빛 연못의 비밀
+**제목 en**: Chapter 2 — The Secret of the Starlit Pond
+
+**Narration KO**:
+> "은혜는 잊지 않겠습니다." 사슴이 말했다. "원하시는 게 있다면 들어드리지요."
+>
+> 나무꾼은 한참을 망설이다 솔직하게 말했다. "저는 가난해 장가를 들지 못합니다. 어머니께 며느리 한 번 보여 드리고 싶습니다만…"
+>
+> 사슴은 잠시 눈을 감았다가 천천히 입을 열었다.
+>
+> "산 가장 깊은 곳에 별빛이 비치는 연못이 있습니다. 보름달이 뜨는 밤이면 하늘의 선녀들이 그 연못에 내려와 목욕을 합지요. 한 사람의 날개옷을 몰래 숨기면 그 선녀는 하늘로 돌아가지 못합니다. 그러면 아내로 맞이할 수 있을 거예요. 단, 한 가지 약속을 꼭 지키셔야 합니다."
+>
+> 사슴이 검고 깊은 눈으로 나무꾼을 똑바로 바라보았다.
+>
+> "자녀 셋을 낳기 전에는 절대로 날개옷을 돌려주지 마세요. 약속이 깨지면 선녀는 하늘로 돌아갈 거예요."
+>
+> 나무꾼은 깊이 고개를 끄덕였다.
+>
+> 그날 밤, 보름달이 하늘 가운데 올라왔을 때 나무꾼은 별빛 연못에 도착했다. 정말로 여러 선녀가 옷을 벗어 둔 채 물에 몸을 담그고 있었다. 옷마다 깃털 같은 빛이 깃들어 있었다. 그는 한 벌의 옷을 몰래 집어 들어 품에 안았다.
+>
+> 한참 뒤, 선녀들이 하늘로 다시 올라갈 시간이 되었다. 그러나 한 사람만 자신의 옷을 찾지 못하고 연못가에 서서 울고 있었다. 어디로 그녀를 데려갈까?
+
+**Narration EN**:
+> "I will not forget your kindness," the deer said. "If you have a wish, tell me."
+>
+> The woodcutter hesitated, then spoke plainly. "I am poor and cannot marry. I only wish to bring my mother a daughter-in-law once, before her years are done."
+>
+> The deer closed its eyes for a moment, then opened them slowly.
+>
+> "Deep in the heart of the mountain there is a pond where starlight pools. On the night of the full moon, fairies of heaven come down to bathe there. If you hide the feathered robe of one of them, she cannot fly back. You may take her as your wife. But you must keep one promise."
+>
+> The deer fixed him with its dark, deep eyes.
+>
+> "Until she has borne three children, you must never return her robe. If the promise is broken, she will fly back to heaven."
+>
+> The woodcutter nodded deeply.
+>
+> That night, when the full moon hung in the sky's middle, he reached the starlit pond. Truly there were fairies bathing, their feathered robes folded by the water's edge, each shimmering with a soft inner light. He gathered up one robe and held it close to his chest.
+>
+> When the hour came for the fairies to fly back, one of them could not find her robe. She stood at the water's edge, weeping. Where should the woodcutter take her now?
+
+**선택지**:
+- 🏠 `산속 작은 오두막으로 데려간다` / `Take her to a small hut in the deep mountain` → **Scene 3a**
+- 🏘 `마을 어머니 곁으로 데려간다` / `Take her down to my mother's house in the village` → **Scene 3b**
+
+**Gemini Prompt** (베이스 + 아래):
+```
+SHOT TYPE: Mythic night scene at a starlit mountain pond. Wide composition,
+mid-distance bird's-eye angle — viewer can see the pond, multiple bathing
+fairies, the discarded robes, and the hidden woodcutter all at once.
+Vertical emphasis (sky reflected in water).
+
+Subject: A round mountain pond at the heart of the forest, lit by a large
+full moon and many stars above. The pond's water reflects the moon as one
+clean circle and the night sky as a few simple star points.
+
+IN THE POND: 4 fairies (선녀, beautiful Korean traditional style, NOT
+anime/chibi — gentle round faces, long flowing hair). Each is bathing
+modestly waist-deep in the water, arms raised gently. Their bodies are
+suggested simply with shoulders + necks + flowing hair — not detailed.
+Long hair as 5-6 thick curving strands per fairy.
+
+ON THE STONES AROUND THE POND: 4 folded feathered robes (날개옷), each
+shimmering with soft inner light (3-4 short sparkle lines around each
+robe). Each robe is folded into a simple bundle shape. ONE robe (closest
+to the right side) is MISSING — only an empty space remains where it had
+been.
+
+LOWER-RIGHT, behind a large boulder partly in shadow: the woodcutter
+(same character as Scene 1) crouches, holding the stolen robe close to
+his chest with both hands. Only his head, shoulders, and the held robe
+peek above the boulder. His face shows quiet shame mixed with hope.
+
+UPPER-LEFT BACKGROUND: tall old Korean pine trees (apply GROUPED NATURAL
+TEXTURES — 5-7 cloud-shaped foliage clusters per tree). Above the trees:
+the large round full moon and 12-15 simple 5-point stars scattered.
+
+LOWER-LEFT FOREGROUND: a single fairy who has stepped out of the pond
+onto the stones — this is the one whose robe is gone. She stands in a
+gentle loose underdress (suggest only shoulders + waist), hands raised
+to her face, weeping. Her long hair flows down behind her. A single small
+tear visible on her cheek.
+
+ALSO IN THE SCENE: the white deer (same as Scene 1) standing at the edge
+of the trees on the upper-right, watching quietly. Just barely visible.
+
+Apply GROUPED NATURAL TEXTURES strictly: pine foliage as cluster shapes,
+stars as 5-point simple icons (all identical), water ripples as 2-3
+concentric arcs around the moon's reflection. NO individual leaves, NO
+wave detail.
+
+Mood: hushed mythic — a forbidden glimpse, a moment that will change
+everything. Tender and slightly sad.
+Composition: BIRD'S-EYE WIDE — round pond center filling 40% of canvas,
+bathing fairies in the pond, robes on the surrounding stones, weeping
+fairy lower-left foreground, woodcutter hidden lower-right, pines + moon
++ stars upper band, deer barely visible upper-right edge.
+```
+
+---
+
+## Scene 3a — `woodcutter/scene-3a-hut.png` (전 · 산속 분기)
+
+**제목 ko**: 3장. 산속 오두막의 두 자녀
+**제목 en**: Chapter 3 — Two Children in the Mountain Hut
+
+**Narration KO**:
+> 나무꾼은 선녀를 산속 깊은 작은 오두막으로 데려갔다. 처음에는 슬퍼하기만 하던 선녀도, 시간이 지나면서 그의 따뜻한 마음에 마음을 열었다.
+>
+> 봄이면 함께 산나물을 캐고, 여름이면 폭포에서 물을 길었다. 가을이면 다람쥐가 모아둔 도토리를 함께 줍고, 겨울이면 솔잎으로 차를 끓여 마셨다. 두 사람 사이에는 곧 사내아이와 누이동생, 두 명의 자녀가 태어났다.
+>
+> 사슴의 약속 — 자녀 셋을 낳기 전에는 날개옷을 돌려주지 말라 — 는 나무꾼의 마음 한구석에 늘 무겁게 남아 있었다. 그는 날개옷을 자기 지게 깊숙이 숨겨 놓았다.
+>
+> 그러나 선녀는 가끔 한밤중에 잠에서 깨어 작은 창 너머 별을 올려다보았다. 두 아이가 잠든 사이, 그녀는 가만히 흐느꼈다.
+>
+> "저 별들 사이에 어머니가 계신데… 한 번만 만나 뵙고 싶어요."
+>
+> 어느 날 밤, 그녀의 슬픈 모습을 더는 보고 있을 수 없었던 나무꾼은 결심했다. 자녀가 둘뿐이지만, 한 번만 — 한 번만 옷을 입어 보게 해 주리라. 그는 지게 속 깊은 곳에서 날개옷을 꺼내 그녀에게 건넸다.
+
+**Narration EN**:
+> The woodcutter took her to a small hut deep in the mountain. At first she only grieved, but as the seasons passed she opened her heart to his quiet kindness.
+>
+> In spring they gathered mountain herbs together. In summer they drew water from the waterfall. In autumn they picked up acorns the squirrels had gathered. In winter they brewed pine-needle tea. Soon they had two children — a little boy and his younger sister.
+>
+> The deer's promise — that the robe must not be returned until three children were born — weighed always on the woodcutter's mind. He had hidden the robe deep in his A-frame carrier.
+>
+> But sometimes in the deep of night the fairy woke and looked up through the small window at the stars. While the two children slept, she wept quietly.
+>
+> "My mother is among those stars… I only wish to see her once."
+>
+> One night, no longer able to bear her sorrow, the woodcutter made up his mind. Two children, not three — but he would let her wear the robe just once, only once. He drew the feathered robe from the bottom of his carrier and held it out to her.
+
+**다음 장면**: → Scene 4 (linear)
+
+**Gemini Prompt** (베이스 + 아래):
+```
+SHOT TYPE: Intimate interior night scene. Cozy small one-room mountain
+hut at midnight. The scene splits between sleeping children (left) and
+the wakeful fairy at the window (right). Soft warm domestic + bittersweet
+tone.
+
+Subject: Inside a small Korean mountain hut at deep night. WOOD-PLANK
+floor, low ondol-style sleeping area on the LEFT where two small children
+sleep on a folded yo-blanket: a little boy (~5, in plain undergarment-style
+sleepwear, hand under his cheek) and his younger sister (~3, in similar
+sleep clothes, holding a small folded cloth doll). Show their faces
+clearly asleep, eyelids gently closed, small smiles.
+
+CENTER: a low wooden tea table (소반) with an oil lamp (호롱불 — bowl +
+wick + flame) softly glowing. A small ceramic teacup beside it. On the
+back wall behind the children, an A-frame carrier (지게) leaned against
+the wall with bundles attached — and tucked behind one bundle, visible to
+the viewer but not to the children, a folded feathered robe (날개옷,
+with 3-4 short sparkle lines around it suggesting its hidden glow).
+
+RIGHT SIDE: a small paper-paneled window (한지창 — 3-by-3 grid of panels).
+Standing barefoot before it: the fairy (~25, plain Korean home hanbok,
+hair loose down her back, NOT in the feathered robe). She has her hands
+flat against the windowpane, looking up through it. Through the window
+panels: a night sky with the moon (round) and 8-10 simple stars visible
+outside. A single tear visible on her cheek.
+
+CROUCHING IN THE FOREGROUND between the table and the window: the
+woodcutter (same character as Scenes 1 + 2, now older with a few small
+worry lines on his brow). He has just opened the A-frame carrier and is
+holding the feathered robe out toward the fairy with both hands. His
+expression is tender + resigned.
+
+DETAILS: A few mountain plant decorations on the back wall (dried herbs
+hanging — show as 2-3 small bundles, each one fill region). On the floor:
+a small wooden bowl with a few acorns inside (autumn detail). Roof beams
+(서까래) visible at the very top of the interior view.
+
+Apply DETAIL LEVEL strictly: hanbok shows collar + ribbon + sleeve + hem
+lines, faces show iris + pupils + nose + mouth + hair strands, windows
+show paper-panel grid.
+
+Mood: tender goodbye in the making — the moment before a promise breaks.
+Domestic warmth shadowed by inevitable sorrow.
+Composition: HORIZONTAL interior. Sleeping children + tea table forming
+the left/center block, fairy at window forming the right, woodcutter
+holding robe in the middle-foreground bridging them. Hidden robe in the
+carrier upper-back-left as the visual cue.
+```
+
+---
+
+## Scene 3b — `woodcutter/scene-3b-village.png` (전 · 마을 분기)
+
+**제목 ko**: 3장. 마을 어머니 곁의 두 자녀
+**제목 en**: Chapter 3 — Two Children at Grandmother's House
+
+**Narration KO**:
+> 나무꾼은 선녀를 산에서 내려와 마을의 어머니 집으로 데려갔다. 어머니는 며느리를 보며 눈물을 흘렸고, 마을 사람들은 그토록 아름다운 여인이 시집을 왔다는 소문에 들떠 했다.
+>
+> 어머니의 따뜻한 보살핌 속에, 두 사람은 곧 사내아이와 누이동생 두 자녀를 낳았다. 마을 어귀의 우물가에서 빨래를 하고, 장에서 떡을 나눠 먹고, 명절이면 한복을 차려입고 어머니께 절을 올렸다. 그렇게 선녀는 점점 인간 세상의 여인으로 살아갔다.
+>
+> 그러나 가을바람이 차가워질 때면, 선녀는 마당에 나가 하늘을 한참 올려다보았다. 두 아이가 그녀의 치맛자락을 붙들고 같이 올려다보았다.
+>
+> "엄마, 저 위에 뭐가 있어요?"
+>
+> "별이 있단다. 우리 별이…"
+>
+> 선녀는 더 말을 잇지 못하고 두 아이를 꼭 안았다. 어느 날 밤, 그녀가 자녀 둘만 안고 잠든 모습을 본 나무꾼은 가슴이 미어졌다. 약속을 떠올렸지만 — 사슴이 셋을 낳기 전엔 안 된다 했지만 — 그래도 한 번만, 그녀가 어머니를 볼 수 있게.
+>
+> 그는 다락방 깊은 곳에 숨겨 놓았던 날개옷을 꺼냈다.
+
+**Narration EN**:
+> The woodcutter brought her down from the mountain to his mother's house in the village. His mother wept for joy at meeting her daughter-in-law, and the villagers were quietly amazed that so beautiful a woman had come to wed.
+>
+> Under his mother's warm care, soon a little boy and his younger sister were born. The fairy washed clothes at the village well, shared rice cakes at the market, dressed in hanbok at festivals and bowed to the elder mother. So she lived, little by little, as a woman of the human world.
+>
+> But when the autumn wind turned cold, she would step out into the courtyard and gaze long up at the sky. The two children would catch at her skirt and look up with her.
+>
+> "Mama, what's up there?"
+>
+> "Stars, my darling. Our star is…"
+>
+> She could not finish, and held the children close. One night the woodcutter watched her sleep with their two children in her arms, and his heart ached. He remembered the promise — three before the robe — but only once, only once so she could see her mother.
+>
+> He climbed to the loft and drew out the feathered robe he had hidden there.
+
+**다음 장면**: → Scene 4 (linear)
+
+**Gemini Prompt** (베이스 + 아래):
+```
+SHOT TYPE: Outdoor village courtyard at late autumn dusk. The fairy + 2
+children stand in the courtyard looking up at the sky. The hanok wall +
+elder mother visible inside the home. Soft horizontal village-life scene.
+
+Subject: A traditional Korean hanok courtyard scene. CENTER-FOREGROUND:
+the fairy (~25, dressed now in full village hanbok — visible collar
+(깃), ribbon (고름), gathered sleeves and full skirt (치마), hair tied up
+in a married woman's style with a binyeo hairpin). She stands in the
+courtyard with her head tilted slightly back, looking up at the sky. Both
+hands rest gently on the heads of two small children at her sides.
+
+LEFT CHILD: a little boy (~5, in small hanbok matching father's style),
+clutching the fairy's skirt with one hand, also looking up. RIGHT CHILD:
+a little sister (~3, in tiny hanbok with a small jacket and skirt),
+holding the fairy's other hand and looking up.
+
+BACKGROUND-LEFT: the hanok house wall with curved tile-roof eaves (~6-8
+visible roof tiles as repeated curved units). A wooden door is partly
+open — through it, the elder mother (~65, gray hair in low bun, simple
+hanbok with apron) is visible inside, gently weaving on a small loom (베틀)
+or sewing at a low table. She glances out at the fairy + children with a
+soft loving expression.
+
+BACKGROUND-RIGHT: the village extends in the middle distance — show 2-3
+small thatched roofs and a single tall persimmon tree (감나무) with bare
+branches and 4-5 round persimmon fruits hanging (each fruit one fill
+region). Behind the village, a low mountain ridge silhouette.
+
+UPPER SKY: late autumn evening sky, soft gradient suggested by a few
+horizontal cloud lines. 6-8 simple 5-point stars beginning to appear in
+the upper band. NO moon visible yet — this is dusk turning to evening.
+
+ON THE COURTYARD GROUND: a few fallen yellow ginkgo leaves (apply
+GROUPED NATURAL TEXTURES — show as 4-5 small fan-shaped leaf groups,
+NOT a carpet of individual leaves). A wooden jar (장독) at one corner.
+A bamboo broom leaning against the wall.
+
+INSIDE THE LOFT visible at the top of the hanok: a hint of the feathered
+robe peeking from a chest — show as a small folded shape with 2-3 short
+sparkle lines around it.
+
+Mood: autumn quiet, domestic warmth, the longing of someone who belongs
+to two worlds.
+Composition: HORIZONTAL. Fairy + two children centered in the courtyard
+foreground, hanok with elder mother glimpsed inside on the left, village
+view + persimmon tree right background, autumn sky with appearing stars
+spanning the upper band, ground details lower. Hidden robe glimpse at
+upper-left as the visual cue.
+```
+
+---
+
+## Scene 4 — `woodcutter/scene-4-dawn.png` (결 · 정통 결말)
+
+**제목 ko**: 마지막 장. 새벽 빛이 된 그리움
+**제목 en**: Final — The Dawn Light of Longing
+
+**Narration KO**:
+> 선녀는 날개옷을 받아 들자 가만히 한참을 들여다보았다. 그러더니 그 옷을 입었다. 어깨에서 깃털 빛이 흘러나오고, 발이 천천히 바닥에서 떠올랐다.
+>
+> "한 번만 다녀올게요." 선녀가 슬픈 미소로 말했다.
+>
+> 그러나 옷을 입은 그녀는 본능처럼 두 아이를 양팔에 안았다. 한 아이는 오른팔 안에, 한 아이는 왼팔 안에. 그러고는 그대로 천천히, 천천히 별빛이 쏟아지는 밤하늘로 올라가기 시작했다.
+>
+> "안 돼요! 잠깐만요!"
+>
+> 나무꾼이 달려 나가 손을 뻗었지만, 이미 그녀와 두 자녀는 하늘 너머로 사라지고 있었다. 사슴이 한 말이 비로소 뼈저렸다. 셋을 낳기 전에는 옷을 돌려주지 말 것을. 자녀가 셋이었다면, 한 아이는 안고 가지 못해 그녀가 다시 내려왔을 것을.
+>
+> 그가 무너져 앉아 울고 있을 때, 등 뒤에서 부드러운 발소리가 들렸다.
+>
+> "울지 마세요. 가실 길이 하나 남아 있어요."
+>
+> 흰 사슴이었다. 사슴은 나무꾼을 별빛 연못으로 다시 데려갔다.
+>
+> "보름달이 뜨는 밤이면 하늘에서 두레박이 물을 길러 내려옵니다. 그 두레박에 몰래 올라타세요. 다만 — 절대로 두 발이 다시 땅에 닿게 해서는 안 됩니다."
+>
+> 그날 밤, 하늘에서 정말로 큰 두레박 하나가 별빛 연못에 내려왔다. 나무꾼은 그 안에 몸을 숨겼다. 두레박이 다시 하늘로 올라가는 동안 그는 두 손을 모아 가족을 그리는 마음만을 빌었다.
+>
+> 마침내 두레박은 하늘에 닿았다. 그곳에서 선녀와 두 자녀가 그를 기다리고 있었다. 그는 별들 사이에서 가족과 함께 살게 되었다.
+>
+> 그러나 — 한 가지가 마음에 걸렸다. 산 아래 작은 초가집에서 아들이 돌아오기만을 기다리고 계신 어머니. 그는 매일 새벽이면 하늘 끝에 서서 땅을 내려다보았다. 그 그리움이 새벽 첫 빛이 되어 산골 어머니의 창문에 가만히 내려앉았더라.
+>
+> 그래서 오늘날도 새벽 첫 빛이 산 너머에서 부드럽게 비쳐 오면, 그것은 하늘에 있는 아들이 어머니를 그리는 마음이라고 — 옛 어른들이 이렇게 손주에게 전했단다.
+
+**Narration EN**:
+> When the fairy received the feathered robe, she gazed at it a long while. Then she put it on. Light spilled from its shoulders, and her feet rose slowly from the floor.
+>
+> "I will only go once," she said with a sad smile.
+>
+> But the robe spoke to her instincts. She gathered her two children into her arms — one in the right, one in the left. And slowly, slowly, she rose into the star-strewn night sky.
+>
+> "Wait — don't go!"
+>
+> The woodcutter ran out, reached up, but already she and the two children were vanishing beyond the sky. Only now did the deer's words bite deep. Don't return the robe until three. If there had been three children, one would have remained — she would have had to come back.
+>
+> As he sat broken on the ground, soft footsteps came behind him.
+>
+> "Don't weep. One road yet remains."
+>
+> It was the white deer. The deer led him back to the starlit pond.
+>
+> "On full-moon nights, a great bucket descends from heaven to draw water from this pond. Hide inside that bucket. Only — do not let your two feet touch the earth again."
+>
+> That night, sure enough, a great bucket came down from the sky into the starlit pond. The woodcutter hid himself inside. As the bucket lifted toward heaven, he prayed only for his family.
+>
+> At last the bucket reached the sky. There the fairy and his two children were waiting. He came to live with them among the stars.
+>
+> But one thing weighed on his heart. His old mother, in the small thatched-roof house at the foot of the mountain, was still waiting for her son to come home. Every dawn the woodcutter went to the edge of heaven and looked down at the earth. His longing became the first soft light of morning, settling gently on his mother's window in the mountain village.
+>
+> So even today, when the first morning light slips softly over the ridge, the old ones say — that is the son in heaven, missing his mother. So the grandmothers tell their grandchildren still.
+
+**Ending Label**: ☁️ `새벽 빛이 된 그리움 — 정통 결말` / `The Dawn Light of Longing — the canonical ending`
+
+**Gemini Prompt** (베이스 + 아래):
+```
+SHOT TYPE: Mythic vertical canvas — SKY HALF (top 60%) showing the heaven
+family + dawn light, EARTH HALF (bottom 40%) showing the small mountain
+house + waiting mother. The two realms are visually connected by a soft
+beam of dawn light descending from the heavens to the earth.
+
+Subject: A two-world canvas at the moment of dawn, connecting heaven and
+the mountain village by a beam of soft light.
+
+UPPER 60% — HEAVEN:
+- Layered stylized clouds across the entire upper band (apply GROUPED
+  NATURAL TEXTURES — 5-7 large billowy cloud shapes, soft and simple).
+- CENTER-LEFT: the woodcutter (same character as previous scenes, now in
+  flowing heavenly robes — visible collar, sleeve, hem). He stands at
+  the very edge of a cloud, facing the viewer but with his head turned
+  DOWN AND TO THE RIGHT, looking toward earth. One hand at his chest.
+- RIGHT OF HIM: the fairy (in her feathered robe again, glowing with 3-4
+  short sparkle lines around her shoulders) holding the hand of the
+  older child (~6, in small heavenly robe). The little sister (~4) sits
+  on a small cloud beside her, looking peacefully at her father.
+- ABOVE / UPPER-LEFT BACKGROUND: a stylized smiling moon face (gentle
+  crescent moon with closed eyes) and 12-15 simple 5-point stars.
+
+A SOFT VERTICAL BEAM OF LIGHT descends from the woodcutter's chest down
+through the clouds toward the lower portion of the canvas — drawn as
+2-3 long parallel soft lines suggesting a gentle dawn ray.
+
+LOWER 40% — EARTH:
+- Center: a small Korean thatched-roof house (초가집) with a single
+  paper-paneled window glowing softly from within (warm interior light
+  suggested with 3-4 short rays around the window frame).
+- Inside the window (visible through the panels): the elderly mother
+  (gray hair in low bun, simple hanbok) sitting at a low wooden table
+  with a cup of tea, looking out the window with a calm, hopeful
+  expression. She does not see her son in the sky — she simply feels
+  the morning light on her face.
+- LEFT of the house: a low Korean stone wall (rough stacked stones — show
+  ~6-8 distinct stones), and a small persimmon tree with a few hanging
+  fruits.
+- RIGHT of the house: the white deer (from Scenes 1, 2) standing quietly
+  at the edge of the trees, looking up at the sky, having watched it all.
+- BACKGROUND: a low mountain ridge silhouette and the first hint of dawn
+  on the horizon (a soft horizontal band).
+
+THE BEAM OF LIGHT from the woodcutter's chest above lands gently on the
+glowing window of the house. The mother's window is the visual anchor —
+where heaven touches earth.
+
+Apply GROUPED NATURAL TEXTURES strictly: clouds in 5-7 simple billowy
+shapes, stars 5-point identical icons, persimmon fruits as ROUND single
+regions, mountain ridge as ONE silhouette.
+
+Mood: bittersweet mythic resolution — family reunited above, mother
+remembered below, the gentle dawn as the bridge between them.
+Composition: VERTICAL TWO-WORLD CANVAS. Heaven occupies the upper 60%
+(woodcutter + fairy + children + clouds + moon + stars), beam of light
+descends through the middle band, earth occupies the lower 40% (thatched
+house + mother through window + deer + stone wall + dawn horizon). The
+beam of light is the central vertical axis of the canvas.
+```
+
+---
+
+# 📋 받은 PNG 체크리스트 (선녀와 나무꾼)
+
+배치 위치: `public/coloring/woodcutter/`
+
+- [ ] `scene-1-deer.png` — 1장. 사슴을 구한 날 (기)
+- [ ] `scene-2-pond.png` — 2장. 별빛 연못의 비밀 (승 + 분기)
+- [ ] `scene-3a-hut.png` — 3장 분기 A. 산속 오두막의 두 자녀 (전)
+- [ ] `scene-3b-village.png` — 3장 분기 B. 마을 어머니 곁의 두 자녀 (전)
+- [ ] `scene-4-dawn.png` — 마지막 장. 새벽 빛이 된 그리움 (결 / 정통 결말)
+
+기존 `start.png`, `sage.png`, `forest.png`, `ending-sky.png`, `ending-mountain.png`은 `Backup_v1/`에 그대로 유지 (롤백용).
