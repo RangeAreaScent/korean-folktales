@@ -393,3 +393,318 @@ unifying horizon, stars across the whole upper background.
 ---
 
 *V2는 해님 달님부터 시작. 검증되면 나머지 7개 스토리도 같은 Y-구조 + 보더 + 정통 결말 패턴으로 점진 적용.*
+
+---
+
+# 🌊 Story 2 — 해녀와 인어 (The Haenyeo and the Mermaid)
+
+**원작 배경**: 제주 해녀 문화 + 한국 바다 정령 전설을 엮은 이야기. 해녀는 제주 고유의 여자 잠수부 (유네스코 무형 문화유산).
+
+**Y-구조**: 1·2 공통 → 3 분기 (산호 미로 / 해초 숲) → 4 정통 결말 (진주를 돌려주고 수호자가 됨)
+
+```
+                ┌── 3a (산호 미로) ──┐
+1 → 2 (선택) ──┤                    ├── 4 (정통 결말: 수호자)
+                └── 3b (해초 숲) ────┘
+```
+
+5장면, 한 회 플레이 시 4장면. 분기 1회. 두 길 모두 "진주는 바다의 것"이라는 깨달음으로 수렴.
+
+---
+
+## Scene 1 — `haenyeo/scene-1-shore.png`
+
+**제목 ko**: 1장. 새벽 바다 앞에서
+**제목 en**: Chapter 1 — At the Dawn-Lit Shore
+
+**Narration KO**:
+> 제주 바다는 아직 어둑한데 동쪽 하늘이 천천히 붉어졌다. 해녀는 검은 잠수복을 입고 머리에 잠수경을 올린 채, 주황색 테왁을 옆구리에 끼고 갯바위에 앉아 있다. "오늘은 깊은 곳까지 가봐야지." 마을 사람들이 잠든 사이, 해녀는 한 번 깊게 숨을 들이쉬고 푸른 바다 속으로 미끄러져 들어갔다. 돌담 너머 작은 초가집들 위로 갈매기 한 마리가 천천히 원을 그리며 날았다.
+
+**Narration EN**:
+> The Jeju sea was still dim, but the eastern sky slowly grew red. The haenyeo sat on the shore-rock in her black diving suit, goggles pushed up on her forehead, an orange tewak buoy tucked at her side. "Today I will go deep." While the village still slept, she took one long breath and slipped into the blue. Above the stone walls and small thatched roofs, a single gull traced a slow circle through the dawn.
+
+**다음 장면**: → Scene 2 (linear)
+
+**Gemini Prompt** (베이스 + 아래):
+```
+SHOT TYPE: Wide outdoor establishing shot at coastal dawn. Horizontal landscape
+emphasis — half sky, half sea-and-rocks. The haenyeo is mid-foreground, full
+body visible.
+
+Subject: A Jeju coastal scene at dawn. Center-foreground: a Korean haenyeo
+(woman diver, ~30 years old). She wears a traditional dark diving suit
+(잠수복 — full-body cover with visible neckline and sleeve cuff lines), hair
+tied back in a bun with a head-cloth, swim goggles (잠수경 — round lenses
+joined by a band) pushed up on her forehead. She sits on a flat lava-rock
+ledge in profile, one knee up, looking toward the sea. Beside her on the
+rock: a round tewak (테왁 — orange floating buoy ball with a small net bag
+hanging underneath holding shellfish — show net pattern as criss-cross
+weave, ~6-8 visible diamond cells) and a small curved diving hook (빗창).
+
+LEFT BACKGROUND: a stretch of Jeju 'oreum' (volcanic hillside, gentle round
+shape) silhouette and 2-3 small Jeju traditional thatched houses (초가집 with
+ropes crossing the roof, distinct from mainland thatched — show roof-rope
+grid pattern). In front of the houses, a low Jeju 돌담 (basalt stone wall
+made of stacked rough lava stones — show ~8-10 distinct stones as fill-able
+regions).
+
+RIGHT: the sea stretching toward the horizon, with 2-3 simple wave outlines
+near the rock. Above the horizon, a stylized rising sun (round, partly above
+the sea line, with 6-8 simple straight rays). Sky has 2-3 large soft cloud
+shapes (one fill-able region each).
+
+UPPER-RIGHT: a single seagull mid-flight (simple V-wing outline).
+
+Apply GROUPED NATURAL TEXTURES strictly: rocks as ~8-10 distinct stones,
+waves as 2-3 outlines, clouds as 2-3 big shapes, NO individual feather/wave
+detail.
+
+Mood: peaceful, anticipatory dawn — a working morning, before the dive.
+Composition: WIDE landscape. Haenyeo + tewak in lower-left foreground (~30%),
+sea + sun in the right half (~40%), village + oreum upper-left background,
+seagull upper-right.
+```
+
+---
+
+## Scene 2 — `haenyeo/scene-2-deep.png`
+
+**제목 ko**: 2장. 두 갈래 빛
+**제목 en**: Chapter 2 — The Two Lights
+
+**Narration KO**:
+> 깊이 내려갈수록 바닷속은 어두워지고, 해녀는 숨을 가만히 누르며 더 아래로 헤엄쳤다. 그때 어둠 속에서 희미한 푸른빛 하나가 깜빡였다. 좀 더 가까이 가자 길이 두 갈래로 나뉘었다. 왼쪽으로는 색색의 산호가 미로처럼 얽혀 있고, 오른쪽으로는 해초 숲이 부드럽게 흔들리고 있었다. 어느 쪽으로 갈까?
+
+**Narration EN**:
+> The deeper she went, the darker the sea became. The haenyeo held her breath steady and pressed downward. Then — a faint blue light blinked in the dark. As she swam closer the path divided. To her left, colored corals knotted into a maze. To her right, a forest of kelp swayed in a soft current. Which way?
+
+**선택지**:
+- 🪸 `산호 미로로 들어간다` / `Enter the coral maze` → **Scene 3a**
+- 🌿 `해초 숲으로 들어간다` / `Enter the kelp forest` → **Scene 3b**
+
+**Gemini Prompt** (베이스 + 아래):
+```
+SHOT TYPE: Underwater mid-shot. Haenyeo is small-to-medium in the canvas — the
+DEEP WATER and the TWO PATHS are the real subject. Slight downward angle (the
+light is below). Vertical emphasis (depth).
+
+Subject: A deep underwater scene. The haenyeo (same diving suit + goggles
+NOW down over her eyes + held breath + hair flowing slightly) is in the
+upper-middle of the canvas, mid-swim, body slightly tilted forward. Bubbles
+rise from her mouth in 2-3 SIMPLE GROUPED bubble clusters (not many little
+bubbles — each group is 1 enclosed region).
+
+The water around her is dark — indicate this with a few wavy current lines
+(no fills, NO hatching). In the MIDDLE-BOTTOM, a single faint round blue
+glowing orb visible in the distance (one clean round region).
+
+The path forks below: TO THE LEFT, the entrance to a CORAL MAZE — show
+3-4 large stylized coral cluster shapes (NOT individual polyps), like
+branched mushroom shapes or fan corals, each as ONE fill-able region. TO
+THE RIGHT, the entrance to a KELP FOREST — show 4-5 tall vertical kelp
+fronds in 2-3 BUNDLED GROUPS (each group is a tall ribbon shape with
+soft curves, NOT individual leaves).
+
+A few small fish (3-4 fish, simple oval bodies with triangle tails, single
+fill-able region each) drifting between the two paths.
+
+UPPER background: water surface visible at the very top of the canvas as a
+soft horizontal wavy line, with broken sunlight rays slanting down (~4-5
+diagonal lines).
+
+Apply GROUPED NATURAL TEXTURES: corals as 3-4 cluster shapes, kelp as 2-3
+bundled groups, bubbles in 2-3 small groups, fish simple.
+
+Mood: depth, mystery, decision — the divide is dramatic.
+Composition: VERTICAL emphasis (depth from surface to dark deep). Haenyeo
+upper-middle, blue glow lower-middle, coral path lower-left, kelp path
+lower-right, broken surface light streaming down from the top.
+```
+
+---
+
+## Scene 3a — `haenyeo/scene-3a-coral.png` (산호 미로 분기)
+
+**제목 ko**: 3장. 산호 사이의 인어
+**제목 en**: Chapter 3 — The Mermaid Among the Corals
+
+**Narration KO**:
+> 산호 사이로 헤엄쳐 들어가자 길이 또 갈라지고 다시 모였다. 어디선가 부드럽고 슬픈 노래가 흘러왔다. 가장 깊은 곳에 다다랐을 때, 그림자 사이로 긴 머리의 인어가 천천히 모습을 드러냈다. 인어는 두 손을 모은 채 작은 진주 하나를 내밀었다. "이것은 우리 어머니의 눈물이에요. 가지실 건가요, 돌려주실 건가요?"
+
+**Narration EN**:
+> She slipped between the corals — paths split and rejoined. From somewhere a soft, sorrowful song drifted through the water. At the deepest place, a long-haired mermaid emerged from the shadow. She held a single small pearl out in her cupped hands. "This is my mother's tear. Will you keep it, or will you give it back?"
+
+**다음 장면**: → Scene 4 (linear — 정통 결말로 수렴)
+
+**Gemini Prompt** (베이스 + 아래):
+```
+SHOT TYPE: Underwater medium-close shot. Two figures center-frame, the
+coral environment surrounding them like an arch. Square/centered emphasis.
+
+Subject: An underwater encounter scene set inside a coral maze. The haenyeo
+(diving suit, goggles down over eyes, hair tied back) is on the LEFT in mid-
+swim, body angled toward center, hands relaxed by her sides.
+
+CENTER-RIGHT: a mermaid (stylized — friendly Korean folktale style, NOT
+Western Ariel-style). She has long flowing hair (drawn as 5-6 thick curving
+strands, not many individual hairs), a graceful upper body, no clothing
+details needed beyond a simple V-line at the chest, and a long curved fish
+tail covered in 8-10 visible large scales arranged in 2-3 rows (each scale
+is ONE fill-able region — NOT a sea of tiny scales). The mermaid holds her
+two hands cupped in front of her with a single round pearl resting in her
+palms (one clean circle, one fill region).
+
+SURROUNDING the figures: 5-7 stylized coral CLUSTERS forming a maze-like
+archway around the encounter. Each coral cluster is ONE clean fill-able
+region. Use varied coral shapes (branching like deer antlers, fan-shaped,
+mushroom-cap, brain-like swirl), but each as a single simple silhouette.
+NO individual polyps. NO hatching.
+
+A few small details: 2-3 small fish drifting nearby (same simple style as
+Scene 2), a few scattered bubble clusters (2 groups), faint vertical water
+current lines (no fills).
+
+BACKGROUND: dark deep water with 2-3 broken sunlight rays from above (soft
+diagonal lines).
+
+Apply GROUPED NATURAL TEXTURES: corals as cluster shapes (each ONE region),
+mermaid scales 8-10 max, fish simple, NO individual coral polyps.
+
+Mood: hushed encounter, sacred meeting, gentle question.
+Composition: CENTERED — haenyeo left, mermaid center-right with the pearl
+between them, coral cluster archway framing the two figures, surface light
+above.
+```
+
+---
+
+## Scene 3b — `haenyeo/scene-3b-kelp.png` (해초 숲 분기)
+
+**제목 ko**: 3장. 해초 숲의 잠든 자라
+**제목 en**: Chapter 3 — The Sleeping Turtle in the Kelp
+
+**Narration KO**:
+> 해초 숲 사이를 천천히 헤엄쳐 들어가자 모든 것이 고요했다. 부드러운 물결에 해초 줄기들이 한쪽으로 길게 쏠려 있었다. 그 안쪽에 거대한 자라가 등껍질을 둥글게 말고 깊이 잠들어 있었다. 등 위로 작은 진주 하나가 맑게 빛났다. 멀리서 인어가 조용히 다가오며 입술에 손가락을 댔다. "조용히. 이건 바다가 자라에게 맡긴 거예요."
+
+**Narration EN**:
+> She drifted between the kelp and everything went still. The kelp leaned in one slow direction with the current. In a hollow within the forest, a great sea turtle slept curled inside its dome shell. A small pearl shone clear on its back. From the distance the mermaid approached and pressed a finger to her lips. "Quiet. The sea trusted this to the turtle."
+
+**다음 장면**: → Scene 4 (linear — 정통 결말로 수렴)
+
+**Gemini Prompt** (베이스 + 아래):
+```
+SHOT TYPE: Underwater horizontal shot. The sleeping turtle is the visual
+anchor at lower-center. The kelp forest forms vertical bars on both sides.
+The mermaid enters from one side.
+
+Subject: An underwater scene inside a quiet kelp forest. CENTER-LOWER: a
+large stylized Korean sea turtle (자라) sleeping on a sandy seafloor patch.
+The turtle has: a domed shell with 6-8 hexagonal/rounded shell plates clearly
+outlined (each plate is ONE fill-able region — NOT a busy texture), 4 stubby
+legs tucked in, closed eyes, a calm peaceful face. On the very TOP of the
+shell, a single small pearl resting (round, one region), with 3-4 short
+simple sparkle lines around it suggesting a soft glow.
+
+LEFT and RIGHT: vertical KELP fronds forming the forest. Show 4-5 BUNDLED
+GROUPS of kelp on each side (so 8-10 groups total), each group as a tall
+ribbon-shape with a soft curve from the current. Each kelp group is ONE
+fill-able region. NO individual leaves. NO veins.
+
+ENTERING FROM THE RIGHT: the mermaid (same friendly style as Scene 3a, long
+flowing hair as 5-6 strands, simple chest line, long curved tail with 8-10
+large visible scales). She is mid-swim, gently approaching, with one finger
+raised to her lips (asking for quiet). Show her from mid-thigh up only — the
+rest of her tail trails offstage right.
+
+The haenyeo is in the UPPER-LEFT, smaller in scale, hovering quietly,
+watching with her hands at her sides — only show her from waist up.
+
+BACKGROUND: dark blue-green water suggested by 2-3 wavy current lines
+(no fills), one or two scattered tiny shellfish on the sandy floor.
+
+Apply GROUPED NATURAL TEXTURES strictly: kelp in bundled groups, turtle
+shell plates 6-8 max, NO individual blades of kelp.
+
+Mood: hushed sacred secret — quiet, reverent, do-not-wake.
+Composition: HORIZONTAL — sleeping turtle dead center-lower as the anchor,
+kelp forest framing both sides as vertical pillars, mermaid entering from
+the right, haenyeo small in upper-left.
+```
+
+---
+
+## Scene 4 — `haenyeo/scene-4-guardian.png` (정통 결말)
+
+**제목 ko**: 마지막 장. 바다의 수호자
+**제목 en**: Final — Guardian of the Sea
+
+**Narration KO**:
+> 해녀는 잠시 진주를 손바닥 위에 올려놓고 그 무게를 느꼈다. "이것은 바다의 것이지요." 그 말과 함께 진주를 다시 인어에게 돌려주었다. 그러자 바다 깊은 곳에서 푸른빛이 천천히 위로 퍼져 올라왔다. 그날부터 해녀는 바다와 마을을 잇는 수호자가 되었다. 보름달이 뜨는 밤마다 그녀는 갯바위에 앉아 인어와 만나, 마을 어부들의 안전과 바다의 풍요를 함께 빌었다.
+
+**Narration EN**:
+> The haenyeo held the pearl in her open palm and felt its weight. "This belongs to the sea." With those words she gave it back to the mermaid. From the depths, a blue light slowly spread upward. From that day she became a guardian — one foot in the village, one in the sea. Every full-moon night she sat on the shore-rock and met the mermaid, and together they prayed for the safety of the fishermen and the kindness of the tides.
+
+**Ending Label**: 🌊 `바다의 수호자 — 정통 결말` / `Guardian of the Sea — the canonical ending`
+
+**Gemini Prompt** (베이스 + 아래):
+```
+SHOT TYPE: Surface-of-sea shot, half above water / half below water. A
+horizontal split with sky-and-sea above the waterline and the underwater
+scene below. The full moon is the central visual anchor.
+
+Subject: A magical night-time scene split between two worlds — surface and
+deep — connected by a glowing pearl returned.
+
+UPPER HALF (above water):
+- A large round FULL MOON dead center in the night sky (one clean circle).
+- Around it, 10-15 simple 5-point stars scattered (each identical, one
+  fill-able region per star).
+- LEFT BACKGROUND: a Jeju coastal silhouette — 2 oreum (volcanic hills) in
+  the distance, 2-3 small Jeju thatched houses (with roof-rope grids) lit
+  by lantern light (small visible lantern circle on one house's front).
+- RIGHT FOREGROUND: a flat lava-rock shore ledge where the haenyeo (now
+  with her goggles off and resting around her neck) sits cross-legged in
+  profile, looking out toward the moon's reflection on the water. Her tewak
+  is beside her on the rock.
+- Between the haenyeo and the moon: the moon's vertical light reflection
+  shimmering on the water (~5-6 short horizontal wave-glint lines stacked
+  vertically — NOT a busy water pattern).
+- 2-3 large soft cloud shapes in the upper sky.
+
+LOWER HALF (below water — through the surface):
+- The water surface drawn as a horizontal wavy line cutting the canvas roughly
+  at 55-60% height.
+- Just BELOW the surface, the MERMAID swimming up, body tilted upward, one
+  arm reaching up toward the haenyeo, hair flowing. The same mermaid as
+  Scenes 3a / 3b (long hair as 5-6 strands, simple chest line, long curved
+  tail with 8-10 large visible scales).
+- Between the haenyeo's hand and the mermaid's hand: the small round PEARL,
+  now glowing softly (show 4-6 short sparkle lines radiating from it).
+- DEEPER BELOW: the sleeping sea turtle small in the distance (same style
+  as Scene 3b but smaller scale), and a few stylized coral clusters and
+  bundled kelp fronds in the deep background — TINY in scale, just hinted.
+
+Apply GROUPED NATURAL TEXTURES strictly: clouds, stars, kelp, coral all
+in simple grouped shapes — NO individual elements.
+
+Mood: blessing, reconciliation, guardianship between two worlds — a soft
+mythic closing.
+Composition: HORIZONTAL SPLIT — sky-and-village + haenyeo on the upper
+band, moon centered as the visual anchor, mermaid + glowing pearl just
+below the waterline, deep sea (turtle, coral, kelp) hinted in the lower
+band as small far-away echoes of Scenes 3a and 3b.
+```
+
+---
+
+# 📋 받은 PNG 체크리스트 (해녀와 인어)
+
+배치 위치: `public/coloring/haenyeo/`
+
+- [ ] `scene-1-shore.png` — 1장. 새벽 바다 앞에서
+- [ ] `scene-2-deep.png` — 2장. 두 갈래 빛 (분기 시작)
+- [ ] `scene-3a-coral.png` — 3장 분기 A. 산호 사이의 인어
+- [ ] `scene-3b-kelp.png` — 3장 분기 B. 해초 숲의 잠든 자라
+- [ ] `scene-4-guardian.png` — 마지막 장. 바다의 수호자 (정통 결말)
+
+기존 `start.png`, `coral.png`, `kelp.png`, `ending-guardian.png`, `ending-village.png`는 `Backup_v1/`에 그대로 유지 (롤백용).
