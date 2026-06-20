@@ -996,9 +996,12 @@ clean circle and the night sky as a few simple star points.
 
 IN THE POND: 4 fairies (선녀, beautiful Korean traditional style, NOT
 anime/chibi — gentle round faces, long flowing hair). Each is bathing
-modestly waist-deep in the water, arms raised gently. Their bodies are
-suggested simply with shoulders + necks + flowing hair — not detailed.
-Long hair as 5-6 thick curving strands per fairy.
+modestly in the water, wearing a simple long sleeveless white
+underdress (속적삼, like a soft cotton shift) that covers shoulders and
+chest down to the waterline. NO bare shoulders, NO bare chest ─ this
+is a Korean children's storybook. Their bodies are suggested simply
+with the white dress + flowing hair. Long hair as 5-6 thick curving
+strands per fairy.
 
 ON THE STONES AROUND THE POND: 4 folded feathered robes (날개옷), each
 shimmering with soft inner light (3-4 short sparkle lines around each
@@ -1016,10 +1019,10 @@ TEXTURES — 5-7 cloud-shaped foliage clusters per tree). Above the trees:
 the large round full moon and 12-15 simple 5-point stars scattered.
 
 LOWER-LEFT FOREGROUND: a single fairy who has stepped out of the pond
-onto the stones — this is the one whose robe is gone. She stands in a
-gentle loose underdress (suggest only shoulders + waist), hands raised
-to her face, weeping. Her long hair flows down behind her. A single small
-tear visible on her cheek.
+onto the stones — this is the one whose robe is gone. She stands in
+her long white underdress (속적삼, modestly covering shoulders to
+ankles), hands raised to her face, weeping. Her long hair flows down
+behind her. A single small tear visible on her cheek.
 
 ALSO IN THE SCENE: the white deer (same as Scene 1) standing at the edge
 of the trees on the upper-right, watching quietly. Just barely visible.
@@ -1080,11 +1083,13 @@ the wakeful fairy at the window (right). Soft warm domestic + bittersweet
 tone.
 
 Subject: Inside a small Korean mountain hut at deep night. WOOD-PLANK
-floor, low ondol-style sleeping area on the LEFT where two small children
-sleep on a folded yo-blanket: a little boy (~5, in plain undergarment-style
-sleepwear, hand under his cheek) and his younger sister (~3, in similar
-sleep clothes, holding a small folded cloth doll). Show their faces
-clearly asleep, eyelids gently closed, small smiles.
+floor, low ondol-style sleeping area on the LEFT where two small
+children sleep on a folded yo-blanket: a little boy (~5, in simple
+white sleep-hanbok 잠한복 ─ short white top with collar line and loose
+white pants, hand under his cheek) and his younger sister (~3, in
+matching simple white sleep-hanbok with a small ribbon at the collar,
+holding a small folded cloth doll). Show their faces clearly asleep,
+eyelids gently closed, small smiles.
 
 CENTER: a low wooden tea table (소반) with an oil lamp (호롱불 — bowl +
 wick + flame) softly glowing. A small ceramic teacup beside it. On the
@@ -1183,9 +1188,10 @@ holding the fairy's other hand and looking up.
 BACKGROUND-LEFT: the hanok house wall with curved tile-roof eaves (~6-8
 visible roof tiles as repeated curved units). A wooden door is partly
 open — through it, the elder mother (~65, gray hair in low bun, simple
-hanbok with apron) is visible inside, gently weaving on a small loom (베틀)
-or sewing at a low table. She glances out at the fairy + children with a
-soft loving expression.
+hanbok with apron) is visible inside, sitting at a low wooden table
+gently sewing a small piece of cloth with needle and thread (NOT a
+loom ─ a simple sewing scene). She glances out at the fairy + children
+with a soft loving expression.
 
 BACKGROUND-RIGHT: the village extends in the middle distance — show 2-3
 small thatched roofs and a single tall persimmon tree (감나무) with bare
@@ -1304,6 +1310,13 @@ UPPER 60% — HEAVEN:
 A SOFT VERTICAL BEAM OF LIGHT descends from the woodcutter's chest down
 through the clouds toward the lower portion of the canvas — drawn as
 2-3 long parallel soft lines suggesting a gentle dawn ray.
+
+VISUAL ECHO OF THE BUCKET: in the upper-right corner of the heaven half
+(behind the fairy + children), a small simple wooden well-bucket (두레박)
+hangs from a curved rope, suggesting how the woodcutter was lifted up.
+This is a small symbolic detail, not the focus — just enough so a
+child reading the narration recognizes "ah, the bucket that brought him
+home". Show: simple round wooden bucket shape + 2-3 rope coil lines.
 
 LOWER 40% — EARTH:
 - Center: a small Korean thatched-roof house (초가집) with a single
@@ -2283,9 +2296,12 @@ the official's hands.
 
 CENTER MID-GROUND: a traditional Korean sedan chair (가마 — wooden box
 with curved roof, decorative carved sides, two long carrying poles
-extending front and back). The magistrate (older man, formal hanbok and
-official's hat, dignified kind face with a small smile) stands beside
-the sedan looking at Kongjwi with approval.
+extending front and back). The magistrate (사또 — older man, formal
+Joseon official robe with embroidered chest panel 흉배, wearing a
+SAMO 사모 ─ the black official's hat with two horizontal wings
+extending from the back, NOT a peaked gat. Dignified kind face with a
+small smile). He stands beside the sedan looking at Kongjwi with
+approval.
 
 LEFT-BACKGROUND: the stepmother and Patjwi (both in fine but now slightly
 disheveled hanbok). The stepmother's face is shocked, mouth half-open;
@@ -2644,19 +2660,19 @@ soft fill.
 
 ---
 
-## Scene 3b — `06-byeoljubu/scene-3b-whisper.png` (전 · 산속 귀띔)
+## Scene 3b — `06-byeoljubu/scene-3b-whisper.png` (전 · 까치의 귀띔)
 
-**제목 ko**: 3장. 산속 도깨비의 귀띔
-**제목 en**: Chapter 3 — A Whisper from a Mountain Spirit
+**제목 ko**: 3장. 까치의 귀띔
+**제목 en**: Chapter 3 — A Whisper from a Magpie
 
 **Narration KO**:
 > "잠시만 기다리시오, 자라 어른. 잔치라니 좋은 일이긴 한데, 한번 풀밭이나 둘러보고 가겠소이다."
 >
-> 토끼는 자라의 곁을 떠나 잠시 풀밭 한구석으로 가서 풀잎을 뜯는 척 했다. 그때 어디선가 작고 둥근 도깨비 한 마리가 풀숲 사이에서 머리를 내밀었다. 산속의 작은 도깨비였다.
+> 토끼는 자라의 곁을 떠나 잠시 풀밭 한구석으로 가서 풀잎을 뜯는 척 했다. 그때 머리 위 소나무 가지에서 까치 한 마리가 깍깍 소리를 내며 내려왔다. 산속의 길조 까치는 가만히 토끼의 어깨 가까이 내려앉았다.
 >
-> "토끼 형님, 가만히 들으시오. 저 자라가 산에 올라온 데는 다른 까닭이 있소이다. 용왕이 병이 들어 형님의 간이 약이라 한답니다. 자라는 충직한 신하라, 형님을 잔치라 속여 모시고 가려는 것이지요."
+> "토끼 형님, 가만히 들으시오." 까치가 작은 부리로 속삭이듯 알려 주었다. "저 자라가 산에 올라온 데는 다른 까닭이 있소이다. 용왕이 병이 들어 형님의 간이 약이라 한답니다. 자라는 충직한 신하라, 형님을 잔치라 속여 모시고 가려는 것이지요."
 >
-> 토끼의 까만 눈동자가 가늘어졌다. 도깨비는 풀숲 사이로 다시 모습을 감추었다.
+> 토끼의 까만 눈동자가 가늘어졌다. 까치는 가지 위로 다시 폴짝 날아올라 깍깍 한 번 짧게 울고 사라졌다.
 >
 > 토끼는 한참을 생각했다. 그대로 도망쳐 버릴까? 그러나 자라는 형님 형님 하며 자기를 진심으로 모시러 온 사람이었다. 자기가 그냥 도망가면 자라는 빈 등껍질로 용궁에 돌아가 큰 벌을 받을 것이다.
 >
@@ -2667,11 +2683,11 @@ soft fill.
 **Narration EN**:
 > "One moment please, good Turtle. A feast is fine news indeed — but let me look once around the meadow before we go."
 >
-> The hare drifted off and pretended to nibble grass at the edge of the clearing. Just then a small round dokkaebi popped its head up from the bushes — a little mountain spirit.
+> The hare drifted off and pretended to nibble grass at the edge of the clearing. Just then a magpie cawed sharply overhead and fluttered down from a pine branch — in Korean tales, the magpie is a bringer of news. It settled near the hare's shoulder.
 >
-> "Brother Hare, listen carefully. That turtle has come up the mountain for a different reason. The Dragon King is ill, and your liver is the medicine. The turtle is a loyal servant. He plans to take you in disguise of a feast."
+> "Brother Hare, listen carefully," the magpie whispered with its small beak. "That turtle has come up the mountain for a different reason. The Dragon King is ill, and your liver is the medicine. The turtle is a loyal servant. He plans to take you in disguise of a feast."
 >
-> The hare's dark eyes narrowed. The dokkaebi vanished back into the bushes.
+> The hare's dark eyes narrowed. The magpie hopped back up to the branch, cawed once more, and was gone.
 >
 > The hare thought for a long while. Should he simply run? But the turtle had called him "Brother" and had truly come to fetch him with care in his heart. If the hare just ran, the turtle would return with an empty shell and be punished severely.
 >
@@ -2685,8 +2701,8 @@ soft fill.
 ```
 SHOT TYPE: Outdoor mountain glade scene, late afternoon. Two zones in
 the same canvas: the LEFT shows the hare pretending to graze with the
-dokkaebi whispering from bushes; the RIGHT shows the turtle waiting
-patiently a short distance away. Soft horizontal composition.
+magpie whispering from a low pine branch; the RIGHT shows the turtle
+waiting patiently a short distance away. Soft horizontal composition.
 
 Subject: A sunlit Korean mountain glade in golden late afternoon.
 
@@ -2696,12 +2712,13 @@ slightly down, head turned subtly to the side so he can hear what's
 behind him. One front paw holds a leaf as if grazing (it's a ruse). The
 hare's eye is slightly squinted — listening intently.
 
-From a clump of bushes directly behind the hare, a small round Korean
-dokkaebi spirit peeks out (small body, single horn on head, round eyes,
-small mischievous smile, finger raised to its mouth signaling secrecy).
-Show only its head and one arm. A few short curving "whisper" lines float
-between the dokkaebi's mouth and the hare's ear — 3-4 small wisp shapes
-suggesting a hushed voice.
+From a low pine branch directly above the hare, a Korean magpie (까치 ─
+simple black-and-white bird shape, distinctive Korean magpie body: white
+belly, dark wings, long forked tail, small black eye, sharp small beak)
+leans down close to the hare's ear. The magpie is in a head-tilted
+whisper pose, beak slightly open. A few short curving "whisper" lines
+float between the magpie's beak and the hare's ear — 3-4 small wisp
+shapes suggesting a hushed voice.
 
 CENTER-RIGHT: the same Korean turtle (Byeoljubu) sitting patiently on a
 flat rock at a polite distance, head extended with a kind smile, looking
@@ -2723,15 +2740,21 @@ GROUND DETAILS: scattered fan-shaped grass tufts (4-5 spaced), 2-3
 mountain wildflowers, one chestnut on the ground.
 
 Apply DETAIL LEVEL: hare's face shows tense listening expression with
-ear position, dokkaebi's mischievous smile clear, turtle's patient kind
-posture. GROUPED NATURAL TEXTURES: pine in clusters, grass in tufts,
-clouds simple.
+ear position, magpie's distinctive Korean magpie markings (white belly +
+dark wings + long forked tail) clear, turtle's patient kind posture.
+GROUPED NATURAL TEXTURES: pine in clusters, grass in tufts, clouds simple.
 
-Mood: secret comedy ─ small mountain spirit whispering warning, hare
+Mood: secret comedy ─ wise messenger magpie whispering a warning, hare
 pretending unconcern, oblivious turtle waiting kindly nearby. Late golden
 calm.
-Composition: HORIZONTAL THREE-ZONE ─ whispering dokkaebi + listening
-hare LEFT, midground gap, patient turtle RIGHT, mountain background.
+
+Cultural note: In Korean folktales the magpie (까치) is the traditional
+bringer of news and good omens — its appearance here as the whisperer
+of truth fits the Korean folk vocabulary far better than a goblin would.
+
+Composition: HORIZONTAL THREE-ZONE ─ whispering magpie on pine branch
+above + listening hare LEFT, midground gap, patient turtle RIGHT,
+mountain background.
 ```
 
 ---
@@ -2855,7 +2878,7 @@ ground details lower.
 - [ ] `scene-1-palace.png` — 1장. 용궁의 큰 시름 (기)
 - [ ] `scene-2-meeting.png` — 2장. 산속 토끼와 자라의 만남 (승 + 분기)
 - [ ] `scene-3a-undersea.png` — 3장 분기 A. 용궁에서 알게 된 비밀 (전)
-- [ ] `scene-3b-whisper.png` — 3장 분기 B. 산속 도깨비의 귀띔 (전)
+- [ ] `scene-3b-whisper.png` — 3장 분기 B. 까치의 귀띔 (전)
 - [ ] `scene-4-return.png` — 마지막 장. 토끼의 기지와 자라의 충성 (결 / 정통 결말)
 
 기존 `start.png`, `palace.png`, `forest.png`, `ending-clever.png`, `ending-honor.png`은 `Backup_v1/`에 그대로 유지 (롤백용).
@@ -3193,61 +3216,66 @@ upper-right.
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-SHOT TYPE: Early dawn outdoor + interior split scene. LEFT shows Heungbu
-gathering herbs on the mountain at dawn; RIGHT shows him at the stone
-mortar in his kitchen at first light. The two moments unify in a single
-canvas as a "remedy-making" scene.
+SHOT TYPE: Interior kitchen scene at first light of dawn. Single
+focused setting on Heungbu grinding herbs at a stone mortar, with the
+swallow watching from the corner. The mountain-gathering moment is
+hinted at the window outside, not shown as a separate scene. Intimate
+centered composition.
 
-Subject: A two-part scene of careful remedy-making in the early hours.
+Subject: Inside Heungbu's modest kitchen at the very first light of
+dawn. The room is small, warm, and quiet.
 
-LEFT THIRD — MOUNTAIN AT DAWN:
-- A misty Korean mountain slope at very early dawn. The sky behind has
-  a thin pale band of dawn light at the horizon (one horizontal soft
-  line).
-- Heungbu (same character) kneeling in the dewy grass, hands carefully
-  picking small herbs. Beside him a small woven basket with a few
-  gathered herb leaves already inside.
-- Show two distinct herb types: mountain mugwort (산쑥 ─ small jagged
-  leaves clustered in a star shape, 3-4 plants visible) and magpie-foot
-  shaped leaves (까치발 모양 leaf ─ three-pointed leaves like a small
-  trident, 3-4 visible). Each herb as a small distinct group of leaves,
-  3-5 leaves per plant clearly outlined.
-- A couple of pine trees in the background (apply GROUPED NATURAL
-  TEXTURES ─ 5-7 foliage clusters per tree). A few small mountain
-  birds (3-4 simple shapes) waking up.
-- One single early magpie (까치) on a branch, watching peacefully.
+CENTER-FOREGROUND: Heungbu (same character ─ worn hanbok with patches,
+sleeves rolled up, focused gentle face) kneeling on the wood-plank
+floor at a low wooden surface. A stone mortar (절구) sits in front of
+him. He holds a stone pestle (절굿공이) in both hands, mid-grind. The
+gathered herbs are partially mashed inside the mortar ─ show as a
+small mound of crushed leaves with a hint of soft texture.
 
-CENTER VERTICAL DIVIDER:
-A soft vertical band of growing dawn light gently bridges the two scenes.
-A few simple light ray lines.
+ON THE WORK SURFACE beside the mortar: a small woven basket containing
+the gathered FRESH HERBS (showing two distinct herb types: mountain
+mugwort 산쑥 with small jagged star-shaped leaves, 2-3 plants; and
+magpie-foot leaves 까치발 모양 with three-pointed trident-like leaves,
+2-3 plants ─ each plant as a small distinct group of 3-5 leaves clearly
+outlined). Beside the basket: a clean folded white cotton cloth ready
+for binding, and a small ceramic bowl of water.
 
-RIGHT TWO-THIRDS — KITCHEN INTERIOR AT FIRST LIGHT:
-- Inside Heungbu's small hut kitchen, just before sunrise. A paper window
-  on the back wall shows the first faint pink-orange of dawn (one band
-  of light visible through the panel grid).
-- Heungbu (same character) now back inside, kneeling at a low wooden
-  surface with a stone mortar (절구) in front of him. He holds a stone
-  pestle (절굿공이) in both hands, mid-grind. The gathered herbs are
-  partially mashed inside the mortar — show as a soft green paste shape.
-- On the surface beside the mortar: a clean folded white cotton cloth,
-  ready for binding.
-- IN THE CORNER OF THE KITCHEN: the small swallow rests on a folded
-  cushion, watching Heungbu with its little black eyes. One small head-
-  nod motion line suggesting it just gave a tiny nod.
-- A small oil lamp (호롱불) on a ledge with a soft flame, the only
-  interior light source besides the dawning sky outside.
-- Simple wood-plank floor, simple back wall.
+LEFT-CORNER OF THE KITCHEN: the small swallow (제비 ─ same character
+as Scene 2) rests on a folded small cushion, head slightly raised,
+watching Heungbu with its little black eyes. One small head-nod motion
+line suggests it just nodded faintly in trust.
 
-Apply DETAIL LEVEL: hanbok worn with patches, faces detailed (Heungbu's
-quiet focused expression), herbs distinct shapes, mortar + pestle clear.
-GROUPED NATURAL TEXTURES: pine in clusters, herbs grouped by plant.
+RIGHT-BACK WALL: a single paper-paneled window (한지창 ─ 3-by-3 grid).
+Through the window, the first faint dawn light is just beginning ─ show
+a soft horizontal band of pale light through the panels, plus the
+silhouette of one tall pine outside and the head of a single Korean
+magpie (까치) perched on a branch outside the window (just visible
+through the paper panel grid, suggesting the morning where the herbs
+came from). This single window detail replaces a separate mountain
+scene ─ the gathering is implied, not separately drawn.
+
+CENTER-BACK: a small clay brazier (화로) on a low ledge, embers
+glowing softly (3-4 small ember dots), giving a faint warm glow.
+
+CEILING: simple roof beams (서까래 ─ 3-4 horizontal lines).
+
+ADDITIONAL DETAIL: a small wooden chest in the upper-left corner with
+a folded blanket on top. A pair of straw sandals near the door (visible
+edge of the room). Apply DETAIL LEVEL strictly.
+
+GROUPED NATURAL TEXTURES: herbs grouped by plant (each plant ONE
+fill region), embers as 3-4 dots, NO carpets of detail.
 
 Mood: quiet dawn devotion ─ the kind of careful skill that is also
 prayer. A son remembering his mother's teaching while caring for the
-smallest guest.
-Composition: HORIZONTAL TWO-PART CANVAS. Mountain dawn LEFT (~35%),
-soft dawn light center divider, kitchen mortar RIGHT (~65%), paper window
-upper-right with dawn light hint, swallow + oil lamp corner-right.
+smallest guest. The window suggests the mountain where he gathered;
+the kitchen holds the work itself.
+
+Composition: CENTERED INTIMATE. Heungbu + mortar dead-center
+foreground, herb basket + cloth + bowl on the surface right of him,
+swallow on cushion corner-left, paper window with dawn-light hint +
+magpie outside upper-right, brazier center-back, all in a single warm
+room.
 ```
 
 ---
@@ -3274,7 +3302,7 @@ upper-right with dawn light hint, swallow + oil lamp corner-right.
 >
 > "내 동생이 박씨로 부자가 되었다? 그 별것 아닌 박씨가? 그렇다면 나도!"
 >
-> 놀부는 부랴부랴 자기 마당으로 달려갔다. 그러나 자기 마당에는 제비 한 마리도 둥지를 틀지 않았다는 것을 그제야 깨달았다. 놀부는 무엇을 했는지 ─ 일부러 한 둥지의 어린 제비를 잡아다 다리를 부러뜨린 다음, 천으로 정성껏 싸 매고는 "내가 너를 살려 주었다" 하고 둥지에 도로 넣었다.
+> 놀부는 부랴부랴 자기 마당으로 달려갔다. 그러나 자기 마당에는 제비 한 마리도 둥지를 틀지 않았다는 것을 그제야 깨달았다. 놀부는 못된 꾀를 냈다 ─ 한 둥지의 어린 제비 한 마리를 일부러 떨어뜨려 다치게 하고는, 천으로 그럴듯이 싸 매고 "내가 너를 살려 주었다" 하고 둥지에 도로 넣었다. 진심이 없는 보살핌이었다.
 >
 > 가을이 가고 다음 봄이 왔다. 정말로 그 제비도 박씨 하나를 물어 와 놀부의 손바닥 위에 떨어뜨렸다. 놀부는 흥부보다 다섯 배는 큰 마당 가득 그 박씨를 심었다.
 >
@@ -3305,7 +3333,7 @@ upper-right with dawn light hint, swallow + oil lamp corner-right.
 >
 > "My brother grew rich from a swallow's seed? From that trifle? Then I can do the same!"
 >
-> Nolbu rushed back to his own yard — and only then realized that not a single swallow had ever nested there. So he did this: he caught a young swallow from a nest, deliberately broke its leg, carefully wrapped the leg in cloth, and put the bird back into the nest, declaring loudly, "I have saved you."
+> Nolbu rushed back to his own yard — and only then realized that not a single swallow had ever nested there. So he played a cruel trick: he caused a young swallow to fall from a nest and hurt itself, then wrapped its leg in cloth for show and put it back, declaring loudly, "I have saved you." There was no kindness in the caring — only the wish for treasure.
 >
 > Autumn passed and spring came. Sure enough, that swallow too brought back a single seed and dropped it into Nolbu's palm. Nolbu planted the seed across an entire yard five times the size of Heungbu's.
 >
@@ -3323,73 +3351,72 @@ upper-right with dawn light hint, swallow + oil lamp corner-right.
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-SHOT TYPE: Split-canvas mythic afternoon scene. LEFT half shows
-Heungbu's family at the joyful gourd-opening with treasure pouring out;
-RIGHT half shows Nolbu's yard with dokkaebi pouring from his gourd in
-chaos. At the bottom CENTER, the two brothers meeting — Heungbu's
-forgiving hand extended to a head-bowed Nolbu. Cosmic justice with
-final reconciliation.
+SHOT TYPE: Warm closing scene centered on the two brothers reconciling.
+The emotional anchor is BIG and CLEAR: Heungbu's gentle outstretched hand
+meeting Nolbu's lowered head. Their two yards are simplified to small
+hints on either side. Background tells the story of "what happened" in
+small simple silhouettes, NOT competing detail panels. Wide horizontal
+composition with the two figures dominating the center.
 
-Subject: A two-yard split canvas, the climax of both brothers' fates,
-with reconciliation at the bottom.
+Subject: A late-afternoon Korean village scene of brotherly
+reconciliation, the emotional resolution of the whole tale.
 
-LEFT HALF — HEUNGBU'S YARD (joyful):
-- Heungbu's repaired-looking thatched hut (now slightly improved — fewer
-  holes in the thatch).
-- THREE LARGE BOK GOURDS (박) on the ground: one already split open
-  with TREASURE POURING OUT (gold ingots as 3-4 simple rectangles, silver
-  pieces as 3-4 round disks, folded silk as 2-3 fabric shapes, a few
-  rice grain clusters). The other two gourds whole, with bok-vine
-  curling among them.
-- HEUNGBU and his family — wife, three children — all standing in joyful
-  poses around the split gourd, arms raised, eyes wide with happy
-  amazement, mouths smiling/open in laughter.
-- 4-5 small swallows flying joyfully overhead in his half of the sky.
-- A small persimmon tree now full of fruit (apply GROUPED NATURAL
-  TEXTURES ─ 4-5 rounded foliage clusters with 5-6 round persimmons).
+CENTER FOREGROUND (the visual + emotional anchor, ~50% of canvas):
+The TWO BROTHERS meeting. HEUNGBU on the LEFT, standing upright in a
+warm peaceful posture, his right hand extended forward palm-up — open,
+gentle, no grudge. His face shows quiet kindness, a soft small smile.
+His hanbok is the same simple worn hanbok from earlier scenes but
+mended-looking and clean. NOLBU on the RIGHT, head LOWERED in shame
+before his younger brother for the first time, shoulders slumped, his
+formerly fine hanbok now visibly disheveled. He is BEGINNING to lift
+his own hand toward Heungbu's open palm — their fingers ALMOST touching
+at the very center of the canvas. A single small tear visible on
+Nolbu's cheek (one teardrop shape).
 
-RIGHT HALF — NOLBU'S YARD (chaos):
-- Nolbu's grand tile-roof house, now slightly battered.
-- THREE GOURDS, all split open: out of the first, 4-5 small stylized
-  dokkaebi (single horn, round body, MISCHIEVOUS NOT FRIENDLY ─ tongues
-  out, frowning, hands raised) pour out and scatter across his yard.
-- The second gourd: dark smudges and small puff shapes (suggesting
-  the ash and refuse, but kept TASTEFUL ─ just curling dark wisps, NOT
-  detailed dung). Show 3-4 puff shapes drifting upward.
-- The third gourd: a tall white-bearded mountain sage (산신 ─ flowing
-  robes, long beard, stern but not cruel expression, one finger raised in
-  reproach) emerges, with his other hand extended toward Nolbu's
-  storehouses ─ from which streams of grain visibly flow away (3-4 thin
-  flowing lines arcing out of the storehouse and disappearing).
-- NOLBU sits on the ground next to his split gourds, head in hands,
-  weeping. Shoulders slumped. His fine hanbok now disheveled.
-- His yard otherwise emptied of birds, oddly silent compared to the
-  chaos of the gourds.
+BACKGROUND-LEFT (small, hinted ─ NOT a full panel):
+Far behind Heungbu, a small simple silhouette suggestion of his yard:
+the small thatched hut with a single split gourd showing a soft glow
+inside (suggesting treasure but NOT detailing it ─ just one bright
+glow shape). 3-4 small swallows flying overhead. A small persimmon tree
+with a few round fruits (apply GROUPED NATURAL TEXTURES). Keep this
+LEFT background simple ─ this is the AFTERMATH, not the main subject.
 
-BOTTOM CENTER (across the divide):
-- The two brothers meeting between their yards. Heungbu (standing,
-  walking forward from the left) extends his hand toward Nolbu (now
-  rising slowly from his ruined yard right side, head bowed in shame,
-  tears visible).
-- Their hands are reaching for each other ─ ALMOST TOUCHING in the
-  middle of the canvas, the reconciliation gesture as the centerpiece.
+BACKGROUND-RIGHT (small, hinted ─ NOT a full panel):
+Far behind Nolbu, a small simple silhouette suggestion of his yard: the
+grand tile-roof house slightly tilted and dimmed. One split gourd
+visible with a few faint dark wisps drifting up from it (suggesting
+chaos but NOT detailed ─ 2-3 curling wisp lines only). NO dokkaebi or
+sage drawn in detail ─ keep this side quiet and empty by contrast. The
+storehouse door is ajar with a few grain spill lines on the ground.
 
-UPPER SKY (across both halves): warm late afternoon, soft sky gradient.
-2-3 simple cloud shapes. A few birds flying across only the LEFT side.
+UPPER SKY: warm late afternoon. 2-3 large soft cloud shapes that span
+BOTH halves (the same sky over both fates). The sun is upper-center
+with simple rays ─ lighting both brothers equally. A few swallows fly
+in a V formation across the sky overhead (3-4 simple V shapes).
 
-Apply DETAIL LEVEL: every face shows clear expression, both yards show
-their characteristic state, gourds show clear split-shape and contents,
-sage's robe + beard detailed.
-GROUPED NATURAL TEXTURES: persimmons in clusters, swallows simple V's,
-clouds simple, ash puffs as few shapes.
+GROUND-CENTER (between the brothers): a single sprouting bok-vine grows
+up from the path between them, suggesting new growth ─ 3-4 simple vine
+leaves around their feet.
 
-Mood: cosmic moral resolution + brotherly forgiveness ─ the canonical
-Korean reconciliation, with all the visual humor of the dokkaebi and
-sage, softened by Heungbu's extended hand.
-Composition: SPLIT-CANVAS with UNIFYING BOTTOM CENTER. Heungbu's joy
-LEFT (~45%), Nolbu's chaos RIGHT (~45%), brothers reaching toward each
-other at the BOTTOM CENTER as the visual + emotional axis. Sky above
-unifies both halves.
+Apply DETAIL LEVEL strictly: both brothers' faces clearly distinct in
+expression and posture, hanbok detailed (Heungbu simple but mended;
+Nolbu finer but disheveled). The reconciliation gesture (their hands)
+is the visual climax ─ position it dead center.
+
+GROUPED NATURAL TEXTURES strictly: persimmons in clusters, swallows
+simple V's, clouds simple. No busy background detail.
+
+Mood: warm cosmic moral resolution ─ the canonical Korean reconciliation.
+Where two yards once stood as opposites, now two brothers stand as one.
+Even the punishment of Nolbu lives only in soft background hints; the
+foreground is FORGIVENESS.
+
+Composition: WIDE HORIZONTAL with CENTRAL VERTICAL EMOTIONAL AXIS.
+Brothers' figures + reaching hands dominate the center foreground (~50%),
+Heungbu's small bright yard far-left background (~25%), Nolbu's small
+empty yard far-right background (~25%), unified warm sky above. The
+two brothers' reaching fingers at the dead center are the climactic
+focal point.
 ```
 
 ---
@@ -3809,9 +3836,10 @@ A few short SPEECH WISP lines connect the woodcutter's mouth toward
 the spirit's open hand (3-4 small wisp shapes suggesting the words being
 "received" by the spirit's listening palm).
 
-ABOVE THE WOODCUTTER'S HEAD: a tiny thought-bubble suggestion (one small
-soft cloud-shape) showing a faint image of his mother's hut (very small
-and simple) — visualizing the brief temptation he is honestly disclosing.
+NO thought-bubble or floating cartoon device ─ the brief temptation is
+told only through the woodcutter's face (slightly downcast eyes, faintly
+flushed cheeks, parted mouth mid-confession) and through the spirit's
+deeply understanding expression. Korean folktale tone, not comic-strip.
 
 THE GOLDEN AXE in the spirit's other hand is held HIGH but its sparkle
 lines are softer in this scene (it's no longer the test; the test is
@@ -3830,7 +3858,7 @@ gently overhead.
 
 Apply DETAIL LEVEL: woodcutter's face emotion clear (shame, honesty,
 hope), spirit's gentle warm smile clear, hands of both characters in
-meaningful gestures, thought-bubble small and simple.
+meaningful gestures.
 
 Mood: tender mythic intimacy ─ a man telling the truth about his
 hesitations and being met not with rebuke but with deeper recognition.
@@ -3838,8 +3866,7 @@ The KOREAN definition of honesty as warm, not stern.
 Composition: CENTERED intimate. Spirit center of pond, woodcutter
 kneeling close on the LEFT bank, the two figures connected by the
 spirit's outstretched palm and the speech wisps, golden axe held high
-but secondary to the emotional exchange, thought-bubble small above
-woodcutter, mountains and sky backdrop.
+but secondary to the emotional exchange, mountains and sky backdrop.
 ```
 
 ---
@@ -3955,9 +3982,16 @@ LEFT HALF — THE HONEST WOODCUTTER (returning home):
 
 RIGHT HALF — THE GREEDY WOODCUTTER (descending empty-handed):
 - A separate path on the OTHER side of the pond going down. The greedy
-  woodcutter (older man with somewhat finer hanbok now disheveled, sour
-  face, bushy eyebrows ─ visually distinct from the honest woodcutter)
-  trudges DOWN the path slumped over.
+  woodcutter — clearly differentiated visually from the honest one:
+  rounder face with thicker cheeks, bushy heavy eyebrows, a small
+  scraggly beard, MERCHANT-STYLE hanbok (a fine outer vest with a
+  visible diamond or floral patterned panel across the chest, an
+  embroidered sash at the waist) now disheveled and dusty from the
+  trip up the mountain. A small money pouch dangles half-empty from
+  his belt. He's older and visibly fancier than the honest woodcutter
+  ─ a 3-second read should tell the viewer "this is a different,
+  greedier man".
+- He trudges DOWN the path slumped over, head bowed.
 - In his hand: a single bare WOODEN AXE HANDLE (자루) ─ no blade.
 - His mouth is downturned, head bowed. One hand wipes his eyes (3-4
   short tear lines on his cheeks).
