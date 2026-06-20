@@ -534,10 +534,14 @@ export default function Home() {
               </p>
             )}
 
-            <article className="w-full max-w-[720px] rounded-2xl border border-amber-100/80 bg-white/70 px-6 py-5 shadow-sm backdrop-blur">
-              <p className="font-serif text-[17px] leading-relaxed text-gray-800">
-                {t(currentScene.narration)}
-              </p>
+            <article className="w-full max-w-[720px] overflow-hidden rounded-2xl border border-amber-100/80 bg-white/70 shadow-sm backdrop-blur">
+              <div className="narration-scroll max-h-[36vh] space-y-3 overflow-y-auto px-6 py-5 font-serif text-[16px] leading-relaxed text-gray-800 md:text-[17px]">
+                {t(currentScene.narration)
+                  .split(/\n{2,}/)
+                  .map((para, i) => (
+                    <p key={i}>{para.trim()}</p>
+                  ))}
+              </div>
             </article>
 
             {currentScene.choices ? (

@@ -418,10 +418,26 @@ unifying horizon, stars across the whole upper background.
 **제목 en**: Chapter 1 — At the Dawn-Lit Shore
 
 **Narration KO**:
-> 제주 바다는 아직 어둑한데 동쪽 하늘이 천천히 붉어졌다. 해녀는 검은 잠수복을 입고 머리에 잠수경을 올린 채, 주황색 테왁을 옆구리에 끼고 갯바위에 앉아 있다. "오늘은 깊은 곳까지 가봐야지." 마을 사람들이 잠든 사이, 해녀는 한 번 깊게 숨을 들이쉬고 푸른 바다 속으로 미끄러져 들어갔다. 돌담 너머 작은 초가집들 위로 갈매기 한 마리가 천천히 원을 그리며 날았다.
+> 옛날, 제주 바다 어느 마을에 한 해녀가 살고 있었더라. 그녀의 어머니도 해녀였고, 그 어머니의 어머니도 해녀였단다. 한 집안의 여인들은 대대로 같은 바다에 들어가 같은 물질을 했고, 같은 갯바위에서 같은 노을을 보며 자랐다.
+>
+> 그날 새벽, 해녀는 아직 별이 보이는 시간에 일어났다. 어머니가 남겨준 낡은 잠수경을 손바닥에 올려 한참을 들여다보았다. "오늘은 더 깊은 곳까지 가봐야겠어요." 어머니에게 인사하듯 중얼거리고는, 검은 잠수복을 단단히 여미었다.
+>
+> 갯바위에 나가 앉았다. 주황색 테왁을 옆에 두고, 빗창을 허리에 매었다. 바다는 아직 어두운 푸른빛인데, 동쪽 하늘 끝이 천천히 붉어지기 시작했다. 갈매기 한 마리가 멀리서 원을 그리며 날아갔다.
+>
+> "바다 어머니, 오늘도 잘 부탁드립니다."
+>
+> 해녀는 두 손을 모아 한 번 절을 하고, 깊게 숨을 들이쉬었다. 그러고는 푸른 바다 속으로 미끄러져 들어갔다.
 
 **Narration EN**:
-> The Jeju sea was still dim, but the eastern sky slowly grew red. The haenyeo sat on the shore-rock in her black diving suit, goggles pushed up on her forehead, an orange tewak buoy tucked at her side. "Today I will go deep." While the village still slept, she took one long breath and slipped into the blue. Above the stone walls and small thatched roofs, a single gull traced a slow circle through the dawn.
+> Long ago, in a fishing village on the southern Jeju coast, there lived a haenyeo — a woman who could swim into the deep on a single breath. Her mother had been a haenyeo, and her mother's mother before her. For generations the women of that family had slipped into the same sea, dove the same deeps, sat upon the same shore-rocks watching the same long evenings.
+>
+> One dawn, before the stars had faded, she rose. She held her mother's old swimming goggles in her palm and gazed at them a while. "Today I will go a little deeper." She fastened the goggles and drew on her dark diving suit.
+>
+> Beside her on the shore-rock she set down her orange tewak buoy, and at her hip she tied her bitchang hook. The sea was still dark, but the eastern edge of the sky was slowly turning red. Far off, a single gull traced a slow circle.
+>
+> "Mother of the Sea, please keep me safe today."
+>
+> She bowed once with her two palms together, drew one long, deep breath, and slipped into the blue.
 
 **다음 장면**: → Scene 2 (linear)
 
@@ -473,10 +489,30 @@ seagull upper-right.
 **제목 en**: Chapter 2 — The Two Lights
 
 **Narration KO**:
-> 깊이 내려갈수록 바닷속은 어두워지고, 해녀는 숨을 가만히 누르며 더 아래로 헤엄쳤다. 그때 어둠 속에서 희미한 푸른빛 하나가 깜빡였다. 좀 더 가까이 가자 길이 두 갈래로 나뉘었다. 왼쪽으로는 색색의 산호가 미로처럼 얽혀 있고, 오른쪽으로는 해초 숲이 부드럽게 흔들리고 있었다. 어느 쪽으로 갈까?
+> 물속은 처음에는 환했다. 햇살이 부서져 내려와 모래밭을 알록달록하게 비추었다. 하지만 해녀가 더 깊이 헤엄칠수록 빛은 점점 흐려졌다. 5미터, 10미터, 15미터… 익숙한 깊이를 지나, 어머니도 다 가보지 못한 곳으로 향했다.
+>
+> 가슴이 답답해질 무렵, 어둠 속에서 무엇인가가 깜빡였다. 푸른빛이었다. 가까이 갈수록 더 또렷해지는, 살아 있는 듯한 빛.
+>
+> "무엇이지?"
+>
+> 그 빛을 따라 한참을 더 내려가니, 바닷속 깊은 곳에 길이 두 갈래로 나뉘어 있었다. 왼쪽으로는 색색의 산호가 미로처럼 얽혀 있고, 오른쪽으로는 키 큰 해초들이 부드럽게 흔들리고 있었다.
+>
+> 어머니의 목소리가 귓가에 들리는 듯했다. "얘야, 바다는 두 얼굴을 가졌단다. 한쪽은 노래로 말하고, 한쪽은 침묵으로 말한단다."
+>
+> 해녀는 숨이 다 떨어지기 전에 결정해야 했다.
 
 **Narration EN**:
-> The deeper she went, the darker the sea became. The haenyeo held her breath steady and pressed downward. Then — a faint blue light blinked in the dark. As she swam closer the path divided. To her left, colored corals knotted into a maze. To her right, a forest of kelp swayed in a soft current. Which way?
+> The shallow water was bright. Sunlight broke into ribbons across the sandy floor. But the deeper she went, the dimmer the world became. Five meters, ten, fifteen — past the depth her mother had taught her, into water she had never tasted before.
+>
+> Her chest was tightening when something blinked in the dark. A blue light, faint, then clearer — alive, almost breathing.
+>
+> "What is that?"
+>
+> She followed it down, and at last the path divided. To her left, branches of colored coral wove like a maze. To her right, tall kelp swayed in a long slow current.
+>
+> Her mother's voice rose from memory: "Child, the sea has two faces. One speaks in song, the other in silence."
+>
+> She had to choose before her breath was gone.
 
 **선택지**:
 - 🪸 `산호 미로로 들어간다` / `Enter the coral maze` → **Scene 3a**
@@ -529,10 +565,30 @@ lower-right, broken surface light streaming down from the top.
 **제목 en**: Chapter 3 — The Mermaid Among the Corals
 
 **Narration KO**:
-> 산호 사이로 헤엄쳐 들어가자 길이 또 갈라지고 다시 모였다. 어디선가 부드럽고 슬픈 노래가 흘러왔다. 가장 깊은 곳에 다다랐을 때, 그림자 사이로 긴 머리의 인어가 천천히 모습을 드러냈다. 인어는 두 손을 모은 채 작은 진주 하나를 내밀었다. "이것은 우리 어머니의 눈물이에요. 가지실 건가요, 돌려주실 건가요?"
+> 알록달록한 산호 사이로 헤엄쳐 들어가자, 길이 자꾸만 갈라지고 다시 모였다. 그러다 어디선가 부드럽고 슬픈 노래가 흘러왔다. 사람의 목소리도 아니고 새의 목소리도 아닌, 바다가 직접 부르는 듯한 노래였다.
+>
+> 노래를 따라 가장 깊은 곳에 다다랐을 때, 어두운 그림자 사이로 긴 머리의 인어가 천천히 모습을 드러냈다. 비늘이 달빛처럼 은은하게 빛났다.
+>
+> 인어는 두 손을 모은 채 그 안에 작은 진주 하나를 들고 있었다.
+>
+> "이것은 우리 어머니의 눈물이에요." 인어가 말했다. "오랜 세월 바다 깊은 곳을 지켜온 우리 어머니가 흘린 단 하나의 눈물. 사람들에게 주면 가장 비싼 보물이 되고, 바다에 두면 마을의 안전을 지킨답니다."
+>
+> 인어는 가만히 진주를 내밀었다.
+>
+> "가지실 건가요, 돌려주실 건가요?"
 
 **Narration EN**:
-> She slipped between the corals — paths split and rejoined. From somewhere a soft, sorrowful song drifted through the water. At the deepest place, a long-haired mermaid emerged from the shadow. She held a single small pearl out in her cupped hands. "This is my mother's tear. Will you keep it, or will you give it back?"
+> She slipped between the corals. The paths split and rejoined, split and rejoined. From somewhere a soft, sorrowful song drifted through the water — not the voice of a person, nor of a bird, but the sea singing to itself.
+>
+> At the deepest place she came to a halt. From the shadows, a mermaid with long flowing hair appeared. Her scales shone like moonlight on water.
+>
+> In her two cupped hands she held a single small pearl.
+>
+> "This is my mother's tear," the mermaid said. "Our mother has guarded the depths for many ages, and this is the one tear she has shed. To people, it would be the most precious of treasures. Kept in the sea, it keeps a village safe."
+>
+> The mermaid quietly held out the pearl.
+>
+> "Will you keep it, or will you give it back?"
 
 **다음 장면**: → Scene 4 (linear — 정통 결말로 수렴)
 
@@ -584,10 +640,26 @@ above.
 **제목 en**: Chapter 3 — The Sleeping Turtle in the Kelp
 
 **Narration KO**:
-> 해초 숲 사이를 천천히 헤엄쳐 들어가자 모든 것이 고요했다. 부드러운 물결에 해초 줄기들이 한쪽으로 길게 쏠려 있었다. 그 안쪽에 거대한 자라가 등껍질을 둥글게 말고 깊이 잠들어 있었다. 등 위로 작은 진주 하나가 맑게 빛났다. 멀리서 인어가 조용히 다가오며 입술에 손가락을 댔다. "조용히. 이건 바다가 자라에게 맡긴 거예요."
+> 해초 숲 사이로 천천히 헤엄쳐 들어가자 모든 것이 고요했다. 부드러운 물결에 해초 줄기들이 한쪽으로 길게 쏠려 있었다. 그 안쪽 깊은 곳에, 거대한 자라 한 마리가 등껍질을 둥글게 말고 깊이 잠들어 있었다.
+>
+> 자라는 너무 오래 이곳에 있었던 듯, 등껍질 위로 작은 산호가 자라고 미역이 한두 줄기 붙어 있었다. 그 등 한가운데에 작은 진주가 맑게 빛났다. 자라의 숨결에 맞춰 빛이 살짝 깜빡거리는 것 같았다.
+>
+> 해녀가 손을 뻗으려 할 때, 옆에서 인기척이 느껴졌다. 긴 머리의 인어가 조용히 다가왔다. 인어는 입술에 손가락을 가져다 댔다.
+>
+> "조용히 해 주세요. 이것은 바다가 자라에게 맡긴 거예요. 자라는 천 년 전부터 이 진주를 지키고 있어요."
+>
+> 해녀는 그 말과 자라의 평온한 잠을 번갈아 보았다.
 
 **Narration EN**:
-> She drifted between the kelp and everything went still. The kelp leaned in one slow direction with the current. In a hollow within the forest, a great sea turtle slept curled inside its dome shell. A small pearl shone clear on its back. From the distance the mermaid approached and pressed a finger to her lips. "Quiet. The sea trusted this to the turtle."
+> She swam slowly between the kelp and everything went still. The kelp leaned all in one slow direction with the current. In a hollow within the forest she found a great sea turtle, asleep on the floor with its dome shell curled around it.
+>
+> The turtle must have been there a very long time — small corals were growing on the shell and a thread of seaweed clung to one of its plates. At the very center of the shell, a small pearl shone clear. It seemed to flicker faintly, breathing with the turtle.
+>
+> She reached out — and felt someone beside her. The mermaid had drifted close. She raised one finger to her lips.
+>
+> "Quiet. The sea gave this to the turtle. He has been guarding it for a thousand years."
+>
+> The haenyeo looked from the mermaid to the turtle's peaceful sleep, and back again.
 
 **다음 장면**: → Scene 4 (linear — 정통 결말로 수렴)
 
@@ -639,10 +711,54 @@ the right, haenyeo small in upper-left.
 **제목 en**: Final — Guardian of the Sea
 
 **Narration KO**:
-> 해녀는 잠시 진주를 손바닥 위에 올려놓고 그 무게를 느꼈다. "이것은 바다의 것이지요." 그 말과 함께 진주를 다시 인어에게 돌려주었다. 그러자 바다 깊은 곳에서 푸른빛이 천천히 위로 퍼져 올라왔다. 그날부터 해녀는 바다와 마을을 잇는 수호자가 되었다. 보름달이 뜨는 밤마다 그녀는 갯바위에 앉아 인어와 만나, 마을 어부들의 안전과 바다의 풍요를 함께 빌었다.
+> 해녀는 잠시 진주를 손바닥 위에 올려놓고 그 무게를 가만히 느꼈다. 진주는 작았지만, 손바닥에 닿는 그 차가움은 바다 전체의 무게처럼 묵직했다.
+>
+> "이것은 바다의 것이지요."
+>
+> 해녀는 그 말과 함께 진주를 다시 인어에게 돌려주었다. 인어는 미소를 지으며 진주를 받아 자기 가슴 가까이 가져다 댔다.
+>
+> 그러자 — 바다 깊은 곳에서 푸른빛이 천천히 위로 퍼져 올라왔다. 처음에는 한 가닥이었다가, 곧 바닷속 모든 산호와 해초와 자라의 등껍질까지 환하게 비추었다. 해녀의 숨이 다 떨어졌다 싶은 순간, 그 빛이 그녀의 몸을 가볍게 들어 올려 수면 위로 올려주었다.
+>
+> 해녀가 갯바위 위로 올라왔을 때, 동쪽 해는 이미 높이 떠 있었다. 마치 그녀가 잠시 깊은 꿈을 꾸고 온 것 같았다. 그러나 손에 끼고 있던 어머니의 낡은 잠수경 안쪽에, 그날 본 푸른빛이 작은 별처럼 한 점 박혀 있었다.
+>
+> 그날부터 해녀는 바다와 마을을 잇는 수호자가 되었다.
+>
+> 보름달이 뜨는 밤마다 그녀는 갯바위에 나가 앉았다. 푸른 바다는 보름달 아래에서 은빛으로 빛났고, 이윽고 인어가 수면 위로 천천히 떠올랐다. 두 사람은 아무 말 없이 함께 앉아, 마을 어부들의 안전과 바다의 풍요를 빌었다.
+>
+> 그 후로 그 마을에는 큰 폭풍이 없었더라. 그물에는 늘 물고기가 가득 들어왔고, 깊은 바다에 들어간 해녀들은 모두 안전하게 돌아왔다.
+>
+> 세월이 흘러 해녀가 늙어 더 이상 잠수하지 못하게 되었을 때, 그녀의 손녀가 같은 갯바위에 앉아 같은 바다를 보았다. 손녀는 할머니의 낡은 잠수경을 손바닥에 올려 한참을 들여다보았다.
+>
+> 잠수경 안에 박힌 작은 푸른 별 한 점.
+>
+> "오늘은 더 깊은 곳까지 가봐야겠어요."
+>
+> 손녀가 중얼거리며 검은 잠수복을 단단히 여미는 그날 새벽, 갯바위 너머 바다 깊은 곳에서 인어가 조용히 미소 짓고 있었더라.
 
 **Narration EN**:
-> The haenyeo held the pearl in her open palm and felt its weight. "This belongs to the sea." With those words she gave it back to the mermaid. From the depths, a blue light slowly spread upward. From that day she became a guardian — one foot in the village, one in the sea. Every full-moon night she sat on the shore-rock and met the mermaid, and together they prayed for the safety of the fishermen and the kindness of the tides.
+> The haenyeo laid the pearl on her open palm and felt its weight. It was a small thing, but cold against her skin in the way the whole sea is cold — heavy as all the deep water that had ever been.
+>
+> "This belongs to the sea."
+>
+> With those words she gave the pearl back. The mermaid smiled, took it, and drew it close to her heart.
+>
+> And then — from far below, a soft blue light began to spread upward. First a single thread, then every coral, every kelp frond, every sleeping turtle's shell, all aglow. Just as her breath was about to fail, the light lifted her gently to the surface.
+>
+> When she climbed back onto the shore-rock, the sun was already high. It felt as though she had returned from a long quiet dream. But inside the lenses of her mother's old goggles, a small blue point of light — like a single star — had set there forever.
+>
+> From that day on, the haenyeo became a guardian between the village and the sea.
+>
+> On every full-moon night she went out to the shore-rock. The sea shone silver under the moon, and the mermaid would rise slowly to the surface. The two of them would sit together without speaking, praying for the fishermen's safety and the ocean's kindness.
+>
+> After that, no great storm came to the village. The nets returned heavy with fish. The haenyeo who went into deep water all came back alive.
+>
+> Years passed, and when the haenyeo grew too old to dive, her granddaughter came to sit on the same shore-rock and watch the same sea. The girl held the grandmother's old goggles in her palm and gazed at them a while.
+>
+> A small blue star, fixed inside the lens.
+>
+> "Today I will go a little deeper."
+>
+> The granddaughter fastened the goggles and drew on her dark diving suit. And far below, in the dawn-blue depths, the mermaid was quietly smiling.
 
 **Ending Label**: 🌊 `바다의 수호자 — 정통 결말` / `Guardian of the Sea — the canonical ending`
 
