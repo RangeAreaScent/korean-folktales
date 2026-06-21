@@ -42,20 +42,35 @@ DECORATIVE BORDER — every scene MUST include this identical frame
   * Outer rectangle ~60px from canvas edges
   * Inner rectangle ~14px inside the outer (parallel to it)
   * Both UNBROKEN, going fully around all four sides — never dashed, never gapped
+  * The parallel lines RUN STRAIGHT through the corner areas behind/under the
+    corner motifs. The corner ornament is layered ON TOP — it does NOT break
+    the parallel lines.
   * Same uniform black stroke as the rest of the line art
-- FOUR CORNER MOTIFS: small geometric right-angle meander pattern (반자 무늬) at each corner only:
-  * Each corner motif ~70×70px, sitting in the space inside the inner border line
-  * Geometric ONLY — nested right-angle hooks, like a small "L" turning into another "L" inward, 2-3 right-angle steps
-  * NO curls, NO spirals, NO curves — pure right-angle geometry, like a tiny Greek-key fragment confined to the corner
-- The four SIDES of the border are PLAIN — no repeating pattern, just the two clean parallel lines
+- FOUR CORNER MOTIFS — SMALL and SIMPLE:
+  * Each corner ornament fits inside a ~50×50px box at each corner (smaller
+    than before so the parallel lines visually dominate)
+  * Two or three nested square-step right-angle hooks (반자 무늬 fragment)
+    — like a small "ㄱ" shape stepping inward
+  * NO curls, NO spirals, NO curves, NO intricate filigree — keep them
+    quiet enough that the eye still reads "double rectangle frame first,
+    decorative corners second"
+- The four SIDES of the border are PLAIN — no repeating pattern, just the
+  two clean parallel lines visible the whole way around
 - Border itself is line-art only (no fills, no shading)
-- The border closes off any subject line that would otherwise reach the canvas edge
-- Subject illustration sits entirely INSIDE this border with ~40px breathing room
+- The border closes off any subject line that would otherwise reach the
+  canvas edge
+- Subject illustration sits entirely INSIDE this border with ~40px breathing
+  room
 - Same border on EVERY scene of EVERY story — brand-level consistency
 
 REJECT and re-render if:
-- The parallel border lines are broken, dashed, or have gaps (must be continuous)
-- The corner motifs use curves, curls, or spirals (must be right-angle hooks)
+- The parallel border lines are broken, dashed, or visibly stop at the
+  corners. They must be visibly continuous all the way around — including
+  passing through the corner regions.
+- The corner motifs are large or busy enough that the parallel lines look
+  "absorbed" into them — shrink/simplify the corner ornaments.
+- The corner motifs use curves, curls, or spirals (must be right-angle
+  hooks only)
 - A repeating pattern runs along the four sides (sides must be plain lines)
 
 COMPOSITION
@@ -70,11 +85,69 @@ ART STYLE
 - Hanbok-clad children, traditional Korean architectural elements (한지문, 초가집, 한옥 지붕, 장독, 우물, 호롱불, 소나무, 수수밭) when relevant.
 
 DETAIL LEVEL — DO NOT oversimplify CHARACTERS or ARCHITECTURE
-- Hanbok must show: collar (깃) line, ribbon (고름), sleeve cuff line, gathered hem fold line — at minimum 4–5 visible garment lines per character. NOT a plain dress silhouette.
-- Faces must show: eyes with iris + pupil circles, small nose line, mouth line, hair strands (3–5 lines), ear shape.
-- Architecture must show: wood grain lines on doors, individual paper panels (한지문 grid pattern), roof straw texture (slanted lines), woven basket pattern (criss-cross weave), oil lamp wick + flame shape.
-- Target: a 5-year-old should see "many things to color" — at least 12–15 distinct enclosed regions per scene.
-- AVOID the "minimal flat sticker" look. Aim for "traditional Korean picture book illustration".
+(These minima are HARD requirements. An image that misses any of these
+is rejected and re-rendered.)
+
+CHARACTER FACES — every visible character face MUST show:
+- Two eyes EACH with an outer eye shape + a clearly drawn iris (round shape
+  inside the eye) + a small pupil dot in the iris. NOT just dots, NOT just
+  closed-eye curves (unless the character is sleeping).
+- A small nose line (one short curved or angled line — not absent).
+- A mouth line (one curve for closed/smiling, or a small oval for speaking).
+- 3–5 hair strand lines visible (not a flat helmet of hair).
+- Ear shape on the side (one simple ear curve).
+- For characters facing front: both eyes visible. For 3/4 view: at least one
+  full eye + nose bridge hint.
+
+GARMENTS — hanbok / diving suit / robes MUST show at least 4–5 internal
+lines, including:
+- Collar line (깃) — the V-shaped or rounded neckline edge
+- Ribbon (고름) on hanbok — the bow tie at chest
+- Sleeve cuff line — where the sleeve ends at the wrist
+- Hem line — where the garment ends at the leg/ankle, with at least 2-3
+  gathered fold lines
+- One belt / sash line at the waist if the garment has one
+- For diving suit / fitted clothing: a neckline + sleeve cuff + waist seam +
+  ankle cuff = 4 lines minimum. NEVER render fitted clothing as a single
+  flat silhouette without internal lines.
+
+ARCHITECTURE — built elements MUST show internal structure:
+- Doors: wood grain (2-4 vertical lines) and any paper panel grid
+- Korean thatched roof: slanted straw lines across the roof surface
+- Jeju traditional house (제주 초가): ROPE GRID pattern criss-crossing the
+  thatch (this is the distinctive Jeju feature — REQUIRED when a Jeju
+  house appears, not a generic dome)
+- Stone wall (돌담): individual stones clearly outlined as separate regions
+- Basket / net bag: criss-cross weave pattern visible
+- Oil lamp (호롱불): bowl + visible wick + flame shape, not just a glow blob
+
+PROPS — Korean tool/object specifics (Gemini often substitutes Western
+equivalents — call these out explicitly):
+- 빗창 (bitchang, haenyeo's diving hook): a SHORT CURVED METAL HOOK with a
+  wooden handle, ~30cm long. NOT a ship's anchor, NOT a fish hook. Looks
+  like a small sickle or pry bar with a curved point. If the prompt mentions
+  bitchang, say "small curved metal hook (NOT a ship's anchor)".
+- 테왁 (tewak): orange ROUND buoy with a net bag below. NOT a fishing float
+  on a line.
+- 호롱불: small oil bowl with a single wick sticking up + a flame.
+- 지게 (A-frame carrier): wooden A-shape on the back, NOT a backpack.
+- 동아줄 (dong-a-jul): thick BRAIDED rope, NOT a smooth single rope.
+
+TARGET: a 5-year-old should see "many things to color" — at least 12–15
+distinct enclosed regions per scene. AVOID the "minimal flat sticker"
+look. Aim for "traditional Korean picture book illustration with delicate
+line work".
+
+COMMON MISSES — explicitly check before accepting an image:
+1. Are the character's eyes just two dots? → reject. Iris + pupil required.
+2. Does the diving suit / hanbok have ZERO seam lines? → reject. 4-5 lines
+   required.
+3. Did Gemini substitute a ship's anchor for the bitchang hook? → reject
+   and specify "small curved metal hook, not an anchor".
+4. Are the Jeju houses smooth domes without rope-grid texture? → reject and
+   call out 제주 초가 rope grid explicitly.
+5. Is the border ornament so busy that the parallel lines disappear into
+   the corner? → reject and demand simpler corner motifs.
 
 GROUPED NATURAL TEXTURES — DO NOT oversummate small elements
 Natural textures with many small repeating units (tree foliage, pine needles, grass, leaves, water ripples, grain stalks, clouds, stars) MUST be drawn as a few LARGE grouped clusters, NOT as individual elements. The colorist should be able to fill each group with ONE click.
@@ -101,24 +174,41 @@ OUTPUT
 
 ## 🔁 결과물 검수 체크리스트 (각 PNG 받자마자)
 
+**선 기본**
 1. **줌 인 (300%)** — 모든 윤곽선 닫혀 있나? 두 선이 만나는 곳에 갭이 있으면 ❌ → 재생성
 2. **자동 색칠 테스트** — 인접 영역 한 곳에 단색으로 바켓 채우기 시도. 의도하지 않은 영역까지 색이 새면 ❌
 3. **스트로크 두께** — 같은 굵기인가? 어떤 선만 가늘면 그 부분에서 누출 위험 → 재생성
-4. **검정 채움** — 솔리드 검정 영역 있으면 ❌. 칠할 곳을 닫아버림
-5. **그림자/해칭** — 회색 점·선 있으면 ❌. 채색 시 톤 충돌
-6. **보더 프레임** — 한국 반자 무늬 + 4코너 메달리온, 60px 안쪽에 균일하게 있나?
-7. **흰 여백** — 보더 안쪽 최소 5% 여백 있나?
-8. **연결되지 않은 선** — 어디에 닿지도 않고 멈춘 짧은 선이 있으면 ❌
-9. **워터마크/사인** — 어디에도 없어야 함
+
+**금지 사항**
+4. **검정 채움** — 솔리드 검정 영역 있으면 ❌
+5. **그림자/해칭** — 회색 점·선 있으면 ❌
+6. **워터마크/사인** — 어디에도 없어야 함
+
+**보더 (외각 프레임)**
+7. **연속성** — 두 평행 사각선이 네 변 모두 끝까지 명확하게 보이나? 코너에서 흐름이 끊긴 듯 보이면 ❌ → 재생성하며 코너 ornament 더 작게 (~50×50px)
+8. **코너 디자인** — 4코너 ornament가 직각 반자(L-step)뿐인가? 곡선이 섞이면 ❌
+9. **여백** — 보더 안쪽 최소 5% 여백 있나?
+
+**캐릭터 디테일 (가장 자주 빠지는 부분)**
+10. **얼굴** — 모든 인물 얼굴에 ◯ 외곽 + 홍채 + 동공 + 코 라인 + 입 라인 + 머리카락 3-5선 + 귀 형태가 있나? 눈이 점 두 개뿐이면 ❌
+11. **의상** — 한복/잠수복에 4-5선 (깃·고름·소맷부리·치마단·허리선)이 다 보이나? 단순 실루엣이면 ❌
+12. **소품 정확성** — 빗창이 닻으로, 테왁이 일반 부표로, 지게가 백팩으로 등 서구 도구로 대체된 곳 없나?
+13. **건축 디테일** — 문 나무결, 한지문 격자, 제주 초가 로프 격자, 돌담 개별 돌 윤곽 등 살아있나?
+
+→ 한 항목이라도 ❌면 재생성. 후속 프롬프트 스니펫은 아래 참고.
 
 → 한 항목이라도 ❌면 재생성. 후속 프롬프트 한 줄 추가 팁:
 - 닫히지 않은 선이 있을 때: `"Re-render. Every outline MUST close — overlap meeting strokes by 4px or more."`
 - 회색·해칭이 섞일 때: `"Re-render. Remove all gray fills, hatching, and shading. Only pure black outlines on pure white."`
 - 솔리드 검정이 나올 때: `"Re-render. NO filled black regions — silhouettes must be hollow outlines only."`
-- 보더 없거나 불규칙할 때: `"Re-render. Add a border 60px from each edge: TWO CONTINUOUS thin parallel rectangle lines (~14px apart, unbroken all the way around) plus a small right-angle meander hook (~70×70px) at each of the 4 corners only. NO pattern along the sides."`
-- 보더 선이 끊겨 있을 때: `"Re-render. The two parallel border rectangles must be CONTINUOUS lines all the way around — no dashes, no gaps. Only the 4 corner motifs are separate."`
+- 보더 없거나 불규칙할 때: `"Re-render. Add a border 60px from each edge: TWO CONTINUOUS thin parallel rectangle lines (~14px apart, unbroken all the way around — they must pass STRAIGHT through the corner regions). Add small right-angle meander hooks (~50×50px) at each of the 4 corners only, sitting OVER the parallel lines without breaking them. NO pattern along the sides."`
+- 보더 선이 코너에서 흐름 끊긴 듯 보일 때: `"Re-render. The two parallel border rectangles must visibly continue STRAIGHT through every corner. Shrink the corner ornaments to ~50×50px and keep them simple (2-3 nested right-angle hooks only) so they sit OVER the lines instead of absorbing them."`
 - 코너에 곡선이 나올 때: `"Re-render. The 4 corner motifs must be RIGHT-ANGLE geometric hooks only (반자 무늬) — small nested L-shapes turning inward. NO curls, NO spirals, NO curves."`
-- 그림이 너무 단순할 때: `"Re-render with more detail. Hanbok must show collar, ribbon, sleeve cuff, and hem lines. Faces must show iris pupils, nose, mouth, hair strands, ears. Architectural elements need wood grain, paper panel grids, and weave patterns. Add background environment details (ground texture, individual leaves/flowers). Target 12-15 distinct enclosed regions per scene."`
+- 인물 얼굴이 너무 단순할 때 (점 두 개 눈): `"Re-render. Every character face must show: two eyes EACH with an outer eye shape + iris circle + pupil dot, a nose line, a mouth line, 3-5 hair strand lines, and an ear shape. NOT just dots for eyes."`
+- 의상에 라인이 없을 때 (밋밋한 실루엣): `"Re-render. The character's hanbok/diving suit must show at least 4-5 internal lines: collar/neckline, ribbon or sash, sleeve cuff, hem with fold lines, waist seam. NOT a flat silhouette."`
+- Gemini가 빗창을 닻으로 그릴 때: `"Re-render. Replace the anchor with a 빗창 (bitchang) — a small curved metal hook with a short wooden handle, like a small sickle or pry bar. NOT a ship's anchor."`
+- 제주 초가집이 그냥 둥근 돔으로 나올 때: `"Re-render the Jeju thatched houses (제주 초가) with their distinctive ROPE GRID pattern criss-crossing over the thatch — a network of straight rope lines forming a wide square grid across the roof. This is the signature Jeju feature."`
+- 그림이 너무 단순할 때 (전체적으로): `"Re-render with more detail. Apply ALL the DETAIL LEVEL rules strictly: faces with iris+pupil+nose+mouth+hair+ears; garments with 4-5 seam lines; architecture with wood grain / paper panels / rope grids / weave patterns. Target 12-15 distinct enclosed regions per scene."`
 
 ---
 
