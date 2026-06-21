@@ -1,37 +1,46 @@
 # Korean Folktales — Coloring Storybook · Handoff
 
-> **읽기 시간 ~10분** · 이 문서는 새 세션 시작 시 컨텍스트를 즉시 잡기 위함.
-> 코드를 만지기 전에 §1·§2·§7만 먼저 훑고, 막힐 때 §8·§9 참조하세요.
+> **읽기 시간 ~12분** · 새 세션 시작 시 컨텍스트를 즉시 잡기 위함.
+> 코드 만지기 전에 §1·§2·§3·§9만 먼저 훑고, 막힐 때 §10·§11 참조하세요.
 
 ---
 
 ## 1. 한 줄 요약
 
 **Korean Folktales — A Bilingual Coloring Storybook.**
-미국 시장(K-content 관심층 + 자녀 둔 부모)을 타깃으로 한 **분기형 한국 옛이야기 색칠 책** 웹앱.
-사용자가 클릭으로 영역을 채워나가며 스토리 선택지를 골라 자기만의 그림책을 완성하면, PDF/PNG로 내보내고 갤러리에 저장된다.
+미국·글로벌 K-content 관심층 + 자녀 둔 부모 타깃 **분기형 한국 옛이야기 색칠 책** 웹앱.
+8개 옛이야기 × 5장면 = 40 도안 · 한/영 이중언어 · 클릭 wavefront 색칠 · PDF/PNG 공유 · 갤러리.
+
+**라이브**: https://koreanfolktales.ink
+**GitHub**: https://github.com/RangeAreaScent/korean-folktales
+**Vercel 프로젝트**: `korean-folktales` (rangeareascent-s-projects)
 
 핵심 차별점:
-1. **8개의 한국 전래동화** (8 스토리 × 5 장면 = 40 도안)
+1. **8 한국 전래동화** (해님 달님·해녀와 인어·선녀와 나무꾼·혹부리 영감·콩쥐와 두꺼비·별주부전·흥부와 놀부·금도끼 은도끼)
 2. **이중언어 (한/영)** — 콘텐츠 + UI 전부, localStorage 기억
-3. **🔊 한국어 발음** (Web Speech API) — 부모·아이 교육 가치
-4. **인스타 친화 4:5 공유 이미지** + Web Share API
-5. **갤러리** — 완성작 자동 저장, 재공유
+3. **🔊 한국어 발음** (Web Speech API)
+4. **인스타 친화 4:5 공유 이미지** + 페이지별 공유 + Web Share API
+5. **갤러리** — localStorage 12권 cap, 재공유/삭제
+6. **플립북 캐러셀** — 완성 후 표지 + 각 장면 좌우 슬라이드
+7. **분기 + 정통 결말** (PROMPTS_V2 콘텐츠) — Y구조 4막 (1·2 공통 → 3 분기 → 4 정통)
 
 ---
 
-## 2. 현재 버전 · v0.6
+## 2. 현재 버전 · v0.7
 
 | 분야 | 상태 |
 |---|---|
-| 콘텐츠 | 8 스토리 모두 도안 완성 (40장) |
-| 인터랙션 | 클릭 wavefront 채우기 · 그라데이션 3종 · undo · 줌(휠+버튼+핀치) · pan(Space/2손가락) · 풀스크린 |
-| 사운드 | plop · page turn · chime + 한국어 발음 + 음소거 토글 |
-| 출력 | PDF (전체 그림책) + PNG (Instagram 4:5 커버) + Web Share |
-| 갤러리 | localStorage 12권 cap, 픽커 상단 carousel, 재공유/삭제 |
-| 모바일 | 좌우 풀폭 캔버스 + bottom sheet 팔레트 (peek + 확장) |
-| 타이포 | Gowun Batang display tier (60px+) · Geist sans · Geist mono |
-| 타깃 환경 | Next.js 16, React 19, Tailwind 4 (Turbopack) |
+| **콘텐츠 (V1)** | 8 스토리 × 5장면 = 40 도안 라이브, story.ts에 narration·glossary·originalTale 모두 입력 완료 |
+| **콘텐츠 (V2 진행중)** | `PROMPTS_V2.md`에 8 스토리 풍부 narration + Gemini 프롬프트 완성. 실제 PNG 재생성 대기 |
+| **앱 코어** | 클릭 wavefront · 그라데이션 3종 · undo · 줌(휠+버튼+핀치) · pan(Space/2손가락) · 풀스크린 · 누출 감지 |
+| **사운드** | water-droplet plop (5음 펜타토닉 랜덤) · page turn · chime + 한국어 발음 + 음소거 토글 |
+| **출력** | PDF (표지+장면별+엔딩) + PNG (Instagram 4:5 표지/장면별) + Web Share |
+| **갤러리** | localStorage 12권 cap, 픽커 상단 carousel, 재공유/삭제 |
+| **최종 뷰** | 플립북 캐러셀 (표지 + 각 장면 좌우 슬라이드 0.5s ease-out, 키보드 ←/→, 도트 인디케이터, 페이지별 share) |
+| **모바일** | 좌우 풀폭 캔버스 + bottom sheet 팔레트 (peek + 확장) |
+| **타이포** | Gowun Batang display tier (60px+) · Geist sans · Geist mono |
+| **인프라** | Next.js 16, React 19, Tailwind 4 (Turbopack), Vercel 자동 배포 |
+| **분석/SEO** | Vercel Analytics · GSC verified (URL prefix) · sitemap.xml · robots.txt · OG image · 호랑이 favicon · 8 SEO 페이지 |
 
 ---
 
@@ -40,104 +49,128 @@
 ```
 src/
 ├── app/
-│   ├── layout.tsx           providers + floating cluster (sound/locale)
-│   ├── page.tsx             메인 게임 페이지 (1100+ lines, PDF/PNG export 함수 포함)
-│   ├── globals.css          Tailwind @theme — display 폰트 변수
-│   └── favicon.ico
+│   ├── layout.tsx                  providers + floating cluster + metadata + Analytics
+│   ├── page.tsx                    메인 게임 페이지 (~1100 lines, PDF/PNG export 포함)
+│   ├── globals.css                 Tailwind @theme + narration-scroll 스타일
+│   ├── icon.png                    favicon (32px tiger)
+│   ├── apple-icon.png              iOS home icon (180px tiger)
+│   ├── opengraph-image.tsx         동적 OG (1200×630)
+│   ├── robots.ts                   /robots.txt
+│   ├── sitemap.ts                  /sitemap.xml (11 URL)
+│   ├── about/page.tsx              About 페이지 (한/영)
+│   ├── privacy/page.tsx            Privacy 페이지 (한/영)
+│   └── folktales/[slug]/page.tsx   8 SEO 페이지 (모달과 동일 콘텐츠 + Other folktales cross-links)
 ├── lib/
-│   ├── story.ts             ⭐ 8 스토리 데이터 (bilingual + originalTale)
-│   ├── i18n.tsx             LocaleProvider + useLocale + Localized type
-│   ├── strings.ts           UI 문자열 사전 (~60개)
-│   ├── colors.ts            8 테마 + harmony/contrast 알고리즘 + HSL 변환
-│   ├── floodfill.ts         wavefront 애니메이션 + 3 fill style
-│   ├── sound.ts             Web Audio 절차적 합성 (plop/pageTurn/chime)
-│   ├── sound-provider.tsx   SoundProvider + useSound hook
-│   └── gallery.ts           localStorage 저장 (저장/조회/삭제/포맷)
+│   ├── story.ts                    ⭐ 8 스토리 데이터 (bilingual + originalTale + STORY_SLUGS)
+│   ├── i18n.tsx                    LocaleProvider + useLocale + Localized type
+│   ├── strings.ts                  UI 문자열 사전 (~80개)
+│   ├── colors.ts                   8 테마 + harmony/contrast + HSL
+│   ├── floodfill.ts                wavefront 애니메이션 + 3 fill style + 누출 감지 (maxFillRatio)
+│   ├── sound.ts                    Web Audio 절차적 합성 (water-drop plop / pageTurn / chime)
+│   ├── sound-provider.tsx          SoundProvider + useSound hook
+│   └── gallery.ts                  localStorage 12 책 저장 + 포맷
 ├── components/
-│   ├── StoryPicker.tsx      픽커 (갤러리 + 8 카드 그리드)
-│   ├── ColoringCanvas.tsx   캔버스 + 플로팅 툴바 + 줌/팬/핀치/풀스크린
-│   ├── ColorPalette.tsx     데스크탑 사이드바 팔레트
-│   ├── MobilePaletteSheet.tsx 모바일 bottom sheet (peek + 확장)
-│   ├── OriginalTaleModal.tsx 원작 옛이야기 팝업 (Web Speech 한글 발음)
-│   ├── SavedBookViewer.tsx  갤러리 책 보기 모달 (재공유·삭제)
-│   ├── LocaleToggle.tsx     한/ENG 토글
-│   └── SoundToggle.tsx      🔊/🔇 토글
-└── (no test files yet)
+│   ├── StoryPicker.tsx             픽커 (갤러리 carousel + 8 카드 + trust pills + About/Privacy 푸터)
+│   ├── ColoringCanvas.tsx          캔버스 + 플로팅 툴바 + 줌/팬/핀치/풀스크린
+│   ├── ColorPalette.tsx            데스크탑 사이드바 팔레트
+│   ├── MobilePaletteSheet.tsx      모바일 bottom sheet (peek + 확장)
+│   ├── OriginalTaleModal.tsx       원작 모달 (Web Speech 발음 + Start coloring + View as page)
+│   ├── SavedBookViewer.tsx         갤러리 책 보기 (재공유·삭제)
+│   ├── LocaleToggle.tsx            한/ENG
+│   └── SoundToggle.tsx             🔊/🔇
 
 public/
 └── coloring/
-    ├── PROMPTS.md           Gemini용 도안 프롬프트 (8 스토리 × 5장 + 베이스)
-    ├── folktale/            해님 달님    (start, forest, well, ending-sky, ending-mountain)
-    ├── haenyeo/             해녀와 인어  (start, coral, kelp, ending-guardian, ending-village)
-    ├── woodcutter/          선녀와 나무꾼 (start, sage, forest, ending-sky, ending-mountain)
-    ├── dokkaebi/            혹부리 영감  (start, sing, hide, ending-blessing, ending-wander)
-    ├── kongjwi/             콩쥐와 두꺼비 (start, toad, cow, ending-banquet, ending-village)
-    ├── byeoljubu/           별주부전     (start, palace, forest, ending-clever, ending-honor)
-    ├── heungbu/             흥부와 놀부  (start, swallow, greed, ending-blessing, ending-lesson)
-    └── woodman/             금도끼 은도끼 (start, trial, temptation, ending-share, ending-quiet)
+    ├── PROMPTS.md                  V1 도안 프롬프트 (참고용)
+    ├── PROMPTS_V2.md               ⭐ V2 풍부 narration + Y구조 + 보더 스펙 (모든 8 스토리)
+    ├── ICON_PROMPTS.md             스토리 카드 아이콘 프롬프트 (Gemini 생성용)
+    ├── 01-folktale/                해님 달님    (start, forest, well, ending-sky, ending-mountain)
+    ├── 02-haenyeo/                 해녀와 인어
+    ├── 03-woodcutter/              선녀와 나무꾼
+    ├── 04-dokkaebi/                혹부리 영감
+    ├── 05-kongjwi/                 콩쥐와 두꺼비
+    ├── 06-byeoljubu/               별주부전
+    ├── 07-heungbu/                 흥부와 놀부
+    ├── 08-woodman/                 금도끼 은도끼
+    ├── icons/                      8 라인아트 카드 아이콘 (storyId.png, 투명 배경)
+    └── Backup_v1/                  v0.6 시점 모든 도안 백업 (git tag v0.6-scenes-original 와 동일)
 
-Start.command                Mac 더블클릭으로 dev 서버 + 브라우저 자동 오픈
-HANDOFF.md                   ← 이 문서
-AGENTS.md / CLAUDE.md        기존 프로젝트 메타
+루트 (꼭 알 것):
+HANDOFF.md                       이 문서
+PINTEREST_PLAYBOOK.md            Pinterest 마케팅 전략 (11 섹션)
+README.md                        Next.js 기본
+AGENTS.md / CLAUDE.md            프로젝트 메타
+Start.command                    Mac 더블클릭 → dev + 브라우저
+.screenshots/                    🔻 모든 스크린샷/디버그 PNG는 여기로 (gitignore)
+.backups/coloring-v0.6/          v0.6 도안 로컬 백업 (gitignore)
 ```
 
 ---
 
 ## 4. 핵심 기술 결정 (Why these?)
 
-### 4.1 i18n — **custom Context, not next-intl**
-- **선택 이유**: 안정성 최우선. 의존성 0, 라우팅 변경 없음, 2개 언어 + 유한 콘텐츠라 단순함이 답.
-- **구조**: `Localized = { ko: string; en: string }` 타입을 모든 콘텐츠/UI 문자열에 적용. `useLocale()`로 `t({ko, en})` 호출.
-- **저장**: `localStorage[coloring-storybook:locale]`. 첫 방문은 `navigator.language`로 자동 감지.
+### 4.1 i18n — custom Context, not next-intl
+- 안정성·간결성 우선. 의존성 0, 2개 언어 + 유한 콘텐츠.
+- `Localized = { ko: string; en: string }` 타입 모든 콘텐츠/UI에 적용.
+- localStorage `coloring-storybook:locale` + `navigator.language` 자동 감지.
 
-### 4.2 사운드 — **Web Audio API 절차적 합성**
-- **선택 이유**: 오디오 파일 0개, 번들 사이즈 증가 0, 로딩/CORS 이슈 0. 모든 모던 브라우저 안정 지원.
-- **구조**: `sound.plop()` 등 직접 호출. AudioContext는 첫 사용자 클릭에서 자동 unlock.
-- **사운드 종류**: plop (~140ms sine sweep), pageTurn (~220ms 노이즈), chime (~750ms 삼화음)
+### 4.2 사운드 — Web Audio 절차적 합성
+- 오디오 파일 0개, 번들 증가 0, 로딩/CORS 0.
+- `plop()`은 물방울 톤 (5음 펜타토닉 C4-A4 랜덤 + 직후 sub-octave)
+- pageTurn (~220ms 노이즈), chime (~750ms 삼화음)
 
-### 4.3 한글 발음 — **Web Speech API**
-- `speechSynthesis.speak(utter)` with `lang = "ko-KR"`, `rate = 0.85`.
-- 원작 모달의 단어 옆 🔊 버튼.
+### 4.3 한글 발음 — Web Speech API
+- `speechSynthesis.speak(utter)` `lang = "ko-KR"`, `rate = 0.85`
 
-### 4.4 PDF/PNG export — **jspdf + html2canvas (동적 import)**
-- 동적 import로 메인 번들 안 키움.
-- PDF: A4, 표지 + 장면별 (narration + 선택 기록) + 엔딩, ~1.5MB
-- PNG: 4:5 (1080×1350) Instagram-native 커버, html2canvas로 렌더, ~700KB-1MB
+### 4.4 PDF/PNG export — jspdf + html2canvas (동적 import)
+- 동적 import로 메인 번들 안 키움
+- PDF: A4 표지+장면별 ~1.5MB
+- PNG: 1080×1350 Instagram 4:5
+- **표지 + 장면별 share 둘 다 지원** (page.tsx에 `generateShareImage` + `generateScenePng`)
 
-### 4.5 갤러리 — **localStorage with FIFO eviction**
-- key: `coloring-storybook:books:v1`
-- 12권 cap. 저장 실패 시 가장 오래된 책 evict 후 재시도.
-- 각 책: shareImage(dataURL) + 메타. **모든 장면 이미지는 안 저장** (용량 이슈).
+### 4.5 갤러리 — localStorage FIFO
+- `coloring-storybook:books:v1` 12권 cap, quota error 시 자동 evict
+- 표지 dataURL + 메타만 저장 (모든 장면 X)
 
-### 4.6 폰트 — **Gowun Batang via next/font/google**
-- `--font-gowun` → `--font-display` 변수로 노출
-- 영문/한글 모두 우아한 명조체. 픽커 타이틀 60px, 카드 26px, 모달 5xl.
+### 4.6 폰트 — Gowun Batang via next/font
+- `--font-gowun` → `--font-display`
 
-### 4.7 폴더 구조 — **`{storyId}/{sceneId}.png`**
-- 이전: 평면 `scene-{shortcode}-{name}.png` (편집 시 흩어짐)
-- 이후: 계층 (편집·교체 용이, 새 스토리 추가 시 폴더 하나만)
+### 4.7 폴더 구조 — `{NN}-{storyId}/{sceneId}.png`
+- v0.7부터 숫자 prefix (01-folktale, …, 08-woodman) — 파일 시스템 순서가 캐논 순서 일치
+
+### 4.8 누출 감지 — floodfill.ts
+- `maxFillRatio: 0.55` 기본 — 한 클릭이 캔버스 55% 넘게 칠하면 abort + 친절한 hint
+- 끊긴 선으로 색이 페이지 전체로 새는 것 차단
+
+### 4.9 플립북 캐러셀
+- `transition-transform duration-500 ease-out` 으로 부드러운 슬라이드
+- 키보드 ←/→ + 도트 인디케이터 + pageTurn 사운드
+- 표지 + N장 + 페이지별 share 버튼
+
+### 4.10 V2 narration 스크롤
+- 옛이야기 톤 narration이 길어서 카드 안에 max-h 36vh + 상/하 페이드 마스킹 + 멀티-paragraph (\\n\\n split)
+- `globals.css`에 `.narration-scroll` 클래스
 
 ---
 
 ## 5. 스토리 8권 명세
 
-| ID | 한국어 | 영어 | 5 Scene IDs | 분기 구조 |
-|---|---|---|---|---|
-| `folktale` | 해님 달님 | Sun and Moon | start → forest/well → ending-sky/ending-mountain | 호랑이 피해 도망 |
-| `haenyeo` | 해녀와 인어 | The Haenyeo and the Mermaid | start → coral/kelp → ending-guardian/ending-village | 진주 둘러싼 모험 |
-| `woodcutter` | 선녀와 나무꾼 | The Fairy and the Woodcutter | start → sage/forest → ending-sky/ending-mountain | 사슴·선녀 만남 |
-| `dokkaebi` | 혹부리 영감 | The Old Man and the Goblins | start → sing/hide → ending-blessing/ending-wander | 도깨비 잔치 |
-| `kongjwi` | 콩쥐와 두꺼비 | Kongjwi and the Toad | start → toad/cow → ending-banquet/ending-village | 깨진 항아리 |
-| `byeoljubu` | 별주부전 | The Hare and the Dragon King | start → palace/forest → ending-clever/ending-honor | 토끼·자라·용궁 |
-| `heungbu` | 흥부와 놀부 | Heungbu and Nolbu | start → swallow/greed → ending-blessing/ending-lesson | 제비·박씨 |
-| `woodman` | 금도끼 은도끼 | The Gold Axe and the Silver Axe | start → trial/temptation → ending-share/ending-quiet | 산신령 시험 |
+| # | Slug (folder) | 한국어 | 영어 | 분기 (V2) | 정통 결말 |
+|---|---|---|---|---|---|
+| 1 | `01-folktale` (`sun-and-moon`) | 해님 달님 | Sun and Moon | 손 보여달라 / 자장가 부르라 | 두 동아줄·수수밭·해/달 부끄럼 자리 바꿈 |
+| 2 | `02-haenyeo` (`haenyeo-and-the-mermaid`) | 해녀와 인어 | Haenyeo and Mermaid | 산호 미로 / 해초 숲 | 진주 반환·수호자·잠수경 안 푸른 별·손녀 대잇기 |
+| 3 | `03-woodcutter` (`fairy-and-the-woodcutter`) | 선녀와 나무꾼 | Fairy and Woodcutter | 산속 오두막 / 마을 어머니 곁 | 두레박·하늘 가족·새벽 빛이 된 그리움 |
+| 4 | `04-dokkaebi` (`old-man-and-the-goblins`) | 혹부리 영감 | Old Man and Goblins | 흥겨운 마을 노래 / 어머니 자장가 | 혹 떼임·보물·욕심쟁이 혹 두 개 |
+| 5 | `05-kongjwi` (`kongjwi-and-the-toad`) | 콩쥐와 두꺼비 | Kongjwi and Toad | 베틀 + 참새 / 검은 소의 선물 | 꽃신 짝·사또·계모 가족 용서 |
+| 6 | `06-byeoljubu` (`hare-and-the-dragon-king`) | 별주부전 | Hare and Dragon King | 자라 따라 용궁 / 까치 귀띔 | 토끼 기지·산삼·우정 |
+| 7 | `07-heungbu` (`heungbu-and-nolbu`) | 흥부와 놀부 | Heungbu and Nolbu | 가족과 보살핌 / 어머니 약방문 | 박씨·도깨비·산신·형제 화해 |
+| 8 | `08-woodman` (`gold-axe-and-silver-axe`) | 금도끼 은도끼 | Gold and Silver Axe | 단호한 정직 / 흔들림 포함 정직 | 세 도끼·욕심쟁이 빈 손 |
 
-모든 스토리에 `originalTale` 메타데이터 포함:
-- `koreanTitle`, `romanized`, `englishTitle`
-- `origin` (Localized) — 언제·어디서 전해진
-- `summary` (Localized) — 아이용 줄거리
-- `glossary[]` — 한글·romanized·발음·의미 (Localized)
-- `ourVersion` (Localized) — 원작과 우리 분기의 차이
+**Y구조** (V2 적용 후): 1·2 공통 → 3 분기 (3a/3b) → 4 정통 결말. 한 회 플레이 = 4 장면.
+**현재 라이브** (V1): 1 → 2a/2b → 3a/3b (분기 엔딩 2개). PROMPTS_V2 도안 생성 후 story.ts 마이그레이션 필요.
+
+각 스토리 `originalTale`에 `koreanTitle / romanized / englishTitle / origin / summary / glossary[] / ourVersion`.
+**Slug 매핑**: `STORY_SLUGS` in `src/lib/story.ts` (URL용 영문 친화 슬러그)
 
 ---
 
@@ -145,89 +178,95 @@ AGENTS.md / CLAUDE.md        기존 프로젝트 메타
 
 ```
 [Picker]
-   ├─ "Story X" 카드 클릭 → [Game: scene start]
-   ├─ "📖 About" 클릭     → OriginalTaleModal (한글 발음 🔊 포함)
-   ├─ 갤러리 썸네일 클릭   → SavedBookViewer (재공유·삭제)
-   └─ 한/ENG 토글 (fixed bottom-right or mobile top-right)
+   ├─ 카드 클릭 → [Game: scene start]
+   ├─ "📖 About" 버튼 클릭 → OriginalTaleModal
+   │     ├─ Start coloring → 모달 닫고 게임 시작
+   │     └─ 🔗 View as page → /folktales/{slug}
+   ├─ 갤러리 썸네일 → SavedBookViewer
+   └─ /about, /privacy 푸터 링크
+
+[/folktales/{slug}] (SEO)
+   └─ 🎨 Start coloring → /?start={storyId} → 자동 게임 시작 (page.tsx의 useEffect)
 
 [Game: scene N]
-   ├─ 캔버스 클릭         → wavefront flood fill (180ms 애니메이션) + plop sound
-   ├─ 팔레트에서 색 선택  → state update
-   ├─ 선택지 카드 클릭    → 0.4s fade + scene 교체 + pageTurn sound
-   ├─ ↶ 되돌리기          → undo stack pop (최대 15)
-   ├─ 줌 −/100%/+         → CSS scale 변환 (캔버스 픽셀은 1024 고정)
-   ├─ Space + 드래그       → pan
-   ├─ 2손가락 핀치/드래그   → 모바일 핀치 줌 + pan
-   ├─ F 또는 ⛶            → 풀스크린
-   └─ (마지막 장에서) ✨ 완성 → handleFinish
+   ├─ 캔버스 클릭 → wavefront fill (180ms) + plop
+   ├─ 팔레트 색 선택 → state update
+   ├─ 선택지 카드 → 0.4s fade + scene 교체 + pageTurn
+   ├─ ↶ undo (max 15)
+   ├─ 줌 −/100%/+ · Space+드래그 pan · 핀치 모바일
+   └─ (마지막 장) ✨ 완성 → handleFinish
 
-[Finish flow]
-   ├─ generateShareImage() — html2canvas로 4:5 PNG 만듦
-   ├─ chime sound
-   ├─ saveBook() — localStorage 자동 저장
-   └─ [Final view]
-        ├─ 📤 Share        → Web Share API 또는 다운로드
-        ├─ 📚 Save as PDF  → exportStorybookPdf()
-        ├─ 🔄 Recolor      → handleRestartStory()
-        └─ 📖 Pick another → handleBackToPicker()
+[Finish]
+   ├─ generateShareImage() — 4:5 표지
+   ├─ chime
+   ├─ saveBook() — localStorage 자동
+   └─ [Final view = Flipbook]
+        ├─ 좌우 화살표 / 키보드 / 도트 → 표지 + 각 장면 슬라이드
+        ├─ 📤 [표지 또는 이 장면] 공유 → 4:5 PNG + Web Share
+        ├─ 📚 PDF 저장
+        ├─ 🔄 다시 색칠 / 📖 다른 이야기
+        └─ 색칠 완료 갤러리에 자동 추가
 ```
 
 ---
 
-## 7. 자주 만나는 작업 패턴
+## 7. 인프라
 
-### 7.1 새 UI 문자열 추가
-1. `src/lib/strings.ts` — `UI` 객체에 `{ko, en}` 추가
-2. 컴포넌트에서 `const { t } = useLocale(); t(UI.myKey)`
+### 7.1 도메인
+- `koreanfolktales.ink` — Namecheap 등록, Vercel A record (76.76.21.21)
+- `www.koreanfolktales.ink` — CNAME → cname.vercel-dns.com.
+- TLS 자동 (Vercel)
 
-### 7.2 새 테마 추가
-1. `src/lib/colors.ts` — `ThemeId` 타입에 ID 추가 + `PALETTE_THEMES` 배열에 hexColors 24개 추가
-2. `src/lib/strings.ts` — `themeXxx`, `themeXxxDesc` 추가
-3. `src/components/ColorPalette.tsx` — `THEME_NAMES`, `THEME_DESCS` 매핑에 추가
+### 7.2 GitHub
+- `RangeAreaScent/korean-folktales` (public)
+- `main` 브랜치가 production
+- Vercel for GitHub 연결됨 → push 시 자동 배포
 
-### 7.3 새 스토리 추가
-1. `src/lib/story.ts` —
-   - `StoryId` 타입에 ID 추가
-   - `const newStory: Story = { ... }` (id/emoji/title/subtitle/tagline/accent + 5 scenes + originalTale)
-   - `STORIES` 객체 + `STORY_LIST` 배열에 추가
-2. `public/coloring/{newStoryId}/` 폴더 만들어 5장 PNG 넣기 (scene-id.png 그대로)
-3. `public/coloring/PROMPTS.md` — Gemini용 도안 프롬프트 5개 추가
-4. Picker에서 자동으로 표시됨
+### 7.3 Vercel
+- 프로젝트: `korean-folktales`
+- 자동 배포 활성화
+- Vercel Analytics 활성화 (cookieless, 무료 한도)
+- `npx vercel --prod --yes --name korean-folktales` 로 수동 배포도 가능
 
-### 7.4 새 사운드 추가
-`src/lib/sound.ts`의 `SoundEngine` 클래스에 메서드 추가, Web Audio nodes로 합성.
+### 7.4 Google Search Console
+- URL prefix property: `https://koreanfolktales.ink` (verified via HTML meta tag in `layout.tsx`)
+- Sitemap submitted: `sitemap.xml` (11 URL)
+- `verification.google` 토큰: `FN2UIhpj0nlnXmj4IgbOJQE6J1e6VvHxt0WhHlo83Cg` (layout.tsx metadata)
+
+### 7.5 백업
+- Git tag `v0.6-scenes-original` (origin에 푸시됨) — v0.6 시점 모든 도안
+- 로컬 `.backups/coloring-v0.6/` — 34MB, gitignore
+- 각 스토리 폴더 안의 v1 PNG들은 `Backup_v1/` 으로 옮겨질 예정 (V2 도안 모이면)
 
 ---
 
-## 8. Gotchas — 코드 만지기 전에 알아두면 좋은 것
+## 8. 자주 만나는 작업 패턴
 
-### 8.1 F키 풀스크린이 안 먹힐 때
-`<input type="range">` (L 슬라이더) 등 비텍스트 input에 포커스 있으면 차단되던 버그가 있어서 fix함.
-`isTypingTarget()`은 **텍스트성 input/textarea/contenteditable만** true. range, color, checkbox는 false.
+### 8.1 새 UI 문자열 추가
+1. `src/lib/strings.ts` — `UI` 객체에 `{ko, en}` 추가
+2. 컴포넌트에서 `const { t } = useLocale(); t(UI.myKey)`
 
-### 8.2 그라데이션 영역 refill
-다른 색으로 다시 칠할 때 그라데이션 픽셀들이 일부만 바뀌던 문제. 시작 픽셀이 흰색이 아니면(`>230` 임계) tolerance 자동으로 60 → 220으로 올림 (`floodfill.ts`).
+### 8.2 새 도안 (V2) 생성 → 통합
+1. `public/coloring/PROMPTS_V2.md`의 해당 스토리 섹션 → 베이스 + Subject 블록 Gemini에 입력
+2. 받은 PNG에 9단계 QA (PROMPTS_V2.md 체크리스트) 적용
+3. `public/coloring/{NN}-{storyId}/scene-*.png` 위치에 저장
+4. (V2 전체 완성 시) `src/lib/story.ts` narration·choices·image 경로를 PROMPTS_V2 기준으로 교체
+5. Scene 타입에 1-choice (linear) 지원 추가 (Y구조용) — 현재 미적용
 
-### 8.3 모바일 핀치 줌 후 fill 오발
-2손가락 제스처 끝나고 잠깐 click 이벤트가 따라옴. `recentPinchEndRef`로 350ms 동안 click 억제.
+### 8.3 새 스토리 추가
+1. `src/lib/story.ts` — `StoryId` 타입에 ID 추가 + 데이터 객체 + `STORIES` + `STORY_LIST` + `STORY_SLUGS`
+2. `public/coloring/{NN}-{storyId}/` 폴더 5장 PNG
+3. `public/coloring/icons/{storyId}.png` 라인아트 아이콘 (투명 배경 1024×1024)
+4. `PROMPTS_V2.md`에 새 스토리 섹션 추가 (Y구조 + 풍부 narration)
 
-### 8.4 wavefront 애니메이션 cancel
-진행 중에 undo 누르면 `handle.cancel()` 호출 + pre-fill snapshot 복원. 새 클릭은 애니메이션 중에 무시 (race 방지).
+### 8.4 새 사운드 추가
+`src/lib/sound.ts`의 `SoundEngine` 클래스에 메서드 추가, Web Audio nodes로 합성
 
-### 8.5 갤러리 dataURL 용량
-12권 × ~1MB = 12MB. localStorage 한계(5-10MB) 근접. quota error 시 자동 FIFO evict, 그래도 실패하면 그냥 skip (best-effort).
-
-### 8.6 모달 + 모바일 floating cluster z-index
-모달 z-50, 모바일 toggle cluster top-3 right-3 z-50, 모바일 bottom sheet z-30/40, 모달 띄우면 cluster가 모달 위에 보이는 게 정상. (모달 닫기 위해 cluster 가리지 않음.)
-
-### 8.7 PDF 생성 중 한글 폰트
-html2canvas는 페이지에 로드된 폰트를 캡처. Gowun Batang이 next/font로 로드되어 있으면 PDF/PNG export에 깨끗하게 들어감. 만약 미리 로드 못 한 상태에서 export 시도하면 fallback (Apple SD Gothic Neo / Pretendard / Georgia)으로 표시됨.
-
-### 8.8 Story title의 chapter prefix
-PDF export에서 scene 제목의 "1장. " 또는 "Chapter 1 — " prefix를 regex로 떼고 출력. 새 스토리 추가할 때 제목 패턴 따라가야 prefix 처리됨.
-
-### 8.9 wizard 스토리는 의도적으로 삭제됨
-초기 v0.1에는 "마법사의 성"이 있었으나 한국 전래동화 톤 통일하면서 제거. git log에 남아있음. 마음 바뀌면 복원 쉬움.
+### 8.5 스크린샷 / 디버그 PNG 저장 위치 ⚠️
+**모든 임시 스크린샷은 `.screenshots/` 폴더로** (gitignore됨). 루트에 직접 저장 금지.
+- Playwright MCP `browser_take_screenshot` 사용 시 `filename: ".screenshots/foo.png"` 처럼 명시
+- Bash로 PNG 임시 생성 시 `.screenshots/...` 경로 사용
+- `.gitignore`에 `/*.png` 룰 있어서 루트 PNG는 자동 제외되지만, 깔끔하게 폴더 분리 권장
 
 ---
 
@@ -236,95 +275,165 @@ PDF export에서 scene 제목의 "1장. " 또는 "Chapter 1 — " prefix를 rege
 ### 9.1 개발
 ```bash
 cd /Users/ryan/Projects/Coloring_book-Website
-npm run dev          # 또는 Start.command 더블클릭
+npm run dev
 # → http://localhost:3000
+# 또는 Start.command 더블클릭
 ```
 
 ### 9.2 빌드 검증
 ```bash
-npx tsc --noEmit     # 타입체크 (CI/CD 첫 게이트)
+npx tsc --noEmit     # 타입 게이트
 npx next build       # 프로덕션 빌드
 ```
 
-### 9.3 의존성
+### 9.3 배포
+**자동:** `git push origin main` → Vercel이 자동 production 배포 (~1분)
+**수동:** `npx vercel --prod --yes --name korean-folktales`
+
+### 9.4 의존성
 - `next@16.2.9`, `react@19.2.4`
 - `tailwindcss@4`
 - `jspdf`, `html2canvas` (export용)
+- `@vercel/analytics`
 - (next/font 통해) Geist, Geist Mono, Gowun Batang
 
 ---
 
-## 10. 미완 / 다음 후보
+## 10. Gotchas — 코드 만지기 전에 알아두면 좋은 것
 
-design-critique과 사용자 합의로 정해진 우선순위:
+### 10.1 F키 풀스크린이 안 먹힐 때
+range/color/checkbox는 OK. 텍스트성 input/textarea/contenteditable만 차단. `isTypingTarget()` in `ColoringCanvas.tsx`.
 
-### 🟢 콘텐츠 / 시각
-- **스토리 카드 라인아트 아이콘** (Gemini 8개) — 카드의 이모지를 도안 라인아트 스타일 작은 일러스트로 교체. 카드가 미니 책 표지처럼 보이도록.
+### 10.2 그라데이션 영역 refill
+다른 색으로 다시 칠할 때 시작 픽셀이 흰색이 아니면(`>230` 임계) tolerance 자동으로 60 → 220 (`floodfill.ts`).
 
-### 🟢 마케팅 / 시장 진입
-- **랜딩 페이지 카피** — 픽커를 마케팅용 hero로 보강: "Real Korean folktales for kids", "8 stories · bilingual · printable"
-- **OG 이미지** — SNS 공유 시 미리보기 카드 (`/og-image.png`, layout.tsx metadata에 추가)
-- **도메인** — `korean-folktales.app` 같은 이름 후보. 공유 이미지에 이미 attribution으로 박혀있음.
-- **About / Privacy 페이지** — 부모용 신뢰 페이지
+### 10.3 모바일 핀치 줌 후 fill 오발
+2손가락 끝난 직후 click 따라옴. `recentPinchEndRef` 350ms 억제.
 
-### 🟢 폴리시
-- **즐겨찾는 색** (별 표시로 빠른 픽)
-- **장면 진행 미니맵** (헤더에 ●→●→○)
-- **다국어 확장 후보**: 일본어/중국어 (콘텐츠 확장 의지 따라)
-- **사운드 다양성**: 색 선택 시 미세한 톡 (현재 너무 시끄러우면 생략)
+### 10.4 wavefront 애니메이션 cancel
+진행 중 undo → `handle.cancel()` + pre-fill snapshot 복원. 새 클릭은 애니메이션 중 무시.
 
-### 🟢 기술
-- **테스트 코드 0개** — playwright e2e 한두 개 정도 추가 권장 (CI 안 함, 수동 검증으로만 유지 중)
-- **a11y 감사** — `design:accessibility-review` skill로 한 번 패스 (대비, focus ring, ARIA)
+### 10.5 갤러리 dataURL 용량
+12권 × ~1MB = 12MB. localStorage 한계(5-10MB) 근접. quota error 시 자동 FIFO evict, 그래도 실패 시 skip.
+
+### 10.6 누출 감지
+한 클릭이 캔버스 55% 초과 칠 → abort + "선이 살짝 끊어진 곳 같아요" 안내. 비율은 `floodfill.ts`의 `maxFillRatio`. 새 도안에서 너무 민감하면 0.65로 올리면 됨.
+
+### 10.7 PDF 한글 폰트
+html2canvas는 페이지 로드된 폰트 캡처. Gowun Batang이 next/font로 로드돼 있으면 깨끗. 미리 로드 못 한 상태에서 export하면 fallback (Apple SD Gothic Neo / Pretendard / Georgia).
+
+### 10.8 Story title의 chapter prefix
+PDF + 플립북에서 scene 제목의 "1장. " 또는 "Chapter 1 — " regex로 떼고 출력. 새 스토리 추가 시 같은 패턴 따라야 prefix 처리됨.
+
+### 10.9 모달 + 모바일 floating cluster z-index
+모달 z-50, 모바일 toggle cluster top-3 right-3 z-50, 모바일 bottom sheet z-30/40.
+
+### 10.10 카드 클릭 = Begin (Begin pill 시각 제거됨)
+콘텐츠는 `pointer-events-none`, 아이콘+타이틀 영역 클릭 시 z-10 absolute 버튼이 받아 onPick 발사. 카드 내 About 버튼만 stopPropagation으로 모달 열림.
+
+### 10.11 ?start=storyId 딥링크
+`/?start=folktale` → page.tsx의 useEffect가 자동 pickStory 후 URL에서 파라미터 제거. `/folktales/[slug]`의 CTA가 이걸로 게임 시작.
+
+### 10.12 V1 vs V2 콘텐츠
+**현재 라이브**는 V1 (story.ts). V2 narration은 PROMPTS_V2.md에만 존재 — 도안 + story.ts 마이그레이션 안 된 상태. 새 도안 받기 전엔 V1 narration이 사용자에게 보임.
+
+### 10.13 GSC favicon 캐시
+URL prefix property가 인증된 시점의 favicon이 GSC 대시보드에 남음. 실제 사용자에겐 호랑이 표시. 며칠~몇 주 후 자동 갱신됨.
 
 ---
 
-## 11. 결정 기록 (Why decisions were made)
+## 11. 미완 / 다음 후보
+
+### 🟢 콘텐츠 / 시각
+- **V2 도안 생성** (Gemini, 8 스토리 × 5장면 = 40장) — PROMPTS_V2 베이스 + Subject 블록으로 차례 생성
+- **V2 마이그레이션** — 도안 모이면 story.ts narration·choices·image 경로 일괄 교체, Scene 타입에 1-choice 추가
+- **랜딩 페이지 hero 강화** — picker 상단 마케팅 카피 (현재 이미 trust pills + 가이드 arrow까지는 적용됨)
+- **OG 이미지 개선** — 현재는 자동 생성된 텍스트 베이스. 호랑이 라인아트 추가하면 임팩트 ↑
+
+### 🟢 마케팅 / 성장
+- **Pinterest 운영** — `PINTEREST_PLAYBOOK.md` §10 체크리스트부터 시작 (Business 계정 + 8 보드 + 첫 8 메인 핀)
+- **자동 핀 생성기** — `src/app/pin/[slug].tsx` ImageResponse로 1000×1500 핀 동적 생성 (playbook §6)
+- **GA / Plausible 추가 분석** (현재 Vercel Analytics만)
+- **GSC URL 검사 → Request Indexing** 8 스토리 페이지 다 (수동 노가다, 인덱싱 가속)
+
+### 🟢 폴리시
+- **즐겨찾는 색** (별 토글, 빠른 픽)
+- **장면 진행 미니맵** (헤더 ●→●→○)
+- **a11y 감사** (`design:accessibility-review`)
+- **테스트 코드** (현재 0개) — playwright e2e 1-2개
+
+### 🟢 수익화 준비 (AdSense)
+- **자체 도메인** ✅
+- **About / Privacy** ✅
+- **Sitemap** ✅
+- **트래픽 ~1-3개월 누적** ⏳ (현재 14명/56뷰, 봇 ~60-70%)
+- **AdSense 신청 시점** — 월 1000+ 실 방문자 도달 후
+
+### 🟢 음악 (보류)
+사용자가 음원 royalty-free 찾으면 SoundProvider에 `music.play()` 추가. `<audio loop>` + 음소거 토글 연동.
+
+---
+
+## 12. 결정 기록 (Why decisions were made)
 
 | 결정 | 시점 | 근거 |
 |---|---|---|
 | 한국 전래동화로 톤 통일 (wizard 제거) | v0.3 | 미국 시장 K-content 포지셔닝 |
-| 이중언어 — 옵션 C | v0.4 | 미국 부모: "내 아이가 한국어 노출" 셀링포인트 |
-| custom i18n vs next-intl | v0.4 | 안정성·간결성 우선, 2개 언어면 충분 |
+| 이중언어 — 옵션 C | v0.4 | 미국 부모 "내 아이가 한국어 노출" |
+| custom i18n vs next-intl | v0.4 | 안정성·간결성 우선 |
 | Gowun Batang | v0.5 | 영문·한글 모두 우아, next/font 자동 최적화 |
-| 4:5 PNG (vs 세로 stacked) | v0.5 | Instagram-native, 공유 우선 |
-| 한국 전통색 24×2 | v0.5 | 한국 정체성 + 따뜻한 톤 + 차가운 톤 분리 |
-| Fill mode 큰 미리보기 버튼 | v0.5 | 아이의 호기심·발견 UX (design-critique 권장) |
-| 모바일 bottom sheet | v0.6 | 데스크탑처럼 한 화면에서 색 ↔ 캔버스 즉시 |
-| 폴더 구조 `{storyId}/{sceneId}` | v0.6 | 새 스토리 추가 시 디렉터리 하나로 끝 |
-| 갤러리는 localStorage | v0.6 | 가벼움 우선, IndexedDB는 오버킬 |
+| 4:5 PNG (vs 세로 stacked) | v0.5 | Instagram-native 공유 |
+| 한국 전통색 24×2 | v0.5 | 한국 정체성 + 따뜻한 톤·차가운 톤 분리 |
+| 모바일 bottom sheet | v0.6 | 데스크탑처럼 한 화면에서 색 ↔ 캔버스 |
+| 폴더 구조 `{storyId}/{sceneId}` | v0.6 | 새 스토리 디렉터리 하나 |
+| 갤러리는 localStorage | v0.6 | 가벼움 우선 |
+| **분기 여정 + 정통 결말 (Y구조)** | v0.7 | 옛이야기는 본질이 정통 결말. 분기는 여정에만 |
+| **V1 → PROMPTS_V2 별도 파일** | v0.7 | V1 살려두면서 V2 점진 적용 |
+| **폴더 NN- prefix** | v0.7 | 파일 시스템 정렬이 캐논 순서 일치 |
+| **호랑이 favicon (minhwa 스타일)** | v0.7 | K 글자보다 한국 옛이야기 정체성 직접 표현 |
+| **자체 도메인 .ink** | v0.7 | "잉크" 컨셉 + .com보다 저렴 + AdSense·SEO 신뢰도 ↑ |
+| **카드 Begin pill 제거** | v0.7 | 카드 클릭 = Begin 직관 + UI 단순화 |
+| **모달 + SEO 페이지 콘텐츠 통일** | v0.7 | 사용자가 어디서 봐도 같은 이야기·같은 구조 |
 
 ---
 
-## 12. 빠른 검증 체크리스트 (작업 끝 후 PR/푸시 전)
+## 13. 빠른 검증 체크리스트 (작업 끝 후 푸시 전)
 
 - [ ] `npx tsc --noEmit` 통과
 - [ ] `npm run dev`로 띄워 픽커 → 스토리 → 완성 풀 흐름 동작
-- [ ] 한/영 토글 전환 모든 텍스트 바뀌는지
-- [ ] 📖 About 모달의 🔊 버튼 음성 재생
-- [ ] 그림책 완성 시 갤러리 자동 추가 + Web Share or 다운로드
-- [ ] 모바일 (414px 폭) bottom sheet peek + 확장 동작
-- [ ] Console에 에러 0개
+- [ ] 한/영 토글 모든 텍스트 바뀜
+- [ ] 📖 About 모달의 🔊 발음 재생
+- [ ] 완성 시 갤러리 자동 추가 + Web Share 또는 다운로드
+- [ ] 모바일 (414px 폭) bottom sheet peek + 확장
+- [ ] 플립북 ←/→ 화살표 + 키보드 동작
+- [ ] Console 0 에러
+- [ ] 스크린샷·디버그 PNG가 루트에 안 남았는지 (`ls *.png 2>/dev/null` 결과 없어야 함)
 
 ---
 
-## 13. 핵심 인사이트 (디자인 비평에서 얻은)
+## 14. 핵심 인사이트 (디자인 비평·세션 회고에서 얻은)
 
-1. **Typography hierarchy가 모든 화면의 기반**. Display tier 없이 다른 디테일 잡아도 "amateur" 느낌이 남는다.
-2. **Card spam을 피하라**. 모든 게 카드면 아무것도 카드가 아니다.
-3. **모바일 팔레트는 bottom sheet이거나 깨진 UX다**. 색 → 캔버스 흐름을 끊으면 안 됨.
-4. **Web Share API는 마케팅 입소문의 발판**. 4:5 + 네이티브 공유 시트 = 마찰 최소.
-5. **🔊 한국어 발음**은 시그니처 모먼트. 부모 입장에서 "이 앱 진짜 교육적이다" 신호.
-
----
-
-## 14. 연락 (지난 세션과의 교신)
-
-- 마지막 작업: 폴더 재구조 + 신규 3 스토리 도안 15장 정리
-- 다음 자연스러운 후보: 스토리 카드 라인아트 아이콘 (Gemini 8개) 또는 랜딩 페이지 카피
-- 사용자 톤: 빠른 결정, 깔끔한 시각, 디테일 신경 씀, 안정성 우선
-- 사용자 응답 패턴: "응 가자", "잘된다", "이거 해줘" — 명확한 짧은 신호
+1. **Typography hierarchy가 모든 화면의 기반** — Display tier 없으면 amateur 느낌
+2. **Card spam을 피하라** — 모든 게 카드면 아무것도 카드가 아니다
+3. **모바일 팔레트는 bottom sheet이거나 깨진 UX** — 색 ↔ 캔버스 흐름 끊지 말 것
+4. **Web Share API는 마케팅 입소문의 발판** — 4:5 + 네이티브 공유 시트 = 마찰 최소
+5. **🔊 한국어 발음**은 시그니처 모먼트 — 부모에게 "이 앱 진짜 교육적이다" 신호
+6. **분기 엔딩 vs 정통 결말** — 옛이야기는 결말이 본질. 분기는 여정 차이로만 (v0.7 학습)
+7. **이미지 한 컷 = 한 모먼트** — narration 다 표현하려 욕심내면 어린이가 못 따라옴 (v0.7 검수)
+8. **모티프 중복 피하기** — 도깨비는 혹부리 영감 전용, 다른 스토리엔 까치·산신령·산토끼 등 (v0.7)
 
 ---
 
-*마지막 갱신: v0.6 · 한국 옛이야기 컬렉션 풀세트 완성 시점.*
+## 15. 연락 (지난 세션과의 교신)
+
+- 마지막 작업: V1 → V2 narration 8개 스토리 모두 PROMPTS_V2.md에 정리, 폴더 numerical prefix, 점검 5개 중대 수정 + 6개 refinement
+- 다음 자연스러운 후보:
+  1. V2 도안 생성 (Gemini로 8×5장)
+  2. V2 통합 (도안 모이면 story.ts 교체)
+  3. Pinterest 첫 핀 운영 시작
+- 사용자 톤: 빠른 결정, 깔끔한 시각, 디테일 신경, 안정성 우선
+- 사용자 응답 패턴: "응 가자", "잘된다", "이거 해줘" — 명확한 짧은 신호. 한국어로 토론 + 영어 검색.
+
+---
+
+*마지막 갱신: v0.7 · PROMPTS_V2 완성 + 인프라 (도메인 + GSC + Vercel Analytics + 자동 배포) 완비 시점.*

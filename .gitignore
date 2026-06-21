@@ -42,8 +42,12 @@ next-env.d.ts
 
 # local artifacts
 .playwright-mcp/
+.screenshots/
 /coloring images/
 *.png
 !public/**/*.png
 !src/**/*.png
 .backups/
+
+# Stray root PNGs (defense in depth — should never sneak back)
+/*.png
