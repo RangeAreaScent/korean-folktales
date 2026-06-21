@@ -172,6 +172,93 @@ OUTPUT
 
 ---
 
+## ✨ V2.5 한국 그림책 스타일라이제이션 레이어 (선택 적용)
+
+기본 V2는 "한국적 요소가 담긴 깔끔한 색칠 도안"이지만, V2.5는 한 단계 더 나아가 **"한국 전통 그림책 일러스트"** 느낌으로 시각적 정체성을 강화합니다.
+
+**현재 적용:** Story 2 (해녀와 인어) 시험판
+**미적용:** 나머지 7개 스토리는 기본 V2 유지
+
+특정 스토리가 V2.5를 사용한다고 표시되면, 그 스토리의 모든 Gemini 프롬프트에 베이스 + V2.5 레이어 + Subject 블록 순서로 합쳐 입력합니다.
+
+```
+KOREAN PICTURE BOOK STYLIZATION LAYER (apply ON TOP of the base spec)
+
+CLOUDS — Korean minhwa cloud motifs (구름 무늬), NOT simple blobs
+- Each cloud is a soft slowly-coiling curl that ends in a 2-3 turn spiral,
+  like a sideways "?" mark with rounded turns
+- The body of the cloud is a thick rounded form; the tail trails into a
+  spiral curl
+- Each cloud is ONE fillable region but visually richer than a blob
+- 2-4 clouds per scene maximum
+- Think of clouds in Joseon-era court paintings or classic Korean
+  children's storybook illustrations (정승각, 강우현 풍)
+
+SUN / MOON — stylized celestial bodies
+- Sun: a round disk with 8-12 RADIAL CURVED rays (gently wavy, not straight
+  lines). Optional: very subtle facial features (closed gentle eyes + tiny
+  smile) for warmth, like Korean folk-art sun. NEVER realistic.
+- Moon: a clean circle. For nighttime scenes, a few small "moon halo" curve
+  lines around it (2-3 concentric soft arcs at one side, suggesting glow).
+  Optional subtle smiling face.
+
+WAVES / WATER — minhwa wave pattern (파도 무늬)
+- Water surface waves: a row of slow rolling curls, each curl 2-3 spiral
+  turns ending in a small tip. Like the iconic Hokusai-style waves but
+  softer/rounder and Korean (not Japanese).
+- Underwater current lines: gentle curving parallel lines, not straight
+- Water ripples: 3-4 concentric soft arcs
+
+MOUNTAINS — layered overlapping silhouettes
+- 2-4 mountain layers visible, each a separate fillable region
+- Each layer has a SOFT ROLLING silhouette (rounded peaks, not jagged)
+- Add 1-2 short PEAK ACCENT LINES inside each silhouette (suggesting
+  ridges) for paint-able detail without crowding
+- Front mountains larger, back mountains smaller — sense of depth
+
+TREES / FOLIAGE — stylized clusters with internal hints
+- Pine: 5-7 cloud-shaped foliage clusters (grouped natural textures rule
+  still applies), each cluster gets 2-3 short internal "needle direction"
+  lines suggesting texture without breaking the fill region
+- Leafy tree: foliage clusters get 2-3 leaf shape outlines visible at the
+  edges of each cluster
+- Bushes/grass: small fan tufts with 3-5 individual stroke lines each
+
+DECORATIVE ACCENTS — sprinkle small Korean motifs in background
+- Small 매화 (plum blossom) branches in spring scenes (3-4 tiny 5-petal
+  flowers on a thin branch)
+- 단청-inspired pattern accents on architectural elements (small geometric
+  pattern bands on hanok eaves, doorways)
+- Cloud-spiral motif borders on important objects (only if it makes sense)
+
+CHARACTER STYLIZATION
+- Faces retain the DETAIL FLOOR (iris + pupil + nose + mouth + hair + ears)
+- Add: hair gets 1-2 traditional ribbon or hairpin details when visible
+- Hanbok / clothing gets a small decorative line at the collar or hem
+  (suggesting 자수 embroidery) — just 2-3 small repeating dots or a
+  scalloped edge
+
+OVERALL TONE
+- The illustration should read as "this is a Korean storybook page,
+  not a generic coloring sheet". A 5-second glance should signal
+  "Korean" through clouds + waves + mountains + small cultural accents.
+- Still STRICTLY line-art only (no fills, no shading) — the stylization
+  is in the SHAPES, not in tonal rendering.
+- Still respect every base spec rule (border, closed regions, detail
+  floor, grouped textures, no Western tool substitutions).
+
+REJECT and re-render if:
+- Clouds are simple blobs instead of coiling curls
+- Sun is just straight rays without curved/radial styling
+- Mountains are tiny background curves without layered silhouettes
+- Waves are flat curves without rolling curl pattern
+- No Korean visual signature recognizable in 5 seconds
+```
+
+위 레이어 사용 시 입력 순서: **베이스 → V2.5 레이어 → Subject 블록**
+
+---
+
 ## 🔁 결과물 검수 체크리스트 (각 PNG 받자마자)
 
 **선 기본**
@@ -488,6 +575,10 @@ unifying horizon, stars across the whole upper background.
 
 # 🌊 Story 2 — 해녀와 인어 (The Haenyeo and the Mermaid)
 
+> ✨ **V2.5 한국 그림책 스타일라이제이션 레이어 적용 중** (시험판)
+> 이 스토리의 모든 Gemini 프롬프트는 **베이스 + V2.5 레이어 + Subject 블록** 순서로 합쳐 입력합니다.
+> 검증 후 다른 스토리로 확산 결정.
+
 **원작 배경**: 제주 해녀 문화 + 한국 바다 정령 전설을 엮은 이야기. 해녀는 제주 고유의 여자 잠수부 (유네스코 무형 문화유산).
 
 **Y-구조**: 1·2 공통 → 3 분기 (산호 미로 / 해초 숲) → 4 정통 결말 (진주를 돌려주고 수호자가 됨)
@@ -554,21 +645,43 @@ grid pattern). In front of the houses, a low Jeju 돌담 (basalt stone wall
 made of stacked rough lava stones — show ~8-10 distinct stones as fill-able
 regions).
 
-RIGHT: the sea stretching toward the horizon, with 2-3 simple wave outlines
-near the rock. Above the horizon, a stylized rising sun (round, partly above
-the sea line, with 6-8 simple straight rays). Sky has 2-3 large soft cloud
-shapes (one fill-able region each).
+RIGHT: the sea stretching toward the horizon, with KOREAN MINHWA WAVE
+PATTERN near the shore — show 3-4 rolling curl waves, each wave a soft
+spiral curl with 2-3 turns ending in a small tip (apply V2.5 wave
+stylization). Above the horizon, a stylized rising sun: round disk
+sitting partly above the sea line, with 8-12 GENTLY CURVED RADIAL RAYS
+(wavy curves, NOT straight lines). Optional subtle face on the sun (two
+closed eye curves + small soft smile) ─ Korean folk-art warmth.
 
-UPPER-RIGHT: a single seagull mid-flight (simple V-wing outline).
+SKY: 2-3 large MINHWA CLOUD MOTIFS (구름 무늬) ─ each cloud is a thick
+rounded body with a tail that curls into a 2-3 turn spiral, like a
+sideways "?" mark with rounded turns. NOT simple blobs. Each cloud
+ONE fill region but visually richer.
 
-Apply GROUPED NATURAL TEXTURES strictly: rocks as ~8-10 distinct stones,
-waves as 2-3 outlines, clouds as 2-3 big shapes, NO individual feather/wave
-detail.
+UPPER-RIGHT: a single seagull mid-flight (simple V-wing outline but
+with a small head + eye dot + tail fork visible).
+
+MOUNTAINS BACKGROUND: 2-3 OVERLAPPING LAYERED Jeju oreum silhouettes
+(rounded volcanic hill shapes). Front-most oreum has 1-2 short peak
+accent lines inside it suggesting ridge contour. Each oreum layer ONE
+fill region.
+
+Apply GROUPED NATURAL TEXTURES strictly: rocks as ~8-10 distinct stones
+(each separate region), waves as 3-4 minhwa curl shapes, clouds as 2-3
+coiling motifs. NO individual feathers.
+
+CULTURAL DETAIL HINT: a small spray of 매화-like spring flowers (2-3
+tiny 5-petal flowers on a thin branch) growing from a crack in the
+lava rock near the haenyeo's feet. Adds Korean visual signature
+without crowding.
 
 Mood: peaceful, anticipatory dawn — a working morning, before the dive.
-Composition: WIDE landscape. Haenyeo + tewak in lower-left foreground (~30%),
-sea + sun in the right half (~40%), village + oreum upper-left background,
-seagull upper-right.
+A scene that says "Korean folktale" in the first 5 seconds through its
+sun rays, cloud curls, wave curls, and oreum layers.
+Composition: WIDE landscape. Haenyeo + tewak in lower-left foreground
+(~30%), sea + stylized sun in the right half (~40%), village + layered
+oreum upper-left background, seagull + minhwa clouds upper, plum-blossom
+sprig at lava-rock crack.
 ```
 
 ---
@@ -620,26 +733,39 @@ upper-middle of the canvas, mid-swim, body slightly tilted forward. Bubbles
 rise from her mouth in 2-3 SIMPLE GROUPED bubble clusters (not many little
 bubbles — each group is 1 enclosed region).
 
-The water around her is dark — indicate this with a few wavy current lines
-(no fills, NO hatching). In the MIDDLE-BOTTOM, a single faint round blue
-glowing orb visible in the distance (one clean round region).
+The water around her is suggested by GENTLE CURVING parallel CURRENT
+LINES (not straight, slightly wavy in a minhwa style ─ 4-6 long soft
+curves flowing in the same direction across the upper background, NO
+fills, NO hatching). In the MIDDLE-BOTTOM, a single faint round blue
+glowing orb visible in the distance (one clean round region, with 4-5
+short curved sparkle lines around it suggesting living light).
 
 The path forks below: TO THE LEFT, the entrance to a CORAL MAZE — show
-3-4 large stylized coral cluster shapes (NOT individual polyps), like
-branched mushroom shapes or fan corals, each as ONE fill-able region. TO
-THE RIGHT, the entrance to a KELP FOREST — show 4-5 tall vertical kelp
-fronds in 2-3 BUNDLED GROUPS (each group is a tall ribbon shape with
-soft curves, NOT individual leaves).
+3-4 large stylized coral cluster shapes in MINHWA FOLK-ART STYLE: each
+cluster is rounded with a small interior swirl or spiral hint suggesting
+organic life. Use varied silhouettes (branched-antler, fan-shaped, brain-
+coral swirl) but each cluster is ONE fillable region with 2-3 short
+internal accent lines (not detail texture, just hints).
 
-A few small fish (3-4 fish, simple oval bodies with triangle tails, single
-fill-able region each) drifting between the two paths.
+TO THE RIGHT, the entrance to a KELP FOREST — show 4-5 tall vertical
+kelp fronds in 2-3 BUNDLED GROUPS. Each kelp group is a tall ribbon
+shape with a SOFT S-CURVE bend (Korean wave-curl energy), NOT straight
+ribbons. Each ribbon has 1-2 internal soft accent lines suggesting fold
+without breaking the fill region.
 
-UPPER background: water surface visible at the very top of the canvas as a
-soft horizontal wavy line, with broken sunlight rays slanting down (~4-5
-diagonal lines).
+A few small fish (3-4 fish, simple oval bodies + clearly visible eye
+dot + triangle tail + ONE side fin line, single fillable body region
+each). Position them drifting in different directions between the two
+paths.
 
-Apply GROUPED NATURAL TEXTURES: corals as 3-4 cluster shapes, kelp as 2-3
-bundled groups, bubbles in 2-3 small groups, fish simple.
+UPPER background: water surface visible at the very top of the canvas
+as a soft horizontal wavy line, with BROKEN SUNLIGHT RAYS slanting down
+─ show as 4-5 long curved diagonal soft beams (not straight lines, gently
+curved like underwater light truly behaves).
+
+Apply GROUPED NATURAL TEXTURES: corals as 3-4 minhwa cluster shapes,
+kelp as 2-3 curved bundled groups, bubbles in 2-3 small groups, fish
+simple but with eye + fin detail.
 
 Mood: depth, mystery, decision — the divide is dramatic.
 Composition: VERTICAL emphasis (depth from surface to dark deep). Haenyeo
@@ -691,27 +817,41 @@ Subject: An underwater encounter scene set inside a coral maze. The haenyeo
 (diving suit, goggles down over eyes, hair tied back) is on the LEFT in mid-
 swim, body angled toward center, hands relaxed by her sides.
 
-CENTER-RIGHT: a mermaid (stylized — friendly Korean folktale style, NOT
-Western Ariel-style). She has long flowing hair (drawn as 5-6 thick curving
-strands, not many individual hairs), a graceful upper body, no clothing
-details needed beyond a simple V-line at the chest, and a long curved fish
-tail covered in 8-10 visible large scales arranged in 2-3 rows (each scale
-is ONE fill-able region — NOT a sea of tiny scales). The mermaid holds her
-two hands cupped in front of her with a single round pearl resting in her
-palms (one clean circle, one fill region).
+CENTER-RIGHT: a mermaid (stylized — friendly KOREAN FOLKTALE style, NOT
+Western Ariel-style). Long flowing hair drawn as 5-6 thick curving
+strands ending in soft minhwa-style spiral curls at the tips. Hair has
+1-2 small traditional Korean ornament details: a tiny coral hairpin or
+shell hair-clip. A graceful upper body wearing a simple sleeveless
+modest top suggested by a SOFT WRAP LINE at the chest + a small
+decorative band at the neckline (like a delicate seaweed-collar ─ 2-3
+tiny dots as decoration). A long curved fish tail covered in 8-10
+visible large scales arranged in 2-3 rows, each scale ONE fill region
+with a small inner curve hint for organic feel.
+
+The mermaid holds her two hands cupped in front of her with a single
+round pearl resting in her palms (one clean circle, 4-6 short curved
+sparkle lines radiating outward suggesting living glow).
 
 SURROUNDING the figures: 5-7 stylized coral CLUSTERS forming a maze-like
-archway around the encounter. Each coral cluster is ONE clean fill-able
-region. Use varied coral shapes (branching like deer antlers, fan-shaped,
-mushroom-cap, brain-like swirl), but each as a single simple silhouette.
-NO individual polyps. NO hatching.
+archway around the encounter, drawn in MINHWA FOLK-ART STYLE. Each
+coral cluster is ONE clean fillable region but visually rich: use varied
+silhouettes (branched-antler / fan-shaped / mushroom-cap / brain-coral
+swirl). Each cluster has 2-3 short internal accent lines suggesting
+organic ridges, NOT polyp texture. The archway around the figures
+echoes the curve of a traditional Korean gate (홍예문) ─ rounded at
+the top.
 
-A few small details: 2-3 small fish drifting nearby (same simple style as
-Scene 2), a few scattered bubble clusters (2 groups), faint vertical water
-current lines (no fills).
+A few small details: 2-3 small fish drifting nearby (oval body + eye
+dot + tail + one fin line, same style as Scene 2 fish), 2 small bubble
+clusters of 3-4 bubbles each.
 
-BACKGROUND: dark deep water with 2-3 broken sunlight rays from above (soft
-diagonal lines).
+BACKGROUND: deep water suggested by 3-4 long GENTLY CURVED current
+lines flowing downward from the upper edge. 2-3 broken sunlight rays
+filtering down (soft curved diagonal beams, not straight lines).
+
+CULTURAL DETAIL HINT: a few small minhwa-style seashells (소라·전복)
+scattered on the sandy floor near the encounter (3-4 simple shell
+shapes, each ONE region with a soft spiral hint).
 
 Apply GROUPED NATURAL TEXTURES: corals as cluster shapes (each ONE region),
 mermaid scales 8-10 max, fish simple, NO individual coral polyps.
@@ -759,30 +899,49 @@ SHOT TYPE: Underwater horizontal shot. The sleeping turtle is the visual
 anchor at lower-center. The kelp forest forms vertical bars on both sides.
 The mermaid enters from one side.
 
-Subject: An underwater scene inside a quiet kelp forest. CENTER-LOWER: a
-large stylized Korean sea turtle (자라) sleeping on a sandy seafloor patch.
-The turtle has: a domed shell with 6-8 hexagonal/rounded shell plates clearly
-outlined (each plate is ONE fill-able region — NOT a busy texture), 4 stubby
-legs tucked in, closed eyes, a calm peaceful face. On the very TOP of the
-shell, a single small pearl resting (round, one region), with 3-4 short
-simple sparkle lines around it suggesting a soft glow.
+Subject: An underwater scene inside a quiet kelp forest. CENTER-LOWER:
+a large stylized Korean sea turtle (자라) sleeping on a sandy seafloor
+patch. The turtle has: a domed shell with 6-8 hexagonal/rounded shell
+plates clearly outlined (each plate is ONE fillable region), each plate
+has ONE small internal accent line suggesting natural ridge pattern
+(NOT busy texture). Four stubby legs tucked in, closed gentle eye
+curves, a peaceful face with small nose line + soft mouth curve.
 
-LEFT and RIGHT: vertical KELP fronds forming the forest. Show 4-5 BUNDLED
-GROUPS of kelp on each side (so 8-10 groups total), each group as a tall
-ribbon-shape with a soft curve from the current. Each kelp group is ONE
-fill-able region. NO individual leaves. NO veins.
+On TOP of the shell, a single small pearl resting (round, one region),
+with 4-5 short CURVED sparkle lines radiating outward (Korean
+minhwa-style sparkle, not straight rays). One small additional detail:
+a tiny minhwa-style sea-flower or coral piece growing on one plate of
+the shell (showing the turtle has been here a thousand years).
 
-ENTERING FROM THE RIGHT: the mermaid (same friendly style as Scene 3a, long
-flowing hair as 5-6 strands, simple chest line, long curved tail with 8-10
-large visible scales). She is mid-swim, gently approaching, with one finger
-raised to her lips (asking for quiet). Show her from mid-thigh up only — the
-rest of her tail trails offstage right.
+LEFT and RIGHT: vertical KELP fronds forming the forest. Show 4-5
+BUNDLED GROUPS of kelp on each side (so 8-10 groups total). Each group
+is a tall ribbon-shape with a SOFT S-CURVE bend (Korean wave-curl
+energy), NOT straight ribbons. Each kelp group is ONE fillable region
+with 1-2 internal soft fold lines suggesting movement, NO leaf veins.
+
+ENTERING FROM THE RIGHT: the mermaid (same as Scene 3a — long curving
+hair with spiral tip curls, small Korean hair ornament, sleeveless
+modest top with neckline decoration band, long curved tail with 8-10
+scales each with small inner curve). She is mid-swim, gently
+approaching, with one finger raised to her lips (asking for quiet).
+Show her from mid-thigh up only — the rest of her tail trails offstage
+right.
 
 The haenyeo is in the UPPER-LEFT, smaller in scale, hovering quietly,
-watching with her hands at her sides — only show her from waist up.
+watching with her hands at her sides — show her from waist up. Her face
+clearly readable (iris + pupil + nose + mouth + ear), her goggles
+covering eyes (with a clear circle suggesting the lens shape, not
+opaque), hair trailing behind.
 
-BACKGROUND: dark blue-green water suggested by 2-3 wavy current lines
-(no fills), one or two scattered tiny shellfish on the sandy floor.
+BACKGROUND: dark blue-green water suggested by 3-4 long GENTLY CURVING
+current lines flowing diagonally. 2-3 broken light beams from above
+(soft curves). Scattered tiny shellfish on the sandy floor (3-4 small
+shell shapes, each ONE region with a soft spiral hint). One or two
+small bubble clusters drifting.
+
+CULTURAL DETAIL HINT: where the turtle rests, a small ring of pebbles
+arranged in a soft circular pattern around it (like a respectful
+offering), 5-7 small stones each ONE region.
 
 Apply GROUPED NATURAL TEXTURES strictly: kelp in bundled groups, turtle
 shell plates 6-8 max, NO individual blades of kelp.
@@ -863,32 +1022,49 @@ deep — connected by a glowing pearl returned.
 
 UPPER HALF (above water):
 - A large round FULL MOON dead center in the night sky (one clean circle).
+  2-3 soft concentric "moon halo" curve arcs around one side suggesting
+  glow. Optional subtle face on the moon (gentle closed eyes + tiny soft
+  smile) ─ Korean folk-art moon.
 - Around it, 10-15 simple 5-point stars scattered (each identical, one
-  fill-able region per star).
-- LEFT BACKGROUND: a Jeju coastal silhouette — 2 oreum (volcanic hills) in
-  the distance, 2-3 small Jeju thatched houses (with roof-rope grids) lit
-  by lantern light (small visible lantern circle on one house's front).
+  fillable region per star). All same simple star icon.
+- LEFT BACKGROUND: a Jeju coastal silhouette in LAYERED MOUNTAIN style ─
+  2-3 overlapping oreum silhouettes (volcanic hill rounded shapes, front
+  larger, back smaller, each ONE fill region with 1-2 ridge accent lines).
+  In front: 2-3 small Jeju traditional thatched houses (제주 초가)
+  WITH THE DISTINCTIVE ROPE-GRID PATTERN criss-crossing the thatched
+  roofs (this is REQUIRED ─ a network of straight rope lines forming a
+  wide square grid across each roof). One house has a small lantern
+  circle glowing on its front wall.
 - RIGHT FOREGROUND: a flat lava-rock shore ledge where the haenyeo (now
-  with her goggles off and resting around her neck) sits cross-legged in
-  profile, looking out toward the moon's reflection on the water. Her tewak
-  is beside her on the rock.
-- Between the haenyeo and the moon: the moon's vertical light reflection
-  shimmering on the water (~5-6 short horizontal wave-glint lines stacked
-  vertically — NOT a busy water pattern).
-- 2-3 large soft cloud shapes in the upper sky.
+  with her goggles off and resting around her neck) sits cross-legged
+  in profile, looking out toward the moon's reflection. Her tewak is
+  beside her on the rock. Her face: full detail (iris + pupil + nose +
+  mouth + ear + hair strands). Hanbok or work suit shows 4-5 internal
+  lines (collar + cuff + waist + hem).
+- Between the haenyeo and the moon: the moon's vertical reflection
+  shimmering on the water ─ show as 4-5 short ROLLING CURL wave-glints
+  stacked vertically along the reflection path (minhwa wave pattern,
+  not flat horizontal lines).
+- UPPER SKY: 2-3 MINHWA CLOUD MOTIFS (구름 무늬) ─ each cloud a thick
+  rounded body with a tail curling into a 2-3 turn spiral. NOT simple
+  blobs.
 
 LOWER HALF (below water — through the surface):
-- The water surface drawn as a horizontal wavy line cutting the canvas roughly
-  at 55-60% height.
-- Just BELOW the surface, the MERMAID swimming up, body tilted upward, one
-  arm reaching up toward the haenyeo, hair flowing. The same mermaid as
-  Scenes 3a / 3b (long hair as 5-6 strands, simple chest line, long curved
-  tail with 8-10 large visible scales).
-- Between the haenyeo's hand and the mermaid's hand: the small round PEARL,
-  now glowing softly (show 4-6 short sparkle lines radiating from it).
-- DEEPER BELOW: the sleeping sea turtle small in the distance (same style
-  as Scene 3b but smaller scale), and a few stylized coral clusters and
-  bundled kelp fronds in the deep background — TINY in scale, just hinted.
+- The water surface drawn as a row of soft ROLLING CURL waves (minhwa
+  wave pattern) cutting the canvas at 55-60% height.
+- Just BELOW the surface, the MERMAID swimming up, body tilted upward,
+  one arm reaching up toward the haenyeo, hair flowing with spiral curl
+  tips (same as Scenes 3a/3b — hair ornament, modest sleeveless top with
+  neckline band, long curved tail with 8-10 scales each with inner
+  curve).
+- Between the haenyeo's hand and the mermaid's hand: the small round
+  PEARL now glowing softly ─ 5-6 short CURVED sparkle lines radiating
+  outward (minhwa sparkle, not straight rays).
+- DEEPER BELOW: the sleeping sea turtle small in the distance (same
+  style as Scene 3b but smaller scale, still with shell plates +
+  resting pearl + tiny coral on shell), a few stylized minhwa coral
+  clusters and S-curve kelp fronds in the deep background — small
+  in scale, just hinted with their characteristic shapes.
 
 Apply GROUPED NATURAL TEXTURES strictly: clouds, stars, kelp, coral all
 in simple grouped shapes — NO individual elements.
