@@ -563,6 +563,18 @@ export default function Home() {
                   </button>
                 ))}
               </div>
+            ) : currentScene.nextId ? (
+              <button
+                type="button"
+                onClick={() => handleChoice(currentScene.nextId!)}
+                disabled={transitioning}
+                className="group flex w-full max-w-[720px] items-center justify-center gap-3 rounded-full bg-gray-900 px-7 py-3.5 text-base font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-gray-800 hover:shadow-lg disabled:cursor-wait disabled:opacity-60"
+              >
+                <span>{t(UI.continueScene)}</span>
+                <span className="text-amber-300 transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </button>
             ) : (
               <div className="w-full max-w-[720px] rounded-2xl border border-amber-200/80 bg-gradient-to-br from-amber-50 to-rose-50 px-6 py-5 shadow-sm">
                 <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-amber-700">

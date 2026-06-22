@@ -92,6 +92,10 @@ export const UI = {
     ko: "색칠이 끝났다면 다음 이야기를 골라보세요 ↓",
     en: "When you're done coloring, choose what happens next ↓",
   },
+  continueScene: {
+    ko: "다음 이야기로",
+    en: "Continue the story",
+  },
   finalScene: {
     ko: "마지막 장",
     en: "Final scene",
