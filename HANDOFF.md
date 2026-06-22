@@ -26,17 +26,19 @@
 
 ---
 
-## 2. 현재 버전 · v0.7
+## 2. 현재 버전 · v0.8
 
 | 분야 | 상태 |
 |---|---|
-| **콘텐츠 (V1)** | 8 스토리 × 5장면 = 40 도안 라이브, story.ts에 narration·glossary·originalTale 모두 입력 완료 |
-| **콘텐츠 (V2 진행중)** | `PROMPTS_V2.md`에 8 스토리 풍부 narration + Gemini 프롬프트 완성. 실제 PNG 재생성 대기 |
+| **콘텐츠 (Story 2 V2.5 라이브)** ⭐ | 해녀와 인어가 Y구조 5장면 + 풍부 narration + V2.5 한국 그림책 스타일로 production. PNG·story.ts·렌더링 모두 V2.5 |
+| **콘텐츠 (Stories 1, 3-8: V1 라이브 + V2.5 프롬프트 대기)** | PROMPTS_V2.md에 7개 스토리 풍부 narration + Y구조 + V2.5 스타일 체크리스트 완성. PNG 재생성 + story.ts 마이그레이션 대기 |
 | **앱 코어** | 클릭 wavefront · 그라데이션 3종 · undo · 줌(휠+버튼+핀치) · pan(Space/2손가락) · 풀스크린 · 누출 감지 |
+| **Scene 진행 (NEW)** | Y구조 지원 — `nextId`(linear, 단일 "Continue →" 버튼) · `choices`(branching, 2개 카드) · `endingLabel`(ending, Complete 버튼) 3-state |
 | **사운드** | water-droplet plop (5음 펜타토닉 랜덤) · page turn · chime + 한국어 발음 + 음소거 토글 |
 | **출력** | PDF (표지+장면별+엔딩) + PNG (Instagram 4:5 표지/장면별) + Web Share |
 | **갤러리** | localStorage 12권 cap, 픽커 상단 carousel, 재공유/삭제 |
 | **최종 뷰** | 플립북 캐러셀 (표지 + 각 장면 좌우 슬라이드 0.5s ease-out, 키보드 ←/→, 도트 인디케이터, 페이지별 share) |
+| **Narration 박스** | 스크롤형 max-h 36vh, 상/하 페이드 마스킹, 멀티-paragraph (\\n\\n split) — V2.5 긴 narration 호환 |
 | **모바일** | 좌우 풀폭 캔버스 + bottom sheet 팔레트 (peek + 확장) |
 | **타이포** | Gowun Batang display tier (60px+) · Geist sans · Geist mono |
 | **인프라** | Next.js 16, React 19, Tailwind 4 (Turbopack), Vercel 자동 배포 |
@@ -151,23 +153,51 @@ Start.command                    Mac 더블클릭 → dev + 브라우저
 - 옛이야기 톤 narration이 길어서 카드 안에 max-h 36vh + 상/하 페이드 마스킹 + 멀티-paragraph (\\n\\n split)
 - `globals.css`에 `.narration-scroll` 클래스
 
+### 4.11 Scene 3-state (Y구조용)
+`src/lib/story.ts`의 `Scene` 타입은 3가지 상태 중 하나만 가짐:
+- **`nextId: SceneId`** — Linear scene. 단일 "Continue → / 다음 이야기로 →" 버튼. Y구조의 1·3a·3b 위치
+- **`choices: [Choice, Choice]`** — Branching scene. 2개 카드. Y구조의 2번 위치
+- **둘 다 없음 + `endingLabel`** — Ending scene. "그림책 완성하기" 버튼. Y구조의 4번 위치
+
+`page.tsx` 렌더링에서 `choices ? branching : nextId ? linear : ending` 순서로 분기.
+Linear 진행은 기존 `handleChoice(nextId)` 재활용 (chosenLabel은 null).
+
+### 4.12 V2.5 한국 그림책 스타일라이제이션 레이어
+V2 기본은 "한국적 요소가 있는 깔끔한 색칠 도안"이지만, V2.5는 한 단계 위 — **한국 전통 그림책 일러스트**.
+
+핵심 차이:
+- **구름** → 단순 블롭 ❌ → 민화 구름 무늬 (둘둘 말린 곡선)
+- **해/달** → 직선 광선 ❌ → 곡선 광선 + 선택적 부드러운 얼굴
+- **파도** → 단순 곡선 ❌ → minhwa 파도 무늬 (말린 curl)
+- **산** → 작은 봉우리 ❌ → layered 실루엣 + ridge accent
+- **인어·선녀** → 평범 strand 머리 ❌ → spiral curl 끝 + 한국 머리장식
+- **제주 초가** → 단순 돔 ❌ → 로프 격자 패턴 명시
+- **배경 액센트** → 매화 sprig·단청 띠 등 한국 시그니처
+
+V2.5는 옵트인 레이어 — 각 스토리 PROMPTS_V2.md 상단에 "V2.5 적용 중" 마커가 있으면 베이스 + V2.5 레이어 + 스토리 체크리스트 + Subject 블록을 합쳐 Gemini 입력.
+
+**현재 V2.5 적용 상태:**
+- ⭐ Story 2 (haenyeo) — production 라이브
+- 🔄 Stories 1, 3-8 — 프롬프트 준비됨, PNG 생성 대기
+
 ---
 
 ## 5. 스토리 8권 명세
 
-| # | Slug (folder) | 한국어 | 영어 | 분기 (V2) | 정통 결말 |
-|---|---|---|---|---|---|
-| 1 | `01-folktale` (`sun-and-moon`) | 해님 달님 | Sun and Moon | 손 보여달라 / 자장가 부르라 | 두 동아줄·수수밭·해/달 부끄럼 자리 바꿈 |
-| 2 | `02-haenyeo` (`haenyeo-and-the-mermaid`) | 해녀와 인어 | Haenyeo and Mermaid | 산호 미로 / 해초 숲 | 진주 반환·수호자·잠수경 안 푸른 별·손녀 대잇기 |
-| 3 | `03-woodcutter` (`fairy-and-the-woodcutter`) | 선녀와 나무꾼 | Fairy and Woodcutter | 산속 오두막 / 마을 어머니 곁 | 두레박·하늘 가족·새벽 빛이 된 그리움 |
-| 4 | `04-dokkaebi` (`old-man-and-the-goblins`) | 혹부리 영감 | Old Man and Goblins | 흥겨운 마을 노래 / 어머니 자장가 | 혹 떼임·보물·욕심쟁이 혹 두 개 |
-| 5 | `05-kongjwi` (`kongjwi-and-the-toad`) | 콩쥐와 두꺼비 | Kongjwi and Toad | 베틀 + 참새 / 검은 소의 선물 | 꽃신 짝·사또·계모 가족 용서 |
-| 6 | `06-byeoljubu` (`hare-and-the-dragon-king`) | 별주부전 | Hare and Dragon King | 자라 따라 용궁 / 까치 귀띔 | 토끼 기지·산삼·우정 |
-| 7 | `07-heungbu` (`heungbu-and-nolbu`) | 흥부와 놀부 | Heungbu and Nolbu | 가족과 보살핌 / 어머니 약방문 | 박씨·도깨비·산신·형제 화해 |
-| 8 | `08-woodman` (`gold-axe-and-silver-axe`) | 금도끼 은도끼 | Gold and Silver Axe | 단호한 정직 / 흔들림 포함 정직 | 세 도끼·욕심쟁이 빈 손 |
+| # | Slug (folder) | 한국어 | 영어 | 라이브 | 분기 (V2 Y구조) | 정통 결말 |
+|---|---|---|---|---|---|---|
+| 1 | `01-folktale` (`sun-and-moon`) | 해님 달님 | Sun and Moon | V1 | 손 보여달라 / 자장가 부르라 | 두 동아줄·수수밭·해/달 부끄럼 자리 바꿈 |
+| 2 | `02-haenyeo` (`haenyeo-and-the-mermaid`) | 해녀와 인어 | Haenyeo and Mermaid | **⭐ V2.5** | 산호 미로 / 해초 숲 | 진주 반환·수호자·잠수경 안 푸른 별·손녀 대잇기 |
+| 3 | `03-woodcutter` (`fairy-and-the-woodcutter`) | 선녀와 나무꾼 | Fairy and Woodcutter | V1 | 산속 오두막 / 마을 어머니 곁 | 두레박·하늘 가족·새벽 빛이 된 그리움 |
+| 4 | `04-dokkaebi` (`old-man-and-the-goblins`) | 혹부리 영감 | Old Man and Goblins | V1 | 흥겨운 마을 노래 / 어머니 자장가 | 혹 떼임·보물·욕심쟁이 혹 두 개 |
+| 5 | `05-kongjwi` (`kongjwi-and-the-toad`) | 콩쥐와 두꺼비 | Kongjwi and Toad | V1 | 베틀 + 참새 / 검은 소의 선물 | 꽃신 짝·사또·계모 가족 용서 |
+| 6 | `06-byeoljubu` (`hare-and-the-dragon-king`) | 별주부전 | Hare and Dragon King | V1 | 자라 따라 용궁 / 까치 귀띔 | 토끼 기지·산삼·우정 |
+| 7 | `07-heungbu` (`heungbu-and-nolbu`) | 흥부와 놀부 | Heungbu and Nolbu | V1 | 가족과 보살핌 / 어머니 약방문 | 박씨·도깨비·산신·형제 화해 |
+| 8 | `08-woodman` (`gold-axe-and-silver-axe`) | 금도끼 은도끼 | Gold and Silver Axe | V1 | 단호한 정직 / 흔들림 포함 정직 | 세 도끼·욕심쟁이 빈 손 |
 
-**Y구조** (V2 적용 후): 1·2 공통 → 3 분기 (3a/3b) → 4 정통 결말. 한 회 플레이 = 4 장면.
-**현재 라이브** (V1): 1 → 2a/2b → 3a/3b (분기 엔딩 2개). PROMPTS_V2 도안 생성 후 story.ts 마이그레이션 필요.
+**Y구조**: 1·2 공통 → 3 분기 (3a/3b) → 4 정통 결말. 한 회 플레이 = 4 장면. Scene type 3-state(`nextId`/`choices`/`endingLabel`)로 구현.
+**V1 라이브** (Story 1, 3-8): 1 → 2a/2b → 3a/3b (분기 엔딩 2개). PROMPTS_V2.md에 V2.5 프롬프트 준비돼 있음, 도안 생성 + story.ts 마이그레이션 대기 (Story 2 패턴 그대로).
+**V2.5 라이브** (Story 2): 5장면 모두 V2.5 PNG + Y구조 + 풍부 narration + canonical ending production.
 
 각 스토리 `originalTale`에 `koreanTitle / romanized / englishTitle / origin / summary / glossary[] / ourVersion`.
 **Slug 매핑**: `STORY_SLUGS` in `src/lib/story.ts` (URL용 영문 친화 슬러그)
@@ -246,12 +276,28 @@ Start.command                    Mac 더블클릭 → dev + 브라우저
 1. `src/lib/strings.ts` — `UI` 객체에 `{ko, en}` 추가
 2. 컴포넌트에서 `const { t } = useLocale(); t(UI.myKey)`
 
-### 8.2 새 도안 (V2) 생성 → 통합
-1. `public/coloring/PROMPTS_V2.md`의 해당 스토리 섹션 → 베이스 + Subject 블록 Gemini에 입력
-2. 받은 PNG에 9단계 QA (PROMPTS_V2.md 체크리스트) 적용
-3. `public/coloring/{NN}-{storyId}/scene-*.png` 위치에 저장
-4. (V2 전체 완성 시) `src/lib/story.ts` narration·choices·image 경로를 PROMPTS_V2 기준으로 교체
-5. Scene 타입에 1-choice (linear) 지원 추가 (Y구조용) — 현재 미적용
+### 8.2 새 도안 (V2.5) 생성 → 통합 (Story 2 검증된 패턴)
+**Gemini 프롬프트 생성:**
+1. `public/coloring/PROMPTS_V2.md` 해당 스토리 섹션의 V2.5 마커 확인
+2. **베이스 스펙** + **V2.5 레이어** + **스토리 체크리스트** + **Scene Subject 블록** 순서로 합쳐 Gemini 입력
+3. 받은 PNG에 13항목 QA (PROMPTS_V2.md 체크리스트) 적용 — 보더 연속성·디테일 최소선·한국 도구 대체 방지·V2.5 minhwa 요소 모두 점검
+4. `public/coloring/{NN}-{storyId}/scene-{1-shore|2-deep|3a-...|3b-...|4-...}.png` 위치 저장
+5. 5장 다 모이면 story.ts 마이그레이션
+
+**story.ts 마이그레이션 (Story 2 패턴 그대로):**
+1. 해당 스토리 객체의 `startSceneId` → `scene-1-...` 으로 변경
+2. `scenes` 객체를 V2.5 5장면으로 재구성:
+   ```ts
+   "scene-1-...": { ..., nextId: "scene-2-..." },        // linear
+   "scene-2-...": { ..., choices: [..3a, ..3b] },        // branching
+   "scene-3a-...": { ..., nextId: "scene-4-..." },       // linear
+   "scene-3b-...": { ..., nextId: "scene-4-..." },       // linear
+   "scene-4-...": { ..., endingLabel: {...} },           // canonical ending
+   ```
+3. 각 narration은 PROMPTS_V2.md의 풍부 버전 그대로 (멀티-paragraph `\\n\\n` 포함)
+4. `originalTale.ourVersion` 도 V2.5 정통 결말 반영해 갱신 (분기 엔딩 언급 제거)
+5. `npx tsc --noEmit` + `npx next build` 통과 확인
+6. `npm run dev` → 두 분기 (3a, 3b) 다 플레이 → Complete book → 플립북 검증
 
 ### 8.3 새 스토리 추가
 1. `src/lib/story.ts` — `StoryId` 타입에 ID 추가 + 데이터 객체 + `STORIES` + `STORY_LIST` + `STORY_SLUGS`
@@ -334,8 +380,22 @@ PDF + 플립북에서 scene 제목의 "1장. " 또는 "Chapter 1 — " regex로 
 ### 10.11 ?start=storyId 딥링크
 `/?start=folktale` → page.tsx의 useEffect가 자동 pickStory 후 URL에서 파라미터 제거. `/folktales/[slug]`의 CTA가 이걸로 게임 시작.
 
-### 10.12 V1 vs V2 콘텐츠
-**현재 라이브**는 V1 (story.ts). V2 narration은 PROMPTS_V2.md에만 존재 — 도안 + story.ts 마이그레이션 안 된 상태. 새 도안 받기 전엔 V1 narration이 사용자에게 보임.
+### 10.12 V1 vs V2.5 콘텐츠 혼재 상태
+**현재 라이브 상태:**
+- **Story 2 (haenyeo)** = V2.5 완전 적용 (PNG + Y구조 + V2.5 narration + canonical ending)
+- **Stories 1, 3-8** = 여전히 V1 (V1 PNG + V1 narration + 분기 엔딩 2개)
+
+V2.5 narration이 PROMPTS_V2.md에 모두 작성돼 있으니 도안만 받으면 Story 2 패턴(§8.2)으로 바로 마이그레이션 가능. **혼재 상태가 사용자에게는 문제 없음** — 각 스토리는 독립적이라 V1 흐름·V2.5 흐름이 카드 클릭으로 분기.
+
+### 10.13 Scene 3-state 진행 규칙
+Scene 타입의 세 상태는 **상호 배타적**:
+- `nextId` 있음 → linear ("Continue →" 단일 버튼)
+- `choices` 있음 → branching (2개 카드)
+- 둘 다 없음 + `endingLabel` → ending ("Complete book" 버튼)
+
+`page.tsx` 렌더링은 `choices ? branching : nextId ? linear : ending` 순. 한 scene에 `nextId`와 `choices`를 같이 두면 `choices`가 이김 (의도된 동작 — branching 우선).
+
+V1 스토리 (Story 1, 3-8)는 모든 scene이 `choices` 또는 `endingLabel` 만 사용 (linear 미사용). V2.5 스토리 (Story 2)는 5장면 중 3장면이 linear, 1장면이 branching, 1장면이 ending.
 
 ### 10.13 GSC favicon 캐시
 URL prefix property가 인증된 시점의 favicon이 GSC 대시보드에 남음. 실제 사용자에겐 호랑이 표시. 며칠~몇 주 후 자동 갱신됨.
@@ -344,11 +404,12 @@ URL prefix property가 인증된 시점의 favicon이 GSC 대시보드에 남음
 
 ## 11. 미완 / 다음 후보
 
-### 🟢 콘텐츠 / 시각
-- **V2 도안 생성** (Gemini, 8 스토리 × 5장면 = 40장) — PROMPTS_V2 베이스 + Subject 블록으로 차례 생성
-- **V2 마이그레이션** — 도안 모이면 story.ts narration·choices·image 경로 일괄 교체, Scene 타입에 1-choice 추가
+### 🟢 콘텐츠 / 시각 (V2.5 확산이 다음 큰 트랙)
+- **V2.5 도안 생성 — Story 1, 3-8** (7 스토리 × 5장면 = 35장 Gemini) — 각 스토리의 PROMPTS_V2.md 섹션이 V2.5 마커 + 체크리스트 포함됐으니 베이스 + V2.5 레이어 + 체크리스트 + Subject 블록 입력. Story 2 검증된 패턴
+- **V2.5 마이그레이션 — Story 1, 3-8** — 도안 모이는 대로 story.ts 마이그레이션 (Story 2 패턴: §8.2 참조). 7 스토리 모두 끝나면 Backup_v1 폴더의 V1 PNG 삭제 가능
 - **랜딩 페이지 hero 강화** — picker 상단 마케팅 카피 (현재 이미 trust pills + 가이드 arrow까지는 적용됨)
 - **OG 이미지 개선** — 현재는 자동 생성된 텍스트 베이스. 호랑이 라인아트 추가하면 임팩트 ↑
+- **Story 2 라이브 한/영 토글 + 갤러리 + PDF 검증** — V2.5 마이그레이션 직후 라이브에서 실제 사용자 경험 한 번 더 확인
 
 ### 🟢 마케팅 / 성장
 - **Pinterest 운영** — `PINTEREST_PLAYBOOK.md` §10 체크리스트부터 시작 (Business 계정 + 8 보드 + 첫 8 메인 핀)
@@ -394,6 +455,10 @@ URL prefix property가 인증된 시점의 favicon이 GSC 대시보드에 남음
 | **자체 도메인 .ink** | v0.7 | "잉크" 컨셉 + .com보다 저렴 + AdSense·SEO 신뢰도 ↑ |
 | **카드 Begin pill 제거** | v0.7 | 카드 클릭 = Begin 직관 + UI 단순화 |
 | **모달 + SEO 페이지 콘텐츠 통일** | v0.7 | 사용자가 어디서 봐도 같은 이야기·같은 구조 |
+| **V2.5 한국 그림책 스타일라이제이션 레이어** | v0.8 | 미니멀 워크북 톤은 사이트 브랜드(한국 옛이야기)와 어긋남. minhwa 구름·산·물결·hair 디테일로 5초 안에 "한국 그림책" 인식 |
+| **Scene 3-state (nextId / choices / endingLabel)** | v0.8 | Y구조 linear 진행을 표현하려면 단일 next 필요. 기존 2-choice 패턴 유지하면서 추가 |
+| **Story 2 V2.5 testbed → 7 스토리 마커 확산** | v0.8 | 한 스토리 검증 후 패턴 복제. PROMPTS_V2.md 일관성 + Story 1, 3-8 도안 생성만 남음 |
+| **V2.5 lightweight 적용 (per-story 마커 + 체크리스트)** | v0.8 | 35 scene 블록 다시 쓰는 대신 스토리당 1 마커 + 10-15 bullets로 효율적 가이드. Gemini가 base + layer + checklist 통합 적용 |
 
 ---
 
@@ -426,14 +491,19 @@ URL prefix property가 인증된 시점의 favicon이 GSC 대시보드에 남음
 
 ## 15. 연락 (지난 세션과의 교신)
 
-- 마지막 작업: V1 → V2 narration 8개 스토리 모두 PROMPTS_V2.md에 정리, 폴더 numerical prefix, 점검 5개 중대 수정 + 6개 refinement
-- 다음 자연스러운 후보:
-  1. V2 도안 생성 (Gemini로 8×5장)
-  2. V2 통합 (도안 모이면 story.ts 교체)
-  3. Pinterest 첫 핀 운영 시작
+- 마지막 작업:
+  1. V2.5 한국 그림책 스타일라이제이션 레이어 PROMPTS_V2.md 베이스에 추가
+  2. **Story 2 (haenyeo) V2.5 production 마이그레이션 완료** ─ Y구조 + 5장면 + canonical ending 라이브
+  3. Scene 타입에 `nextId` 추가, page.tsx에 Continue 버튼 렌더링
+  4. Stories 1, 3-8에 V2.5 opt-in 마커 + 스토리 고유 체크리스트 (10-15 bullets each)
+- 다음 자연스러운 후보 (병렬 가능):
+  1. **Story 1 V2.5 도안 생성** (Gemini, 5장) → 받으면 story.ts 마이그레이션 (§8.2 패턴)
+  2. **Stories 3-8 V2.5 도안 순차 생성** — 한 스토리씩 또는 batch
+  3. **Pinterest 첫 핀** — 6 스토리 V2.5 완성 후 한 번에 핀 30개 정도 첫 푸시
+  4. Story 2 라이브 실측 — 한/영 토글·갤러리·PDF·플립북 한 번 더 확인
 - 사용자 톤: 빠른 결정, 깔끔한 시각, 디테일 신경, 안정성 우선
 - 사용자 응답 패턴: "응 가자", "잘된다", "이거 해줘" — 명확한 짧은 신호. 한국어로 토론 + 영어 검색.
 
 ---
 
-*마지막 갱신: v0.7 · PROMPTS_V2 완성 + 인프라 (도메인 + GSC + Vercel Analytics + 자동 배포) 완비 시점.*
+*마지막 갱신: v0.8 · V2.5 한국 그림책 스타일라이제이션 레이어 도입 + Story 2 production 마이그레이션 + Scene 3-state(nextId/choices/endingLabel) 완비 시점.*
