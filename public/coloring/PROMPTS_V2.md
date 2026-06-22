@@ -74,7 +74,7 @@ REJECT and re-render if:
 - A repeating pattern runs along the four sides (sides must be plain lines)
 
 COMPOSITION
-- Square 1024 × 1024 pixels, centered subject inside the inner border.
+- Square 2048 × 2048 pixels, centered subject inside the inner border.
 - Medium detail — friendly, readable shapes that a 5-year-old can recognize and a 10-year-old finds interesting.
 
 BACKGROUND
@@ -164,8 +164,13 @@ Natural textures with many small repeating units (tree foliage, pine needles, gr
 REJECT if any individual leaf / needle / blade of grass / single grain stalk is drawn as its own enclosed region — that means too many tiny clicks. Group them.
 
 OUTPUT
-- 1024 × 1024 PNG.
-- High-resolution square. If the model wants to output smaller, override: "render at full 1024×1024, do not downscale".
+- 2048 × 2048 PNG.
+- High-resolution square. This is print-quality (315 DPI when printed at 6.5"
+  on a typical home printer — book-quality reproduction). If the model wants
+  to output smaller, override: "render at full 2048×2048, do not downscale".
+- The border, line work, and decorative motifs benefit greatly from this
+  resolution — fine V2.5 detail (minhwa cloud curls, mountain ridge accents,
+  spiral hair tips) reads clearly at 2048 where it would smear at 1024.
 ```
 
 위 베이스 + 아래 장면 설명을 합쳐서 한 번에 넣으세요.

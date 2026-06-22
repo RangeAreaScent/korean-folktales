@@ -19,12 +19,21 @@ import { useLocale } from "@/lib/i18n"
 import { sound } from "@/lib/sound"
 import { UI } from "@/lib/strings"
 
-const CANVAS_SIZE = 1024
-const UNDO_LIMIT = 15
+// Internal canvas resolution. 2048 = print-quality (315 DPI for 6.5" print).
+// 4× more pixels than 1024, so undo + fill timing are tuned below.
+// Display size is still CSS-controlled (max-w-[720px] aspect-square).
+const CANVAS_SIZE = 2048
+// Undo stack holds full ImageData snapshots (CANVAS_SIZE² × 4 bytes each).
+// At 2048: 16MB per snapshot. Cap at 7 to keep mobile memory comfortable
+// (~110MB peak headroom).
+const UNDO_LIMIT = 7
 const MIN_ZOOM = 1
 const MAX_ZOOM = 4
 const ZOOM_STEP = 0.5
-const FILL_ANIMATE_MS = 180
+// Wavefront fill animation duration. Stretched from 180ms → 320ms so the
+// animation still lasts longer than the BFS work for typical large regions
+// at the 2048 resolution.
+const FILL_ANIMATE_MS = 320
 
 export type FillMode = "solid" | "linear" | "radial"
 
