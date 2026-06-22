@@ -301,6 +301,21 @@ REJECT and re-render if:
 
 # 🌙 Story 1 — 해님 달님 (Sun and Moon)
 
+> ✨ **V2.5 한국 그림책 스타일라이제이션 레이어 적용**
+> Gemini 입력 순서: **베이스 + V2.5 레이어 + 아래 스토리 체크리스트 + Subject 블록**
+
+**V2.5 스토리 고유 디테일 체크리스트:**
+- **달 (Scene 1·3a·3b)** — 보름달은 clean 원 + 2-3 halo arc 한쪽에 + 선택적 부드러운 얼굴 (감은 눈 + 작은 미소)
+- **호랑이** — 한국 민화 호랑이 (Joseon 민화 풍): 둥근 친근한 얼굴, 큰 둥근 눈, 굵은 줄무늬, 위협적이지 않음. NOT 서양 realistic tiger
+- **해/달 얼굴 (Scene 4 정통 결말)** — Korean folk-art 풍: 해는 둥근 얼굴 + 8-12 curved radial rays + 잔잔한 미소 / 달은 차분한 표정의 초승달 또는 둥근 달
+- **소나무 (Scene 3a)** — 5-7 cloud-shaped foliage clusters per pine, 2-4 trunk grain lines only
+- **수수밭 (Scene 4)** — 5-7 BUNDLED 그룹 (3-5 stems sharing one grain head per bundle). NOT individual stalks. 빨간 색칠 영역 명확
+- **동아줄 (Scene 4)** — BRAIDED 굵은 줄, 4-5 plait lines 시각적, NOT smooth 단순 줄
+- **별 (Scene 4)** — 10-15 simple 5-point stars 모두 동일한 아이콘
+- **마을·초가집 (Scene 4 horizon)** — 3-4 curved eaves 지붕 silhouette + simple thatch texture lines
+- **한지문 (Scene 1·2)** — 3×5 패널 그리드 명확, 종이 panel 사이 wood frame
+- **호롱불** — 작은 기름 그릇 + 보이는 심지 + 불꽃 + 2-3 short ray 빛 hint
+
 **구조**: Y-구조 (1·2 공통 → 3 분기 → 4 정통 결말)
 
 ```
@@ -1095,6 +1110,22 @@ band as small far-away echoes of Scenes 3a and 3b.
 
 # 🦌 Story 3 — 선녀와 나무꾼 (The Fairy and the Woodcutter)
 
+> ✨ **V2.5 한국 그림책 스타일라이제이션 레이어 적용**
+> Gemini 입력 순서: **베이스 + V2.5 레이어 + 아래 스토리 체크리스트 + Subject 블록**
+
+**V2.5 스토리 고유 디테일 체크리스트:**
+- **흰 사슴** — 한국 산속 사슴 (slender 한국 spotted deer 풍), 두 개 delicate antlers, 큰 검은 눈동자, 부드러운 얼굴. 사람 말 하는 옛이야기 동물답게 친근
+- **선녀 (Scene 2·3a·3b·4)** — 긴 머리 + 끝에 spiral curl 마무리 (V2.5 인어와 유사 톤), 머리에 작은 한국 머리장식 (꽃·구슬), 날개옷은 깃털 같은 빛 + sparkle lines. 목욕 장면(Scene 2)에서는 흰 sleeveless 속적삼 (어깨~허리 덮음, 노출 ❌)
+- **나무꾼** — 평민 한복 (짧은 저고리 + 바지, 머릿수건), 지게(A-frame carrier) 메는 자세, 도끼·갈고리 같은 도구
+- **별빛 연못 (Scene 2)** — 산 깊은 곳 둥근 연못, 물 위에 보름달 reflection + 별 reflection 작게, 주변에 minhwa 곡선 ripple
+- **소나무 (Scene 1·2)** — V2.5 cloud-shaped foliage clusters, trunk wood grain 2-4 lines
+- **한지창 (Scene 3a)** — 3×3 paper panel grid, 창 너머 밤하늘 보임
+- **한옥 (Scene 3b)** — 곡선 curved tile eaves (6-8 visible tiles), 한지 paneled door, 흙벽 horizontal line hints
+- **감나무 (Scene 3b)** — 가을 가지 + 4-5 둥근 감 each one fill region
+- **두레박 (Scene 4)** — wooden bucket + rope coils, 작게라도 hint
+- **새벽 빛줄기 (Scene 4)** — 2-3 long parallel soft 광선 lines 하늘→땅 connecting
+- **하늘 가족 옷차림 (Scene 4)** — 하얗고 가벼운 천상 한복, 약간 흐르는 듯한 sleeves
+
 **원작 배경**: 한국 옛이야기 중 가장 사랑받는 작품 중 하나. 사슴의 보은(報恩) + 하늘의 선녀 + 깨진 약속 + 새벽 빛의 etiology가 한 이야기에 엮인다.
 
 **기승전결 매핑** (Y-구조 5장면):
@@ -1636,6 +1667,22 @@ beam of light is the central vertical axis of the canvas.
 
 # 🥁 Story 4 — 혹부리 영감 (The Old Man and the Goblins)
 
+> ✨ **V2.5 한국 그림책 스타일라이제이션 레이어 적용**
+> Gemini 입력 순서: **베이스 + V2.5 레이어 + 아래 스토리 체크리스트 + Subject 블록**
+
+**V2.5 스토리 고유 디테일 체크리스트:**
+- **도깨비** — 한국 민화 스타일 (NOT Western goblin, NOT scary): 둥근 통통한 몸, 머리 위 외뿔 1개, 큰 둥근 친근 눈, 단순한 입, 짧고 통통한 팔다리. Scene 2·3a·3b·4에 동일한 5마리 같은 캐릭터로 일관
+- **영감 (선한 영감)** — 길고 흰 수염, 친절한 주름 얼굴, 평민 한복 (collar/ribbon/sleeve cuff lines), 머리수건, 한쪽 턱에 작은 복숭아 크기 둥근 혹 (한 영역, 부드러운 outline)
+- **욕심쟁이 영감 (Scene 4 only)** — 같은 노인 연배지만 시각 구분: 둥근 통통한 얼굴, 굵은 눈썹, 짧은 까칠 수염, MERCHANT-style 한복 (chest panel pattern, embroidered sash), 작은 돈주머니
+- **빈집 (Scene 1·2·3a·3b)** — 다 무너져 가는 초가집, paper-paneled door + 작은 paper window, 기울어진 wooden post, 풀더미 corner
+- **호롱불 (Scene 2·3a·3b)** — 작은 기름 그릇 + 보이는 심지 + 불꽃 + 2-3 short ray 빛
+- **달 (Scene 1 dusk = crescent / Scene 2-4 = full moon through window)** — V2.5 halo arc, 선택적 부드러운 얼굴
+- **가마솥 + 술병 (Scene 2)** — 큰 둥근 가마솥 + 좁은 목 둥근 몸 술병
+- **춤 동작선 (Scene 3a)** — 2-3 short motion lines per dancer, 발 아래 4-5 dust puff cloud shapes
+- **자장가 분위기 (Scene 3b)** — 졸린 도깨비 눈 = 부드러운 curve line (NOT round open eyes), 작은 Z 또는 breath puff
+- **보물 보따리 (Scene 4 좌)** — 2-3 큰 보따리 + 금덩어리 + 은붙이 + 비단 + 곡식 sack
+- **떡 stack (Scene 4 좌, 마을 잔치)** — 둥근 떡 patties 쌓인 모습
+
 **원작 배경**: 한국 전래동화의 권선징악 원형. 정직한 노래와 욕심에 대한 도깨비의 심판. 한국 사람의 정서 ─ 노래·정·진심 ─ 가 모두 들어 있다.
 
 **기승전결**:
@@ -2094,6 +2141,24 @@ halves at the top.
 ---
 
 # 🐸 Story 5 — 콩쥐와 두꺼비 (Kongjwi and the Toad)
+
+> ✨ **V2.5 한국 그림책 스타일라이제이션 레이어 적용**
+> Gemini 입력 순서: **베이스 + V2.5 레이어 + 아래 스토리 체크리스트 + Subject 블록**
+
+**V2.5 스토리 고유 디테일 체크리스트:**
+- **콩쥐** — 17세 처녀, 평민 work 한복 (collar/ribbon/cuff/hem lines, 약간의 패치 또는 시침질 자국), 긴 머리 한 갈래 braid + plain ribbon, 부드러운 얼굴 (iris+pupil+nose+mouth+ear)
+- **새어머니** — 약간 fancier 한복, strict 눈썹, 작은 입, 단정한 머리 (낮은 쪽머리 + binyeo)
+- **팥쥐** — 어린 소녀, 화려한 색 한복, 머리 리본
+- **사또 (Scene 4)** — 정통 Joseon 관복 (embroidered chest panel 흉배), **사모(紗帽)** ─ 검은 모자 양쪽 horizontal wing 있는 형태 (NOT 갓), 위엄 있는 친절한 얼굴
+- **항아리 (장독, Scene 1·2·3a·3b·4)** — 한국 전통 clay fermenting jar, 둥근 wide body + 좁은 top, 어깨 부근 horizontal banding 라인. 깨진 항아리는 visible CRACK + 새는 물방울 3-4개
+- **두꺼비** — 친근한 한국 두꺼비, 통통한 몸, 큰 둥근 눈, 부드러운 미소, 5-6 small round bump 등 (NOT 백 개 wart)
+- **베틀 (Scene 2·3a)** — 단순화된 한국 베틀 silhouette: 수직 frame + foot treadles + 8-10 warp threads. Scene 3b에선 ❌ (어머니 바느질로 대체된 woodcutter Scene 3b와 다름)
+- **참새 (Scene 3a)** — 8-10마리 simple Korean sparrow: round body + small head + short beak + 2 small dot eyes. 부리에 실 물고 있는 자세
+- **검은 소 (Scene 3b)** — Korean 전통 소, strong body + 두 short curved horns + 한 wooden bell on rope around neck + 큰 dark eyes + gentle expression. 무릎 꿇는 자세
+- **꽃신 (Scene 3b·4)** — pointed-tip 한국 전통 women's shoes, delicate flower embroidery patterns (small petals on each shoe), 분홍빛
+- **가마 (Scene 4)** — 한국 전통 sedan chair: wooden box + curved roof + 두 carrying poles
+- **감나무** — 4-5 cluster foliage + 4-5 round persimmons
+- **새 한복 (Scene 3b·4 콩쥐가 입은)** — 분홍빛 embroidered hanbok, floral embroidery lines along collar+sleeve cuffs, 푸른 댕기 ribbon in braid
 
 **원작 배경**: 한국판 신데렐라. 계모와 의붓동생 팥쥐의 학대를 받는 콩쥐가 자연(두꺼비·참새·검은 소)의 도움으로 잔치에 가게 되고, 신발 한 짝을 통해 사또를 만나 행복해진다.
 
@@ -2622,6 +2687,23 @@ above.
 ---
 
 # 🐢 Story 6 — 별주부전 (The Hare and the Dragon King)
+
+> ✨ **V2.5 한국 그림책 스타일라이제이션 레이어 적용**
+> Gemini 입력 순서: **베이스 + V2.5 레이어 + 아래 스토리 체크리스트 + Subject 블록**
+
+**V2.5 스토리 고유 디테일 체크리스트:**
+- **용왕 (Scene 1·3a)** — 한국 친근한 dragon (NOT Western fierce dragon): 길고 sinuous body coiled, 두 delicate horns + 긴 whiskers, kind tired face, ~12-15 large scale plates 명확 (each one fill region), 한 foreclaw에 wisdom pearl
+- **자라 별주부 (모든 scene)** — 한국 soft-shelled turtle, 둥근 dome shell + 6-8 hexagonal plates (each ONE fill region + 1 small internal accent line), 짧은 stubby legs 4개, gentle determined 얼굴, dark dot eyes, 작은 결심의 미소. Scene 2에선 shell에 흙 flecks + 작은 moss bits (오랜 여정 표현)
+- **토끼 (Scene 2·3a·3b·4)** — 한국 산토끼: 둥근 body, 두 긴 upright ears + pink inner ear lines, 큰 round black 눈, 작은 pink 코 (씰룩거리는 느낌), 작은 흰 tail puff
+- **잉어 의원 (Scene 1·3a)** — 긴 body + 6-8 large scales + gentle sage 같은 whiskers + 작은 scholar's cap
+- **용궁 throne (Scene 1·3a)** — 산호와 물결 모양으로 조각된 grand throne, 좌우에 seaweed 발 (4-5 vertical ribbon shapes)
+- **진주 lanterns (Scene 1·3a)** — 아치 ceiling에서 매달린 3-4 round 진주 (광원 역할)
+- **다른 court creatures** — 게 (둥근 body + 2 raised claws + 4-5 simple legs), 해파리 (simple bell + 4-5 dangling lines), 큰 fish courtiers (각자 다른 한국 fish style)
+- **까치 (Scene 3b — 도깨비 대체)** — 한국 전형 magpie: 흰 belly + 검은 wings + 긴 forked tail + 작은 검은 눈 + sharp small beak. 머리 tilt whisper 자세
+- **산속 풍경 (Scene 2·3b·4)** — 소나무 V2.5 cluster foliage, 산속 wildflowers (3-4 simple 5-petal), 작은 mountain stream (3-4 flowing curve lines), 산봉우리 layered silhouettes
+- **산삼 (Scene 4)** — small plant with 5-7 leaves arrayed around a central stalk, 깊은 valley 바닥에 2-3 plants visible
+- **가을 단풍 (Scene 4)** — 6-8 rounded blob clusters per tree, 2-3 trees clearly autumn-colored
+- **기러기 V형 (Scene 4)** — 5-6 simple V-shape birds in a line, southward flight
 
 **원작 배경**: 판소리 다섯 마당 중 하나. 용왕의 병을 고치기 위한 자라(별주부)의 충성과 토끼의 기지가 부딪치는 이야기. 한국 옛이야기 중 가장 재치 있고 유머가 있는 작품이다.
 
@@ -3152,6 +3234,29 @@ ground details lower.
 ---
 
 # 🪺 Story 7 — 흥부와 놀부 (Heungbu and Nolbu)
+
+> ✨ **V2.5 한국 그림책 스타일라이제이션 레이어 적용**
+> Gemini 입력 순서: **베이스 + V2.5 레이어 + 아래 스토리 체크리스트 + Subject 블록**
+
+**V2.5 스토리 고유 디테일 체크리스트:**
+- **흥부** — 친절한 ~35세 남자, 단순 worn 한복 (visible patches at elbows + knees, collar + ribbon + sleeve cuff + hem lines), 친절한 wrinkled 얼굴, kind 눈
+- **흥부 가족** — 아내 (단순 한복 + clean apron + 머리 단정), 아이 셋 (~3, ~5, ~7세, 작은 단순 한복 일부 patched, 친근한 얼굴)
+- **놀부** — 흥부와 비슷한 외모지만 fuller cheeks + scowling 표정 + downturned 입, fine embroidered 한복 wide sleeves + 손 등 뒤. Scene 4에선 disheveled로 변형
+- **흥부 집 (Scene 1·2·3a·3b·4)** — 다 무너져 가는 thatched-roof hut: thatch 일부 sagging, 일부에 햇빛 hole, paper-paneled door slightly askew, wooden post leaning. Scene 4 에선 약간 mended-looking
+- **놀부 집** — grand 한옥 with curved gimong tiles, ornate carved beam ends, sturdy posts, paper door with intricate grid pattern
+- **곡식 storage jars (놀부 마당)** — 4-5 tall 장독 in a row along the wall
+- **제비 (Scene 1·2·3a·3b·4)** — 한국 제비: 둥근 body + sleek 검은 등 + 흰 belly + 긴 forked tail + 작은 검은 눈 + tiny beak. 다친 다리는 한쪽이 awkward angle + 작은 injury marks (NOT 세부 피)
+- **둥지 (Scene 2)** — 처마 밑 simple round 바구니 모양 둥지
+- **목련 (Scene 2 spring)** — early bloom magnolia, 4-5 large rounded blossom shapes (each one fill region)
+- **새 둥지 (Scene 3a)** — 아이들이 짜는 round 짚단 nest + soft pine needle clump inside
+- **약방문 herbs (Scene 3b)** — 산쑥 (small jagged star-shaped 잎, 2-3 plants) + 까치발 모양 잎 (three-pointed trident-like 잎, 2-3 plants). 각 plant 3-5 leaves 명확
+- **절구 (Scene 3b)** — 돌 stone mortar + stone pestle 두 손으로 들고 grinding 자세
+- **화로·주전자 (Scene 3a·3b)** — 작은 clay brazier + copper kettle + 2-3 steam wisp lines
+- **박 gourd (Scene 4)** — 큰 둥근 박, 톱으로 켜진 split form + 보물 쏟아짐. 3 gourds visible per side
+- **보물 (Scene 4 흥부 측)** — gold ingots (3-4 rectangles) + silver pieces (round disks) + folded silk + rice grain clusters + timber + 기와
+- **재앙 (Scene 4 놀부 측, 부드럽게)** — 4-5 mischievous dokkaebi (tongues out, frowning) + dark wisps (NOT 세부 dung) + 산신 (white-bearded sage in flowing robes, 한 finger raised in reproach)
+- **새벽 빛 (Scene 4 화해)** — bok-vine sprouting between brothers' feet, 3-4 simple vine leaves
+- **새들** — sparrows·magpies cheerful simple shapes (눈 dot + tail fork visible). Scene 4 흥부 측에 4-5 swallows joyfully overhead
 
 **원작 배경**: 판소리 다섯 마당 중 하나. 형제의 대비를 통해 자비와 욕심의 결과를 보여주는 한국 권선징악의 대표작. 박씨를 물어 온 제비가 만드는 두 개의 박이 두 형제의 마음을 비춘다.
 
@@ -3702,6 +3807,29 @@ focal point.
 ---
 
 # 🪓 Story 8 — 금도끼 은도끼 (The Gold Axe and the Silver Axe)
+
+> ✨ **V2.5 한국 그림책 스타일라이제이션 레이어 적용**
+> Gemini 입력 순서: **베이스 + V2.5 레이어 + 아래 스토리 체크리스트 + Subject 블록**
+
+**V2.5 스토리 고유 디테일 체크리스트:**
+- **정직한 나무꾼 (~30대)** — 평민 worn 한복 (sleeves rolled up, 머리수건, lean kind 얼굴), 깡마른 친절한 인상. Iris+pupil+nose+mouth+ear 명확
+- **늙은 어머니 (Scene 1·4)** — 굽은 허리, 회색 머리 낮은 쪽머리, 단순 한복 + apron, 친절한 wrinkled 얼굴, 작은 wooden walking stick
+- **욕심쟁이 나무꾼 (Scene 4 only)** — 정직한 나무꾼과 명확 시각 구분: 둥근 fuller 얼굴, bushy 굵은 눈썹, 작은 scraggly 수염, MERCHANT-style 한복 (diamond 또는 floral patterned chest panel, embroidered sash at waist, 약간 disheveled + dusty), 작은 money pouch dangling
+- **산신령 (Scene 2·3a·3b)** — 한국 전통: 길고 흰 수염 (가슴까지), 흰 한복 with wide sleeves, 작은 jade crown OR simple silk 머리띠, 긴 jade 지팡이. 물 위로 waist up only 또는 chest up 등장. kind testing smile → warm approving smile (Scene 3a/3b 다름)
+- **연못 (Scene 1·2·3a·3b·4)** — 둥근 한국 산속 연못, surface clear, 주변에 5-7 rounded stones + 3-4 fan-shaped reed 군락 + 1-2 lily pad shapes. 산신령 떠오를 때 3-4 concentric ripple lines
+- **세 도끼 (Scene 2·3a·3b·4)** — 명확 구분:
+  - **금도끼**: ornate larger blade + decorative pattern lines + 4-6 short sparkle/ray lines (bright)
+  - **은도끼**: bright moonlight-like, 4-6 sparkle lines, slightly smaller than gold
+  - **쇠도끼 (정직한 도끼)**: worn smooth wooden 자루 + simple unornamented blade, distinctly NOT shiny — true 도끼
+- **소나무 (Scene 1·2·3a·3b·4)** — V2.5 cloud-shaped foliage clusters (6-9 per pine), 2-4 trunk grain lines
+- **산봉우리 (background)** — layered overlapping silhouettes, 2-3 ridges with subtle peak accents
+- **초가집 (Scene 1·4)** — 작은 modest Korean thatched-roof hut, paper-paneled door + 작은 window + simple wooden frame, chimney smoking 2-3 wisp lines
+- **돌담 (Scene 1·4)** — rough basalt stones (6-8 distinct stones, each one fill region)
+- **닭 (Scene 1)** — 마당에서 pecking, simple shape
+- **감나무 (Scene 4)** — 4-5 cluster foliage + 4-5 round persimmons
+- **까치 (Scene 4 욕심쟁이 측)** — 2 simple mocking 까치 on branch, 흰 belly + 검은 wings + 긴 forked tail
+- **도끼 가루 (Scene 1)** — 도끼날 falling motion: 2-3 motion lines following trajectory toward pond
+- **세 도끼 column (Scene 3a)** — 산신령 손에 vertical sequence: 위 gold → 중 silver → 아래 iron (forward-extending). 시간 흐름 시각화
 
 **원작 배경**: 한국에서 가장 짧고 명료한 권선징악 옛이야기. 산신령의 시험을 통해 정직과 욕심의 결과가 곧바로 드러난다. 어린이가 가장 먼저 듣는 도덕 우화 중 하나.
 
