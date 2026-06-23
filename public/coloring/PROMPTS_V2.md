@@ -3349,64 +3349,90 @@ linking all three beats.
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-SHOT TYPE: Outdoor wide split-yard scene at golden afternoon. The canvas
-shows TWO YARDS side by side, separated by a low fence or pathway. LEFT
-half is poor-but-warm Heungbu's yard; RIGHT half is rich-but-cold
-Nolbu's yard. Establish character contrast immediately.
+SHOT TYPE: WIDE village panorama — pulled BACK far so we see a whole
+Korean mountain village with multiple houses, a market road running
+through, villagers in motion. The two brothers' gates anchor the LEFT
+and RIGHT edges; the contrast is shown through their SOCIAL ACTIONS
+toward people and birds passing by, not just architectural difference.
+Reads like a Korean genre painting (풍속화) — many small life scenes
+woven together. Slight elevated angle (bird's-eye-ish), expansive.
 
-Subject: A Korean village seen as two adjacent yards.
+Subject: A Korean mountain village panorama at golden afternoon, with
+two brothers' gates as the LEFT and RIGHT anchors of a wide social
+tableau.
 
-LEFT HALF — HEUNGBU'S YARD:
-- A small dilapidated thatched-roof hut (초가집 — visibly worn, thatched
-  roof with a few sagging sections, one section showing daylight through
-  a hole, paper-paneled door slightly askew, a wooden post leaning).
-- HEUNGBU himself (kind-faced man ~35, simple worn hanbok with visible
-  patches at the elbows and knees, gentle wrinkled face from worry, kind
-  eyes). He stands at the front of his yard, scattering crumbs from a
-  small wooden bowl.
-- 5-7 small Korean sparrows and 2-3 magpies (까치) gathered around his
-  feet, eating eagerly — friendly simple bird shapes, GROUPED simply.
-- 2-3 small children (his children, ~3, ~5, ~7, in small simple hanbok,
-  some patched) standing in the doorway watching with affectionate
-  smiles. The youngest holds a tiny rice ball in both hands.
-- An empty grain sack hanging by the door, a single hoe propped against
-  the wall, a small dry persimmon tree (apply GROUPED NATURAL TEXTURES
-  ─ 3-4 rounded blob foliage clusters with 2-3 ripe persimmons hanging).
-- A few weed tufts in the yard (4-5 fan-shaped grass groups, not a
-  carpet).
+LEFT ANCHOR — HEUNGBU at his gate (warm-poor):
+- A small dilapidated thatched-roof hut at the FAR LEFT edge with its
+  gate opening onto the market road. Visibly worn thatch with a few
+  sagging sections, paper door askew.
+- HEUNGBU (kind ~35, simple worn 한복 with visible patches at elbows
+  + knees, gentle wrinkled face, kind eyes) stands at his open gate
+  scattering crumbs from a small wooden bowl. His posture is open,
+  welcoming.
+- 6-8 small Korean sparrows + 2-3 magpies (까치) gathered around his
+  feet eating. A small village child (passing on the road) has stopped
+  beside Heungbu; Heungbu is gently handing her a piece of rice cake.
+- His three children peek out from the hut doorway behind him, all
+  watching with affectionate smiles.
+- A persimmon tree by his gate (V2.5 GROUPED foliage, 3-4 round
+  persimmons), a single hoe against the wall.
 
-DIVIDING LINE — a low wooden fence runs vertically down the center of
-the canvas separating the two yards. A single magpie sits on the fence,
-turned toward the Heungbu side.
+RIGHT ANCHOR — NOLBU at his gate (cold-rich):
+- A grand 한옥 with curved tile eaves at the FAR RIGHT edge, with its
+  imposing wooden gate. Ornate carved beam ends, sturdy posts, paper
+  door with intricate grid pattern.
+- NOLBU (older, similar features to Heungbu but fuller cheeks,
+  scowling, fine embroidered 한복 with wide sleeves, hands tucked
+  inside opposite sleeves) stands at his closed gate REFUSING someone
+  ─ show a thin elderly beggar (older man in tattered 한복, walking
+  stick, empty bowl extended) being waved away with a stern flick
+  of Nolbu's hand. Nolbu's eyebrows scowling, mouth downturned.
+- Multiple grain storage jars (장독, 4-5 tall jars in a row) visible
+  inside his gate, all clearly full.
+- A finely groomed ornamental tree near his gate (4-5 rounded foliage
+  clusters), but NO birds anywhere on his side.
 
-RIGHT HALF — NOLBU'S YARD:
-- A grand Korean tile-roof house (한옥 with curved gimong tiles, ornate
-  carved beam ends, sturdy posts, paper door with intricate grid pattern).
-- Multiple grain storage jars (장독 — 4-5 tall jars in a row along the
-  wall, all clearly full).
-- NOLBU (older brother, similar facial features to Heungbu but with
-  fuller cheeks, scowling expression with downturned mouth, fine
-  embroidered hanbok with wide sleeves, hands behind his back). He stands
-  in the middle of his yard glaring out — but not at his brother;
-  glaring at the air, generally displeased.
-- NOT A SINGLE BIRD anywhere on his side of the fence. The yard is
-  immaculate but empty of life.
-- A finely groomed ornamental tree (apply GROUPED NATURAL TEXTURES ─ 4-5
-  rounded foliage clusters), pristine but lifeless feel.
+CENTER — THE VILLAGE LIFE (the social fabric between):
+- A market road running horizontally across the canvas, connecting
+  the two gates.
+- 3-4 villagers in motion along the road:
+  • A woman carrying a water jar on her head, walking toward Heungbu's
+    side, smiling at him
+  • Two children running and chasing each other with a stick toy
+  • An old man with a long pipe sitting on a small wooden bench under
+    a tree, watching the village
+- 2-3 other neighbor hanok rooftops visible mid-distance (curved tile
+  eaves), suggesting the wider community.
+- A small village well in the center foreground, with a wooden pulley.
+- A few chickens pecking near the well (3-4 simple shapes).
 
-UPPER SKY (across both halves): golden afternoon, 2-3 simple cloud
-shapes, large warm sun in the upper-center. Birds flying in formation
-over Heungbu's side only (4-5 simple V shapes), none over Nolbu's side.
+BACKGROUND:
+- Mountain ridges layered behind the village (apply V2.5 layered
+  silhouettes, 2-3 ridges with subtle ridge accent lines).
+- 2-3 V2.5 minhwa cloud motifs (coiling curls) in the upper sky.
+- Warm afternoon sun upper-center with curved radial rays + optional
+  subtle smiling face.
+- A line of 4-5 swallows flying in V formation ONLY over Heungbu's
+  half of the sky (small simple V shapes) — birds know where they're
+  welcome.
 
-Apply DETAIL LEVEL: both houses show their respective construction
-details, both brothers full hanbok detail, children's faces detailed,
-birds detailed enough to feel cheerful. GROUPED NATURAL TEXTURES: trees
-in clusters, weeds in tufts, clouds simple.
+GROUND DETAILS: fan-shaped grass tufts (4-5 spaced), scattered small
+pebbles, a small wildflower cluster near the well.
 
-Mood: gentle but unmistakable moral contrast ─ warm-poor vs cold-rich.
-Composition: SPLIT-CANVAS VERTICAL. Heungbu's yard with birds and children
-LEFT (~50%), low fence with magpie as the divider CENTER, Nolbu's yard
-empty and grand RIGHT (~50%), unified sky above.
+Apply DETAIL LEVEL: both brothers' faces clearly distinct (kind vs
+scowling), all secondary characters legible (child receiving rice
+cake / beggar / water-carrier / playing children / old man on bench).
+GROUPED NATURAL TEXTURES strictly: clouds as minhwa curls, foliage
+in clusters, grass in tufts, swallows simple V shapes.
+
+Mood: a whole village seen at once ─ the contrast between the brothers
+shown through SOCIAL ACTIONS toward strangers, not just through their
+houses. Genre-painting density without crowding.
+
+Composition: WIDE HORIZONTAL PANORAMA. Heungbu welcoming at FAR LEFT
+(~25%), village life flowing along the central road (~50%), Nolbu
+refusing at FAR RIGHT (~25%), mountain ridges + minhwa sky upper band,
+village well + ground details lower foreground.
 ```
 
 ---
@@ -3444,60 +3470,77 @@ empty and grand RIGHT (~50%), unified sky above.
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-SHOT TYPE: Spring outdoor courtyard scene at midday. Heungbu kneeling in
-the center of his yard holding the small fallen swallow. The dilapidated
-hut + sky + spring flowers create the gentle backdrop. Intimate composition.
+SHOT TYPE: INTIMATE EXTREME CLOSE-UP — the camera is pulled IN close
+to a pair of cupped hands holding a single tiny swallow. The viewer
+sees Heungbu mostly from the SHOULDERS UP and his HANDS, large in
+the frame. Everything else (hut, family, sky) is barely-there hints
+at the edges. The opposite of Scene 1's wide panorama. Reads like a
+single tender moment frozen in time.
 
-Subject: A spring day in Heungbu's small yard. CENTER-FOREGROUND: Heungbu
-(same character as Scene 1, simple worn hanbok with patches) kneels on
-one knee in the middle of the yard. He holds his two hands gently
-cupped in front of his chest. Inside the cupped hands rests a small
-Korean swallow (제비 ─ rounded body, sleek black back, white belly, long
-forked tail, small black eyes, tiny beak). One of the swallow's legs is
-clearly bent at an awkward angle, with a few small marks suggesting
-injury (NOT detailed blood, just suggestion).
+Subject: A close, tender springtime moment focused on a hurt swallow
+in a man's cupped hands.
 
-Heungbu's face is gentle and concerned, head bent toward the bird with
-careful tenderness.
+CENTER OF CANVAS (large, the entire emotional anchor):
+- Heungbu's two HANDS cupped together, palms up, fingers gently
+  curved inward to form a soft nest shape. Hands are clearly an
+  older laborer's ─ a few subtle wrinkle lines, slight calluses
+  hinted by 1-2 short crease lines. Show the hands LARGE — they
+  fill roughly the center 40% of the canvas.
+- Inside the cupped hands rests a small Korean swallow (제비) — the
+  body of the bird shown at a scale where the viewer can clearly
+  see: rounded body, sleek black back, white belly, long forked tail
+  curled across one hand, small black eyes wide and alert, tiny
+  beak slightly open, one wing held normal + one wing slightly
+  drooping. One leg is clearly bent at an unnatural angle, with
+  2-3 small marks suggesting it hurts (no detailed blood). The
+  swallow looks directly out toward the viewer — eye contact.
+- Three or four small dots/curve lines near the bird suggesting
+  soft feather texture, but kept very simple.
 
-ABOVE THE YARD: under the thatched eaves, a small empty swallow's nest
-(둥지 ─ simple round basket shape) tucked into the corner. A few stray
-twigs scattered around it suggest the fall.
+UPPER CANVAS — Heungbu's face and shoulders looking DOWN at the bird:
+- Show Heungbu from the shoulders up only, leaning forward, head
+  tilted DOWN toward the cupped hands. We see the top half of his
+  face: kind eyes (full V2.5 face detail — iris + pupil + soft
+  worry lines + brows slightly raised in concern), gentle mouth in
+  a small "oh" of compassion. His head-cloth (머릿수건) visible at
+  the crown.
+- His worn hanbok visible at the shoulders + upper chest only ─
+  collar line, ribbon (고름) hint at the chest. Patches subtly
+  shown.
 
-LEFT-MIDGROUND: Heungbu's children peeking out from the doorway, all
-three faces watching with worry and curiosity. The youngest holds the
-hand of the middle one.
+EDGES OF THE CANVAS — soft contextual hints (NOT competing focal):
+- TOP-LEFT corner: a sliver of thatched eaves with a small empty
+  round swallow's nest tucked under (둥지 ─ simple basket shape),
+  2-3 stray twigs falling from it.
+- TOP-RIGHT corner: 1-2 V2.5 minhwa cloud motifs in pale spring sky.
+- BOTTOM-LEFT: 2-3 fallen 매화 or magnolia petals on the ground at
+  Heungbu's knee level (suggests spring + softness).
+- BOTTOM-RIGHT: a tiny corner of Heungbu's wife's hand entering
+  frame from the side, holding the edge of a clean white cotton
+  cloth ─ just enough to suggest "help is coming", NOT her full
+  body.
+- A small line of 2-3 swallows flying high in the very top sliver
+  of sky (simple V shapes), echoing the family the wounded bird
+  came from.
 
-RIGHT-MIDGROUND: Heungbu's wife (kind face, simple hanbok, hair tied
-back, a clean apron) hurries from inside the hut carrying a small
-clean cloth (suggesting she will help bandage). Her face is gently
-focused, not panicked.
+Apply DETAIL LEVEL strictly: hands clearly rendered as adult human
+hands (knuckle lines, fingertip curves), swallow body fully detailed
+at this larger scale (head shape, beak, eye iris+pupil, both wings
+with simple feather flow lines, forked tail, broken leg clear), face
+in upper canvas with V2.5 emotional richness.
 
-BACKGROUND: the dilapidated hut as in Scene 1, but now with hints of
-spring around it ─ small wildflowers blooming at the base of the wall
-(apply GROUPED NATURAL TEXTURES ─ 3-4 small flower clusters of simple
-5-petal shapes). A small magnolia tree (목련) in early bloom by the
-fence with 4-5 large rounded blossom shapes (each one fill region). The
-persimmon tree from Scene 1 still bare-branched.
+GROUPED NATURAL TEXTURES strictly: clouds as minhwa curls, falling
+petals in a small group of 3-4 (NOT a flurry), swallows simple V's.
 
-UPPER SKY: bright spring sky. 2-3 soft cloud shapes. Other swallows
-flying overhead (3-4 simple V shapes with forked tails). The sun upper-
-right with simple rays.
+Mood: extreme spring tenderness. The wide world has shrunk to one
+small life held in two hands. The whole story pivots on this moment.
 
-GROUND DETAILS: scattered wildflowers, a fan-shaped grass tuft, one
-small shovel propped against the wall.
-
-Apply DETAIL LEVEL: Heungbu's worn hanbok shows patches + collar +
-sleeve, his face detailed with kind worry, swallow clearly shows
-broken leg shape, family members faces visible.
-GROUPED NATURAL TEXTURES: magnolia in clusters, flowers in groups, swallows
-overhead simple V shapes.
-
-Mood: spring tenderness, a moment of decision rooted in kindness ─
-the family gathering inward around a small wounded life.
-Composition: CENTERED on Heungbu and the swallow in his hands, family
-flanking left and right, dilapidated hut + magnolia + spring background,
-swallows in the sky above.
+Composition: CENTRAL CLOSE-UP. Cupped hands + swallow dead-center
+(~50% of canvas), Heungbu's face + shoulders above them looking
+down (~20%), all four corners holding faint contextual hints
+(nest, sky cloud, fallen petals, wife's helping hand). 4-5×
+narrower depth than Scene 1's village panorama — the visual breath
+is the OPPOSITE of Scene 1.
 ```
 
 ---
