@@ -3167,59 +3167,96 @@ mountain background.
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-SHOT TYPE: Outdoor mountain valley scene in warm autumn light. The hare
-sits beside the turtle showing him a map-like gesture toward the valley
-where the ginseng grows. Wide warm reconciliation composition.
+SHOT TYPE: Wide horizontal canvas reading LEFT-TO-RIGHT as a TIME ARC
+(Korean scroll painting 산수도 풍): foreground LEFT shows the
+reconciliation moment, midground RIGHT shows the turtle's solo
+journey into the valley, far-right edge/upper-right shows the
+RESOLUTION ─ the turtle reaching the underwater palace with the
+ginseng and the Dragon King recovering. One coloring page that
+visually summarizes the whole ending.
 
-Subject: A Korean mountain slope in early autumn afternoon.
+Subject: A Korean autumn mountain landscape that holds the entire
+closing arc — friendship + journey + healing.
 
-CENTER-FOREGROUND: the hare (same character) sitting on a low flat rock,
-ears relaxed (no longer alarmed), one front paw extended pointing
-gently toward the deeper valley to the right. His face is kind, no
-trace of mockery — a settled smile.
+LEFT THIRD — RECONCILIATION (the emotional anchor):
+- The hare (same character) sits on a low flat rock, ears relaxed,
+  one front paw extended pointing toward the deeper valley to the
+  right. His face is kind, settled smile, no mockery.
+- Beside him on the same rock: the turtle (Byeoljubu), shell turned
+  partly toward the hare, looking in the direction he points. A single
+  small tear-drop shape near the turtle's eye (relief + gratitude),
+  one forefoot lifted slightly. Body language: turtle's shell leaning
+  toward hare; hare looking at turtle warmly.
+- Around them: small mountain wildflower cluster (3-4 simple 5-petal
+  flowers), a few pebbles, one fallen pine cone, one tall Korean pine
+  framing the LEFT edge (apply V2.5 GROUPED foliage clusters).
 
-BESIDE THE HARE on the same rock: the turtle (Byeoljubu, same character)
-is sitting low, his shell turned partly toward the hare. He is looking
-in the direction the hare points. A single small tear-drop shape near
-his eye, mixing relief and gratitude. One forefoot lifted slightly.
+CENTER-MID — THE JOURNEY (smaller in scale, showing progression):
+- The same turtle, now SOLO, smaller in scale, mid-walk along a
+  winding mountain path that descends from the rock toward the deep
+  valley on the right. His shell from a slight back-3/4 angle, four
+  short legs in mid-step, head extended forward with purpose. Show
+  2-3 short motion lines around his feet suggesting steady travel.
+- The path is shown as a soft curving line through the landscape,
+  flanked by 2-3 layered mountain ridge silhouettes (apply V2.5
+  layered mountains with subtle ridge accent lines).
+- At the bottom of the valley: the ginseng (산삼) ─ 2-3 plants with
+  5-7 leaves arrayed around a central stalk, each plant one distinct
+  fill region. A gentle stream winds past them. The turtle is heading
+  toward this. Optional: one ginseng plant shown being gently lifted
+  by the turtle (as a second small "turtle digging" vignette beneath
+  the journey path, if space allows).
 
-THE TWO ANIMALS ARE CLEARLY FRIENDS NOW — small body language: turtle's
-shell leaning slightly toward hare, hare looking at turtle warmly.
+RIGHT THIRD — THE RESOLUTION (the closing beat, smaller still):
+- UPPER-RIGHT shows a soft circular or oval VIGNETTE (like a thought-
+  cloud but framed as a traditional Korean fan-shape or scroll-end
+  motif). Inside the vignette:
+  • A simplified version of the Dragon Palace from Scene 1 (coral
+    throne + arched pearl-lantern ceiling, scaled down to fit the
+    vignette).
+  • The turtle (now arrived) presenting the ginseng to the Dragon
+    King with both forelegs raised. The Dragon King is sitting UP
+    on his coral bed, alert, with a small smile of recovery (visibly
+    different from Scene 1's sick posture). The pearl in his claw
+    now glows faintly (3-4 short sparkle lines).
+- This vignette is a small, decorative frame ─ NOT a separate
+  canvas. It sits in the upper-right of the main scene like an
+  illuminated capital at the end of a chapter, telling the reader
+  "and this is what happened next, on the other side of the world".
 
-RIGHT-MIDGROUND: the deep valley the hare is pointing toward. Show as
-a soft V-shape valley with mountain ridges on either side, and at its
-bottom, a clear suggestion of a hidden wild ginseng (산삼 ─ a small plant
-with 5-7 leaves arrayed around a central stalk; show 2-3 of these
-ginseng plants growing in the valley floor as distinct enclosed
-shapes). A gentle stream winds through the valley.
+BACKGROUND across the whole canvas:
+- Korean autumn mountain ridges in layered V2.5 silhouettes (2-3
+  layers, each with 1-2 ridge accent lines).
+- Two clearly autumn-colored trees (oval-leaf cluster shapes, treat
+  each cluster as one fill region).
+- UPPER-LEFT: a small flock of 기러기 flying southward in a V formation
+  (5-6 simple V-shape birds in a line) — closes the journey
+  visually toward the resolution.
+- UPPER SKY: warm autumn afternoon, 2-3 V2.5 minhwa cloud motifs
+  (coiling curl bodies), warm sun upper-left with curved radial
+  rays.
+- AT THE VERY FAR HORIZON between the valley path and the resolution
+  vignette: a thin horizontal line suggesting the distant SEA where
+  the turtle ultimately returns — visually links the mountain journey
+  to the underwater palace inside the vignette.
 
-BACKGROUND: Korean autumn mountain ridges layered, with autumn foliage
-in clusters — apply GROUPED NATURAL TEXTURES strictly: foliage as 6-8
-rounded blob clusters per visible tree, NOT individual leaves. Two trees
-clearly autumn-colored (visible by oval-leaf cluster shape, treat the
-cluster as one fill region).
+GROUND DETAILS: scattered fan-shaped grass tufts (3-4 spaced), a few
+small autumn leaves grouped (3-4 leaf groups), one pine cone.
 
-UPPER-LEFT BACKGROUND: a small flock of geese flying southward in a V
-formation (5-6 simple V-shape birds in a line).
+Apply DETAIL LEVEL: every character face clear (hare's settled smile,
+turtle's small tear, recovering Dragon King's gentle smile). GROUPED
+NATURAL TEXTURES strictly: foliage in clusters, geese as simple V,
+flowers in groups, clouds as minhwa curls.
 
-LEFT-FOREGROUND: a small mountain wildflower cluster (3-4 simple
-5-petal flowers), a few pebbles, one fallen pine cone.
+Mood: warm reconciliation + quiet completion ─ a single page that
+holds friendship, the long walk, and the saving of a king. Korean
+scroll-painting energy: time reads across the canvas like reading a
+hand-painted handscroll.
 
-UPPER SKY: warm autumn afternoon, 2-3 simple cloud shapes, warm sun
-upper-left with simple rays.
-
-DETAIL — at the very far horizon, hint at the SEA (a thin horizontal line
-suggesting where the turtle came from), to remind viewer of his journey.
-
-Apply DETAIL LEVEL: hare's face soft kind, turtle's small tear visible,
-ginseng plants distinct shapes. GROUPED NATURAL TEXTURES: foliage in
-clusters, geese as simple shapes, flowers in groups.
-
-Mood: warm reconciliation, friendship between mountain and sea ─ each
-keeps its own life and gives the other the road home.
-Composition: BALANCED. Hare + turtle on rock CENTER-LEFT, valley with
-ginseng RIGHT, autumn mountain layers BACKGROUND, geese upper-left,
-ground details lower.
+Composition: HORIZONTAL TIME ARC. Reconciliation rock LEFT (~35%),
+solo journey + ginseng valley CENTER (~35%), resolution vignette
+upper-RIGHT (~25-30%), unified autumn sky + distant sea horizon
+linking all three beats.
 ```
 
 ---
