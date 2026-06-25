@@ -669,8 +669,12 @@ function Sep() {
 //  PDF export
 // ──────────────────────────────────────────────────────────────
 
-const PAGE_W = 780
-const PAGE_H = 1102
+// US Letter portrait (8.5"×11" = 215.9×279.4 mm). Aspect = 0.7727.
+const PAGE_W = 850
+const PAGE_H = 1100
+// Generous breathing room — ~25mm side, ~22mm top/bottom on Letter.
+const PAGE_PAD_X = 100
+const PAGE_PAD_Y = 80
 
 function pageStyles(): string {
   return `
@@ -680,7 +684,7 @@ function pageStyles(): string {
     color: #1f2937;
     font-family: "Apple SD Gothic Neo", "Pretendard", Georgia, ui-serif, serif;
     box-sizing: border-box;
-    padding: 70px 80px;
+    padding: ${PAGE_PAD_Y}px ${PAGE_PAD_X}px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -688,56 +692,232 @@ function pageStyles(): string {
   `
 }
 
-function coverPageHtml(story: Story, locale: Locale): string {
+// Narration pagination ─ paragraph-based split so V2.5 long narrations
+// don't get silently clipped. First page hosts the image + a short
+// chunk; continuation pages flow the rest with no image.
+function paginateNarration(
+  narration: string,
+  locale: Locale,
+): { hasImage: boolean; text: string }[] {
+  const paragraphs = narration.split(/\n\n+/).filter((p) => p.trim().length > 0)
+  // Tuned to current layout (image ~52% page height + 14px/13px narration).
+  const firstPageLimit = locale === "ko" ? 520 : 980
+  const continuationLimit = locale === "ko" ? 2200 : 4200
+
+  const pages: { hasImage: boolean; text: string }[] = []
+  let current: string[] = []
+  let limit = firstPageLimit
+  let isFirst = true
+
+  const flush = () => {
+    if (current.length === 0) return
+    pages.push({ hasImage: isFirst, text: current.join("\n\n") })
+    current = []
+    isFirst = false
+    limit = continuationLimit
+  }
+
+  for (const para of paragraphs) {
+    const projected = current.length === 0 ? para : current.join("\n\n") + "\n\n" + para
+    if (projected.length > limit && current.length > 0) {
+      flush()
+      current.push(para)
+    } else {
+      current.push(para)
+    }
+  }
+  flush()
+
+  if (pages.length === 0) {
+    pages.push({ hasImage: true, text: narration })
+  }
+
+  return pages
+}
+
+async function imgUrlToDataUrl(url: string): Promise<string | null> {
+  try {
+    const res = await fetch(url)
+    if (!res.ok) return null
+    const blob = await res.blob()
+    return await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader()
+      reader.onload = () => resolve(reader.result as string)
+      reader.onerror = () => reject(new Error("read"))
+      reader.readAsDataURL(blob)
+    })
+  } catch {
+    return null
+  }
+}
+
+function coverPageHtml(
+  story: Story,
+  locale: Locale,
+  iconDataUrl: string | null,
+): string {
   const today = new Date()
   const dateStr = `${today.getFullYear()}.${String(
     today.getMonth() + 1,
   ).padStart(2, "0")}.${String(today.getDate()).padStart(2, "0")}`
+
+  const glossaryPreview = story.originalTale.glossary
+    .slice(0, 2)
+    .map(
+      (g) => `
+        <div style="
+          display: flex;
+          align-items: baseline;
+          gap: 14px;
+          padding: 10px 0;
+          border-bottom: 1px dashed #e0cfa8;
+        ">
+          <div style="flex: 0 0 auto; min-width: 90px; text-align: left;">
+            <span style="
+              font-size: 19px;
+              color: #2c2520;
+              font-weight: 600;
+              letter-spacing: 0.01em;
+            ">${escapeHtml(g.korean)}</span>
+            <span style="
+              font-size: 11px;
+              font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+              color: #9c8866;
+              margin-left: 8px;
+              letter-spacing: 0.08em;
+            ">${escapeHtml(g.romanized)}</span>
+          </div>
+          <div style="
+            flex: 1;
+            font-size: 13px;
+            color: #6b5d4a;
+            font-style: italic;
+            line-height: 1.55;
+            text-align: left;
+          ">${escapeHtml(g.meaning[locale])}</div>
+        </div>
+      `,
+    )
+    .join("")
+
+  const glossaryHeading = locale === "ko" ? "이 이야기 속 단어" : "Words from this tale"
+  const originHeading = locale === "ko" ? "원작에 대하여" : "About the original tale"
+  const folktaleLabel = locale === "ko" ? "한국 옛이야기" : "A KOREAN FOLKTALE"
+
+  const iconBlock = iconDataUrl
+    ? `<img src="${iconDataUrl}" alt="" style="
+        width: 88px;
+        height: 88px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto 12px;
+      " />`
+    : `<div style="font-size: 56px; margin-bottom: 12px; line-height: 1;">${story.emoji}</div>`
+
   return `
-    <div style="${pageStyles()} justify-content: center; align-items: center; text-align: center;">
+    <div style="${pageStyles()} text-align: center; justify-content: space-between;">
+      <!-- TOP: identity (icon + sparkle + KOREAN FOLKTALES eyebrow) -->
+      <div>
+        ${iconBlock}
+        <div style="
+          font-size: 11px;
+          font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+          color: #b76d2a;
+          letter-spacing: 0.32em;
+          margin-bottom: 6px;
+        ">✦ ${escapeHtml(folktaleLabel)} ✦</div>
+      </div>
+
+      <!-- MIDDLE-UPPER: title block -->
+      <div>
+        <h1 style="
+          font-size: 44px;
+          font-weight: 700;
+          margin: 0 0 14px;
+          letter-spacing: -0.01em;
+          line-height: 1.15;
+        ">${escapeHtml(story.title[locale])}</h1>
+        <p style="
+          font-size: 19px;
+          color: #6b5d4a;
+          font-style: italic;
+          margin: 0 0 22px;
+          letter-spacing: 0.02em;
+        ">${escapeHtml(story.subtitle[locale])}</p>
+        <p style="
+          font-size: 14.5px;
+          color: #4a4036;
+          line-height: 1.7;
+          max-width: 480px;
+          margin: 0 auto;
+          font-style: italic;
+          font-family: Georgia, 'Apple SD Gothic Neo', 'Pretendard', ui-serif, serif;
+        ">${escapeHtml(story.tagline[locale])}</p>
+      </div>
+
+      <!-- MIDDLE: divider + date -->
+      <div>
+        <div style="
+          width: 60px;
+          height: 1px;
+          background: #c2a37e;
+          margin: 0 auto 12px;
+        "></div>
+        <p style="
+          font-size: 11px;
+          font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+          color: #9c8866;
+          margin: 0;
+          letter-spacing: 0.2em;
+        ">${dateStr}</p>
+      </div>
+
+      <!-- LOWER: glossary card -->
       <div style="
-        font-size: 64px;
-        margin-bottom: 32px;
-        line-height: 1;
-      ">${story.emoji}</div>
+        background: rgba(255, 248, 232, 0.6);
+        border: 1px solid #f0e0c8;
+        border-radius: 10px;
+        padding: 18px 22px;
+        max-width: 520px;
+        margin: 0 auto;
+        text-align: left;
+      ">
+        <div style="
+          font-size: 10.5px;
+          font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+          color: #b76d2a;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          margin-bottom: 6px;
+        ">${escapeHtml(glossaryHeading)}</div>
+        ${glossaryPreview}
+      </div>
+
+      <!-- LOWER: about original tale -->
       <div style="
-        font-size: 24px;
-        letter-spacing: 0.3em;
-        color: #b76d2a;
-        margin-bottom: 28px;
-      ">✦</div>
-      <h1 style="
-        font-size: 52px;
-        font-weight: 700;
-        margin: 0 0 24px;
-        letter-spacing: -0.01em;
-        line-height: 1.15;
-      ">${escapeHtml(story.title[locale])}</h1>
-      <p style="
-        font-size: 22px;
-        color: #6b5d4a;
-        font-style: italic;
-        margin: 0 0 60px;
-        letter-spacing: 0.02em;
-      ">${escapeHtml(story.subtitle[locale])}</p>
+        max-width: 520px;
+        margin: 0 auto;
+        text-align: left;
+      ">
+        <div style="
+          font-size: 10.5px;
+          font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+          color: #b76d2a;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          margin-bottom: 6px;
+        ">${escapeHtml(originHeading)}</div>
+        <p style="
+          font-size: 12.5px;
+          color: #6b5d4a;
+          line-height: 1.6;
+          margin: 0;
+          font-style: italic;
+        ">${escapeHtml(story.originalTale.origin[locale])}</p>
+      </div>
+
+      <!-- BOTTOM: tagline footer -->
       <div style="
-        width: 80px;
-        height: 1px;
-        background: #c2a37e;
-        margin-bottom: 24px;
-      "></div>
-      <p style="
-        font-size: 13px;
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        color: #9c8866;
-        margin: 0;
-        letter-spacing: 0.18em;
-      ">A KOREAN FOLKTALE · ${dateStr}</p>
-      <div style="
-        position: absolute;
-        bottom: 40px;
-        left: 0;
-        right: 0;
         text-align: center;
         font-size: 11px;
         color: #c2a37e;
@@ -753,12 +933,16 @@ function coverPageHtml(story: Story, locale: Locale): string {
 function scenePageHtml(opts: {
   chapterLabel: string
   sceneTitleClean: string
-  imageDataUrl: string
+  imageDataUrl: string | null
   narration: string
   chosenLabel: string | null
   isEnding: boolean
   endingLabel?: string
   endText: string
+  isContinuation?: boolean
+  continuationLabel?: string
+  hasMore?: boolean
+  moreLabel?: string
 }): string {
   const {
     chapterLabel,
@@ -769,27 +953,39 @@ function scenePageHtml(opts: {
     isEnding,
     endingLabel,
     endText,
+    isContinuation,
+    continuationLabel,
+    hasMore,
+    moreLabel,
   } = opts
 
-  const topLabel = isEnding
-    ? `<div style="
-        font-size: 11px;
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        color: #b76d2a;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        margin: 0 0 6px;
-      ">${escapeHtml(endingLabel ?? "ENDING")}</div>`
-    : `<div style="
-        font-size: 11px;
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        color: #b76d2a;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        margin: 0 0 6px;
-      ">${escapeHtml(chapterLabel)}</div>`
+  const topLabelText = isContinuation
+    ? (continuationLabel ?? "CONTINUED")
+    : isEnding
+      ? (endingLabel ?? "ENDING")
+      : chapterLabel
 
-  const bottomEl = isEnding
+  const topLabel = `<div style="
+    font-size: 11px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: #b76d2a;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+  ">${escapeHtml(topLabelText)}</div>`
+
+  const continuedMore = hasMore
+    ? `<div style="
+        text-align: right;
+        font-size: 12px;
+        color: #b76d2a;
+        font-style: italic;
+        margin-top: 14px;
+        letter-spacing: 0.04em;
+      ">${escapeHtml(moreLabel ?? "continued…")}</div>`
+    : ""
+
+  const bottomEl = isEnding && !hasMore
     ? `<div style="
         text-align: center;
         font-size: 16px;
@@ -798,7 +994,7 @@ function scenePageHtml(opts: {
         letter-spacing: 0.12em;
         margin-top: 28px;
       ">${escapeHtml(endText)}</div>`
-    : chosenLabel
+    : !isEnding && chosenLabel && !hasMore
       ? `<div style="
           text-align: right;
           font-size: 14px;
@@ -809,26 +1005,31 @@ function scenePageHtml(opts: {
         ">${escapeHtml(chosenLabel)} →</div>`
       : ""
 
-  return `
-    <div style="${pageStyles()}">
-      ${topLabel}
-      <h2 style="
-        font-size: 28px;
+  // Title only on first page of the scene; continuation pages skip it
+  // so the narration breathes.
+  const titleBlock = isContinuation
+    ? ""
+    : `<h2 style="
+        font-size: 26px;
         font-weight: 700;
-        margin: 0 0 24px;
+        margin: 0 0 20px;
         line-height: 1.2;
-      ">${escapeHtml(sceneTitleClean)}</h2>
+      ">${escapeHtml(sceneTitleClean)}</h2>`
 
-      <div style="
-        flex: 1;
+  const imageBlock = imageDataUrl
+    ? `<div style="
+        flex: 0 1 auto;
         display: flex;
         align-items: center;
         justify-content: center;
         min-height: 0;
+        overflow: hidden;
+        margin-bottom: 20px;
       ">
         <div style="
-          width: 100%;
-          max-height: 100%;
+          max-width: 100%;
+          height: 480px;
+          max-height: 480px;
           aspect-ratio: 1 / 1;
           background: #fff;
           border: 1px solid #f0e0c8;
@@ -842,17 +1043,25 @@ function scenePageHtml(opts: {
             alt=""
           />
         </div>
-      </div>
+      </div>`
+    : ""
 
-      <div style="margin-top: 24px;">
+  return `
+    <div style="${pageStyles()}">
+      ${topLabel}
+      ${titleBlock}
+      ${imageBlock}
+
+      <div style="flex: 1 1 auto; min-height: 0; overflow: hidden;">
         <p style="
-          font-size: 16px;
+          font-size: ${imageDataUrl ? 14 : 15}px;
           line-height: 1.75;
           color: #2c2520;
           margin: 0;
           font-family: Georgia, 'Apple SD Gothic Neo', 'Pretendard', ui-serif, serif;
-          text-indent: 1em;
+          white-space: pre-wrap;
         ">${escapeHtml(narration)}</p>
+        ${continuedMore}
         ${bottomEl}
       </div>
     </div>
@@ -1146,7 +1355,7 @@ async function generateScenePng(
   locale: Locale,
 ): Promise<string> {
   const scene = getScene(story.id, page.sceneId)
-  const isEnding = !scene.choices
+  const isEnding = !!scene.endingLabel
   const fullTitle = scene.title[locale]
   const sceneTitle = fullTitle.replace(
     /^(?:Chapter\s*\d+\s*[—-]\s*|\d+장[^.]*\.\s*|Final\s*[—-]\s*|마지막 장\.\s*)/i,
@@ -1259,11 +1468,12 @@ async function exportStorybookPdf(
 
   const pdf = new jsPDF({
     unit: "mm",
-    format: "a4",
+    format: "letter",
     orientation: "portrait",
   })
-  const pdfW = 210
-  const pdfH = 297
+  // US Letter: 8.5 × 11 inches = 215.9 × 279.4 mm
+  const pdfW = 215.9
+  const pdfH = 279.4
 
   async function addHtmlPage(html: string, isFirst: boolean) {
     host.innerHTML = html
@@ -1283,14 +1493,18 @@ async function exportStorybookPdf(
   }
 
   const endText = locale === "ko" ? "— 끝 —" : "— The End —"
+  const continuationLabel = locale === "ko" ? "이어서" : "CONTINUED"
+  const moreLabel = locale === "ko" ? "다음 장에 계속…" : "continued on next page…"
+
+  const iconDataUrl = await imgUrlToDataUrl(`/coloring/icons/${story.id}.png`)
 
   try {
-    await addHtmlPage(coverPageHtml(story, locale), true)
+    await addHtmlPage(coverPageHtml(story, locale, iconDataUrl), true)
 
     for (let i = 0; i < pages.length; i++) {
       const p = pages[i]
       const scene = getScene(story.id, p.sceneId)
-      const isEnding = !scene.choices
+      const isEnding = !!scene.endingLabel
       const fullTitle = scene.title[locale]
       const sceneTitleClean = fullTitle.replace(
         /^(?:Chapter\s*\d+\s*[—-]\s*|\d+장[^.]*\.\s*|Final\s*[—-]\s*|마지막 장\.\s*)/i,
@@ -1303,19 +1517,29 @@ async function exportStorybookPdf(
         : locale === "ko"
           ? `${i + 1}장`
           : `CHAPTER ${i + 1}`
-      await addHtmlPage(
-        scenePageHtml({
-          chapterLabel,
-          sceneTitleClean,
-          imageDataUrl: p.dataUrl,
-          narration: scene.narration[locale],
-          chosenLabel: p.chosenLabel?.[locale] ?? null,
-          isEnding,
-          endingLabel: scene.endingLabel?.[locale],
-          endText,
-        }),
-        false,
-      )
+
+      const narrationPages = paginateNarration(scene.narration[locale], locale)
+      for (let j = 0; j < narrationPages.length; j++) {
+        const np = narrationPages[j]
+        const hasMore = j < narrationPages.length - 1
+        await addHtmlPage(
+          scenePageHtml({
+            chapterLabel,
+            sceneTitleClean,
+            imageDataUrl: np.hasImage ? p.dataUrl : null,
+            narration: np.text,
+            chosenLabel: p.chosenLabel?.[locale] ?? null,
+            isEnding,
+            endingLabel: scene.endingLabel?.[locale],
+            endText,
+            isContinuation: j > 0,
+            continuationLabel,
+            hasMore,
+            moreLabel,
+          }),
+          false,
+        )
+      }
     }
 
     pdf.save(`${story.id}-storybook.pdf`)

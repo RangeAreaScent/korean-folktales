@@ -515,52 +515,321 @@ rooftop and moon spanning the upper band, ground tufts the lower band.
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-SHOT TYPE: Mythic split-canvas night sky scene. Vertical movement (rising vs
-falling). The canvas reads in two halves — left/right — telling two destinies
-at once.
+SHOT TYPE: COSMIC ORIGIN-STORY canvas — the canonical transformation
+(해님 + 달님) takes the UPPER HALF as the iconic centerpiece (~50% of
+the canvas), with the salvation/justice events compressed into a smaller
+lower band of "how they got there." This is THE iconic Korean folktale
+moment: "왜 해는 오빠이고 달은 동생인가" ─ give it the visual weight it
+deserves, not an upper-corner footnote.
 
-Subject: A magical night sky climax with two parallel destinies.
+═══ COLORING-BOOK PURITY RULE (override any other instruction):
+- This is a CHILDREN'S COLORING BOOK. The output MUST be PURE WHITE
+  LINE-ART ─ outlines only.
+- NO shading. NO cross-hatching. NO stippling. NO gradient fills.
+  NO tonal weight differences. NO darker areas to imply night or
+  shadow. NO grayscale washes.
+- Every closed region of the image must remain WHITE so a child
+  can paint it themselves.
+- Night sky is NOT a dark fill ─ it is white space with OUTLINED
+  star shapes, an OUTLINED moon, and OUTLINED clouds. The child
+  paints it dark with their own crayon.
+- Day sky is NOT a light fill ─ it is the same white space with
+  OUTLINED sun, OUTLINED clouds, and OUTLINED birds. The child
+  paints it warm with their own crayon.
+- The day/night distinction below is achieved ONLY through outlined
+  MOTIFS (what objects appear where), NEVER through ink density or
+  tonal weight.
 
-LEFT HALF (the saved):
-- A thick, well-braided golden rope (동아줄 — show clear twist/braid pattern,
-  4-5 visible plait lines along its length) descending from billowing clouds
-  at the TOP-LEFT down toward mid-left
-- The brother (~10) and sister (~6) in hanbok hold the rope together as they
-  rise — brother above, gripping the rope with one hand and steadying the
-  sister below him with the other. Both look UP toward the clouds.
-- ABOVE the clouds at the very upper-left corner: a stylized smiling SUN FACE
-  (round face with ~8 short straight rays around it) and beside it a calm
-  CRESCENT MOON FACE (gentle expression) — both as simple single-region
-  shapes, NOT detailed.
-- 2-3 LARGE billowing cloud shapes around the rope's upper end (simple
-  outlines, no wispy detail).
+═══ DAY/NIGHT VERTICAL DIVISION RULE (apply throughout the canvas):
+The canvas is split LEFT = DAY / RIGHT = NIGHT down the vertical
+midline so a child colorist can clearly choose "warm day tones" for
+the LEFT half and "cool night tones" for the RIGHT half. The
+distinction is encoded ENTIRELY through OUTLINED MOTIFS (which side
+the sun is on, which side the stars are on, which side has lanterns
+vs laundry) ─ NEVER through shading. Every element must place itself
+on the correct side and be unmistakably day-marker or night-marker:
+  • LEFT HALF = DAY: sun, daytime clouds, busy village life, daytime
+    animals (chickens, songbirds, butterflies), 빨래줄, ripe persimmon
+    tree being harvested. NO stars on the LEFT half of the sky.
+  • RIGHT HALF = NIGHT: moon, starry sky, sleeping village, nighttime
+    creatures (owl, bat), lit lanterns at thresholds, sleeping figure
+    silhouettes in doorways. NO daytime activity on the RIGHT.
+  • A SOFT VERTICAL DIVIDER runs down the middle of the canvas ─ NOT
+    a hard line. Use the ASCENDING ROPE (mid band) + a single tall
+    central PINE TREE or a vertical column of CLOUD CURLS to softly
+    separate day from night. The viewer can clearly tell where day
+    ends and night begins.
 
-RIGHT HALF (the fallen):
-- UPPER-RIGHT sky: a separate frayed broken rope dangling mid-air, end clearly
-  snapped (~3-4 splintered fiber lines at the break, not many).
-- MID-RIGHT to LOWER-RIGHT: a stylized minhwa-style tiger (same style as
-  Scenes 3a and 3b — cute round eyes, bold flat stripes, friendly proportions)
-  shown mid-fall, paws up, mouth in surprised "O", tail flipping.
-- BOTTOM-RIGHT corner: a field of sorghum (수수) — show as 5-7 BUNDLED GROUPS
-  of stalks. Each group is 3-4 vertical lines sharing one bushy grain head at
-  the top. Each group is ONE fill-able region. Do NOT draw 30 individual
-  stalks. The tiger is falling toward these groups.
+Subject: A wide cosmic-myth canvas reading TOP→BOTTOM as transformation
++ backstory, AND reading LEFT→RIGHT as day vs night. Apply V2.5
+stylization layer ─ minhwa cloud curls, curved sun rays, Korean folk-art
+celestial faces.
 
-BACKGROUND across both halves:
-- MIDDLE-BOTTOM horizon: a small distant Korean village (3-4 simple thatched
-  roof silhouettes with curved eaves, one or two hanok walls)
-- NIGHT SKY across the whole canvas: 10-15 simple 5-point stars scattered
-  evenly, all the SAME simple star icon (one region each, not detailed
-  sparkles)
+═══ UPPER HALF (~50%) ─ THE CELESTIAL TRANSFORMATION (focal anchor):
 
-Apply GROUPED NATURAL TEXTURES rule strictly: sorghum in bundled groups,
-clouds as 2-4 big shapes, stars as simple repeating icon.
+LEFT-UPPER ─ DAY SIDE (the SUN — brother, 해님): a LARGE round MINHWA
+SUN FACE filling roughly the upper-left quarter of the canvas. The
+face is the BROTHER (recognizable from earlier scenes ─ ~10-year-old
+kind sincere boy features, simple topknot or short hair, calm warm
+smile). Around the face: 12-16 LONG curved minhwa SUN RAYS sweeping
+outward (V2.5 calligraphic curve, NOT straight spikes). The face
+glows gently. His expression is steady, protective, looking outward
+and slightly down toward the world (he is now the WATCHER OF THE DAY).
+- SKY AROUND THE SUN (LEFT half only): 3-4 LARGE MINHWA CLOUD CURLS
+  (4-6 curl chambers each), 2-3 small daytime BIRDS in V-formation
+  flying across the day sky. ABSOLUTELY NO STARS on this side ─ it
+  must read as DAYTIME at a glance.
+- One or two stylized BUTTERFLIES near the sun's lower rays
+  (simple wing shapes, single fill region each).
 
-Mood: cosmic justice, transformation, awe — the climax of a Korean folktale.
-Composition: SPLIT-CANVAS — ascending column on the LEFT (rope + siblings +
-sun/moon faces + clouds), descending column on the RIGHT (broken rope + tiger
-mid-fall + sorghum field), distant village across the lower middle as a
-unifying horizon, stars across the whole upper background.
+RIGHT-UPPER ─ NIGHT SIDE (the MOON — sister, 달님): a LARGE round
+MINHWA MOON FACE filling roughly the upper-right quarter, slightly
+smaller than the sun (~80% the sun's scale). The face is the SISTER
+(~6-year-old gentle girl features, small braid or hair tied with a
+simple ribbon, soft quiet smile). Her face is slightly TURNED AWAY /
+GAZE LOWERED ─ this visually encodes the narration detail "사람들이
+쳐다보는 게 부끄러워 오빠와 자리를 바꿔달라 부탁했다." (She traded with
+her brother because she felt shy.) Around her face: a SOFT MOON HALO
+with 8-10 GENTLER short curve-rays. The moon shape can be a CLEAN
+CIRCLE (full moon style for the face) with one slim crescent-shadow
+on the right edge to read clearly as MOON.
+- SKY AROUND THE MOON (RIGHT half only): 12-18 OUTLINED 5-point STAR
+  SHAPES scattered (some larger near the moon, some smaller toward the
+  edge) ─ each star is a clean 5-point OUTLINE the child can color
+  yellow themselves, NOT a shaded dot or filled solid. ONE small
+  constellation suggestion (4-5 outlined stars connected by a thin
+  line) like the Big Dipper hint. A few MOONBEAM curve-ray OUTLINES
+  dropping downward into the night village below. The sky between
+  the stars MUST stay WHITE for the child to color dark blue ─ no
+  hatching, no stippled dots filling the sky.
+- ONE STYLIZED OWL (부엉이) perched on a cloud or branch detail on
+  this side (simple round-eyed minhwa owl shape, OUTLINED only ─
+  the body is a colorable empty shape, NOT a filled silhouette).
+- 1-2 SMALL BATS (박쥐) drawn as tiny W-shape OUTLINES flying near
+  the moon (kids' storybook tone, NOT scary). NOT filled silhouettes
+  ─ outlined shapes only so they remain colorable.
+
+BETWEEN THE SUN AND MOON FACES (the soft vertical day-night divider):
+- A SUBTLE LIGHT BRIDGE / ribbon of small stars and curved light arcing
+  from the sun face toward the moon face ─ 5-7 small star shapes in a
+  gentle arc, suggesting "they exchanged their places." This bridges
+  the day-night divide narratively AND visually separates the two
+  domains.
+- BEHIND the light bridge: one tall central CLOUD CURL column running
+  vertically as the day/night seam. NO stars in this central column ─
+  it reads as the dividing line.
+
+═══ MID BAND (~15%) ─ ASCENSION (the moment of becoming):
+
+CRITICAL ─ TWO COMPLETELY SEPARATE ROPES (the moral core of this
+folktale). The siblings' GOOD ROPE and the tiger's ROTTEN ROPE must
+NEVER appear as one continuous rope or branching from the same anchor.
+They descend from DIFFERENT positions, end at DIFFERENT places, and
+look visually DIFFERENT in texture:
+
+(A) SIBLINGS' GOOD ROPE ─ in the CENTER-MID of the canvas:
+- A THICK golden BRAIDED ROPE (동아줄, 4-5 visible plait lines along
+  the full length) clearly INTACT from top to bottom.
+- Anchored at the TOP into the SUN's lower rays / the central cloud
+  column ─ rises UP into the sky and dissolves into starlight near
+  the celestial faces.
+- The SIBLINGS climb this rope in mid-ascension ─ small figures,
+  brother above gripping confidently, sister just below looking up
+  at her brother. Both touched by celestial light at the top.
+- The rope's LOWER END trails down toward the CENTRAL hanok's
+  threshold below (the rope from heaven reaching the very world
+  below).
+- This rope is THICK, BRAIDED, INTACT, and CENTERED. The colorist
+  can fill it golden.
+
+(B) TIGER'S ROTTEN ROPE ─ a SEPARATE rope in the FAR LEFT-LOWER
+zone (NOT connected to the siblings' center rope):
+- A SHORTER, THINNER, FRAYED rope ─ visibly different texture:
+  drawn with WAVY/IRREGULAR plait lines (NOT clean braid), with
+  loose fiber wisps sticking out along its length.
+- Anchored at its TOP into a SEPARATE small CLOUD on the FAR LEFT
+  upper-mid area (NOT the same cloud as the siblings' rope, NOT the
+  sun, NOT the central cloud column). Place this anchor cloud
+  CLEARLY APART from the siblings' rope by at least 1/4 of the
+  canvas width.
+- The rope's LOWER END is clearly BROKEN ─ a jagged splintered
+  break with 4-6 short loose fiber lines fanning out at the break
+  point. The lower portion of this rope is GONE (already fallen).
+- DIRECTLY BELOW the broken end: the falling TIGER, mouth in
+  surprised "O", paws up, mid-fall toward the sorghum field.
+- This rope is THIN, FRAYED, BROKEN, and on the FAR LEFT. The
+  colorist can leave it gray/brown.
+
+VISUAL SEPARATION RULE: there must be a CLEAR EMPTY GAP between
+the two ropes in the canvas ─ they are two different ropes from
+two different anchors meeting two different fates. Never draw a
+fork, never share a top anchor, never let the two ropes touch or
+cross.
+
+CRITICAL ─ FILL THE MID-BAND DENSITY around the ascending siblings.
+The space LEFT and RIGHT of the rope at mid-height MUST NOT be left
+empty / blank ─ this is the most common composition hole. Fill each
+side with day-side or night-side OUTLINED motifs as follows:
+
+LEFT MID-BAND FILL (day side, between sun's lower rays and the rope):
+- 2-3 additional MINHWA CLOUD CURLS at mid-height, drifting from the
+  sun toward the rope (each curl outlined with 3-5 chamber curls).
+- 1-2 small DAYTIME BIRDS in V-formation flying across the mid-band.
+- 2-3 extra BUTTERFLY OUTLINES drifting upward from the day village
+  below toward the sun (suggesting "the day world reaches up").
+- 3-5 short SUN-RAY PARTICLE outlines (small simple curved tick marks)
+  drifting from the sun toward the siblings ─ NOT shading, just
+  outlined particle shapes the colorist can fill yellow.
+
+RIGHT MID-BAND FILL (night side, between moon's halo and the rope):
+- 2-3 additional small CLOUD CURLS at mid-height on the night side.
+- 4-6 EXTRA OUTLINED 5-POINT STARS scattered in the mid-band right of
+  the rope (filling the empty space between moon's lower halo and the
+  ascending siblings).
+- 1-2 SHOOTING STAR outlines (a 5-point star with a small curved
+  trailing tail line ─ all outlined, colorist fills).
+- A SECOND CONSTELLATION HINT (3-4 small outlined stars connected by
+  thin lines).
+- 2-3 short MOONBEAM PARTICLE outlines drifting from the moon toward
+  the siblings.
+
+AROUND THE ASCENDING SIBLINGS specifically:
+- A small soft HALO RING outline (just a thin curved line, not a
+  filled circle) around the brother's head suggesting his
+  transformation-glow.
+- 4-6 small TRANSFORMATION SPARKLE outlines (tiny 4-point star or
+  diamond shapes) circling the siblings on BOTH sides of the rope,
+  bridging the gap between them and the celestial faces.
+- The rope above the siblings curves with 2-3 small SPIRAL OUTLINES
+  woven into its braid, suggesting it dissolves into pure light as
+  it reaches the sun's rays.
+
+The result: the mid-band must read as DENSELY DETAILED with outlined
+motifs, NEVER as a blank gap between the upper celestial faces and
+the lower village. Every empty square inch in the mid-band should
+have an outlined motif a child can color.
+
+═══ LOWER BAND (~35%) ─ THE JUSTICE + THE WORLD BELOW:
+
+LEFT-LOWER (~20%): a smaller secondary vignette ─ THE TIGER FALL.
+The TIGER'S BROKEN ROPE (already described above in the MID BAND
+rules) ends here, the broken jagged end visible mid-air on the FAR
+LEFT. Directly below the broken end: the stylized MINHWA-STYLE TIGER
+(same friendly proportions as Scenes 3a/3b ─ cute round eyes, bold
+flat stripes, surprised "O" mouth, tail flipping) mid-fall, paws up.
+Smaller in scale than the celestial faces ─ this is BACKSTORY, not
+the centerpiece. The tiger and its broken rope are CLEARLY ISOLATED
+on the far-left side of the canvas, with NO visual connection to the
+siblings' good rope in the center. The tiger falls toward...
+
+LOWER-LEFT GROUND: a field of SORGHUM (수수) ─ 5-7 BUNDLED GROUPS of
+stalks, each group = 3-4 vertical lines sharing ONE bushy grain head
+at the top (one OUTLINED fill region per group ─ the child colors
+the grain head red themselves to evoke the "수수가 호랑이 피로 붉게
+물든" origin). All sorghum heads drawn IDENTICALLY in outline form;
+DO NOT shade or darken any of them. The narration carries the blood-
+stain detail; the line-art remains pure white-fillable shapes so the
+colorist chooses which heads to make red.
+
+LOWER BAND ─ KOREAN VILLAGE SPLIT INTO DAY (LEFT) and NIGHT (RIGHT):
+
+The SAME village shown across the bottom of the canvas, but DIVIDED
+down the middle so the colorist can paint LEFT = warm day, RIGHT =
+cool night. 6-8 thatched-roof hanok houses total spread across the
+bottom band, with the central one straddling the divider (its LEFT
+half in day, its RIGHT half in night ─ this is the visual proof that
+the same world is now lit by both sun and moon).
+
+LEFT VILLAGE ─ THE DAY HALF (under the sun's reach):
+- 3-4 hanok silhouettes with curved eaves, OPEN paper-paneled doors,
+  laundry hanging on a 빨래줄 (clothes-line, 4-5 simple square shapes
+  pinned between two posts).
+- A 감나무 (persimmon tree) with 5-6 round ripe persimmons in clusters
+  (GROUPED fill regions), ONE small village figure with a basket
+  beneath it reaching up to pick fruit.
+- 2-3 CHICKENS pecking in the yard (simple round body shapes).
+- ONE village figure walking the path carrying a small bundle on
+  their back (simple silhouette, no detail face required).
+- The SUN'S long curved rays from above reach DOWN into this half ─
+  3-4 of the longest rays clearly extending toward the day village.
+- NO lanterns lit on this side (it's daytime ─ they're unlit).
+
+RIGHT VILLAGE ─ THE NIGHT HALF (under the moon's reach):
+- 3-4 hanok silhouettes with curved eaves, paper-paneled doors CLOSED.
+- TWO or THREE LIT LANTERNS glowing softly at thresholds and along
+  the path (lantern shape = simple round/oval with a small flame
+  flicker inside, single fill region).
+- ONE paper-paneled window showing a SLEEPING FIGURE OUTLINE inside
+  (visible through the paper grid as a soft curved outlined shape ─
+  NOT a black silhouette; an empty colorable outline).
+- ONE village figure OUTLINED inside a doorway with bedding visible
+  (sleeping posture, all outlined ─ no filled silhouette).
+- 2-3 MOONBEAM curve-rays from the moon above gently reach DOWN into
+  the night village.
+- A SECOND SMALL OWL OUTLINE perched on the night village's roof
+  ridge or on a tree branch nearby (simple round-eyed minhwa owl,
+  outlined only, no filled body).
+- ONE 잠자리 / cicada / cricket detail can be added as a tiny corner
+  hint (optional, single small bug shape).
+- NO chickens, NO laundry, NO daytime activity on this side.
+
+═══ UNIFYING ELEMENTS:
+- LAYERED MOUNTAIN SILHOUETTES at the far horizon behind the village
+  (2-3 receding ridges, calligraphic Korean-painting style) ─ these
+  span both halves as ONE continuous mountain horizon (the same earth,
+  but lit differently on each side).
+- A SINGLE WINDING PATH crosses the village left to right ─ the same
+  path through day and night ─ visually unifying the two halves.
+- AT THE DAY-NIGHT MIDLINE: the ASCENDING ROPE (from the mid band)
+  drops down to roughly the canvas center, with its lower end
+  trailing into the central hanok house's threshold ─ "the rope
+  came from the very world below." This rope is the soft vertical
+  divider between day and night domains.
+- The entire canvas reads as ONE CONTINUOUS cosmic origin painting,
+  not pasted panels.
+
+V2.5 STYLIZATION ELEMENTS:
+- Minhwa sun + moon celestial faces (Korean folk-art tradition).
+- Curved confident sun rays (~12-16) + moon halo curves (~8-10).
+- Minhwa cloud curls between them.
+- Layered mountain silhouettes.
+- Sorghum grouped in bundled clusters.
+- Stars as simple repeating 5-point icons.
+
+Apply DETAIL LEVEL: sun-face and moon-face are the FOCAL anchors ─
+both faces detailed and recognizable as the brother and sister from
+earlier scenes (iris+pupil+nose+mouth+ear visible, kind expressions).
+The tiger and sorghum field are smaller secondary detail. The day/night
+village halves use simple but clearly different markers so a child
+colorist can pick warm tones LEFT and cool tones RIGHT without
+hesitation.
+
+COLORING-AFFORDANCE NOTES (critical):
+- LEFT half of the canvas must be VISIBLY DAYTIME: open doors, laundry,
+  persimmon tree, chickens, daytime birds, sun rays reaching down,
+  ZERO stars or lanterns.
+- RIGHT half must be VISIBLY NIGHTTIME: closed doors with lit lanterns,
+  starry sky, owl + bats, sleeping silhouettes, moonbeams reaching
+  down, ZERO daytime activity.
+- The midline divider (light-bridge + central cloud column + descending
+  rope) makes the day/night seam unmistakable so the colorist can
+  paint the two halves in opposite tonal families.
+
+Mood: cosmic Korean folktale origin ─ awe + tender resolution. The
+center of the canvas is no longer about JUSTICE or ESCAPE but about
+THE CANONICAL ENDING: "이렇게 해서 오빠는 해님, 동생은 달님이 되었더라."
+The transformation breathes. The sun watches the day on the LEFT, the
+moon watches the night on the RIGHT, the world below is held by both.
+
+Composition: VERTICAL TIERED COSMIC SCROLL × LEFT-RIGHT DAY/NIGHT
+SPLIT. Upper half (~50%) = brother-sun + day-sky LEFT + sister-moon
++ star-sky RIGHT + light-bridge through the central cloud column.
+Middle band (~15%) = rope + siblings mid-ascension acting as the
+vertical day/night seam. Lower band (~35%) = day-village + tiger
+fall + sorghum LEFT / night-village + lanterns + owl RIGHT, connected
+by one continuous winding path and a shared mountain horizon. One
+unified celestial-myth canvas readable in BOTH directions: TOP→BOTTOM
+as transformation+backstory, LEFT→RIGHT as day+night.
 ```
 
 ---
@@ -573,7 +842,7 @@ unifying horizon, stars across the whole upper background.
 - [ ] `scene-2-decision.png` — 2장. 두 가지 시험 (분기 시작)
 - [ ] `scene-3a-pine.png` — 3장 분기 A. 달빛 아래 소나무
 - [ ] `scene-3b-well.png` — 3장 분기 B. 우물에 비친 보름달
-- [ ] `scene-4-rope.png` — 마지막 장. 하늘로 오른 동아줄 (정통 결말)
+- [ ] `scene-4-rope.png` — 마지막 장. 해님 달님이 된 오누이 (정통 결말)
 
 ---
 
@@ -3545,193 +3814,252 @@ is the OPPOSITE of Scene 1.
 
 ---
 
-## Scene 3a — `07-heungbu/scene-3a-family.png` (전 · 가족과 함께)
+## Scene 3a — `07-heungbu/scene-3a-family.png` (전 · 가족과 함께 + 박씨 도착)
 
-**제목 ko**: 3장. 식구들의 따뜻한 손길
-**제목 en**: Chapter 3 — The Family's Warm Hands
+**제목 ko**: 3장. 봄날 마당에 돌아온 제비
+**제목 en**: Chapter 3 — The Swallow Returns to the Spring Yard
 
 **Narration KO**:
-> 흥부는 제비를 가만히 부엌 문턱에 누이고 가족을 다 불러 모았다. 아내가 깨끗한 무명 천을 잘게 찢어 와서 작은 끈을 만들었고, 큰아이는 마당에서 곧은 나뭇가지 하나를 골라 와 다듬었다. 막내는 손가락으로 제비의 등을 살짝살짝 쓸어 주었다.
+> 흥부와 식구는 작은 제비를 부엌 문턱에 누이고 한 마음으로 보살폈다. 아내는 무명 천을 잘게 찢어 끈을 만들고, 큰아이는 마당에서 곧은 나뭇가지를 다듬어 왔다. 막내는 손가락으로 제비의 등을 살짝살짝 쓸어 주며 작은 소리로 속삭였다. "작은 제비야, 우리 식구가 같이 있단다." 아이들이 처마 밑의 둥지 잔가지를 모아 새 둥지를 짜고, 솔잎을 부드럽게 깔아 그 안에 제비를 살포시 눕혔다. 그날부터 흥부네 식구는 새 보리차를 끓일 때마다 한 모금씩 제비에게 적셔 주었다.
 >
-> "작은 제비야, 우리가 같이 있단다. 무섭지 마라."
+> 여름이 지나고 가을이 익어 갈 무렵, 제비의 다리는 어느새 깨끗하게 다 나아 있었다. 어느 가을날 아침, 제비가 흥부 가족 앞에서 작은 날갯짓을 두 번 해 보였다. 식구는 마당에 다 같이 나가 손을 흔들었다. 제비는 따뜻한 남쪽 하늘을 향해 멀리 날아갔다.
 >
-> 막내의 작은 손이 제비의 깃털을 어루만지자, 빠르게 뛰던 제비의 가슴이 차츰 가라앉기 시작했다. 흥부가 부러진 다리에 곧은 나뭇가지를 대고, 아내가 무명 천 끈으로 가만가만 묶었다.
+> 차가운 겨울이 길게 흐르고, 다음 해 봄이 왔다. 따뜻한 바람이 흥부네 마당에 다시 불어오던 어느 봄날 아침 ─ 멀리서 익숙한 날갯짓 소리가 들려왔다.
 >
-> 그동안 다른 아이들은 처마 밑에 떨어진 둥지의 잔가지들을 모아 새 둥지를 만들었다. 짚단을 동그랗게 엮고, 그 안에 부드러운 솜털 같은 솔잎을 깔았다.
+> "어! 그 제비가 돌아왔어요!"
 >
-> 제비를 새 둥지에 살포시 누이고, 가족이 모두 둘러앉아 가만히 지켜보았다. 작은 화로 위에 따뜻한 보리차를 끓이는 소리만 마당에 가만히 울렸다. 제비는 작은 까만 눈을 한참 흥부와 아이들을 번갈아 바라보다가, 천천히 잠이 들었다.
+> 막내가 먼저 마당으로 뛰어나갔다. 가족 모두가 마당으로 나가 보니, 정말로 그 제비였다. 그러나 이번에는 부리에 무엇인가 작은 것을 물고 있었다. 제비는 흥부의 어깨에 살포시 내려앉아, 부리에 물고 있던 작은 씨앗 하나를 흥부의 손바닥 위에 가만히 떨어뜨렸다.
+>
+> 박씨였다.
+>
+> 가족 모두가 둘러서서 그 작은 씨앗을 한참 들여다보았다. 따뜻한 봄볕 아래, 박씨가 흥부의 손바닥 안에서 작은 보석처럼 빛났다.
 
 **Narration EN**:
-> Heungbu laid the swallow gently on the kitchen threshold and called the whole family in. His wife tore a clean cotton cloth into thin strips for binding; the eldest child went out and chose a straight twig from the yard, smoothing it. The youngest stroked the swallow's back ever so lightly with one fingertip.
+> Heungbu and his family gathered as one heart around the small swallow. His wife tore a clean cotton cloth into thin strips. The eldest child smoothed a straight twig from the yard. The youngest stroked the swallow's back with a fingertip and whispered, "Little swallow, our family is all here." The other children wove the broken nest pieces into a new round basket lined with soft pine needles, and the swallow was laid gently inside. From that day on, whenever the family brewed barley tea, they let a drop fall onto the swallow's beak.
 >
-> "Little swallow, we are all here. Don't be afraid."
+> Summer passed, autumn ripened, and the swallow's leg healed clean. One autumn morning the swallow stretched its wings twice in front of the family. They all hurried out into the yard and waved together. The swallow rose into the warm southern sky and was gone.
 >
-> Under the small fingers, the swallow's racing chest began to slow. Heungbu set the straight twig against the broken leg, and his wife wound the cotton strips around it with delicate care.
+> A long cold winter passed. Then spring came, and one morning a familiar whirr of wings sounded across the yard.
 >
-> Meanwhile the other children gathered up the broken nest pieces from under the eaves and built a new nest of their own. Round and round they wove straw, then lined the inside with soft pine needles like cotton fluff.
+> "Look! The swallow has come back!"
 >
-> They laid the swallow inside the new nest and all sat around, watching quietly. Only the soft sound of barley tea coming to boil on the small brazier filled the air. The swallow looked from Heungbu to the children, back and forth, with its small black eyes — then slowly fell asleep.
+> The youngest ran out first. The whole family followed — and there it truly was, the same swallow. But this time it carried something small in its beak. It lit gently on Heungbu's shoulder and dropped a single small seed into his open palm.
+>
+> A gourd seed.
+>
+> The whole family gathered close around it. In the warm spring light, the little seed shone like a tiny jewel in Heungbu's hand.
 
 **다음 장면**: → Scene 4 (linear)
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-SHOT TYPE: Cozy interior nighttime scene inside Heungbu's modest hut.
-The family gathered around the swallow on the kitchen threshold. Warm
-intimate composition.
+SHOT TYPE: Outdoor SPRING MORNING in Heungbu's yard, the family gathered
+together to witness the swallow returning with a single seed in its beak.
+This is the "thank-you" moment of the story ─ the family's earlier
+caring is the implied past; the iconic SEED-ARRIVAL is the visible
+present. WARM GROUP composition with Heungbu's open palm as the focal
+anchor.
 
-Subject: Inside Heungbu's modest one-room thatched hut at early evening.
-The room is small but warm. A wood-plank floor, simple paper-paneled
-walls, low ceiling beams visible at the top.
+Subject: Heungbu's modest thatched-hut yard on a bright spring morning.
+Apply V2.5 stylization layer ─ minhwa cloud curls, soft curved sun rays,
+gentle Korean-storybook landscape feel.
 
-CENTER-FOREGROUND: a low wooden threshold area where the swallow rests.
-Heungbu (same character) crouches with great care, his hands gently
-positioning a thin straight twig against the swallow's broken leg.
+CENTER-FOREGROUND (focal anchor): Heungbu (same character ─ worn patched
+hanbok, kind weathered face, beard) standing slightly bent, both hands
+cupped open palm-up at chest height. The SWALLOW (제비 ─ same character
+as Scene 2, leg now healed clean) has just landed lightly on Heungbu's
+right fingertip. The swallow's beak gently releases a SINGLE SMALL
+GOURD SEED (박씨 ─ a small almond-shaped pale seed) which is just at
+the moment of falling toward Heungbu's open palm. Show a small motion
+line under the seed indicating the gentle drop. Heungbu's face is
+amazed and tender, eyes wide with quiet wonder.
 
-NEXT TO HIM: his wife (kind face, simple hanbok, hair tied back, clean
-apron) winds a strip of cotton cloth around the leg, her face focused.
+FAMILY GROUP AROUND HIM (witnessing, warm group joy ─ NOT pushy):
+- WIFE (kind face, simple clean hanbok, hair tied back, apron) standing
+  to Heungbu's left, both hands clasped at her chest, mouth slightly
+  open in a quiet "oh!" of joy.
+- YOUNGEST CHILD (~3, small spring hanbok) directly in front of Heungbu's
+  legs, looking up with both small hands pointing toward the swallow,
+  pure delight on face.
+- TWO OLDER CHILDREN (~5 and ~7) to Heungbu's right, the elder boy with
+  one hand resting on the younger sister's shoulder, both gazing at the
+  swallow with wide eyes. Simple bright spring hanbok each.
 
-LEFT-FOREGROUND: the youngest child (~3, in small night-time hanbok)
-sits with one tiny finger gently touching the swallow's back, head
-tilted with utmost tender concentration.
+YARD DETAILS (spring storybook):
+- LEFT-MIDGROUND: a single 매화 (plum blossom) tree in bloom, 8-12
+  scattered pale blossom clusters as distinct fill regions on bare
+  curving branches. 2-3 individual blossoms on the ground beneath.
+- RIGHT-MIDGROUND: a small persimmon tree just beginning to leaf out ─
+  4-6 tender new leaves as a sparse cluster.
+- LOW GRASS TUFTS along the bottom of the yard: 5-7 small grass clumps
+  as one fill region each.
+- GROUND: simple packed-earth yard with 2-3 small stepping stones near
+  the doorway.
 
-UPPER-RIGHT-MIDGROUND: the two older children (~5 and ~7) sit on the
-floor weaving straw into a new round nest, hands busy. Beside them, a
-small handful of soft pine needle clumps (one fill region) ready to
-line the nest's inside.
+BACKGROUND ─ Heungbu's hut visible upper-left, low and modest:
+- Thatched roof showing a calligraphic curve.
+- Paper-paneled door slightly ajar, with one BOWL on the threshold (a
+  modest hint of the family's life ─ no need to overdetail).
+- Eaves with a small EMPTY SWALLOW NEST tucked under the rafters (visual
+  callback to the original nest the swallow once lived in).
 
-CENTER-BACK: a small clay brazier (화로) with a copper kettle on top.
-2-3 simple steam wisp lines rising from the spout, suggesting warm
-barley tea.
+SKY (V2.5 minhwa stylization):
+- 3-4 LARGE MINHWA CLOUD CURLS in upper sky, 4-6 visible curl chambers
+  each.
+- One CURVED SUN (오목한 곡선의 해) upper-right with 8-10 gentle curved
+  rays.
+- 2-3 SMALL SWALLOWS flying in upper-mid sky (small V shapes) ─ the
+  returning swallow is not alone in the world.
 
-RIGHT-BACK: a single paper-paneled window (한지창 ─ 3-by-3 grid). Through
-it, a soft spring evening sky visible with 2-3 stars and a slim crescent
-moon, plus 2-3 swallows flying outside (small V shapes).
+V2.5 STYLIZATION ELEMENTS:
+- All grass/tree foliage texture in GROUPED fill regions (no carpets
+  of detail).
+- Cloud curls drawn with confident calligraphic curves.
+- Single distinct focal-anchor (Heungbu's palm + seed) ─ all other
+  elements clearly subordinate.
 
-LEFT-BACK: a small wooden chest with simple folded clean cloth on top,
-showing modest careful domestic care.
+Apply DETAIL LEVEL: each family member's face detailed and tender,
+the seed in the air is small but CLEARLY drawn as a single almond
+shape (not lost in busy line work), Heungbu's open palm is the
+brightest focal point.
 
-CEILING: simple roof beams (서까래 ─ 4-5 horizontal lines).
+Mood: spring-morning wonder ─ a year of patience returning as a
+single small gift. Quiet awe in the family's eyes. The whole
+composition leans gently toward Heungbu's open palm.
 
-LIGHT SOURCE: one small oil lamp (호롱불) sitting on a wooden ledge,
-casting a soft glow ─ show 3-4 short ray lines around its flame.
-
-Apply DETAIL LEVEL: every family member's face detailed and tender,
-hanbok shows collar/cuff/hem, the new nest is clearly woven with visible
-straw strands, the brazier kettle shows clear shape.
-GROUPED NATURAL TEXTURES: pine needles clump as one region, steam as
-2-3 wisp lines.
-
-Mood: warm domestic intimacy ─ the family quietly gathered as one heart
-around a tiny wounded creature. The kind of moment fairy-tale magic
-quietly rewards.
-Composition: CIRCULAR intimate ─ swallow + Heungbu + wife center-low,
-youngest child at swallow's level left, older children weaving nest
-upper-right, brazier + steam center-back, paper window with night sky
-upper-right.
+Composition: CIRCULAR WARM GROUP. Heungbu center-front with palm
+extended, family gathered around in a soft semi-circle, hut + empty
+swallow-nest upper-left, plum tree left-mid, persimmon right-mid,
+minhwa clouds + curved sun above. The eye lands on the SEED first.
 ```
 
 ---
 
-## Scene 3b — `07-heungbu/scene-3b-medicine.png` (전 · 어머니의 약방문)
+## Scene 3b — `07-heungbu/scene-3b-medicine.png` (전 · 어머니의 약방문 + 박씨 도착)
 
-**제목 ko**: 3장. 어머니가 가르쳐 주신 약방문
-**제목 en**: Chapter 3 — The Remedy His Mother Taught Him
+**제목 ko**: 3장. 새벽 산기슭에서 받은 박씨
+**제목 en**: Chapter 3 — A Seed Received on the Dawn Foothills
 
 **Narration KO**:
-> 흥부는 제비를 가만히 부엌 한쪽에 눕히고, 어머니가 살아 계실 때 가르쳐 주신 약방문을 떠올렸다.
+> 흥부는 제비를 가만히 부엌 한쪽에 눕히고, 어머니가 살아 계실 때 가르쳐 주신 약방문을 떠올렸다. "다리를 다친 새에게는 산쑥과 까치 발자국 모양의 잎이 좋단다. 둘을 함께 빻아 부드럽게 으깨면, 작은 뼈도 잘 붙는단다." 어머니의 목소리가 머릿속에 또렷이 들리는 듯했다.
 >
-> "다리를 다친 새에게는 산쑥과 까치 발자국 모양의 잎이 좋단다. 둘을 함께 빻아 부드럽게 으깨면, 작은 뼈도 잘 붙는단다." 어머니의 목소리가 머릿속에 또렷이 들리는 듯했다.
+> 흥부는 어둑한 새벽 산기슭에 올라 이슬에 젖은 풀숲을 헤치며 산쑥과 까치발잎을 한 줌씩 모았다. 동이 트기 전에 돌아와 절구에 풀잎을 빻아, 깨끗한 천에 펴고 제비의 부러진 다리를 살포시 감쌌다. 풀잎의 시원한 약 기운이 작은 다리를 부드럽게 감싸 안았다. 흥부는 절구질하는 동안에도 어머니께 가만히 말을 걸었다. "어머니, 손님을 정성껏 모시는 것은 어머니가 늘 가르쳐 주신 일이지요." 제비는 흥부를 한참 바라보다가, 무엇을 약속하는 듯이 가만히 머리를 한 번 끄덕였다.
 >
-> 흥부는 어둑한 새벽 마당으로 나가 산기슭으로 올라갔다. 이슬에 젖은 풀숲을 헤치며 산쑥을 한 줌 캐고, 까치발 모양의 잎을 한 줌 모았다. 동이 트기 전에 돌아와 절구에 풀잎을 넣고 정성껏 빻기 시작했다.
+> 여름이 가고 가을이 익어 갈 무렵, 제비의 다리는 어느새 깨끗하게 다 나아 있었다. 어느 새벽 흥부가 마당에 나와 보니, 제비는 처마 끝에서 그를 한참 바라보다가 작은 날갯짓을 두 번 하고는 따뜻한 남쪽 하늘을 향해 멀리 날아갔다. 흥부는 두 손을 모으고 그 모습을 한참 동안 지켜보았다.
 >
-> 절구질을 하는 동안 흥부는 어머니께 가만히 말을 걸었다.
+> 긴 겨울이 지나고, 다음 해 봄이 왔다. 어느 봄 새벽 ─ 흥부가 약초 한 줌이라도 더 캐 두려고 산기슭에 다시 올라간 길이었다. 이슬 머금은 풀숲에 무릎 꿇고 산쑥을 한 줌 모으던 그때, 멀리서 익숙한 날갯짓 소리가 들려왔다.
 >
-> "어머니, 제 마음이 한결같기를 빌어 주세요. 이 작은 새 한 마리도 우리 집을 찾아온 손님이지요. 손님을 정성껏 모시는 것은 어머니가 늘 가르쳐 주신 일이지요."
+> 흥부는 천천히 고개를 들었다. 동이 트는 산기슭 위로, 그 제비가 곧장 흥부를 향해 날아오고 있었다.
 >
-> 잘 빻은 풀잎을 깨끗한 천에 펴고, 그 위에 제비의 부러진 다리를 살포시 올린 다음, 또 다른 천으로 가만가만 감쌌다. 풀잎의 시원한 약 기운이 작은 다리를 부드럽게 감싸 안았다.
+> 흥부는 약초 바구니를 옆에 내려놓고 두 손을 가만히 펼쳤다. 제비는 그의 손바닥 위에 살포시 내려앉아, 부리에 물고 있던 작은 씨앗 하나를 가만히 놓아주었다.
 >
-> 제비가 작은 까만 눈으로 흥부를 한참 바라보았다. 그러더니 무엇을 약속하는 듯이, 가만히 머리를 한 번 끄덕였다.
+> 박씨였다.
+>
+> 흥부는 작은 씨앗을 한참 들여다보다가, 가만히 가슴께로 가져갔다. 어머니의 따뜻한 가르침이 한 알의 씨앗으로 돌아온 것 같았다. 새벽 햇살이 산기슭에 가만히 번지고, 흥부의 어깨 너머로 멀리 마을의 첫 빛이 보였다.
 
 **Narration EN**:
-> Heungbu laid the swallow gently in one corner of the kitchen and called to mind the remedy his mother had taught him when she was still alive.
+> Heungbu laid the swallow gently in one corner of the kitchen and called to mind the remedy his mother had taught him. "For a bird with a hurt leg, mountain mugwort and the leaf shaped like a magpie's foot are good. Crush them soft, and even tiny bones knit well." Her voice was clear in his mind.
 >
-> "For a bird with a hurt leg, mountain mugwort and the leaf shaped like a magpie's foot are good. Crush them together until soft, and even tiny bones knit well." Her voice was clear in his mind.
+> Before dawn he climbed the foothills, pushed through the dew-wet grass, and gathered a handful each of mugwort and magpie-foot leaves. Before the sky lightened he was back, grinding the leaves in a stone mortar and binding the swallow's broken leg with the cool medicine. As he worked he spoke softly to his mother. "Mother — to care for a guest with all one's heart, that was what you always taught me." The swallow watched him a long while with its small black eyes, then nodded once as if making a promise.
 >
-> He went out into the still-dark yard before dawn and climbed the foothills. Pushing through dew-wet grass he gathered a handful of mugwort and a handful of the magpie-foot leaves. Before the sky lightened he was back at home, dropping the leaves into a stone mortar and beginning to grind them carefully.
+> Summer passed and autumn ripened. The swallow's leg healed clean. One dawn Heungbu found the swallow at the eaves looking at him a long moment ─ then with two beats of its wings it rose into the warm southern sky and was gone. Heungbu pressed his hands together and watched until the small shape disappeared.
 >
-> As he ground, he spoke softly to his mother.
+> A long winter passed, and spring came. One spring dawn ─ Heungbu was up in the foothills again, hoping to gather a fresh handful of mountain herbs. Kneeling in the dew-wet grass with a small basket beside him, he heard a familiar whirr of wings.
 >
-> "Mother, please pray that my heart stays steady. This small bird is also a guest who came to our home. To care for a guest with all one's heart — that was what you always taught me."
+> He raised his head slowly. There, against the lightening foothill sky, the same swallow was flying straight toward him.
 >
-> He spread the well-crushed leaves on a clean cloth, gently laid the swallow's broken leg over it, and wrapped it with another cloth. The cool medicinal power of the herbs seemed to wrap softly around the tiny leg.
+> Heungbu set the basket aside and opened both palms quietly. The swallow lit upon his open hands and gently set down a single small seed.
 >
-> The swallow looked at Heungbu a long while with its small black eyes. Then, as if making a promise, it gave one quiet nod of its head.
+> A gourd seed.
+>
+> Heungbu looked at the tiny seed a long while, then drew it close to his chest. It felt as if his mother's warm teaching had come back to him as a single seed. The dawn light spread softly across the foothills, and far below, the first light was just touching the roofs of the village.
 
 **다음 장면**: → Scene 4 (linear)
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-SHOT TYPE: Interior kitchen scene at first light of dawn. Single
-focused setting on Heungbu grinding herbs at a stone mortar, with the
-swallow watching from the corner. The mountain-gathering moment is
-hinted at the window outside, not shown as a separate scene. Intimate
-centered composition.
+SHOT TYPE: Outdoor SPRING DAWN on the mountain foothills above Heungbu's
+village. Heungbu is ALONE in quiet contemplation when the swallow
+returns to him with the gourd seed. SOLITARY composition ─ very
+different from Scene 3a's warm family group. This is the "thank-you"
+moment as a private, almost prayerful encounter on a misty foothill at
+sunrise. The mother-herb branch's contemplative tone made visible.
 
-Subject: Inside Heungbu's modest kitchen at the very first light of
-dawn. The room is small, warm, and quiet.
+Subject: A high foothill clearing above the village, just at dawn.
+Apply V2.5 stylization layer ─ minhwa cloud curls, soft curved sunrise,
+layered foothill silhouettes in the distance.
 
-CENTER-FOREGROUND: Heungbu (same character ─ worn hanbok with patches,
-sleeves rolled up, focused gentle face) kneeling on the wood-plank
-floor at a low wooden surface. A stone mortar (절구) sits in front of
-him. He holds a stone pestle (절굿공이) in both hands, mid-grind. The
-gathered herbs are partially mashed inside the mortar ─ show as a
-small mound of crushed leaves with a hint of soft texture.
+CENTER-MIDGROUND (focal anchor): Heungbu ALONE (same character ─ worn
+patched hanbok, beard, kind weathered face) kneeling on one knee in a
+small grass clearing. His SMALL WOVEN HERB BASKET sits on the ground
+beside him with a few gathered HERB STEMS poking out (mountain mugwort
++ magpie-foot leaves ─ the same herbs from his earlier remedy, visual
+callback). Both his hands are gently opened upward, palms together
+held at chest height.
 
-ON THE WORK SURFACE beside the mortar: a small woven basket containing
-the gathered FRESH HERBS (showing two distinct herb types: mountain
-mugwort 산쑥 with small jagged star-shaped leaves, 2-3 plants; and
-magpie-foot leaves 까치발 모양 with three-pointed trident-like leaves,
-2-3 plants ─ each plant as a small distinct group of 3-5 leaves clearly
-outlined). Beside the basket: a clean folded white cotton cloth ready
-for binding, and a small ceramic bowl of water.
+THE SWALLOW (제비 ─ same character, leg fully healed) has just landed
+softly on his open hands. The swallow's beak is GENTLY RELEASING a
+SINGLE SMALL GOURD SEED (박씨 ─ small almond-shaped pale seed) that
+sits in the very center of Heungbu's joined palms. Heungbu's eyes are
+soft, almost moved to tears, gazing at the seed with quiet wonder.
+NO OTHER HUMAN FIGURES in the entire image ─ the moment must read
+as solitary.
 
-LEFT-CORNER OF THE KITCHEN: the small swallow (제비 ─ same character
-as Scene 2) rests on a folded small cushion, head slightly raised,
-watching Heungbu with its little black eyes. One small head-nod motion
-line suggests it just nodded faintly in trust.
+FOREGROUND DETAILS (foothill dawn ground):
+- 4-5 small DEW-WET grass tufts as distinct fill regions around
+  Heungbu's knee.
+- 2-3 small wild herb plants (산쑥/까치발잎) ─ a few sprouting near the
+  basket, callback to the herb-gathering moment.
+- 2-3 small stones marking the edge of the clearing.
 
-RIGHT-BACK WALL: a single paper-paneled window (한지창 ─ 3-by-3 grid).
-Through the window, the first faint dawn light is just beginning ─ show
-a soft horizontal band of pale light through the panels, plus the
-silhouette of one tall pine outside and the head of a single Korean
-magpie (까치) perched on a branch outside the window (just visible
-through the paper panel grid, suggesting the morning where the herbs
-came from). This single window detail replaces a separate mountain
-scene ─ the gathering is implied, not separately drawn.
+MIDGROUND (left and right):
+- LEFT: one PINE TREE (소나무) standing tall, calligraphic curving trunk
+  and 3-4 large pine-needle cluster regions, modest stylized
+  presence.
+- RIGHT: a low forest-edge with 2-3 layered shrub silhouettes (grouped
+  fill regions, no individual leaf detail).
 
-CENTER-BACK: a small clay brazier (화로) on a low ledge, embers
-glowing softly (3-4 small ember dots), giving a faint warm glow.
+BACKGROUND (V2.5 LAYERED FOOTHILL SILHOUETTES):
+- 3-4 LAYERED MOUNTAIN/FOOTHILL silhouettes receding into the distance,
+  each curved with confident Korean-landscape-painting lines.
+- DOWN VALLEY (lower-right corner, FAR distance): a TINY suggestion of
+  the village ─ 4-5 small thatched-roof silhouettes with a single thread
+  of dawn smoke rising from one chimney. Very small, distant, but
+  recognizable as "home down there."
+- MIST: 2-3 horizontal soft mist bands curling around the foothill
+  bases (drawn as gentle calligraphic curve lines, no shading).
 
-CEILING: simple roof beams (서까래 ─ 3-4 horizontal lines).
+SKY (V2.5 minhwa stylization):
+- 2-3 LARGE MINHWA CLOUD CURLS in the upper sky, soft.
+- One LOW-RISING CURVED SUN at the right horizon, just clearing the
+  furthest foothill ridge ─ 8-12 long gentle curved rays fanning across
+  the sky.
+- One or two ADDITIONAL SWALLOWS in upper-mid sky (small V silhouettes)
+  ─ the returning swallow is not alone.
 
-ADDITIONAL DETAIL: a small wooden chest in the upper-left corner with
-a folded blanket on top. A pair of straw sandals near the door (visible
-edge of the room). Apply DETAIL LEVEL strictly.
+V2.5 STYLIZATION ELEMENTS (strongly applied here):
+- Layered receding mountain silhouettes (산수도 layering).
+- Confident minhwa cloud curls.
+- Curved sunrise rays.
+- All grass/shrub textures GROUPED into clean fill regions.
+- Single focal anchor (swallow + seed in Heungbu's palms) clearly
+  dominant.
 
-GROUPED NATURAL TEXTURES: herbs grouped by plant (each plant ONE
-fill region), embers as 3-4 dots, NO carpets of detail.
+Apply DETAIL LEVEL: Heungbu's face detailed and reverent, the gourd
+seed is small but CLEARLY drawn as a single almond shape in the
+brightest part of the composition. The herb basket is hand-detailed
+with visible weave lines.
 
-Mood: quiet dawn devotion ─ the kind of careful skill that is also
-prayer. A son remembering his mother's teaching while caring for the
-smallest guest. The window suggests the mountain where he gathered;
-the kitchen holds the work itself.
+Mood: dawn-hour reverence ─ a private "thank you" between a man and
+a small creature, witnessed only by the rising sun and the foothill
+mist. Mother's teaching coming back as a single seed. Quiet, almost
+sacred.
 
-Composition: CENTERED INTIMATE. Heungbu + mortar dead-center
-foreground, herb basket + cloth + bowl on the surface right of him,
-swallow on cushion corner-left, paper window with dawn-light hint +
-magpie outside upper-right, brazier center-back, all in a single warm
-room.
+Composition: CENTERED SOLITARY. Heungbu kneeling center-mid, pine
+left-mid, shrub forest right-mid, layered foothills + tiny village
+in distance below, low curved sun + minhwa clouds + extra swallows
+above. The viewer's eye lands on the SEED first ─ everything else
+recedes around it.
 ```
 
 ---
@@ -3742,11 +4070,7 @@ room.
 **제목 en**: Final — Two Yards, Two Gourds, Two Endings
 
 **Narration KO**:
-> 가을이 깊어지자 제비는 따뜻한 곳을 찾아 멀리 날아갔다. 흥부네 식구는 그저 작별의 손을 흔들 뿐이었다. 다음 해 봄, 따뜻한 바람이 다시 마당에 불어왔을 때, 그 제비가 정말로 돌아왔다. 그러나 이번에는 무엇인가 작은 씨앗 하나를 부리에 물고 있었다.
->
-> 제비는 흥부의 어깨에 살포시 내려앉아 그 박씨를 흥부의 손바닥 위에 가만히 떨어뜨렸다. 그러고는 한 번 짹짹 울고는 다시 하늘로 날아갔다.
->
-> 흥부는 그 씨앗을 마당 한쪽에 심었다. 며칠 만에 줄기가 길게 뻗어 나가더니, 한 달 만에 큰 박 세 통이 마당의 지붕 위에 둥글둥글 매달렸다. 박이 충분히 익자, 흥부네 식구는 가장 큰 박 한 통을 따 와 마당에 놓고 톱으로 켜기 시작했다.
+> 흥부는 제비가 주고 간 박씨를 마당 한쪽 양지바른 곳에 정성껏 심었다. 며칠 만에 줄기가 길게 뻗어 나가더니, 한 달 만에 큰 박 세 통이 마당의 지붕 위에 둥글둥글 매달렸다. 박이 충분히 익자, 흥부네 식구는 가장 큰 박 한 통을 따 와 마당에 놓고 톱으로 켜기 시작했다.
 >
 > "슬근슬근 톱질이야, 우리 식구 박 켜는 소리…"
 >
@@ -3773,11 +4097,7 @@ room.
 > "박씨를 가져다 주는 것은 제비가 아니라, 그 사람의 마음이란다." 옛 어른들이 손주에게 그렇게 일러 주었더라.
 
 **Narration EN**:
-> When autumn deepened, the swallow flew away to warmer lands. Heungbu's family only waved farewell. The next spring, when warm winds blew once again through the yard, that same swallow truly returned — but this time it carried a small seed in its beak.
->
-> The swallow landed lightly on Heungbu's shoulder and dropped the seed into his palm. Then with a single chirp it flew up into the sky.
->
-> Heungbu planted the seed in one corner of the yard. Within days the vine stretched long; within a month, three great round gourds hung swelling on the rooftop. When the gourds were ripe, the family rolled out the biggest one into the yard and began to saw it open.
+> Heungbu planted the gourd seed in a sunny corner of his yard. Within days the vine stretched long; within a month, three great round gourds hung swelling on the rooftop. When the gourds were ripe, the family rolled out the biggest one into the yard and began to saw it open.
 >
 > "Saw, saw, slow and sure, the sound of our family's gourd…"
 >
@@ -3807,72 +4127,118 @@ room.
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-SHOT TYPE: Warm closing scene centered on the two brothers reconciling.
-The emotional anchor is BIG and CLEAR: Heungbu's gentle outstretched hand
-meeting Nolbu's lowered head. Their two yards are simplified to small
-hints on either side. Background tells the story of "what happened" in
-small simple silhouettes, NOT competing detail panels. Wide horizontal
-composition with the two figures dominating the center.
+SHOT TYPE: BIG ICONIC GOURD-OPENING CELEBRATION in Heungbu's yard ─
+this is THE iconic image of the entire tale: "박이 쩌억 갈라지고 보물이
+쏟아져 나오는 장면." The gourd + pouring treasure must dominate the canvas
+(~60-70%). Nolbu's failed yard is a SMALL CORNER VIGNETTE in the
+upper-right (~15%, framed as a small fan-shape or rounded inset).
+Brothers' reconciliation is a SMALL bottom hint (~10%). The viewer
+must SEE THE GOURD AND THE TREASURE FIRST.
 
-Subject: A late-afternoon Korean village scene of brotherly
-reconciliation, the emotional resolution of the whole tale.
+Subject: Heungbu's modest thatched-hut yard in the middle of the
+gourd-opening day. Apply V2.5 stylization layer ─ minhwa cloud curls,
+curved sun rays, joyous Korean folk-art celebration palette in line-art.
 
-CENTER FOREGROUND (the visual + emotional anchor, ~50% of canvas):
-The TWO BROTHERS meeting. HEUNGBU on the LEFT, standing upright in a
-warm peaceful posture, his right hand extended forward palm-up — open,
-gentle, no grudge. His face shows quiet kindness, a soft small smile.
-His hanbok is the same simple worn hanbok from earlier scenes but
-mended-looking and clean. NOLBU on the RIGHT, head LOWERED in shame
-before his younger brother for the first time, shoulders slumped, his
-formerly fine hanbok now visibly disheveled. He is BEGINNING to lift
-his own hand toward Heungbu's open palm — their fingers ALMOST touching
-at the very center of the canvas. A single small tear visible on
-Nolbu's cheek (one teardrop shape).
+CENTER-FOREGROUND ─ THE ICONIC MOMENT (dominant, ~60% of canvas):
+A LARGE 박 (gourd) sits in the middle of the yard on a low straw mat,
+JUST SPLIT IN TWO with a clean diagonal crack. The two gourd halves are
+slightly tipped apart so the inside is visible. FROM THE OPEN GOURD,
+TREASURE IS POURING OUT in a generous spilling arc:
+- a HEAP of gold ingots (말굽 모양 금괴) ─ 6-8 distinct rounded ingot
+  shapes, each as a single clean fill region.
+- silver coins (엽전) tumbling, ~10-15 round coin shapes with center
+  square holes.
+- a flowing roll of silk fabric (비단) unfurling out, drawn as 2-3
+  large draping fold ribbons.
+- a small mound of grain pouring out as a soft heap (one grouped fill
+  region with 5-6 tiny grain dot accents).
+Show 4-6 simple radiating LIGHT BURST LINES from the open gourd, the
+classic folk-art "이건 놀라운 일!" radiance. Make the spilling treasure
+feel ABUNDANT and joyful but readable ─ each treasure type clearly
+distinct as a coloring region.
 
-BACKGROUND-LEFT (small, hinted ─ NOT a full panel):
-Far behind Heungbu, a small simple silhouette suggestion of his yard:
-the small thatched hut with a single split gourd showing a soft glow
-inside (suggesting treasure but NOT detailing it ─ just one bright
-glow shape). 3-4 small swallows flying overhead. A small persimmon tree
-with a few round fruits (apply GROUPED NATURAL TEXTURES). Keep this
-LEFT background simple ─ this is the AFTERMATH, not the main subject.
+TWO MORE GOURDS still intact on either side of the split one, each
+sitting on the straw mat ready to be opened ─ this shows the "three
+gourds total" of the narration. Each whole gourd is a clean ovoid with
+its stem-curl on top, ribbed lightly with 3-4 surface curve lines.
 
-BACKGROUND-RIGHT (small, hinted ─ NOT a full panel):
-Far behind Nolbu, a small simple silhouette suggestion of his yard: the
-grand tile-roof house slightly tilted and dimmed. One split gourd
-visible with a few faint dark wisps drifting up from it (suggesting
-chaos but NOT detailed ─ 2-3 curling wisp lines only). NO dokkaebi or
-sage drawn in detail ─ keep this side quiet and empty by contrast. The
-storehouse door is ajar with a few grain spill lines on the ground.
+ABOVE THE GOURD ON THE ROOF: the gourd VINE still climbs over the
+thatched roof, with 3-4 large heart-shaped gourd leaves and 2-3 small
+curling tendrils (V2.5 calligraphic curves). One or two small white
+gourd flowers (5-petal) still blooming.
 
-UPPER SKY: warm late afternoon. 2-3 large soft cloud shapes that span
-BOTH halves (the same sky over both fates). The sun is upper-center
-with simple rays ─ lighting both brothers equally. A few swallows fly
-in a V formation across the sky overhead (3-4 simple V shapes).
+HEUNGBU + FAMILY (mid-ground, gathered around the gourd in joy):
+- HEUNGBU (same character, worn-but-mended hanbok) standing just behind
+  the gourd, holding a TRADITIONAL TWO-MAN SAW (톱) ─ one end of the saw
+  still in his hand, suggesting he just finished cutting. Face beaming
+  with quiet amazement.
+- WIFE on the other side of the gourd, both hands raised to her cheeks
+  in delighted "어머!" surprise.
+- THREE CHILDREN (~3, ~5, ~7) clustered around the spilling treasure,
+  the youngest already trying to pick up a coin, the other two pointing.
+  Pure folk-art joy on each face.
 
-GROUND-CENTER (between the brothers): a single sprouting bok-vine grows
-up from the path between them, suggesting new growth ─ 3-4 simple vine
-leaves around their feet.
+YARD DETAILS (BIG MOMENT, modest but warm):
+- The thatched HUT upper-left mid-background with paper-door slightly
+  open and one EMPTY SWALLOW NEST under the eaves (callback to the
+  caring moment).
+- A SINGLE 매화 tree (plum blossom) right side, 6-8 blossom clusters
+  (V2.5 grouped fill).
+- A SMALL straw mat beneath the split gourd.
+- 2-3 SWALLOWS circling joyfully in the upper-left sky (V silhouettes).
 
-Apply DETAIL LEVEL strictly: both brothers' faces clearly distinct in
-expression and posture, hanbok detailed (Heungbu simple but mended;
-Nolbu finer but disheveled). The reconciliation gesture (their hands)
-is the visual climax ─ position it dead center.
+UPPER-RIGHT CORNER VIGNETTE (small, ~15% ─ NOLBU'S FAILURE as moral
+contrast):
+Frame this as a small ROUND VIGNETTE (or simple oval inset shape ─
+NOT a hard panel border, just a soft visual island in the corner).
+Inside the vignette: a SMALLER scene of Nolbu's yard. Nolbu (in his
+once-fine hanbok, now disheveled) sitting on the ground with both
+hands on his head in dismay. Behind him, ONE split gourd with curling
+"trouble wisps" (3-4 calligraphic dark wisp lines suggesting chaos),
+a single small dokkaebi silhouette peeking out, and a small sage-figure
+silhouette wagging a finger at Nolbu. Keep ALL of this small and
+sketched ─ this is contrast, NOT the focal moment. Use simple V2.5
+silhouette grouping ─ no detailed faces on the dokkaebi or sage.
 
-GROUPED NATURAL TEXTURES strictly: persimmons in clusters, swallows
-simple V's, clouds simple. No busy background detail.
+LOWER-CENTER (small, ~10% ─ RECONCILIATION HINT):
+Along the bottom-center edge of the canvas, BELOW the treasure pile:
+a small simple silhouette of the TWO BROTHERS standing side by side
+on a path, Heungbu's hand on Nolbu's shoulder, both small figures
+walking toward Heungbu's yard. NOT detailed ─ just enough to read as
+"and later, the brothers reconciled." Keep this as a small grounding
+detail, not a focal moment.
 
-Mood: warm cosmic moral resolution ─ the canonical Korean reconciliation.
-Where two yards once stood as opposites, now two brothers stand as one.
-Even the punishment of Nolbu lives only in soft background hints; the
-foreground is FORGIVENESS.
+SKY (V2.5 minhwa stylization, joyous mood):
+- 3-4 LARGE MINHWA CLOUD CURLS, prosperous and full.
+- One LARGE CURVED SUN upper-center-left with 10-12 long sweeping
+  curved rays.
+- 2-3 swallows in V formation upper-mid.
 
-Composition: WIDE HORIZONTAL with CENTRAL VERTICAL EMOTIONAL AXIS.
-Brothers' figures + reaching hands dominate the center foreground (~50%),
-Heungbu's small bright yard far-left background (~25%), Nolbu's small
-empty yard far-right background (~25%), unified warm sky above. The
-two brothers' reaching fingers at the dead center are the climactic
-focal point.
+V2.5 STYLIZATION ELEMENTS:
+- Minhwa cloud curls.
+- Curved sun rays.
+- Calligraphic vine tendrils.
+- Treasure shapes GROUPED by type (coins one region, ingots one
+  region, silk ribbons one region, grain one region) ─ NOT a
+  carpet of individual detail.
+
+Apply DETAIL LEVEL: gourd + spilling treasure dead center, hand-drawn
+with confident lines, every treasure type clearly its own fill
+region. Heungbu's family faces visible and joyful. The upper-right
+Nolbu vignette is small + simple. The bottom reconciliation hint is
+tiny + readable.
+
+Mood: triumphant fairy-tale abundance ─ the iconic Korean
+"박이 쩌억 갈라지는 그 순간" with all the wonder of the folktale. The
+gourd + treasure is the HERO of the image. Nolbu's failure exists
+as a small moral counter-note. The brothers' reconciliation is a
+quiet bottom resolution.
+
+Composition: SINGLE BIG FOCAL CENTERPIECE (gourd + treasure +
+Heungbu's family ~60-70% center-mid), upper-right small Nolbu vignette
+(~15%), lower-center small reconciliation silhouette (~10%), unified
+warm sky above. The viewer's eye lands on THE OPEN GOURD AND POURING
+TREASURE first ─ that is the entire purpose of the composition.
 ```
 
 ---
@@ -3883,9 +4249,9 @@ focal point.
 
 - [ ] `scene-1-brothers.png` — 1장. 두 형제, 두 마당 (기)
 - [ ] `scene-2-swallow.png` — 2장. 다친 제비를 만난 날 (승 + 분기)
-- [ ] `scene-3a-family.png` — 3장 분기 A. 식구들의 따뜻한 손길 (전)
-- [ ] `scene-3b-medicine.png` — 3장 분기 B. 어머니가 가르쳐 주신 약방문 (전)
-- [ ] `scene-4-justice.png` — 마지막 장. 박씨가 가져온 두 마당의 결말 (결 / 정통 결말)
+- [ ] `scene-3a-family.png` — 3장 분기 A. 봄날 마당에 돌아온 제비 (전 + 박씨 도착)
+- [ ] `scene-3b-medicine.png` — 3장 분기 B. 새벽 산기슭에서 받은 박씨 (전 + 박씨 도착)
+- [ ] `scene-4-justice.png` — 마지막 장. 박이 갈라지고 보물이 쏟아져 나오던 날 (결 / 정통 결말)
 
 기존 `start.png`, `swallow.png`, `greed.png`, `ending-blessing.png`, `ending-lesson.png`은 `Backup_v1/`에 그대로 유지 (롤백용).
 
@@ -4180,63 +4546,85 @@ upper background.
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-SHOT TYPE: Same pond setting as Scene 2 but now the THREE-AXE TEST is
-visualized. Show all three axes within the canvas in a vertical
-sequence: golden axe in the spirit's raised hand (upper), silver axe
-half-rising from the water (middle), iron axe being held forth (lower).
-Wide vertical composition emphasizing the moral sequence.
+SHOT TYPE: Same pond setting as Scene 2, but now THE MOMENT OF
+RECOGNITION ─ the single iconic beat of the test passing. The spirit
+extends the TRUE IRON AXE forward toward the woodcutter as the
+rejected gold + silver axes sink visibly back into the pond below.
+ONE clear focal moment, not a symbolic three-axe stack.
 
-Subject: The mountain pond, same as Scene 2, but in a moment that
-captures the FULL three-axe test as a single tableau.
+Subject: The mountain pond, same as Scene 2, at the very moment the
+test resolves: the spirit has set the gold and silver back into the
+water and is now offering the woodcutter's TRUE axe.
 
-CENTER OF POND: the Mountain Spirit (same character as Scene 2 ─
-flowing white beard, white hanbok, jade staff). He stands in the water
-slightly higher now (visible from chest up), with three positions of
-his right hand shown in a soft vertical column:
+CENTER OF POND ─ THE FOCAL EXCHANGE: the Mountain Spirit (same
+character as Scene 2 ─ flowing white beard, white hanbok with wide
+sleeves, jade staff in his left hand). He rises visible from chest
+up. His RIGHT HAND is extended FORWARD AND DOWNWARD toward the
+woodcutter on the bank, palm slightly up, offering THE IRON AXE
+(쇠도끼) ─ the woodcutter's familiar worn axe with smooth wooden
+handle (손때 묻은 자루) and plain unornamented blade, distinctly NOT
+shiny. This is the iconic "true axe returned" moment ─ the focal
+anchor of the entire scene.
 
-  UPPER POSITION (his hand at top): holding the GOLDEN AXE (same ornate
-  bright axe as Scene 2) ─ but slightly shaded/lower priority now, the
-  sparkle lines softer.
-  MIDDLE POSITION (his hand at middle): holding the SILVER AXE — silver
-  bright like moonlight, with 4-6 short sparkle lines. Slightly smaller
-  in scale than the golden axe.
-  LOWER POSITION (his hand at lower center): holding the IRON AXE ─ the
-  woodcutter's familiar old plain axe with a worn smooth wooden handle.
-  Simple, unornamented, but distinctly NOT shiny like the others. This
-  is the TRUE axe.
+The spirit's face is now WARM AND APPROVING ─ clear soft smile,
+eyes crinkled with gentleness, white beard hanging peacefully. The
+testing is finished; recognition has begun.
 
-THE THREE AXES are stacked in the spirit's hand area in a faint vertical
-arc, suggesting "the test happened over time but here is the whole
-test at once". The IRON AXE at the bottom is the only one held in a
-FORWARD-extending gesture toward the woodcutter.
+UNDERWATER (lower-mid foreground, visible through the clear pond
+surface): the rejected GOLDEN AXE and SILVER AXE are SINKING gently
+back into the water, drawn as semi-translucent suggested outlines
+just below the surface. Each shows 2-3 short sparkle lines suggesting
+they were once bright but are now returning to the spirit's keeping.
+The golden axe slightly higher, the silver axe slightly lower, both
+clearly subordinate to the iron axe above (the moral order of the
+test is visible: "wealth sinks, truth rises"). Around them: 4-6
+subtle bubble shapes (single fill regions, NOT a carpet).
 
-LEFT-FOREGROUND: the woodcutter (same character) now KNEELING with both
-hands raised together in a respectful "received" gesture, head bowed
-slightly, face glowing with relief and gratitude (small smile, eyes
-brightening). His upper body is leaning forward toward the iron axe.
+LEFT-FOREGROUND: the woodcutter (same character) KNEELING very close
+to the pond's edge, leaning forward, both hands cupped and raised
+together to RECEIVE the iron axe. His face is the emotional
+counterpart to the spirit's: eyes shining, mouth opening in quiet
+"yes!", a soft glow of gratitude. He looks at the iron axe ─ NOT at
+the gold or silver in the water ─ which visually reinforces that the
+honest heart sees what is truly his.
 
-THE SPIRIT'S FACE: now warm and approving, a clear smile, eyes
-crinkled with gentleness. He has stopped testing.
+POND DETAILS: same edge as Scene 2 ─ 5-7 rounded stones distinct,
+3-4 fan-shaped reed clumps, 1-2 lily pad ovals. 3-4 concentric
+ripple lines spreading from where the spirit stands.
 
-POND DETAILS: same edge as Scene 2 ─ stones, reeds, lily pads. Ripples
-around the spirit still active.
+WATER SURFACE: between the spirit's outstretched iron axe and the
+woodcutter's open hands, a faint soft glow / 4-6 short sparkle lines
+suggesting the moral light of the moment.
 
-BACKGROUND: same mountains and pines (apply GROUPED NATURAL TEXTURES ─
-5-7 cluster foliage per pine, simple ridges).
+BACKGROUND: same mountains + pines as Scene 2 (apply GROUPED NATURAL
+TEXTURES ─ 5-7 cloud-shaped foliage clusters per pine, simple ridges).
 
-UPPER SKY: same clouds and sun behind the spirit's head as halo, slightly
-brighter now (a few more sun rays radiating).
+UPPER SKY (V2.5 minhwa stylization, brighter than Scene 2):
+- 2-3 LARGE MINHWA CLOUD CURLS parting around the spirit's halo.
+- The sun behind the spirit's head as a soft halo with 8-10 simple
+  curved rays radiating outward ─ slightly brighter than Scene 2,
+  marking the moral peak.
 
-Apply DETAIL LEVEL: clearly distinguish the three axes by ornament/finish,
-spirit's robe + beard detailed, woodcutter's reverent posture and small
-smile visible.
+V2.5 STYLIZATION ELEMENTS:
+- Minhwa cloud curls + curved sun halo rays.
+- Pond ripples grouped (single fill region per ring).
+- Sunken axes as clean semi-translucent outline shapes.
+
+Apply DETAIL LEVEL: iron axe clearly distinguishable from the sunken
+gold + silver (gold/silver smaller and lower priority, iron axe larger
+and FORWARD); spirit's beard + robe + warm smile detailed; woodcutter's
+receiving hands + bright eyes visible.
 
 Mood: the moral peak of the story ─ honesty meeting recognition. The
-quiet warmth of a test passed.
-Composition: VERTICAL EMPHASIS. Spirit in pond center, three axes
-stacked vertically from upper (gold) → middle (silver) → lower (iron),
-woodcutter kneeling LEFT in a receiving posture, mountains and clouds
-upper background.
+quiet warmth of a test passed. ONE clear iconic moment, not a
+crowded symbol-stack: "the true axe returns; wealth returns to the
+water."
+
+Composition: SINGLE FOCAL EXCHANGE. Spirit in pond mid-center holding
+iron axe forward-low, woodcutter kneeling close on the LEFT bank with
+cupped receiving hands, the IRON AXE between them as the visual focal
+anchor, gold + silver sinking subtly below the water line as a moral
+counterweight, mountains + minhwa clouds + curved sun halo above.
 ```
 
 ---
@@ -4429,80 +4817,132 @@ but secondary to the emotional exchange, mountains and sky backdrop.
 
 **Gemini Prompt** (베이스 + 아래):
 ```
-SHOT TYPE: Split-canvas. LEFT half: the honest woodcutter returning home
-with the three axes, his mother at the door, the warm hut. RIGHT half:
-the greedy woodcutter trudging down the mountain empty-handed with just
-an axe handle. Wide horizontal composition with the mountain pond at the
-visual center connecting both halves.
+SHOT TYPE: KOREAN SCROLL-PAINTING TIME-ARC composition ─ wide
+horizontal canvas with THREE narrative beats reading LEFT→CENTER→RIGHT,
+one continuous landscape but with three distinct moral moments. This
+captures the FULL 결 (conclusion): the honest reward AT HOME, the
+greedy man's iconic JUDGMENT at the pond, and his EMPTY-HANDED
+descent. The CENTER (pond judgment) is the moral focal anchor.
 
-Subject: A two-fate canvas of the moral conclusion.
+Subject: A wide unified Korean mountainscape at warm late afternoon.
+Apply V2.5 stylization layer ─ minhwa cloud curls, soft curved sun
+rays, layered mountain silhouettes, gentle scroll-painting visual
+language.
 
-CENTER OF CANVAS: the mountain pond, now empty and silent. The Mountain
-Spirit has sunk back beneath. A few simple ripple lines on the surface
-suggest his recent presence. Tall pines around the pond (apply GROUPED
-NATURAL TEXTURES ─ 5-7 cluster foliage per pine).
+═══ LEFT BEAT (~33%) ─ 정직한 나무꾼의 보상 (HONEST REUNION):
+The small thatched hut from Scene 1 at the foot of the mountain on
+the LEFT side of the canvas.
 
-LEFT HALF — THE HONEST WOODCUTTER (returning home):
-- The mountain path leading DOWN from the pond to the small thatched hut
-  at the foot of the mountain (the hut from Scene 1).
-- The HONEST WOODCUTTER walking down the path in joyful posture ─ both
-  arms full of the THREE AXES: golden axe over one shoulder (bright with
-  3-4 sparkle lines), silver axe in his other hand (bright with 3-4
-  sparkle lines), iron axe tucked across his back. His face shows quiet
-  awed gratitude, a calm smile.
-- AT THE HUT'S THRESHOLD: the aged mother (same character as Scene 1)
-  stands with both hands joined together at her chest, looking up at her
-  son returning. A soft smile of recognition + pride on her face.
-- The hut now seems brighter ─ a small puff of smoke rising from the
-  chimney, paper-paneled window with a soft glow.
-- Around the path: persimmon trees with ripe fruit (apply GROUPED NATURAL
-  TEXTURES ─ 4-5 cluster foliage per tree, 4-5 round persimmons hanging),
-  fan-shaped grass tufts spaced.
+- AT THE HUT'S THRESHOLD: the HONEST WOODCUTTER (same character ─
+  worn but mended hanbok, head-cloth, lean kind face) kneeling on
+  one knee on the ground. THE THREE AXES are laid out in a neat
+  row on a small cloth in front of him on the threshold:
+    • GOLDEN AXE (ornate larger blade + decorative pattern lines +
+      4-6 short sparkle rays)
+    • SILVER AXE (slightly smaller, bright with 4-6 sparkle rays)
+    • IRON AXE (worn smooth wooden handle, plain unornamented blade,
+      distinctly NOT shiny ─ the TRUE axe)
+- THE AGED MOTHER (same character as Scene 1 ─ bent back, gray hair
+  in small low bun, simple plain hanbok with apron, kind wrinkled
+  face, small wooden walking stick) standing right beside him,
+  BOTH HER HANDS HOLDING ONE OF HIS HANDS at her chest in a deeply
+  moved gesture. Her face: small tearful smile, eyes warm with
+  pride. He looks up at her with quiet awe.
+- The hut behind them: paper-paneled door open with a soft glow
+  spilling out, chimney with 2-3 wisp lines of smoke, small persimmon
+  tree at the corner with 4-5 round ripe persimmons (GROUPED fill).
+  A hen pecking near the stone wall (rough basalt, 4-5 distinct stones).
 
-RIGHT HALF — THE GREEDY WOODCUTTER (descending empty-handed):
-- A separate path on the OTHER side of the pond going down. The greedy
-  woodcutter — clearly differentiated visually from the honest one:
-  rounder face with thicker cheeks, bushy heavy eyebrows, a small
-  scraggly beard, MERCHANT-STYLE hanbok (a fine outer vest with a
-  visible diamond or floral patterned panel across the chest, an
-  embroidered sash at the waist) now disheveled and dusty from the
-  trip up the mountain. A small money pouch dangles half-empty from
-  his belt. He's older and visibly fancier than the honest woodcutter
-  ─ a 3-second read should tell the viewer "this is a different,
-  greedier man".
-- He trudges DOWN the path slumped over, head bowed.
-- In his hand: a single bare WOODEN AXE HANDLE (자루) ─ no blade.
-- His mouth is downturned, head bowed. One hand wipes his eyes (3-4
-  short tear lines on his cheeks).
-- Around him: scattered fallen autumn leaves, a few stones, scrubbier
-  vegetation (less lush than the honest woodcutter's side).
-- A pair of mocking magpies on a branch nearby (2 simple bird shapes).
+═══ CENTER BEAT (~34%) ─ 연못의 판결 순간 (THE POND JUDGMENT — focal
+anchor of the canvas):
+Slightly elevated on a mountain shelf above the hut, the FAMILIAR
+ROUND POND from Scenes 2/3. This is the ICONIC MORAL MOMENT.
 
-DIVIDING ELEMENT: the central mountain pond at the very center of the
-canvas, slightly elevated, with the surface gently rippling. Behind it
-a tall central pine tree separating the two halves visually.
+- IN THE CENTER OF THE POND: the MOUNTAIN SPIRIT (same character ─
+  long white beard, white hanbok, jade staff, small crown) visible
+  chest-up, with a clearly DISAPPROVING expression now ─ NOT angry,
+  but deeply sorrowful: white beard hanging straight, eyebrows soft
+  but downturned, mouth firm, one quiet long sigh leaving him (1-2
+  small breath wisps from his mouth).
+- IN HIS RAISED HAND: the GOLDEN AXE held aloft for ONE LAST MOMENT
+  before sinking ─ already TILTED BLADE-DOWN, the sparkle lines around
+  it DIMMING (only 2-3 faint short rays, much fewer than Scene 2).
+  Below the spirit's hand, 3-4 subtle motion lines indicate the
+  golden axe is just beginning to descend back into the pond.
+- ON THE POND'S NEAR BANK (foreground of the center beat): the
+  GREEDY WOODCUTTER kneeling, but in the OPPOSITE posture of the
+  honest woodcutter's earlier reverence ─ both arms outstretched
+  GRABBING toward the golden axe, fingers splayed in eager claim,
+  mouth open in a loud false claim. His face is visibly the GREEDY
+  CHARACTER (rounder fuller face, bushy thick eyebrows, small scraggly
+  beard, MERCHANT-STYLE hanbok with diamond OR floral patterned chest
+  panel, embroidered waist sash, a small money pouch dangling) ─
+  3-second read MUST be "this is a different, greedier man, not the
+  honest woodcutter". His outstretched hands NEVER touch the axe ─
+  there is a clear gap between his fingers and the descending blade.
+- POND DETAILS: 4-5 rounded stones, 2-3 fan-shaped reed clumps,
+  3-4 concentric ripple lines around the spirit. NO lily pads here
+  (slight visual difference from Scene 2 ─ this is the somber moment,
+  not the wonder moment).
+- BACKGROUND: tall central PINE TREE just behind the pond, dividing
+  the LEFT and RIGHT beats visually (V2.5 cloud-shaped foliage, 6-8
+  clusters).
 
-UPPER SKY (across both halves): warm late afternoon. 2-3 simple cloud
-shapes. The sun upper-center with simple rays as a unifying warm
-presence ─ both fates received the same daylight.
+═══ RIGHT BEAT (~33%) ─ 욕심쟁이의 빈손 (EMPTY-HANDED DESCENT):
+A mountain path leading DOWN from the pond to the RIGHT, into a
+slightly bleaker stretch of mountainside.
 
-GROUND DETAILS: scattered autumn leaves in groups (3-4 small clusters
-per side), fan-shaped grass tufts, a few pine cones.
+- THE GREEDY WOODCUTTER (same character, NOW descending) trudges
+  down the path, this time from BEHIND/THREE-QUARTER angle so the
+  viewer reads him as the SAME character a few moments later.
+  Shoulders SLUMPED, head bowed, one hand wiping his eyes (3-4
+  short tear lines on his cheeks), the OTHER hand holds a single
+  BARE WOODEN AXE HANDLE (자루) ─ no blade. His merchant-style
+  hanbok now disheveled and dusty.
+- The path is bare and stony, with scrubbier vegetation (less lush
+  than the honest LEFT beat). 2-3 small autumn leaves scattered.
+- ON A NEARBY BRANCH: 2 simple MOCKING MAGPIES (까치 ─ white belly +
+  black wings + long forked tail), beaks open in silent caw, looking
+  down at the greedy man as a quiet moral chorus.
+- Sparser pines on this side (V2.5 cloud-clusters, smaller).
 
-Apply DETAIL LEVEL: both woodcutters' faces clear and contrasting,
-mother's posture and expression clear, three axes visually distinct
-(gold ornate, silver bright, iron plain).
-GROUPED NATURAL TEXTURES strictly: pine foliage in clusters, leaves
-in small groups, magpies simple shapes, clouds simple.
+═══ UNIFYING ELEMENTS (across all three beats):
+- ONE WIDE SKY OVER ALL THREE BEATS: 3-4 LARGE MINHWA CLOUD CURLS
+  in the upper band, 4-6 curl chambers each.
+- ONE CURVED SUN upper-center-high with 10-12 long gentle curved
+  rays sweeping over the whole canvas ─ "both fates received the
+  same daylight."
+- LAYERED MOUNTAIN SILHOUETTES in the far background, 2-3 receding
+  ridges, continuous across LEFT to RIGHT.
+- THE CONTINUOUS PATH: a single winding mountain path links all three
+  beats ─ down from pond to hut on LEFT, around the pond at CENTER,
+  down from pond to bare descent on RIGHT. Reads as one mountain,
+  one afternoon, two fates.
 
-Mood: serene final justice ─ both endings under the same warm sun, but
-one walking toward a lit window and the other walking down with nothing.
-The cosmic gentleness of Korean folktale endings: even punishment is
-quiet.
-Composition: SPLIT CANVAS unified by CENTRAL POND. Honest woodcutter +
-mother + lit hut LEFT (~45%), central pond + pine + rippling water
-CENTER (~10%), greedy woodcutter + bare path + mocking magpies RIGHT
-(~45%), unified warm sky above.
+V2.5 STYLIZATION ELEMENTS:
+- Minhwa cloud curls.
+- Curved sun rays unifying the sky.
+- Layered mountain silhouettes.
+- Calligraphic pine trunk + cloud-shaped foliage clusters.
+- All textures GROUPED (persimmons in clusters, leaves in small
+  groups, magpies as simple silhouettes).
+
+Apply DETAIL LEVEL: both woodcutters' faces clearly distinct (lean
+kind honest vs round bushy greedy); mother's posture/walking-stick
+clear; three axes visually distinct (gold ornate, silver bright,
+iron plain); spirit's sorrowful expression at the moral moment
+unmistakable.
+
+Mood: cosmic Korean folktale resolution ─ same warm sun over both
+fates. Honest reward feels tender, greedy judgment feels sorrowful
+(not punitive), empty-handed descent feels quiet. Three moral beats
+in one breathing landscape.
+
+Composition: WIDE HORIZONTAL SCROLL-PAINTING TIME-ARC. Honest
+woodcutter + mother + 3 axes at hut LEFT (~33%), pond + judgment +
+greedy claim CENTER (~34%, the moral focal anchor), greedy descent +
+bare handle + mocking magpies RIGHT (~33%). One unified sky, one
+continuous mountain path, one warm sun above all three beats.
 ```
 
 ---
