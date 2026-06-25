@@ -25,7 +25,7 @@ const gowunBatang = Gowun_Batang({
 
 const SITE_URL = "https://koreanfolktales.ink"
 const SITE_NAME = "Korean Folktales"
-const SITE_TITLE = "Korean Folktales — A Bilingual Coloring Storybook"
+const SITE_TITLE = "Korean Folktales — Coloring Storybook for Kids"
 const SITE_DESC =
   "Color real Korean folktales — eight stories, bilingual (한/EN), branching endings, free and printable. For kids, parents, and K-content lovers."
 
