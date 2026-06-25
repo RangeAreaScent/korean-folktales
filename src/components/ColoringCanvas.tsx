@@ -28,7 +28,7 @@ const CANVAS_SIZE = 2048
 // (~110MB peak headroom).
 const UNDO_LIMIT = 7
 const MIN_ZOOM = 1
-const MAX_ZOOM = 4
+const MAX_ZOOM = 8
 const ZOOM_STEP = 0.5
 // Wavefront fill animation duration. Stretched from 180ms → 320ms so the
 // animation still lasts longer than the BFS work for typical large regions
@@ -43,6 +43,9 @@ export type ColoringCanvasHandle = {
   canUndo: () => boolean
   toDataURL: () => string | null
   getCanvas: () => HTMLCanvasElement | null
+  zoomBy: (delta: number) => void
+  resetZoom: () => void
+  toggleFullscreen: () => void
 }
 
 type Props = {
@@ -50,7 +53,14 @@ type Props = {
   fillColor: Hsl
   fillMode: FillMode
   onError?: (msg: string) => void
-  onHistoryChange?: (canUndo: boolean) => void
+  /** Hide the floating bottom-left toolbar so a parent can render an
+   *  external one (mobile control strip). Keyboard shortcuts still work. */
+  hideToolbar?: boolean
+  /** Fired whenever zoom changes — let the parent render a synced value
+   *  in an external toolbar. */
+  onZoomChange?: (zoom: number) => void
+  /** Fired whenever the undo stack becomes (non-)empty. */
+  onHistoryChange?: (hasHistory: boolean) => void
 }
 
 function buildStyle(color: Hsl, mode: FillMode): FillStyle {
@@ -94,7 +104,15 @@ function isTypingTarget(el: EventTarget | null): boolean {
 
 export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
   function ColoringCanvas(
-    { imageSrc, fillColor, fillMode, onError, onHistoryChange },
+    {
+      imageSrc,
+      fillColor,
+      fillMode,
+      onError,
+      hideToolbar,
+      onZoomChange,
+      onHistoryChange,
+    },
     ref,
   ) {
     const { t } = useLocale()
@@ -122,8 +140,19 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
       initialMidY: number
       initialScrollLeft: number
       initialScrollTop: number
+      lastZoom: number
     } | null>(null)
     const recentPinchEndRef = useRef<number>(0)
+    const pinchRafRef = useRef<number | null>(null)
+    // Single-finger pan when zoomed in (mobile-only) — distinct from
+    // pinch (two fingers) and from desktop space-held drag.
+    const touchPanRef = useRef<{
+      startX: number
+      startY: number
+      startScrollLeft: number
+      startScrollTop: number
+      moved: boolean
+    } | null>(null)
 
     const [zoom, setZoom] = useState(1)
     const [spaceHeld, setSpaceHeld] = useState(false)
@@ -217,7 +246,15 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
       canUndo: () => undoStackRef.current.length > 0,
       toDataURL: () => canvasRef.current?.toDataURL("image/png") ?? null,
       getCanvas: () => canvasRef.current,
+      zoomBy,
+      resetZoom,
+      toggleFullscreen,
     }))
+
+    // Sync zoom changes outward so a parent toolbar can render the same value.
+    useEffect(() => {
+      onZoomChange?.(zoom)
+    }, [zoom, onZoomChange])
 
     useEffect(() => {
       const canvas = canvasRef.current
@@ -394,41 +431,116 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
           initialMidY: (t1.clientY + t2.clientY) / 2,
           initialScrollLeft: s?.scrollLeft ?? 0,
           initialScrollTop: s?.scrollTop ?? 0,
+          lastZoom: zoom,
+        }
+        // If a single-finger pan was in progress, cancel it.
+        touchPanRef.current = null
+      } else if (e.touches.length === 1 && zoom > 1) {
+        // Single-finger drag = pan when zoomed in. At zoom=1 nothing to
+        // pan, so we let the touch fall through to a normal fill-click.
+        const t = e.touches[0]
+        const s = scrollRef.current
+        touchPanRef.current = {
+          startX: t.clientX,
+          startY: t.clientY,
+          startScrollLeft: s?.scrollLeft ?? 0,
+          startScrollTop: s?.scrollTop ?? 0,
+          moved: false,
         }
       }
     }
 
     function handleTouchMove(e: React.TouchEvent<HTMLDivElement>) {
+      // Pinch zoom + pan with two fingers
       const pinch = pinchRef.current
-      if (!pinch || e.touches.length !== 2) return
-      e.preventDefault()
-      const t1 = e.touches[0]
-      const t2 = e.touches[1]
-      const distance = Math.max(
-        1,
-        Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY),
-      )
-      const midX = (t1.clientX + t2.clientX) / 2
-      const midY = (t1.clientY + t2.clientY) / 2
+      if (pinch && e.touches.length === 2) {
+        e.preventDefault()
+        const t1 = e.touches[0]
+        const t2 = e.touches[1]
+        const distance = Math.max(
+          1,
+          Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY),
+        )
+        const midX = (t1.clientX + t2.clientX) / 2
+        const midY = (t1.clientY + t2.clientY) / 2
 
-      // Pinch → zoom
-      const rawZoom = pinch.initialZoom * (distance / pinch.initialDistance)
-      const nextZoom =
-        Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, Math.round(rawZoom * 20) / 20))
-      setZoom(nextZoom)
+        // Compute target zoom — 1% steps (was 5%) so the gesture reads as
+        // continuous instead of stair-stepped.
+        const rawZoom = pinch.initialZoom * (distance / pinch.initialDistance)
+        const nextZoom =
+          Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, Math.round(rawZoom * 100) / 100))
 
-      // Two-finger drag → pan
-      const s = scrollRef.current
-      if (s) {
-        s.scrollLeft = pinch.initialScrollLeft - (midX - pinch.initialMidX)
-        s.scrollTop = pinch.initialScrollTop - (midY - pinch.initialMidY)
+        const s = scrollRef.current
+        if (s) {
+          // ANCHOR the zoom at the pinch midpoint (relative to the viewport
+          // of the scroll container) so the image grows / shrinks around the
+          // fingers — not from the top-left corner.
+          const rect = s.getBoundingClientRect()
+          const localMidX = midX - rect.left
+          const localMidY = midY - rect.top
+          // The image point under the pinch midpoint stays put when zoom
+          // changes. After zoom z → z': newScroll = (oldScroll + local) *
+          // (z'/z) - local.
+          const ratio = nextZoom / pinch.lastZoom
+          s.scrollLeft = (s.scrollLeft + localMidX) * ratio - localMidX
+          s.scrollTop = (s.scrollTop + localMidY) * ratio - localMidY
+          // Also handle two-finger pan: shift by midpoint delta vs initial.
+          s.scrollLeft -= midX - pinch.initialMidX
+          s.scrollTop -= midY - pinch.initialMidY
+          // Reset the initial-midpoint reference each frame so the pan
+          // delta is per-frame (otherwise it accumulates wrong).
+          pinch.initialMidX = midX
+          pinch.initialMidY = midY
+        }
+        pinch.lastZoom = nextZoom
+        // Defer the React state update to the next animation frame so we
+        // don't trigger a re-render on every touchmove (which was the
+        // source of the zigzag/stutter). The DOM scroll position is already
+        // applied above for instant visual feedback.
+        if (pinchRafRef.current == null) {
+          pinchRafRef.current = requestAnimationFrame(() => {
+            const target = pinchRef.current?.lastZoom
+            if (target != null) setZoom(target)
+            pinchRafRef.current = null
+          })
+        }
+        return
+      }
+
+      // Single-finger pan (only when zoomed in)
+      const pan = touchPanRef.current
+      if (pan && e.touches.length === 1) {
+        const t = e.touches[0]
+        const dx = t.clientX - pan.startX
+        const dy = t.clientY - pan.startY
+        if (Math.abs(dx) + Math.abs(dy) > 6) pan.moved = true
+        const s = scrollRef.current
+        if (s) {
+          s.scrollLeft = pan.startScrollLeft - dx
+          s.scrollTop = pan.startScrollTop - dy
+        }
       }
     }
 
     function handleTouchEnd(e: React.TouchEvent<HTMLDivElement>) {
       if (pinchRef.current && e.touches.length < 2) {
         recentPinchEndRef.current = performance.now()
+        // Make sure the final zoom state lands in React.
+        const finalZoom = pinchRef.current.lastZoom
+        if (pinchRafRef.current != null) {
+          cancelAnimationFrame(pinchRafRef.current)
+          pinchRafRef.current = null
+        }
+        setZoom(finalZoom)
         pinchRef.current = null
+      }
+      // If a single-finger pan moved, prevent the trailing synthetic click
+      // from triggering a fill.
+      if (touchPanRef.current?.moved) {
+        recentPinchEndRef.current = performance.now()
+      }
+      if (e.touches.length === 0) {
+        touchPanRef.current = null
       }
     }
 
@@ -469,7 +581,7 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
           </div>
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-3 z-10 flex items-end justify-between px-3">
+        <div className={`pointer-events-none absolute inset-x-0 bottom-3 z-10 flex items-end justify-between px-3 ${hideToolbar ? "hidden" : ""}`}>
           <div className="pointer-events-auto flex items-center gap-0.5 rounded-full bg-white/95 px-1.5 py-1 shadow-lg ring-1 ring-gray-200/70 backdrop-blur">
             <ToolbarButton
               onClick={undo}

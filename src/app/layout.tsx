@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Gowun_Batang } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
@@ -77,6 +77,20 @@ export const metadata: Metadata = {
   },
 };
 
+// Viewport — critical for mobile Safari. Without it, iOS falls back to a
+// 980px-wide compatibility viewport: card-tap coordinates miss their targets,
+// double-tap triggers native zoom, and the layout grows horizontal scroll.
+// maximumScale=1 + userScalable=false disables the double-tap-to-zoom AND
+// pinch-to-zoom that fights our canvas pinch handler.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
+  themeColor: "#fffbf2",
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -91,7 +105,9 @@ export default function RootLayout({
         <LocaleProvider>
           <SoundProvider>
             {children}
-            <div className="pointer-events-none fixed top-3 right-3 z-50 flex items-center gap-2 lg:bottom-4 lg:right-4 lg:top-auto">
+            {/* Floating cluster — desktop only. On mobile, these toggles
+                live inside MobileControlBar so they don't cover the title. */}
+            <div className="pointer-events-none fixed bottom-4 right-4 z-50 hidden items-center gap-2 lg:flex">
               <SoundToggle className="pointer-events-auto" />
               <LocaleToggle className="pointer-events-auto" />
             </div>

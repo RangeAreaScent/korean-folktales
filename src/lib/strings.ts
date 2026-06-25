@@ -93,8 +93,8 @@ export const UI = {
     en: "When you're done coloring, choose what happens next ↓",
   },
   continueScene: {
-    ko: "다음 이야기로",
-    en: "Continue the story",
+    ko: "계속",
+    en: "Continue",
   },
   finalScene: {
     ko: "마지막 장",
@@ -195,6 +195,26 @@ export const UI = {
   tt100: { ko: "100% (Shift 0)", en: "100% (Shift 0)" },
   ttZoomIn: { ko: "확대 (Shift +)", en: "Zoom in (Shift +)" },
   ttFullscreen: { ko: "전체화면 (F)", en: "Fullscreen (F)" },
+  ttStory: { ko: "이야기 보기", en: "Read story" },
+  narrationModalTitle: { ko: "이 장면의 이야기", en: "Scene story" },
+  narrationListen: { ko: "🔊 한국어로 듣기", en: "🔊 Listen in Korean" },
+  narrationClose: { ko: "닫기", en: "Close" },
+  restartConfirm: {
+    ko: "지금까지 칠한 게 사라져요. 정말 다시 시작할까요?",
+    en: "You'll lose what you've colored. Restart the story?",
+  },
+  makeAChoice: { ko: "갈래 고르기", en: "Choose path" },
+  palHarmonyChip: { ko: "어울림", en: "Harmony" },
+  palContrastChip: { ko: "대비", en: "Contrast" },
+  // Short chip names — bounded width for horizontal scroll row
+  themeTraditional1Short: { ko: "전통 I", en: "Trad I" },
+  themeTraditional2Short: { ko: "전통 II", en: "Trad II" },
+  themeTotoroShort: { ko: "토토로", en: "Totoro" },
+  themeSpiritedShort: { ko: "치히로", en: "Spirited" },
+  themeHowlShort: { ko: "하울", en: "Howl" },
+  themeMononokeShort: { ko: "모노노케", en: "Mononoke" },
+  themeVividShort: { ko: "쨍한", en: "Vivid" },
+  themeMutedShort: { ko: "차분", en: "Muted" },
   dragToPan: {
     ko: "✋ 드래그로 이동",
     en: "✋ Drag to pan",

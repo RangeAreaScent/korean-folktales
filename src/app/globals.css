@@ -24,6 +24,41 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  /* Mobile Safari safeguard — should never need to scroll horizontally.
+     Any element overflowing the viewport width gets clipped here so the
+     layout doesn't develop a sideways scroll. */
+  overflow-x: hidden;
+  /* Disable the 300ms tap delay + double-tap-to-zoom on interactive
+     elements (already disabled at the viewport meta level too, but this
+     belt-and-suspenders prevents any residual gesture quirks). */
+  touch-action: manipulation;
+  /* Prevent iOS Safari's elastic horizontal pan when a child is wider
+     than the viewport. */
+  overscroll-behavior-x: none;
+}
+
+/* Disable iOS Safari's auto text-size adjustment on rotation, which
+   sometimes inflates fonts inside controls and breaks chip widths. */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* iOS Safari has a long-standing bug where empty absolutely-positioned
+   <button> overlays (used as full-card click catchers) don't fire onClick
+   on the first tap unless they explicitly look "tappable" via cursor:pointer.
+   Forcing this on all buttons + role=button + anchor elements is a safe,
+   global belt for the entire app. */
+button,
+[role="button"],
+a {
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(180, 140, 80, 0.15);
+}
+
+/* iOS canvas tap-highlight removal — the canvas is for color fills, not
+   a button, so the system blue flash on tap is just noise. */
+canvas {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Narration scroll box — soft amber scrollbar, fade mask top + bottom */

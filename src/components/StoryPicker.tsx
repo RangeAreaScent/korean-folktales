@@ -240,62 +240,63 @@ function StoryCard({
 }) {
   const { t } = useLocale()
   return (
+    // Outer wrapper — plain div with the card visual styling. The two
+    // interactive areas (begin-story + about) are SIBLINGS rather than
+    // nested, because mobile Safari refuses to fire the outer button's
+    // click handler when an interactive descendant is present.
     <div
-      className={`group relative flex flex-col overflow-hidden rounded-3xl border border-amber-100/80 bg-gradient-to-br ${story.accent} p-6 text-left shadow-sm transition hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg`}
+      className={`group relative flex flex-col overflow-hidden rounded-3xl border border-amber-100/80 bg-gradient-to-br ${story.accent} p-6 shadow-sm transition hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg`}
     >
+      {/* Primary tap target — covers the whole card except the About row */}
       <button
         type="button"
         onClick={onPick}
-        className="absolute inset-0 z-10"
         aria-label={`${t(story.title)} — ${t(UI.startStory)}`}
-      />
-
-      <div className="pointer-events-none relative z-20 flex items-start justify-between">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={`/coloring/icons/${story.id}.png`}
-          alt=""
-          aria-hidden
-          width={96}
-          height={96}
-          className="h-24 w-24 object-contain drop-shadow-sm transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105"
-        />
-        <span className="rounded-full bg-white/60 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-amber-800/80 backdrop-blur">
-          {Object.keys(story.scenes).length} {t(UI.scenesSuffix)}
-        </span>
-      </div>
-
-      <h2
-        className="pointer-events-none relative z-20 mt-5 font-display text-[22px] font-bold leading-tight text-gray-900 md:text-[26px]"
-        style={{ fontFamily: "var(--font-display)" }}
+        className="flex w-full flex-col text-left"
       >
-        {t(story.title)}
-      </h2>
-      <p
-        className="pointer-events-none relative z-20 mt-1 font-display text-[13px] italic text-gray-700 md:text-sm"
-        style={{ fontFamily: "var(--font-display)" }}
-      >
-        {t(story.subtitle)}
-      </p>
+        <div className="flex w-full items-start justify-between">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`/coloring/icons/${story.id}.png`}
+            alt=""
+            aria-hidden
+            width={96}
+            height={96}
+            className="h-24 w-24 object-contain drop-shadow-sm transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105"
+          />
+          <span className="rounded-full bg-white/60 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-amber-800/80 backdrop-blur">
+            {Object.keys(story.scenes).length} {t(UI.scenesSuffix)}
+          </span>
+        </div>
 
-      <div className="pointer-events-none relative z-20 my-4 h-px w-12 bg-amber-900/15" />
-
-      <p className="pointer-events-none relative z-20 text-[13px] leading-relaxed text-gray-700">
-        {t(story.tagline)}
-      </p>
-
-      <div className="relative z-20 mt-5">
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation()
-            onAbout()
-          }}
-          className="inline-flex items-center gap-1.5 rounded-full border border-amber-200/80 bg-white/70 px-3 py-1.5 text-[12px] font-medium text-amber-900/80 shadow-sm backdrop-blur transition hover:border-amber-300 hover:bg-white hover:text-amber-900"
+        <h2
+          className="mt-5 font-display text-[22px] font-bold leading-tight text-gray-900 md:text-[26px]"
+          style={{ fontFamily: "var(--font-display)" }}
         >
-          📖 {t(UI.aboutThisTale).replace("📖 ", "")}
-        </button>
-      </div>
+          {t(story.title)}
+        </h2>
+        <p
+          className="mt-1 font-display text-[13px] italic text-gray-700 md:text-sm"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
+          {t(story.subtitle)}
+        </p>
+
+        <div className="my-4 h-px w-12 bg-amber-900/15" />
+
+        <p className="text-[13px] leading-relaxed text-gray-700">
+          {t(story.tagline)}
+        </p>
+      </button>
+
+      {/* About button — true sibling button, no nesting */}
+      <button
+        type="button"
+        onClick={onAbout}
+        className="mt-5 inline-flex w-fit items-center gap-1.5 self-start rounded-full border border-amber-200/80 bg-white/70 px-3 py-1.5 text-[12px] font-medium text-amber-900/80 shadow-sm backdrop-blur transition hover:border-amber-300 hover:bg-white hover:text-amber-900"
+      >
+        📖 {t(UI.aboutThisTale).replace("📖 ", "")}
+      </button>
     </div>
   )
 }

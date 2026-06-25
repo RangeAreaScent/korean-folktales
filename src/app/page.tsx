@@ -7,7 +7,9 @@ import {
   type FillMode,
 } from "@/components/ColoringCanvas"
 import { ColorPalette } from "@/components/ColorPalette"
+import { MobileControlBar } from "@/components/MobileControlBar"
 import { MobilePaletteSheet } from "@/components/MobilePaletteSheet"
+import { NarrationModal } from "@/components/NarrationModal"
 import { OriginalTaleModal } from "@/components/OriginalTaleModal"
 import { StoryPicker } from "@/components/StoryPicker"
 import { PALETTE_THEMES, themeColors, type Hsl } from "@/lib/colors"
@@ -47,13 +49,21 @@ export default function Home() {
   const [showFinal, setShowFinal] = useState(false)
   const [finalImage, setFinalImage] = useState<string | null>(null)
   const [finalPagesCache, setFinalPagesCache] = useState<CompletedPage[]>([])
-  const [hint, setHint] = useState<string | null>(null)
   const [transitioning, setTransitioning] = useState(false)
   const [exporting, setExporting] = useState<null | "pdf" | "png" | "scene">(
     null,
   )
   const [showAbout, setShowAbout] = useState(false)
   const [finalPageIdx, setFinalPageIdx] = useState(0)
+  // Mobile control strip state — mirrored from ColoringCanvas via callbacks
+  // so the strip can render zoom % + disabled undo state without owning the
+  // canvas logic itself.
+  const [canvasZoom, setCanvasZoom] = useState(1)
+  const [canvasHasHistory, setCanvasHasHistory] = useState(false)
+  const [showNarration, setShowNarration] = useState(false)
+  // For branching scenes, choice cards stay hidden behind a "Continue"
+  // button until the user is ready — reduces always-visible CTAs.
+  const [showChoices, setShowChoices] = useState(false)
 
   const story = useMemo<Story | null>(
     () => (storyId ? getStory(storyId) : null),
@@ -75,7 +85,6 @@ export default function Home() {
     setShowFinal(false)
     setFinalImage(null)
     setFinalPagesCache([])
-    setHint(null)
   }, [])
 
   // Deep-link: /?start=<storyId> auto-picks the story (used by /folktales/[slug] CTAs)
@@ -92,6 +101,19 @@ export default function Home() {
     url.searchParams.delete("start")
     window.history.replaceState(null, "", url.pathname + url.search)
   }, [storyId, handlePickStory])
+
+  // Auto-open the narration modal on mobile when a new scene appears, so
+  // users discover the story text without hunting for the 📖 button.
+  // Desktop already shows narration inline.
+  useEffect(() => {
+    if (!currentSceneId) return
+    setShowChoices(false)
+    if (typeof window === "undefined") return
+    const isMobile = window.matchMedia("(max-width: 1023px)").matches
+    if (isMobile) {
+      setShowNarration(true)
+    }
+  }, [currentSceneId])
 
   const handlePick = useCallback((c: Hsl) => {
     setColor(c)
@@ -123,7 +145,6 @@ export default function Home() {
           },
         ])
       }
-      setHint(null)
       setTransitioning(true)
       sound.pageTurn()
       window.setTimeout(() => {
@@ -176,21 +197,24 @@ export default function Home() {
     setFinalPagesCache([])
     setShowFinal(false)
     setFinalImage(null)
-    setHint(null)
     setColor(INITIAL_COLOR)
   }, [])
 
   const handleRestartStory = useCallback(() => {
     if (!story) return
+    // Confirm before destroying in-progress colorings — easy mis-tap target.
+    if (typeof window !== "undefined") {
+      const msg = t(UI.restartConfirm)
+      if (!window.confirm(msg)) return
+    }
     setHistory([story.startSceneId])
     setCompleted([])
     setFinalPagesCache([])
     setShowFinal(false)
     setFinalImage(null)
-    setHint(null)
     setColor(INITIAL_COLOR)
     setTimeout(() => canvasRef.current?.reset(), 0)
-  }, [story])
+  }, [story, t])
 
   const handleExportPdf = useCallback(async () => {
     if (exporting || !story) return
@@ -467,9 +491,10 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col bg-gradient-to-b from-amber-50 via-rose-50/30 to-amber-50">
-      {/* ─── Slim header ─── */}
+      {/* ─── Slim header — tightened on mobile (smaller padding, page
+            indicator moved into the MobileControlBar below the canvas) ─── */}
       <header className="border-b border-amber-100/50 bg-white/50 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-1.5 md:px-8 md:py-3">
           <div className="flex items-baseline gap-3 overflow-hidden">
             <button
               type="button"
@@ -481,7 +506,7 @@ export default function Home() {
             </button>
             <span className="hidden text-gray-300 sm:inline">/</span>
             <h1
-              className={`truncate font-serif text-base font-semibold text-gray-900 transition-opacity duration-200 md:text-lg ${
+              className={`truncate font-serif text-[15px] font-semibold text-gray-900 transition-opacity duration-200 md:text-lg ${
                 transitioning ? "opacity-0" : "opacity-100"
               }`}
             >
@@ -497,7 +522,9 @@ export default function Home() {
             >
               📖
             </button>
-            <span className="font-mono text-[11px] tabular-nums text-gray-500">
+            {/* Page indicator desktop-only — on mobile it's in the
+                MobileControlBar to keep the header a single tight row. */}
+            <span className="hidden font-mono text-[11px] tabular-nums text-gray-500 sm:inline">
               {completed.length + 1} / {history.length}
             </span>
             <button
@@ -512,11 +539,11 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ─── Main work area ─── */}
-      <div className="mx-auto w-full max-w-7xl flex-1 px-2 py-4 md:px-8 md:py-8">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_320px] lg:gap-8">
+      {/* ─── Main work area — tight gaps on mobile so the palette sits high ─── */}
+      <div className="mx-auto w-full max-w-7xl flex-1 px-2 py-2 md:px-8 md:py-8">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-[1fr_320px] lg:gap-8">
           <div
-            className={`flex flex-col items-center gap-5 transition-opacity duration-200 ease-out lg:items-stretch ${
+            className={`flex flex-col items-center gap-2 transition-opacity duration-200 ease-out lg:items-stretch lg:gap-5 ${
               transitioning ? "opacity-0" : "opacity-100"
             }`}
           >
@@ -525,16 +552,41 @@ export default function Home() {
               imageSrc={currentScene.image}
               fillColor={color}
               fillMode={fillMode}
-              onError={(msg) => setHint(msg)}
+              hideToolbar
+              onZoomChange={setCanvasZoom}
+              onHistoryChange={setCanvasHasHistory}
             />
 
-            {hint && (
-              <p className="text-center text-[11px] text-amber-700/80">
-                {hint}
-              </p>
-            )}
+            {/* Mobile control strip — directly under the canvas. The
+                story-progression primary action (Continue / Choose path)
+                lives INSIDE this strip so the palette can rise one row. */}
+            <MobileControlBar
+              hasHistory={canvasHasHistory}
+              pageLabel={`${completed.length + 1} / ${history.length}`}
+              primaryAction={
+                currentScene.choices
+                  ? showChoices
+                    ? null
+                    : {
+                        label: t(UI.makeAChoice),
+                        onClick: () => setShowChoices(true),
+                      }
+                  : currentScene.nextId
+                    ? {
+                        label: t(UI.continueScene),
+                        onClick: () => handleChoice(currentScene.nextId!),
+                        disabled: transitioning,
+                      }
+                    : null
+              }
+              onUndo={() => canvasRef.current?.undo()}
+              onOpenNarration={() => setShowNarration(true)}
+            />
 
-            <article className="w-full max-w-[720px] overflow-hidden rounded-2xl border border-amber-100/80 bg-white/70 shadow-sm backdrop-blur">
+            {/* Inline narration — DESKTOP ONLY. On mobile, narration lives
+                in the NarrationModal opened by 📖 in MobileControlBar so
+                the canvas + palette get full vertical space. */}
+            <article className="hidden w-full max-w-[720px] overflow-hidden rounded-2xl border border-amber-100/80 bg-white/70 shadow-sm backdrop-blur lg:block">
               <div className="narration-scroll max-h-[36vh] space-y-3 overflow-y-auto px-6 py-5 font-serif text-[16px] leading-relaxed text-gray-800 md:text-[17px]">
                 {t(currentScene.narration)
                   .split(/\n{2,}/)
@@ -545,33 +597,46 @@ export default function Home() {
             </article>
 
             {currentScene.choices ? (
-              <div className="grid w-full max-w-[720px] grid-cols-1 gap-3 sm:grid-cols-2">
-                {currentScene.choices.map((choice) => (
-                  <button
-                    key={choice.nextId}
-                    type="button"
-                    onClick={() => handleChoice(choice.nextId)}
-                    disabled={transitioning}
-                    className="group flex min-h-[72px] items-center gap-3 rounded-2xl border border-amber-100/80 bg-white/80 px-5 py-4 text-left text-base font-medium text-gray-900 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-amber-400 hover:shadow-md disabled:cursor-wait disabled:opacity-60"
-                  >
-                    <span className="flex-1 leading-snug">
-                      {t(choice.label)}
-                    </span>
-                    <span className="text-amber-400 transition-transform group-hover:translate-x-1">
-                      →
-                    </span>
-                  </button>
-                ))}
-              </div>
+              showChoices ? (
+                <div className="grid w-full max-w-[720px] grid-cols-1 gap-3 sm:grid-cols-2">
+                  {currentScene.choices.map((choice) => (
+                    <button
+                      key={choice.nextId}
+                      type="button"
+                      onClick={() => handleChoice(choice.nextId)}
+                      disabled={transitioning}
+                      className="group flex min-h-[64px] items-center gap-3 rounded-2xl border border-amber-100/80 bg-white/80 px-4 py-3 text-left text-[15px] font-medium text-gray-900 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-amber-400 hover:shadow-md disabled:cursor-wait disabled:opacity-60"
+                    >
+                      <span className="flex-1 leading-snug">
+                        {t(choice.label)}
+                      </span>
+                      <span className="text-amber-400 transition-transform group-hover:translate-x-1">
+                        →
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                // Desktop fallback — on mobile the "Choose path" button
+                // lives inside MobileControlBar so we don't render this row.
+                <button
+                  type="button"
+                  onClick={() => setShowChoices(true)}
+                  className="group hidden w-full max-w-[720px] items-center justify-center gap-2 rounded-full border border-gray-900/80 bg-white/85 px-5 py-2.5 text-[14px] font-medium text-gray-900 shadow-sm transition hover:bg-gray-900 hover:text-white lg:flex"
+                >
+                  <span>{t(UI.makeAChoice)}</span>
+                </button>
+              )
             ) : currentScene.nextId ? (
+              // Desktop-only Continue button (mobile uses MobileControlBar).
               <button
                 type="button"
                 onClick={() => handleChoice(currentScene.nextId!)}
                 disabled={transitioning}
-                className="group flex w-full max-w-[720px] items-center justify-center gap-3 rounded-full bg-gray-900 px-7 py-3.5 text-base font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-gray-800 hover:shadow-lg disabled:cursor-wait disabled:opacity-60"
+                className="group hidden w-full max-w-[720px] items-center justify-center gap-2 rounded-full border border-gray-900/80 bg-white/85 px-5 py-2.5 text-[14px] font-medium text-gray-900 shadow-sm transition hover:bg-gray-900 hover:text-white disabled:cursor-wait disabled:opacity-60 lg:flex"
               >
                 <span>{t(UI.continueScene)}</span>
-                <span className="text-amber-300 transition-transform group-hover:translate-x-1">
+                <span className="transition-transform group-hover:translate-x-1">
                   →
                 </span>
               </button>
@@ -606,17 +671,27 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Mobile bottom sheet palette */}
-      <MobilePaletteSheet
-        current={color}
-        recent={recent}
-        fillMode={fillMode}
-        onPick={handlePick}
-        onFillModeChange={setFillMode}
-      />
+      {/* Mobile palette — always-visible panel below the control strip,
+          choices area, etc. Sits inline (not fixed). */}
+      <div className="px-2 lg:hidden">
+        <MobilePaletteSheet
+          current={color}
+          recent={recent}
+          fillMode={fillMode}
+          onPick={handlePick}
+          onFillModeChange={setFillMode}
+        />
+      </div>
 
-      {/* Spacer so peek bar doesn't cover content on mobile */}
-      <div className="h-20 lg:hidden" aria-hidden />
+      {/* Narration modal (mobile-only entry point; lives at root for layering) */}
+      {currentScene && (
+        <NarrationModal
+          open={showNarration}
+          onClose={() => setShowNarration(false)}
+          sceneTitle={currentScene.title}
+          narration={currentScene.narration}
+        />
+      )}
 
       <footer className="hidden border-t border-amber-100/50 bg-white/50 backdrop-blur-md md:block">
         <div className="mx-auto max-w-7xl px-5 py-2.5 md:px-8">
