@@ -46,7 +46,7 @@ export function SavedBookViewer({ book, onClose, onDelete, onShare }: Props) {
       role="dialog"
     >
       <div
-        className="relative max-h-[92vh] w-full max-w-md overflow-y-auto rounded-3xl bg-gradient-to-b from-amber-50/98 to-rose-50/95 p-5 shadow-2xl ring-1 ring-amber-100 md:p-7"
+        className="relative max-h-[92vh] w-full max-w-md overflow-y-auto rounded-3xl bg-gradient-to-b from-[#fafbfc]/98 to-[#e7eaee]/95 p-5 shadow-2xl ring-1 ring-gray-400 md:p-7"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -58,7 +58,7 @@ export function SavedBookViewer({ book, onClose, onDelete, onShare }: Props) {
           <span className="text-xl leading-none">✕</span>
         </button>
 
-        <div className="overflow-hidden rounded-2xl border border-amber-100 bg-white shadow-lg">
+        <div className="overflow-hidden rounded-2xl border border-gray-400 bg-white shadow-lg">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={book.shareImage}

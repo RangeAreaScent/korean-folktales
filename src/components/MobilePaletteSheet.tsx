@@ -98,7 +98,7 @@ export function MobilePaletteSheet({
   const contrastSwatches = useMemo(() => contrast(current), [current])
 
   return (
-    <div className="rounded-t-3xl bg-gradient-to-b from-amber-50/98 to-rose-50/95 shadow-[0_-4px_20px_-8px_rgba(0,0,0,0.12)] ring-1 ring-amber-100/80 lg:hidden">
+    <div className="rounded-t-3xl bg-gradient-to-b from-[#fafbfc]/98 to-[#e7eaee]/95 shadow-[0_-4px_20px_-8px_rgba(0,0,0,0.12)] ring-1 ring-gray-400/50 lg:hidden">
       {/* ─── 1. Theme chips — scroll affordance via right-edge fade ─── */}
       <div className="relative px-3 pt-2.5">
         <div
@@ -153,7 +153,7 @@ export function MobilePaletteSheet({
       </div>
 
       {/* ─── 3. Fill style chips ─── */}
-      <div className="flex items-center gap-1.5 border-t border-amber-100/70 px-3 py-2">
+      <div className="flex items-center gap-1.5 border-t border-gray-400/55 px-3 py-2">
         <SectionLabel>{t(UI.palFillMode)}</SectionLabel>
         <div className="ml-auto flex items-center gap-1.5">
           {(
@@ -184,7 +184,7 @@ export function MobilePaletteSheet({
 
       {/* ─── 4. Recent ─── */}
       {recent.length > 0 && (
-        <div className="flex items-center gap-3 border-t border-amber-100/70 px-4 py-2">
+        <div className="flex items-center gap-3 border-t border-gray-400/55 px-4 py-2">
           <SectionLabel>{t(UI.palRecent)}</SectionLabel>
           <div className="flex flex-wrap gap-1.5">
             {recent.slice(0, 8).map((c, i) => (
@@ -201,7 +201,7 @@ export function MobilePaletteSheet({
       )}
 
       {/* ─── 5. Harmony (dynamic per current color) ─── */}
-      <div className="flex items-center gap-3 border-t border-amber-100/70 px-4 py-2">
+      <div className="flex items-center gap-3 border-t border-gray-400/55 px-4 py-2">
         <SectionLabel>{t(UI.palHarmonyChip)}</SectionLabel>
         <div className="flex flex-wrap gap-1.5">
           {harmonySwatches.map((c, i) => (
@@ -217,7 +217,7 @@ export function MobilePaletteSheet({
       </div>
 
       {/* ─── 6. Contrast (dynamic per current color) ─── */}
-      <div className="flex items-center gap-3 border-t border-amber-100/70 px-4 py-2">
+      <div className="flex items-center gap-3 border-t border-gray-400/55 px-4 py-2">
         <SectionLabel>{t(UI.palContrastChip)}</SectionLabel>
         <div className="flex flex-wrap gap-1.5">
           {contrastSwatches.map((c, i) => (
@@ -233,7 +233,7 @@ export function MobilePaletteSheet({
       </div>
 
       {/* ─── 7. Darker / Lighter slider + custom color picker beside ─── */}
-      <div className="flex items-center gap-3 border-t border-amber-100/70 px-4 py-2.5">
+      <div className="flex items-center gap-3 border-t border-gray-400/55 px-4 py-2.5">
         <div className="flex flex-1 flex-col gap-1">
           <div className="flex items-center justify-between text-[10px] text-gray-400">
             <span>{t(UI.palDarker)}</span>

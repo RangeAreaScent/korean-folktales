@@ -1946,7 +1946,13 @@ beam of light is the central vertical axis of the canvas.
 
 **V2.5 스토리 고유 디테일 체크리스트:**
 - **도깨비** — 한국 민화 스타일 (NOT Western goblin, NOT scary): 둥근 통통한 몸, 머리 위 외뿔 1개, 큰 둥근 친근 눈, 단순한 입, 짧고 통통한 팔다리. Scene 2·3a·3b·4에 동일한 5마리 같은 캐릭터로 일관
-- **영감 (선한 영감)** — 길고 흰 수염, 친절한 주름 얼굴, 평민 한복 (collar/ribbon/sleeve cuff lines), 머리수건, 한쪽 턱에 작은 복숭아 크기 둥근 혹 (한 영역, 부드러운 outline)
+- **영감 (선한 영감) — THE 혹부리 영감 ★ 핵심 캐릭터 정체성**: 길고 흰 수염, 친절한 주름 얼굴, 평민 한복 (collar/ribbon/sleeve cuff lines), 머리수건. **혹 (LUMP / WEN) — 이 캐릭터의 가장 중요한 시각적 특징, 절대 생략 금지**:
+  - 위치: 왼쪽 턱 아래 (viewer's RIGHT) — 항상 같은 쪽
+  - 크기: **fist-sized / 작은 사과 크기** (수염 옆에서 분명히 튀어나와야 함)
+  - 모양: ROUND or OVAL, 살짝 매달려 내려옴 (water-drop tendency), 부드러운 단일 곡선 outline
+  - 디테일: 한 fill region (피부색으로 칠해질 수 있게), surface line이나 cross-hatching 없음
+  - 모든 scene에서 동일하게 그려야 함 — face turn에 관계없이 silhouette에서 lump가 보이게 3/4 angle 권장
+  - 혹 없이는 이 캐릭터가 혹부리 영감이 아님
 - **욕심쟁이 영감 (Scene 4 only)** — 같은 노인 연배지만 시각 구분: 둥근 통통한 얼굴, 굵은 눈썹, 짧은 까칠 수염, MERCHANT-style 한복 (chest panel pattern, embroidered sash), 작은 돈주머니
 - **빈집 (Scene 1·2·3a·3b)** — 다 무너져 가는 초가집, paper-paneled door + 작은 paper window, 기울어진 wooden post, 풀더미 corner
 - **호롱불 (Scene 2·3a·3b)** — 작은 기름 그릇 + 보이는 심지 + 불꽃 + 2-3 short ray 빛
@@ -2101,10 +2107,26 @@ lines on its lid) and a tall wine jar (술병 with a narrow neck and round
 body). A couple of wooden bowls.
 
 LEFT-FOREGROUND: a tall pile of straw (gathered as 4-5 bundle shapes,
-each one fill region — NOT individual straws). Peeking out from behind:
-just the head and shoulders of the old man (gray beard, lump on jaw),
-one hand cupped near his mouth as if about to sing, eyes wide with mixed
-fear and excitement.
+each one fill region — NOT individual straws). Peeking out from behind
+the straw: the OLD MAN WITH THE LUMP (혹부리 영감 — see top-of-story
+character spec, must follow exactly):
+- HEAD turned in 3/4 angle TOWARD the dokkaebi circle so the LEFT side
+  of his jaw (viewer's RIGHT) is fully visible in silhouette.
+- ★ THE LUMP (혹) IS NON-NEGOTIABLE: a clearly OUTLINED, fist-sized
+  ROUND/OVAL bulge hanging from his LEFT cheek/jaw (viewer's right
+  side, just below the white beard). Drawn as a single closed curve
+  forming its own colorable fill region. Size = roughly the same as
+  his eye-to-chin distance. Should pop out of the silhouette so any
+  viewer immediately reads "this is the old man with the lump." NOT
+  optional. NOT subtle. NOT hidden by hair/beard. Drawn even when most
+  of the body is behind the straw.
+- WHITE BEARD reaches chest, but is positioned so it does NOT cover
+  the lump — beard hangs from chin / right side of face, lump bulges
+  on the left side, both visible.
+- Eyes wide with mixed fear + excitement, mouth opening as if about
+  to sing, one hand cupped near his mouth.
+- Head + shoulders + upper torso visible above the straw line.
+- 머리수건 (simple cloth band) on his head.
 
 LIGHTING: the full moon is visible through a small paper window on the
 back wall (small clean round shape inside the panel grid). One small oil
@@ -2175,15 +2197,28 @@ of motion lines and joy.
 
 Subject: Inside the same hut. CIRCLE OF 6 figures dancing in a ring: 5
 dokkaebi (same style as Scene 2 — round bodies, single horn, friendly
-faces) and the old man (gray beard, lump still on his jaw, eyes shut in
-joyful song, mouth open singing, arms raised). All are mid-step, one foot
-lifted, the next about to come down. Show 2-3 short motion lines around
-each figure suggesting movement.
+faces) and the OLD MAN WITH THE LUMP (혹부리 영감 — see top-of-story
+character spec, must follow exactly).
+
+★ THE OLD MAN — drawn IDENTICALLY to Scene 2's character spec:
+- Head turned in 3/4 angle so the LEFT side of his jaw (viewer's RIGHT
+  side) is visible — the LUMP must be in the silhouette.
+- ★ THE LUMP (혹) IS NON-NEGOTIABLE: a clearly OUTLINED, fist-sized
+  ROUND/OVAL bulge on his LEFT cheek/jaw (viewer's right). Single
+  closed curve, NOT optional, NOT subtle. Even mid-dance with the head
+  tilted in song, the lump must read clearly in the silhouette. Treat
+  it as a defining silhouette feature like Mickey's ears — without
+  the lump he is not 혹부리 영감.
+- White beard, head-cloth band, worn plain hanbok with visible collar
+  + ribbon.
+- Eyes shut in joyful song, mouth open singing, both arms raised in
+  dance.
+- One foot lifted mid-step, 2-3 short motion lines around him.
 
 Each dokkaebi has a slightly different pose: one with arms over its head,
 one with hands on its belly, one twirling. Their horns sway. The old man
 in the middle of the ring is the visual anchor, distinguishable by his
-human form and hanbok.
+human form, hanbok, AND prominent lump on the jaw.
 
 FLOOR: simple wood planks, with the cauldron + wine jar pushed to one
 side now (no longer the center).
@@ -2257,9 +2292,22 @@ the floor, leaning on each other's shoulders, eyes mostly closed
 Their bodies relaxed, horns tilted slightly. Some have a small "Z" or a
 visible breath puff (just a tiny shape near the mouth) suggesting sleep.
 
-CENTER OF THE CIRCLE: the old man (same character) sits cross-legged on
-the floor, eyes gently shut, mouth slightly open in song, hands folded in
-his lap. His lump still hangs from his jaw. A calm peaceful smile.
+CENTER OF THE CIRCLE: the OLD MAN WITH THE LUMP (혹부리 영감 — see
+top-of-story character spec, drawn IDENTICALLY across all Story 4 scenes):
+- Sits cross-legged on the floor, body facing the viewer slightly but
+  head turned in 3/4 angle so the LEFT side of his jaw (viewer's RIGHT
+  side) is visible — the lump must be in the silhouette.
+- ★ THE LUMP (혹) IS NON-NEGOTIABLE: a clearly OUTLINED, fist-sized
+  ROUND/OVAL bulge on his LEFT cheek/jaw (viewer's right). Single
+  closed curve forming its own colorable fill region. Even in this
+  calm pose with head tilted in soft song, the lump must read clearly.
+  Treat it as a defining silhouette feature like Mickey's ears —
+  without the lump he is not 혹부리 영감.
+- White beard reaching to chest (positioned so it does NOT cover the
+  lump on the opposite side).
+- Head-cloth band (머리수건) on his head.
+- Eyes gently shut, mouth slightly open in song, hands folded in lap.
+- Calm peaceful smile.
 
 LIGHTING: a long beam of moonlight enters from the paper window on the
 back wall (one diagonal soft line of light landing on the floor between
@@ -2358,27 +2406,53 @@ dawn light or a tree.
 
 Subject: A canvas of two destinies side by side.
 
-LEFT HALF — GOOD OLD MAN:
-- Center: the kind old man (same character) standing in the village
-  square at dawn, clean jaw (no lump), arms slightly raised in joy.
-- At his feet: 2-3 large open bundles overflowing with treasure — gold
-  ingots (3-4 simple rectangular shapes), silver pieces (3-4 round
-  disks), folded silk fabric (2-3 cloth shapes), grain bags (2-3 round
-  sacks with simple drawstring tops).
-- Behind him: 3-4 villagers cheering, hands raised. A simple low table
-  set with rice cake (떡 — round patties stacked).
-- Background: hanok rooftops with curved eaves, a low Korean stone wall,
-  a persimmon tree with 3-4 round fruits.
+LEFT HALF — THE GOOD OLD MAN (혹부리 영감, AFTER the dokkaebi took
+his lump):
+- Same character from Scenes 1-3 (white beard reaching chest,
+  head-cloth band 머리수건, worn plain hanbok with visible collar +
+  ribbon). EVERYTHING the same EXCEPT the lump.
+- ★ THE LUMP IS GONE — his LEFT cheek/jaw (viewer's right) is now
+  CLEAN AND SMOOTH where the round bulge used to be. To visually
+  signal "the lump was here, now removed", draw the jaw line cleanly
+  with no bulge AND add 3-4 small SHORT RADIATING SHIMMER LINES around
+  that spot (like the dokkaebi magic just lifted it off) — the absence
+  of the lump must be readable at a glance to anyone who saw the
+  earlier scenes. Head turned 3/4 toward the viewer so the now-clean
+  jaw is the visible silhouette.
+- Center-left position: standing in the village square at dawn, arms
+  slightly raised in joy, hand touching the clean jaw in disbelief.
+- At his feet: 2-3 large open bundles overflowing with treasure —
+  gold ingots (3-4 rectangular shapes), silver coins (3-4 round disks
+  with center holes), folded silk fabric (2-3 ribbon-like cloth
+  shapes), grain bags (2-3 round sacks with drawstring tops).
+- Behind him: 3-4 villagers cheering, hands raised, eyes wide. A simple
+  low table with stacked rice cakes (떡 — 3-4 round patties).
+- Background: hanok rooftops with curved eaves, a low Korean stone
+  wall, a persimmon tree with 3-4 round ripe fruits.
 
-RIGHT HALF — GREEDY OLD MAN:
-- The greedy old man (same general age, gray hair and beard but slightly
-  fancier hanbok suggesting wealth) descending a mountain trail. He has
-  TWO LUMPS on his jaw — one on each side (clearly visible).
-- His shoulders slumped, head down, face crumpled in tears (2-3 short
-  tear lines on each cheek). One hand wiping his eyes.
-- Background: rocky mountain path, a couple of pine trees (apply
-  GROUPED NATURAL TEXTURES — 5-7 cloud-shaped foliage clusters per
-  pine), a few mocking magpie birds in the trees (3-4 simple bird shapes).
+RIGHT HALF — THE GREEDY OLD MAN (different character — DON'T confuse
+with the good old man):
+- Different visual identity from the good old man: ROUNDER FULLER face,
+  bushy thick eyebrows, SHORT scraggly beard (not the long flowing
+  white one of the good man), MERCHANT-STYLE fancier hanbok (chest
+  panel with diamond/floral pattern, embroidered waist sash, small
+  money pouch dangling). The 3-second read MUST be "this is NOT the
+  same old man — this is the greedy one."
+- ★ TWO LUMPS — CRITICAL: a clearly OUTLINED ROUND/OVAL bulge on EACH
+  side of his jaw. Both lumps are the same fist-sized round shape as
+  the good old man's original lump. Both single closed curves forming
+  their own colorable fill regions. The two-lump silhouette is the
+  story's punchline and must read instantly. Draw with head facing
+  toward the viewer 3/4 angle so BOTH lumps are in the silhouette.
+- Descending a rocky mountain trail, shoulders slumped, head bowed,
+  face crumpled in tears (3-4 short tear lines down each cheek). One
+  hand wiping his eyes.
+- His merchant hanbok now dusty and disheveled. The small money pouch
+  empty.
+- Background: rocky mountain path, 2-3 pine trees (apply GROUPED
+  NATURAL TEXTURES — 5-7 cloud-shaped foliage clusters per pine), 2-3
+  mocking 까치 magpies in the trees (simple white-belly + black-wings
+  + long-forked-tail silhouettes) looking down at him.
 
 DIVIDING ELEMENT: a tall vertical pine tree at center separating the
 two halves, OR a soft vertical line of dawn light from sky to ground.

@@ -7,7 +7,7 @@ export default function AboutPage() {
   const { locale } = useLocale()
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-amber-50 via-rose-50/30 to-amber-50 px-6 py-14 md:py-20">
+    <main className="min-h-screen bg-gradient-to-b from-[#fafbfc] via-[#f3f5f7]/50 to-[#e7eaee] px-6 py-14 md:py-20">
       <article className="mx-auto max-w-2xl">
         <p className="mb-3 text-center text-[11px] font-medium uppercase tracking-[0.32em] text-amber-700/80">
           {locale === "ko" ? "✦ 소개 ✦" : "✦ About ✦"}

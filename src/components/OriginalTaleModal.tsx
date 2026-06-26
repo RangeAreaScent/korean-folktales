@@ -54,7 +54,7 @@ export function OriginalTaleModal({ story, onClose, onStartColoring }: Props) {
       role="dialog"
     >
       <div
-        className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-gradient-to-b from-amber-50/98 to-rose-50/95 p-7 shadow-2xl ring-1 ring-amber-100 md:p-10"
+        className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-gradient-to-b from-[#fafbfc]/98 to-[#e7eaee]/95 p-7 shadow-2xl ring-1 ring-gray-400 md:p-10"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -118,7 +118,7 @@ export function OriginalTaleModal({ story, onClose, onStartColoring }: Props) {
             {tale.glossary.map((g) => (
               <li
                 key={g.korean}
-                className="rounded-2xl border border-amber-100 bg-white/70 px-4 py-3 backdrop-blur"
+                className="rounded-2xl border border-gray-400 bg-white/70 px-4 py-3 backdrop-blur"
               >
                 <div className="flex items-center gap-2">
                   <span
@@ -151,7 +151,7 @@ export function OriginalTaleModal({ story, onClose, onStartColoring }: Props) {
         </section>
 
         {/* Our version — small footer line, not a full section */}
-        <p className="border-t border-amber-100 pt-4 text-[12px] leading-relaxed text-gray-600">
+        <p className="border-t border-gray-400 pt-4 text-[12px] leading-relaxed text-gray-600">
           <span className="font-semibold text-amber-800/80">
             {t(UI.modalOurVersion)} —{" "}
           </span>
@@ -160,7 +160,7 @@ export function OriginalTaleModal({ story, onClose, onStartColoring }: Props) {
 
         {/* CTAs */}
         {onStartColoring && (
-          <div className="mt-6 flex flex-col items-center gap-3 border-t border-amber-100 pt-5">
+          <div className="mt-6 flex flex-col items-center gap-3 border-t border-gray-400 pt-5">
             <button
               type="button"
               onClick={() => {

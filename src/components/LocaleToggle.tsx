@@ -16,7 +16,7 @@ export function LocaleToggle({
 
   return (
     <div
-      className={`inline-flex items-center gap-0.5 rounded-full border border-amber-100/80 bg-white/70 p-1 shadow-sm backdrop-blur ${className}`}
+      className={`inline-flex items-center gap-0.5 rounded-full border border-gray-400/60 bg-white/70 p-1 shadow-sm backdrop-blur ${className}`}
     >
       {options.map((o) => (
         <button

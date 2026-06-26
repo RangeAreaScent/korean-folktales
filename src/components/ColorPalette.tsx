@@ -53,19 +53,16 @@ function Swatch({
   isActive,
   size = 30,
   onClick,
-  title,
 }: {
   color: Hsl
   isActive?: boolean
   size?: number
   onClick: () => void
-  title?: string
 }) {
   return (
     <button
       type="button"
       onClick={onClick}
-      title={title}
       className={`rounded-full transition-transform hover:scale-110 ${
         isActive
           ? "ring-2 ring-gray-900 ring-offset-2 ring-offset-white"
@@ -96,7 +93,12 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   )
 }
 
-function FillModeButton({
+/**
+ * Compact rectangular fill-style chip — color preview rectangle on top,
+ * small caption below. Replaces the older round-circle preview which felt
+ * oversized in the now-narrower sidebar.
+ */
+function FillStyleChip({
   active,
   preview,
   label,
@@ -111,19 +113,19 @@ function FillModeButton({
     <button
       type="button"
       onClick={onClick}
-      className={`group flex flex-col items-center gap-1.5 rounded-xl border-2 px-2 py-2.5 transition ${
+      className={`flex flex-col items-center gap-1.5 rounded-lg border px-2 py-1.5 transition ${
         active
           ? "border-gray-900 bg-white shadow-sm"
-          : "border-transparent bg-gray-100/70 hover:bg-gray-100"
+          : "border-gray-300/70 bg-white/70 hover:bg-white"
       }`}
     >
       <div
-        className="h-11 w-11 rounded-full ring-1 ring-gray-300/60"
+        className="h-5 w-12 rounded ring-1 ring-gray-300/60"
         style={preview}
       />
       <span
-        className={`text-[11px] font-medium ${
-          active ? "text-gray-900" : "text-gray-600 group-hover:text-gray-900"
+        className={`text-[10.5px] font-medium ${
+          active ? "text-gray-900" : "text-gray-600"
         }`}
       >
         {label}
@@ -141,7 +143,6 @@ export function ColorPalette({
 }: Props) {
   const { t } = useLocale()
   const [themeId, setThemeId] = useState<ThemeId>(DEFAULT_THEME_ID)
-  const [showMore, setShowMore] = useState(false)
 
   const currentHex = useMemo(() => hslToHex(current), [current])
   const activeTheme = useMemo(
@@ -152,7 +153,6 @@ export function ColorPalette({
   const harmonyColors = useMemo(() => harmony(current), [current])
   const contrastColors = useMemo(() => contrast(current), [current])
 
-  // Fill mode previews use the actual current color, so kids see what each mode produces
   const lighterCss = hslToCss({
     ...current,
     l: Math.min(95, current.l + 22),
@@ -163,17 +163,35 @@ export function ColorPalette({
   })
   const currentCss = hslToCss(current)
 
-  return (
-    <div className="flex flex-col gap-4 rounded-2xl border border-amber-100/80 bg-white/75 p-4 shadow-sm backdrop-blur">
-      {/* ─── 1. Themes ─── */}
-      <section className="space-y-2.5">
-        <div className="flex items-baseline justify-between">
-          <SectionLabel>{t(UI.palThemes)}</SectionLabel>
-          <span className="text-[10px] text-gray-400">
-            {t(THEME_DESCS[activeTheme.id])}
-          </span>
+  // Reusable section row — section label + content with consistent
+  // spacing so Recent matches Harmony/Contrast/Current visually.
+  function Row({
+    label,
+    hint,
+    children,
+  }: {
+    label: string
+    hint?: string
+    children: React.ReactNode
+  }) {
+    return (
+      <section className="space-y-2">
+        <div className="flex items-baseline gap-1.5">
+          <SectionLabel>{label}</SectionLabel>
+          {hint && <span className="text-[10px] text-gray-400">{hint}</span>}
         </div>
+        {children}
+      </section>
+    )
+  }
 
+  return (
+    <div className="flex flex-col gap-4 rounded-2xl border border-gray-400/60 bg-white/75 p-4 shadow-sm backdrop-blur">
+      {/* ─── 1. Themes ─── */}
+      <Row
+        label={t(UI.palThemes)}
+        hint={t(THEME_DESCS[activeTheme.id])}
+      >
         <div className="flex flex-wrap gap-1">
           {PALETTE_THEMES.map((th) => (
             <button
@@ -190,9 +208,9 @@ export function ColorPalette({
             </button>
           ))}
         </div>
-      </section>
+      </Row>
 
-      {/* ─── 2. Color grid ─── */}
+      {/* ─── 2. Color grid (active theme) ─── */}
       <div className="grid grid-cols-6 gap-2">
         {activeColors.map((c, i) => (
           <Swatch
@@ -205,19 +223,18 @@ export function ColorPalette({
         ))}
       </div>
 
-      <div className="border-t border-amber-100/70" />
+      <div className="border-t border-gray-400/55" />
 
-      {/* ─── 3. Fill mode big preview buttons ─── */}
-      <section className="space-y-2">
-        <SectionLabel>{t(UI.palFillMode)}</SectionLabel>
+      {/* ─── 3. Fill style (smaller rectangles + caption) ─── */}
+      <Row label={t(UI.palFillMode)}>
         <div className="grid grid-cols-3 gap-2">
-          <FillModeButton
+          <FillStyleChip
             active={fillMode === "solid"}
             label={t(UI.palFillSolid)}
             preview={{ background: currentCss }}
             onClick={() => onFillModeChange("solid")}
           />
-          <FillModeButton
+          <FillStyleChip
             active={fillMode === "linear"}
             label={t(UI.palFillLinear)}
             preview={{
@@ -225,7 +242,7 @@ export function ColorPalette({
             }}
             onClick={() => onFillModeChange("linear")}
           />
-          <FillModeButton
+          <FillStyleChip
             active={fillMode === "radial"}
             label={t(UI.palFillRadial)}
             preview={{
@@ -234,127 +251,101 @@ export function ColorPalette({
             onClick={() => onFillModeChange("radial")}
           />
         </div>
-      </section>
+      </Row>
 
-      <div className="border-t border-amber-100/70" />
+      <div className="border-t border-gray-400/55" />
 
-      {/* ─── 4. More toggle (harmony, contrast, L slider, custom picker, recent) ─── */}
-      <section className="space-y-3">
-        <button
-          type="button"
-          onClick={() => setShowMore((s) => !s)}
-          className="flex w-full items-center justify-between text-left text-[10px] font-semibold uppercase tracking-[0.14em] text-gray-500 transition hover:text-gray-900"
-        >
-          <span>✨ {t(UI.palMore)}</span>
-          <span className="text-xs">{showMore ? "▾" : "▸"}</span>
-        </button>
-
-        {showMore && (
-          <div className="space-y-4">
-            {/* Current color + custom picker + L slider */}
-            <div className="space-y-2.5">
-              <div className="flex items-center justify-between">
-                <SectionLabel>{t(UI.palCurrent)}</SectionLabel>
-                <span className="font-mono text-[10px] text-gray-400">
-                  {currentHex}
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div
-                  className="h-9 flex-1 rounded-lg ring-1 ring-gray-200/80"
-                  style={{ background: currentCss }}
-                />
-                <label
-                  className="relative grid h-9 w-9 cursor-pointer place-items-center overflow-hidden rounded-lg ring-1 ring-gray-300 bg-gradient-to-br from-rose-300 via-amber-200 to-sky-300"
-                  title={t(UI.palCustom)}
-                >
-                  <input
-                    type="color"
-                    value={currentHex}
-                    onChange={(e) => onPick(hexToHsl(e.target.value))}
-                    className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
-                  />
-                  <span className="pointer-events-none text-sm">🎯</span>
-                </label>
-              </div>
-
-              <div className="space-y-1">
-                <div className="flex items-center justify-between text-[10px] text-gray-400">
-                  <span>{t(UI.palDarker)}</span>
-                  <span className="font-mono">L {Math.round(current.l)}</span>
-                  <span>{t(UI.palLighter)}</span>
-                </div>
-                <input
-                  type="range"
-                  min={5}
-                  max={95}
-                  step={1}
-                  value={Math.round(current.l)}
-                  onChange={(e) =>
-                    onPick({ ...current, l: parseInt(e.target.value, 10) })
-                  }
-                  className="block h-1.5 w-full cursor-pointer appearance-none rounded-full bg-gradient-to-r from-gray-900 via-gray-400 to-white accent-gray-900"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex items-center gap-1.5">
-                <SectionLabel>{t(UI.palHarmonyLabel)}</SectionLabel>
-                <span className="text-[10px] text-gray-400">
-                  {t(UI.palHarmonyHint)}
-                </span>
-              </div>
-              <div className="flex gap-2">
-                {harmonyColors.map((c, i) => (
-                  <Swatch
-                    key={`h-${i}`}
-                    color={c}
-                    size={26}
-                    onClick={() => onPick(c)}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex items-center gap-1.5">
-                <SectionLabel>{t(UI.palContrastLabel)}</SectionLabel>
-                <span className="text-[10px] text-gray-400">
-                  {t(UI.palContrastHint)}
-                </span>
-              </div>
-              <div className="flex gap-2">
-                {contrastColors.map((c, i) => (
-                  <Swatch
-                    key={`c-${i}`}
-                    color={c}
-                    size={26}
-                    onClick={() => onPick(c)}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {recent.length > 0 && (
-              <div className="space-y-2">
-                <SectionLabel>{t(UI.palRecent)}</SectionLabel>
-                <div className="flex flex-wrap gap-2">
-                  {recent.map((c, i) => (
-                    <Swatch
-                      key={`r-${i}`}
-                      color={c}
-                      size={24}
-                      isActive={sameColor(c, current)}
-                      onClick={() => onPick(c)}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
+      {/* ─── 4. Recent ─── */}
+      {recent.length > 0 && (
+        <Row label={t(UI.palRecent)}>
+          <div className="flex flex-wrap gap-2">
+            {recent.map((c, i) => (
+              <Swatch
+                key={`r-${i}`}
+                color={c}
+                size={24}
+                isActive={sameColor(c, current)}
+                onClick={() => onPick(c)}
+              />
+            ))}
           </div>
-        )}
-      </section>
+        </Row>
+      )}
+
+      {/* ─── 5. Harmony ─── */}
+      <Row label={t(UI.palHarmonyLabel)} hint={t(UI.palHarmonyHint)}>
+        <div className="flex gap-2">
+          {harmonyColors.map((c, i) => (
+            <Swatch
+              key={`h-${i}`}
+              color={c}
+              size={24}
+              isActive={sameColor(c, current)}
+              onClick={() => onPick(c)}
+            />
+          ))}
+        </div>
+      </Row>
+
+      {/* ─── 6. Contrast ─── */}
+      <Row label={t(UI.palContrastLabel)} hint={t(UI.palContrastHint)}>
+        <div className="flex gap-2">
+          {contrastColors.map((c, i) => (
+            <Swatch
+              key={`c-${i}`}
+              color={c}
+              size={24}
+              isActive={sameColor(c, current)}
+              onClick={() => onPick(c)}
+            />
+          ))}
+        </div>
+      </Row>
+
+      <div className="border-t border-gray-400/55" />
+
+      {/* ─── 7. Current (color + L slider + custom picker) — at the very bottom ─── */}
+      <Row label={t(UI.palCurrent)}>
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <div
+              className="h-9 flex-1 rounded-lg ring-1 ring-gray-200/80"
+              style={{ background: currentCss }}
+            />
+            <span className="font-mono text-[10px] text-gray-400">
+              {currentHex}
+            </span>
+            <label
+              className="relative grid h-9 w-9 cursor-pointer place-items-center overflow-hidden rounded-lg ring-1 ring-gray-300 bg-gradient-to-br from-rose-300 via-amber-200 to-sky-300"
+              title={t(UI.palCustom)}
+            >
+              <input
+                type="color"
+                value={currentHex}
+                onChange={(e) => onPick(hexToHsl(e.target.value))}
+                className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+              />
+              <span className="pointer-events-none text-sm">🎯</span>
+            </label>
+          </div>
+          <div className="flex items-center justify-between text-[10px] text-gray-400">
+            <span>{t(UI.palDarker)}</span>
+            <span className="font-mono">L {Math.round(current.l)}</span>
+            <span>{t(UI.palLighter)}</span>
+          </div>
+          <input
+            type="range"
+            min={5}
+            max={95}
+            step={1}
+            value={Math.round(current.l)}
+            onChange={(e) =>
+              onPick({ ...current, l: parseInt(e.target.value, 10) })
+            }
+            className="block h-1.5 w-full cursor-pointer appearance-none rounded-full bg-gradient-to-r from-gray-900 via-gray-400 to-white accent-gray-900"
+          />
+        </div>
+      </Row>
     </div>
   )
 }

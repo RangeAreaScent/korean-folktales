@@ -7,6 +7,7 @@ import {
   type FillMode,
 } from "@/components/ColoringCanvas"
 import { ColorPalette } from "@/components/ColorPalette"
+import { DesktopControlBar } from "@/components/DesktopControlBar"
 import { MobileControlBar } from "@/components/MobileControlBar"
 import { MobilePaletteSheet } from "@/components/MobilePaletteSheet"
 import { NarrationModal } from "@/components/NarrationModal"
@@ -64,6 +65,15 @@ export default function Home() {
   // For branching scenes, choice cards stay hidden behind a "Continue"
   // button until the user is ready — reduces always-visible CTAs.
   const [showChoices, setShowChoices] = useState(false)
+  const [eraseMode, setEraseMode] = useState(false)
+
+  const toggleErase = useCallback(() => {
+    setEraseMode((m) => {
+      const next = !m
+      canvasRef.current?.setEraseMode(next)
+      return next
+    })
+  }, [])
 
   const story = useMemo<Story | null>(
     () => (storyId ? getStory(storyId) : null),
@@ -308,7 +318,7 @@ export default function Home() {
       : null
 
     return (
-      <main className="min-h-screen bg-gradient-to-b from-amber-50 via-rose-50/40 to-amber-50 p-4 md:p-10">
+      <main className="min-h-screen bg-gradient-to-b from-[#fafbfc] via-[#f3f5f7]/60 to-[#e7eaee] p-4 md:p-10">
         <div className="mx-auto max-w-3xl">
           <p className="mb-2 text-center text-[11px] font-medium uppercase tracking-[0.22em] text-amber-700/80">
             {t(UI.finalEyebrow)}
@@ -325,7 +335,7 @@ export default function Home() {
 
           {/* Flipbook viewport */}
           <div className="relative">
-            <div className="mx-auto max-w-md overflow-hidden rounded-2xl border border-amber-100 bg-white shadow-2xl">
+            <div className="mx-auto max-w-md overflow-hidden rounded-2xl border border-gray-400 bg-white shadow-2xl">
               <div
                 className="flex transition-transform duration-500 ease-out"
                 style={{ transform: `translateX(-${finalPageIdx * 100}%)` }}
@@ -344,7 +354,7 @@ export default function Home() {
                   const sc = getScene(story.id, p.sceneId)
                   return (
                     <div key={p.sceneId + i} className="w-full shrink-0">
-                      <div className="flex aspect-[4/5] flex-col bg-gradient-to-b from-amber-50/40 to-white p-5">
+                      <div className="flex aspect-[4/5] flex-col bg-gradient-to-b from-[#fafbfc]/55 to-white p-5">
                         <p className="mb-1 text-center font-mono text-[10px] uppercase tracking-[0.22em] text-amber-700/80">
                           {i + 1} {t(UI.chapterPrefix)} / {finalPagesCache.length}
                         </p>
@@ -357,7 +367,7 @@ export default function Home() {
                             "",
                           )}
                         </h3>
-                        <div className="flex flex-1 items-center justify-center overflow-hidden rounded-lg border border-amber-100 bg-white">
+                        <div className="flex flex-1 items-center justify-center overflow-hidden rounded-lg border border-gray-400 bg-white">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={p.dataUrl}
@@ -384,7 +394,7 @@ export default function Home() {
               }}
               disabled={finalPageIdx === 0}
               aria-label={t(UI.prevPage)}
-              className="absolute -left-1 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-amber-200 bg-white/95 text-xl text-gray-800 shadow-md backdrop-blur transition hover:bg-amber-50 disabled:cursor-not-allowed disabled:opacity-30 md:-left-6"
+              className="absolute -left-1 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-gray-500 bg-white/95 text-xl text-gray-800 shadow-md backdrop-blur transition hover:bg-amber-50 disabled:cursor-not-allowed disabled:opacity-30 md:-left-6"
             >
               ‹
             </button>
@@ -397,7 +407,7 @@ export default function Home() {
               }}
               disabled={finalPageIdx >= flipbookTotal - 1}
               aria-label={t(UI.nextPage)}
-              className="absolute -right-1 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-amber-200 bg-white/95 text-xl text-gray-800 shadow-md backdrop-blur transition hover:bg-amber-50 disabled:cursor-not-allowed disabled:opacity-30 md:-right-6"
+              className="absolute -right-1 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-gray-500 bg-white/95 text-xl text-gray-800 shadow-md backdrop-blur transition hover:bg-amber-50 disabled:cursor-not-allowed disabled:opacity-30 md:-right-6"
             >
               ›
             </button>
@@ -490,10 +500,10 @@ export default function Home() {
   if (!currentScene) return null
 
   return (
-    <main className="flex min-h-screen flex-col bg-gradient-to-b from-amber-50 via-rose-50/30 to-amber-50">
+    <main className="flex min-h-screen flex-col bg-gradient-to-b from-[#fafbfc] via-[#f3f5f7]/50 to-[#e7eaee]">
       {/* ─── Slim header — tightened on mobile (smaller padding, page
             indicator moved into the MobileControlBar below the canvas) ─── */}
-      <header className="border-b border-amber-100/50 bg-white/50 backdrop-blur-md">
+      <header className="border-b border-gray-400/40 bg-white/50 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-1.5 md:px-8 md:py-3">
           <div className="flex items-baseline gap-3 overflow-hidden">
             <button
@@ -539,9 +549,10 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ─── Main work area — tight gaps on mobile so the palette sits high ─── */}
-      <div className="mx-auto w-full max-w-7xl flex-1 px-2 py-2 md:px-8 md:py-8">
-        <div className="grid grid-cols-1 gap-3 lg:grid-cols-[1fr_320px] lg:gap-8">
+      {/* ─── Main work area — wider on desktop so the canvas owns more
+            of the viewport instead of floating inside narrow margins ─── */}
+      <div className="mx-auto w-full max-w-[1700px] flex-1 px-2 py-2 md:px-6 md:py-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-[1fr_360px] lg:gap-8">
           <div
             className={`flex flex-col items-center gap-2 transition-opacity duration-200 ease-out lg:items-stretch lg:gap-5 ${
               transitioning ? "opacity-0" : "opacity-100"
@@ -563,6 +574,7 @@ export default function Home() {
             <MobileControlBar
               hasHistory={canvasHasHistory}
               pageLabel={`${completed.length + 1} / ${history.length}`}
+              eraseActive={eraseMode}
               primaryAction={
                 currentScene.choices
                   ? showChoices
@@ -580,13 +592,29 @@ export default function Home() {
                     : null
               }
               onUndo={() => canvasRef.current?.undo()}
+              onErase={toggleErase}
               onOpenNarration={() => setShowNarration(true)}
+            />
+
+            {/* Desktop control bar — directly below canvas */}
+            <DesktopControlBar
+              hasHistory={canvasHasHistory}
+              zoom={canvasZoom}
+              canZoomIn={canvasZoom < 8}
+              canZoomOut={canvasZoom > 1}
+              eraseActive={eraseMode}
+              onUndo={() => canvasRef.current?.undo()}
+              onZoomIn={() => canvasRef.current?.zoomBy(0.5)}
+              onZoomOut={() => canvasRef.current?.zoomBy(-0.5)}
+              onResetZoom={() => canvasRef.current?.resetZoom()}
+              onToggleFullscreen={() => canvasRef.current?.toggleFullscreen()}
+              onErase={toggleErase}
             />
 
             {/* Inline narration — DESKTOP ONLY. On mobile, narration lives
                 in the NarrationModal opened by 📖 in MobileControlBar so
                 the canvas + palette get full vertical space. */}
-            <article className="hidden w-full max-w-[720px] overflow-hidden rounded-2xl border border-amber-100/80 bg-white/70 shadow-sm backdrop-blur lg:block">
+            <article className="hidden w-full max-w-[960px] overflow-hidden rounded-2xl border border-gray-400/60 bg-white/70 shadow-sm backdrop-blur lg:block">
               <div className="narration-scroll max-h-[36vh] space-y-3 overflow-y-auto px-6 py-5 font-serif text-[16px] leading-relaxed text-gray-800 md:text-[17px]">
                 {t(currentScene.narration)
                   .split(/\n{2,}/)
@@ -598,14 +626,14 @@ export default function Home() {
 
             {currentScene.choices ? (
               showChoices ? (
-                <div className="grid w-full max-w-[720px] grid-cols-1 gap-3 sm:grid-cols-2">
+                <div className="grid w-full max-w-[960px] grid-cols-1 gap-3 sm:grid-cols-2">
                   {currentScene.choices.map((choice) => (
                     <button
                       key={choice.nextId}
                       type="button"
                       onClick={() => handleChoice(choice.nextId)}
                       disabled={transitioning}
-                      className="group flex min-h-[64px] items-center gap-3 rounded-2xl border border-amber-100/80 bg-white/80 px-4 py-3 text-left text-[15px] font-medium text-gray-900 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-amber-400 hover:shadow-md disabled:cursor-wait disabled:opacity-60"
+                      className="group flex min-h-[64px] items-center gap-3 rounded-2xl border border-gray-400/60 bg-white/80 px-4 py-3 text-left text-[15px] font-medium text-gray-900 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-amber-400 hover:shadow-md disabled:cursor-wait disabled:opacity-60"
                     >
                       <span className="flex-1 leading-snug">
                         {t(choice.label)}
@@ -622,7 +650,7 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() => setShowChoices(true)}
-                  className="group hidden w-full max-w-[720px] items-center justify-center gap-2 rounded-full border border-gray-900/80 bg-white/85 px-5 py-2.5 text-[14px] font-medium text-gray-900 shadow-sm transition hover:bg-gray-900 hover:text-white lg:flex"
+                  className="group hidden w-full max-w-[960px] items-center justify-center gap-2 rounded-full border border-gray-900/80 bg-white/85 px-5 py-2.5 text-[14px] font-medium text-gray-900 shadow-sm transition hover:bg-gray-900 hover:text-white lg:flex"
                 >
                   <span>{t(UI.makeAChoice)}</span>
                 </button>
@@ -633,7 +661,7 @@ export default function Home() {
                 type="button"
                 onClick={() => handleChoice(currentScene.nextId!)}
                 disabled={transitioning}
-                className="group hidden w-full max-w-[720px] items-center justify-center gap-2 rounded-full border border-gray-900/80 bg-white/85 px-5 py-2.5 text-[14px] font-medium text-gray-900 shadow-sm transition hover:bg-gray-900 hover:text-white disabled:cursor-wait disabled:opacity-60 lg:flex"
+                className="group hidden w-full max-w-[960px] items-center justify-center gap-2 rounded-full border border-gray-900/80 bg-white/85 px-5 py-2.5 text-[14px] font-medium text-gray-900 shadow-sm transition hover:bg-gray-900 hover:text-white disabled:cursor-wait disabled:opacity-60 lg:flex"
               >
                 <span>{t(UI.continueScene)}</span>
                 <span className="transition-transform group-hover:translate-x-1">
@@ -641,7 +669,7 @@ export default function Home() {
                 </span>
               </button>
             ) : (
-              <div className="w-full max-w-[720px] rounded-2xl border border-amber-200/80 bg-gradient-to-br from-amber-50 to-rose-50 px-6 py-5 shadow-sm">
+              <div className="w-full max-w-[960px] rounded-2xl border border-gray-500/60 bg-gradient-to-br from-[#fafbfc] to-[#e7eaee] px-6 py-5 shadow-sm">
                 <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-amber-700">
                   {currentScene.endingLabel
                     ? t(currentScene.endingLabel)
@@ -693,14 +721,14 @@ export default function Home() {
         />
       )}
 
-      <footer className="hidden border-t border-amber-100/50 bg-white/50 backdrop-blur-md md:block">
+      <footer className="hidden border-t border-gray-400/40 bg-white/50 backdrop-blur-md md:block">
         <div className="mx-auto max-w-7xl px-5 py-2.5 md:px-8">
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[11px] text-gray-500">
             <ShortcutHint k="⌘Z">{t(UI.scUndo)}</ShortcutHint>
             <Sep />
-            <ShortcutHint k="Shift +/−">{t(UI.scZoom)}</ShortcutHint>
+            <ShortcutHint k="+ / −">{t(UI.scZoom)}</ShortcutHint>
             <Sep />
-            <ShortcutHint k="Shift 0">{t(UI.scZoom100)}</ShortcutHint>
+            <ShortcutHint k="0">{t(UI.scZoom100)}</ShortcutHint>
             <Sep />
             <ShortcutHint k="Space">{t(UI.scPan)}</ShortcutHint>
             <Sep />

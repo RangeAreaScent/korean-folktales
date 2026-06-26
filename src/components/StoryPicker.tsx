@@ -70,7 +70,7 @@ export function StoryPicker({ onPick }: Props) {
   )
 
   return (
-    <main className="flex min-h-screen flex-col bg-gradient-to-b from-amber-50 via-rose-50/30 to-amber-50">
+    <main className="flex min-h-screen flex-col bg-gradient-to-b from-[#fafbfc] via-[#f3f5f7]/50 to-[#e7eaee]">
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col items-center justify-center px-6 py-12 md:py-16">
         <div className="mb-3 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.32em] text-amber-700/80">
           <span className="h-px w-8 bg-amber-700/40" />
@@ -194,7 +194,7 @@ function SavedBookThumb({
     <button
       type="button"
       onClick={onOpen}
-      className="group flex w-[136px] shrink-0 flex-col overflow-hidden rounded-2xl border border-amber-100/80 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md md:w-[152px]"
+      className="group flex w-[136px] shrink-0 flex-col overflow-hidden rounded-2xl border border-gray-400/60 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md md:w-[152px]"
     >
       <div className="aspect-[4/5] w-full overflow-hidden bg-amber-50">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -222,7 +222,7 @@ function TrustPill({
   children: React.ReactNode
 }) {
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-200/80 bg-white/70 px-3 py-1.5 text-[12px] font-medium text-amber-900/80 shadow-sm backdrop-blur md:text-[13px]">
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-500/60 bg-white/70 px-3 py-1.5 text-[12px] font-medium text-amber-900/80 shadow-sm backdrop-blur md:text-[13px]">
       <span aria-hidden>{icon}</span>
       {children}
     </span>
@@ -245,7 +245,7 @@ function StoryCard({
     // nested, because mobile Safari refuses to fire the outer button's
     // click handler when an interactive descendant is present.
     <div
-      className={`group relative flex flex-col overflow-hidden rounded-3xl border border-amber-100/80 bg-gradient-to-br ${story.accent} p-6 shadow-sm transition hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg`}
+      className={`group relative flex flex-col overflow-hidden rounded-3xl border border-gray-400/60 bg-gradient-to-br ${story.accent} p-6 shadow-sm transition hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg`}
     >
       {/* Primary tap target — covers the whole card except the About row */}
       <button
@@ -293,7 +293,7 @@ function StoryCard({
       <button
         type="button"
         onClick={onAbout}
-        className="mt-5 inline-flex w-fit items-center gap-1.5 self-start rounded-full border border-amber-200/80 bg-white/70 px-3 py-1.5 text-[12px] font-medium text-amber-900/80 shadow-sm backdrop-blur transition hover:border-amber-300 hover:bg-white hover:text-amber-900"
+        className="mt-5 inline-flex w-fit items-center gap-1.5 self-start rounded-full border border-gray-500/60 bg-white/70 px-3 py-1.5 text-[12px] font-medium text-amber-900/80 shadow-sm backdrop-blur transition hover:border-amber-300 hover:bg-white hover:text-amber-900"
       >
         📖 {t(UI.aboutThisTale).replace("📖 ", "")}
       </button>

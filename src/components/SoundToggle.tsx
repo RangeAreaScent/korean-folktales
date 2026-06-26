@@ -14,7 +14,7 @@ export function SoundToggle({
       onClick={toggle}
       aria-label={muted ? "Sound off" : "Sound on"}
       aria-pressed={!muted}
-      className={`grid h-9 w-9 place-items-center rounded-full border border-amber-100/80 bg-white/85 text-gray-700 shadow-sm backdrop-blur transition hover:bg-white ${className}`}
+      className={`grid h-9 w-9 place-items-center rounded-full border border-gray-400/60 bg-white/85 text-gray-700 shadow-sm backdrop-blur transition hover:bg-white ${className}`}
     >
       {/* Flat minimal black-and-white speaker glyph (replaces the 🔊 / 🔇
           emoji which rendered in full color and clashed with the toolbar's

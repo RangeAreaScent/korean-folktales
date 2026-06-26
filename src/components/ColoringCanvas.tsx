@@ -9,6 +9,7 @@ import {
   useState,
 } from "react"
 import {
+  eraseRegion,
   floodFill,
   type FillStyle,
   type FloodFillHandle,
@@ -21,7 +22,8 @@ import { UI } from "@/lib/strings"
 
 // Internal canvas resolution. 2048 = print-quality (315 DPI for 6.5" print).
 // 4× more pixels than 1024, so undo + fill timing are tuned below.
-// Display size is still CSS-controlled (max-w-[720px] aspect-square).
+// Display size is CSS-controlled (max-w-[960px] aspect-square — the
+// canvas now stretches to fill the desktop main column up to that cap).
 const CANVAS_SIZE = 2048
 // Undo stack holds full ImageData snapshots (CANVAS_SIZE² × 4 bytes each).
 // At 2048: 16MB per snapshot. Cap at 7 to keep mobile memory comfortable
@@ -46,6 +48,7 @@ export type ColoringCanvasHandle = {
   zoomBy: (delta: number) => void
   resetZoom: () => void
   toggleFullscreen: () => void
+  setEraseMode: (on: boolean) => void
 }
 
 type Props = {
@@ -159,6 +162,7 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
     const [dragging, setDragging] = useState(false)
     const [isFullscreen, setIsFullscreen] = useState(false)
     const [hasHistory, setHasHistory] = useState(false)
+    const eraseModeRef = useRef(false)
 
     const notifyHistory = useCallback(() => {
       const has = undoStackRef.current.length > 0
@@ -249,6 +253,9 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
       zoomBy,
       resetZoom,
       toggleFullscreen,
+      setEraseMode: (on: boolean) => {
+        eraseModeRef.current = on
+      },
     }))
 
     // Sync zoom changes outward so a parent toolbar can render the same value.
@@ -299,17 +306,21 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
           undo()
           return
         }
-        if (e.shiftKey && (e.key === "+" || e.key === "=")) {
+        // Zoom shortcuts — Cmd/Ctrl + (=/-/0) is reserved by the browser
+        // for native page-zoom and can't be overridden by a regular web
+        // page. So we listen for plain "+" / "-" / "0" (no modifier).
+        // Inputs are already excluded via isTypingTarget above.
+        if (!meta && (e.key === "+" || e.key === "=")) {
           e.preventDefault()
           zoomBy(ZOOM_STEP)
           return
         }
-        if (e.shiftKey && (e.key === "-" || e.key === "_")) {
+        if (!meta && (e.key === "-" || e.key === "_")) {
           e.preventDefault()
           zoomBy(-ZOOM_STEP)
           return
         }
-        if (e.shiftKey && e.key === "0") {
+        if (!meta && e.key === "0") {
           e.preventDefault()
           resetZoom()
           return
@@ -354,8 +365,24 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
       const rect = canvas.getBoundingClientRect()
       const x = ((e.clientX - rect.left) / rect.width) * CANVAS_SIZE
       const y = ((e.clientY - rect.top) / rect.height) * CANVAS_SIZE
-      const style = buildStyle(fillColor, fillMode)
 
+      // Erase mode — wipe the clicked region back to white. Uses the
+      // line-art (not color tolerance) as the boundary so gradient /
+      // radial fills get cleared cleanly.
+      if (eraseModeRef.current) {
+        const prior = eraseRegion(ctx, CANVAS_SIZE, CANVAS_SIZE, x, y)
+        if (prior) {
+          undoStackRef.current.push(prior)
+          if (undoStackRef.current.length > UNDO_LIMIT) {
+            undoStackRef.current.shift()
+          }
+          notifyHistory()
+          sound.plop()
+        }
+        return
+      }
+
+      const style = buildStyle(fillColor, fillMode)
       const snapshot = ctx.getImageData(0, 0, CANVAS_SIZE, CANVAS_SIZE)
       let leaked = false
       const handle = floodFill(ctx, CANVAS_SIZE, CANVAS_SIZE, x, y, style, {
@@ -553,7 +580,7 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
     return (
       <div
         ref={containerRef}
-        className="relative aspect-square w-full max-w-[720px]"
+        className="relative aspect-square w-full max-w-[960px]"
       >
         <div
           ref={scrollRef}
@@ -565,7 +592,7 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           onTouchCancel={handleTouchEnd}
-          className="absolute inset-0 touch-none overflow-auto rounded-2xl border border-amber-100/80 bg-white shadow-sm"
+          className="absolute inset-0 touch-none overflow-auto bg-white shadow-lg"
         >
           <div
             style={{

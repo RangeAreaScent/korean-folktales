@@ -61,7 +61,7 @@ export default async function FolktalePage({
   const otherStories = STORY_LIST.filter((s) => s.id !== story.id).slice(0, 4)
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-amber-50 via-rose-50/30 to-amber-50 px-5 py-12 md:py-16">
+    <main className="min-h-screen bg-gradient-to-b from-[#fafbfc] via-[#f3f5f7]/50 to-[#e7eaee] px-5 py-12 md:py-16">
       <article className="mx-auto max-w-3xl">
         {/* ─── Hero ─── */}
         <p className="mb-3 text-center text-[11px] font-medium uppercase tracking-[0.32em] text-amber-700/80">
@@ -121,7 +121,7 @@ export default async function FolktalePage({
           >
             {story.originalTale.summary.en}
           </p>
-          <details className="mt-5 rounded-lg border border-amber-100/80 bg-white/60 p-4 text-[13px] text-gray-600">
+          <details className="mt-5 rounded-lg border border-gray-400/60 bg-white/60 p-4 text-[13px] text-gray-600">
             <summary className="cursor-pointer font-medium text-amber-800">
               한국어로 읽기
             </summary>
@@ -143,7 +143,7 @@ export default async function FolktalePage({
             {story.originalTale.glossary.map((g) => (
               <li
                 key={g.korean}
-                className="rounded-2xl border border-amber-100/80 bg-white/70 p-4"
+                className="rounded-2xl border border-gray-400/60 bg-white/70 p-4"
               >
                 <div className="flex items-baseline gap-2">
                   <span
@@ -168,7 +168,7 @@ export default async function FolktalePage({
         </Section>
 
         {/* ─── Our version (footer-style, matches modal) ─── */}
-        <div className="border-t border-amber-100 pt-5">
+        <div className="border-t border-gray-400 pt-5">
           <p className="text-[13px] leading-relaxed text-gray-600">
             <span className="font-semibold text-amber-800/80">
               Our version —{" "}
@@ -184,7 +184,7 @@ export default async function FolktalePage({
         </div>
 
         {/* ─── CTA bottom ─── */}
-        <div className="my-14 rounded-3xl border border-amber-200/60 bg-gradient-to-br from-amber-50 to-rose-50 p-8 text-center shadow-sm md:p-10">
+        <div className="my-14 rounded-3xl border border-gray-400/50 bg-gradient-to-br from-[#fafbfc] to-[#e7eaee] p-8 text-center shadow-sm md:p-10">
           <h2
             className="mb-3 font-display text-2xl font-bold text-gray-900 md:text-3xl"
             style={{ fontFamily: "var(--font-display)" }}
@@ -261,7 +261,7 @@ function OtherStoryLink({ story }: { story: Story }) {
   return (
     <Link
       href={`/folktales/${STORY_SLUGS[story.id]}`}
-      className={`flex flex-col items-center rounded-2xl border border-amber-100/80 bg-gradient-to-br ${story.accent} p-4 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md`}
+      className={`flex flex-col items-center rounded-2xl border border-gray-400/60 bg-gradient-to-br ${story.accent} p-4 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img

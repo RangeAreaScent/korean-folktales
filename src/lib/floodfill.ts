@@ -294,3 +294,61 @@ function blendLineEdges(
     }
   }
 }
+
+/**
+ * Erase the connected region that the click lands in, restoring it to
+ * pure white. Boundary is the LINE-ART (dark pixels) — color tolerance is
+ * not used, so gradients / radial fills get cleared cleanly. Returns the
+ * pre-erase ImageData snapshot for the undo stack, or null when the click
+ * was on a line pixel / out of bounds / nothing to erase.
+ */
+export function eraseRegion(
+  ctx: CanvasRenderingContext2D,
+  width: number,
+  height: number,
+  startX: number,
+  startY: number,
+): ImageData | null {
+  const sx = Math.floor(startX)
+  const sy = Math.floor(startY)
+  if (sx < 0 || sy < 0 || sx >= width || sy >= height) return null
+
+  const snapshot = ctx.getImageData(0, 0, width, height)
+  const img = ctx.getImageData(0, 0, width, height)
+  const data = img.data
+  const startIdx = (sy * width + sx) * 4
+  if (isLineLike(data, startIdx)) return null
+
+  const visited = new Uint8Array(width * height)
+  const stack: number[] = [sx, sy]
+  let painted = 0
+
+  while (stack.length) {
+    const y = stack.pop()!
+    const x = stack.pop()!
+    if (x < 0 || y < 0 || x >= width || y >= height) continue
+    const pix = y * width + x
+    if (visited[pix]) continue
+    const i = pix * 4
+    // Line-art boundary stops the flood; no color tolerance check.
+    if (isLineLike(data, i)) continue
+
+    visited[pix] = 1
+    painted++
+
+    // Paint pure white
+    data[i] = 255
+    data[i + 1] = 255
+    data[i + 2] = 255
+    data[i + 3] = 255
+
+    stack.push(x + 1, y)
+    stack.push(x - 1, y)
+    stack.push(x, y + 1)
+    stack.push(x, y - 1)
+  }
+
+  if (painted === 0) return null
+  ctx.putImageData(img, 0, 0)
+  return snapshot
+}

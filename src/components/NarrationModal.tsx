@@ -78,7 +78,7 @@ export function NarrationModal({ open, onClose, sceneTitle, narration }: Props) 
         </div>
 
         {/* Header */}
-        <header className="flex items-center justify-between gap-3 border-b border-amber-100/70 px-5 pb-4 pt-3 sm:pt-5">
+        <header className="flex items-center justify-between gap-3 border-b border-gray-400/55 px-5 pb-4 pt-3 sm:pt-5">
           <div className="min-w-0 flex-1">
             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-amber-700">
               {t(UI.narrationModalTitle)}
@@ -110,7 +110,7 @@ export function NarrationModal({ open, onClose, sceneTitle, narration }: Props) 
         {/* Footer: language toggle (lives here on mobile so the control
              strip below the canvas can stay compact) + listen-in-Korean
              pronunciation button. */}
-        <footer className="flex items-center justify-between gap-3 border-t border-amber-100/70 bg-gradient-to-b from-white to-amber-50/40 px-5 py-3.5">
+        <footer className="flex items-center justify-between gap-3 border-t border-gray-400/55 bg-gradient-to-b from-white to-[#fafbfc]/55 px-5 py-3.5">
           <LocaleToggle />
           <button
             type="button"
