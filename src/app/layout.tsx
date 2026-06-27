@@ -6,6 +6,7 @@ import { LocaleProvider } from "@/lib/i18n";
 import { SoundProvider } from "@/lib/sound-provider";
 import { LocaleToggle } from "@/components/LocaleToggle";
 import { SoundToggle } from "@/components/SoundToggle";
+import { BgmToggle } from "@/components/BgmToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -108,6 +109,7 @@ export default function RootLayout({
             {/* Floating cluster — desktop only. On mobile, these toggles
                 live inside MobileControlBar so they don't cover the title. */}
             <div className="pointer-events-none fixed bottom-4 right-4 z-50 hidden items-center gap-2 lg:flex">
+              <BgmToggle className="pointer-events-auto" />
               <SoundToggle className="pointer-events-auto" />
               <LocaleToggle className="pointer-events-auto" />
             </div>

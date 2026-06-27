@@ -1,13 +1,23 @@
 /**
- * Procedural sound engine using Web Audio API.
- * No audio files — all sounds synthesized on the fly. Stable, instant, zero-bundle.
+ * Sound engine.
+ *
+ * All sounds are real samples from /public/sounds (loaded once, played via
+ * cloneNode so overlapping plays don't cut each other off).
  */
 
-type Ctor = typeof AudioContext
+const PAINT_SRC = ["/sounds/paint1.mp3", "/sounds/paint2.mp3", "/sounds/paint3.mp3"]
+const PAGE_TURN_SRC = "/sounds/page-turn.mp3"
+const CHIME_SRC = "/sounds/chime.m4a"
+const BGM_SRC = "/sounds/bgm.m4a"
 
 class SoundEngine {
-  private ctx: AudioContext | null = null
   private muted = false
+
+  private paintBank: HTMLAudioElement[] | null = null
+  private paintIndex = 0
+  private pageTurnEl: HTMLAudioElement | null = null
+  private chimeEl: HTMLAudioElement | null = null
+  private bgmEl: HTMLAudioElement | null = null
 
   setMuted(m: boolean) {
     this.muted = m
@@ -17,125 +27,68 @@ class SoundEngine {
     return this.muted
   }
 
-  private ensure(): AudioContext | null {
+  private load(src: string, volume: number): HTMLAudioElement | null {
     if (typeof window === "undefined") return null
-    if (!this.ctx) {
-      try {
-        const Ctx: Ctor =
-          window.AudioContext ||
-          (
-            window as unknown as {
-              webkitAudioContext: Ctor
-            }
-          ).webkitAudioContext
-        if (!Ctx) return null
-        this.ctx = new Ctx()
-      } catch {
-        return null
-      }
-    }
-    if (this.ctx && this.ctx.state === "suspended") {
-      this.ctx.resume().catch(() => {})
-    }
-    return this.ctx
+    const a = new Audio(src)
+    a.preload = "auto"
+    a.volume = volume
+    return a
   }
 
-  /** Water-droplet 'plop' — splash tick + rising bubble resonance (Minnaert). */
+  private play(base: HTMLAudioElement) {
+    const node = base.cloneNode(true) as HTMLAudioElement
+    node.volume = base.volume
+    node.play().catch(() => {})
+  }
+
+  private ensurePaintBank(): HTMLAudioElement[] | null {
+    if (typeof window === "undefined") return null
+    if (!this.paintBank) {
+      this.paintBank = PAINT_SRC.map((src) => this.load(src, 0.55)!).filter(Boolean)
+    }
+    return this.paintBank
+  }
+
+  /** Brush/marker stroke — cycles paint1 → paint2 → paint3 per fill. */
   plop() {
     if (this.muted) return
-    const ctx = this.ensure()
-    if (!ctx) return
-    const now = ctx.currentTime
-
-    // Pentatonic, mid-high range — bubble cavity pitches
-    const notes = [523.25, 587.33, 659.25, 783.99, 880.0]
-    const base = notes[Math.floor(Math.random() * notes.length)]
-
-    // 1) Splash tick — very short filtered noise burst (the impact)
-    const tickLen = Math.floor(ctx.sampleRate * 0.025)
-    const tickBuf = ctx.createBuffer(1, tickLen, ctx.sampleRate)
-    const tickCh = tickBuf.getChannelData(0)
-    for (let i = 0; i < tickLen; i++) {
-      const t = i / tickLen
-      tickCh[i] = (Math.random() * 2 - 1) * (1 - t) * (1 - t)
-    }
-    const tick = ctx.createBufferSource()
-    tick.buffer = tickBuf
-    const tickFilter = ctx.createBiquadFilter()
-    tickFilter.type = "bandpass"
-    tickFilter.frequency.value = base * 4
-    tickFilter.Q.value = 1.2
-    const tickGain = ctx.createGain()
-    tickGain.gain.value = 0.07
-    tick.connect(tickFilter).connect(tickGain).connect(ctx.destination)
-    tick.start(now)
-
-    // 2) Bubble resonance — RISING pitch with tiny overshoot (real droplet physics)
-    const osc = ctx.createOscillator()
-    const gain = ctx.createGain()
-    const softener = ctx.createBiquadFilter()
-    osc.type = "sine"
-    osc.frequency.setValueAtTime(base * 0.6, now)
-    osc.frequency.exponentialRampToValueAtTime(base, now + 0.06)
-    osc.frequency.exponentialRampToValueAtTime(base * 1.04, now + 0.13)
-    softener.type = "lowpass"
-    softener.frequency.value = base * 5
-    softener.Q.value = 0.7
-    gain.gain.setValueAtTime(0.0001, now)
-    gain.gain.exponentialRampToValueAtTime(0.18, now + 0.012)
-    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.24)
-    osc.connect(softener).connect(gain).connect(ctx.destination)
-    osc.start(now)
-    osc.stop(now + 0.28)
+    const bank = this.ensurePaintBank()
+    if (!bank || !bank.length) return
+    const base = bank[this.paintIndex % bank.length]
+    this.paintIndex++
+    this.play(base)
   }
 
-  /** Soft 'page turn' — short low-pass filtered noise, played on scene change. */
+  /** Page-turn whoosh — played on scene change / continue. */
   pageTurn() {
     if (this.muted) return
-    const ctx = this.ensure()
-    if (!ctx) return
-    const now = ctx.currentTime
-    const bufferSize = Math.floor(ctx.sampleRate * 0.22)
-    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate)
-    const channel = buffer.getChannelData(0)
-    for (let i = 0; i < bufferSize; i++) {
-      const t = i / bufferSize
-      // Pink-ish noise with envelope (in then out)
-      const env = Math.sin(Math.PI * t) ** 1.5
-      channel[i] = (Math.random() * 2 - 1) * env
-    }
-    const source = ctx.createBufferSource()
-    source.buffer = buffer
-    const filter = ctx.createBiquadFilter()
-    filter.type = "lowpass"
-    filter.frequency.setValueAtTime(800, now)
-    filter.frequency.exponentialRampToValueAtTime(2000, now + 0.18)
-    const gain = ctx.createGain()
-    gain.gain.value = 0.12
-    source.connect(filter).connect(gain).connect(ctx.destination)
-    source.start(now)
+    if (!this.pageTurnEl) this.pageTurnEl = this.load(PAGE_TURN_SRC, 0.7)
+    if (!this.pageTurnEl) return
+    this.play(this.pageTurnEl)
   }
 
-  /** Ascending 3-note chime — played when storybook is complete. */
+  /** Soft chime — played when storybook is complete. */
   chime() {
     if (this.muted) return
-    const ctx = this.ensure()
-    if (!ctx) return
-    const now = ctx.currentTime
-    const notes = [523.25, 659.25, 783.99] // C5, E5, G5
-    notes.forEach((freq, i) => {
-      const t = now + i * 0.14
-      const osc = ctx.createOscillator()
-      const gain = ctx.createGain()
-      osc.type = "triangle"
-      osc.frequency.value = freq
-      gain.gain.setValueAtTime(0.0001, t)
-      gain.gain.linearRampToValueAtTime(0.16, t + 0.02)
-      gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.5)
-      osc.connect(gain).connect(ctx.destination)
-      osc.start(t)
-      osc.stop(t + 0.55)
-    })
+    if (!this.chimeEl) this.chimeEl = this.load(CHIME_SRC, 0.65)
+    if (!this.chimeEl) return
+    this.play(this.chimeEl)
+  }
+
+  /** Background music — looped piano. Independent of SFX mute. */
+  startBgm() {
+    if (typeof window === "undefined") return
+    if (!this.bgmEl) {
+      this.bgmEl = this.load(BGM_SRC, 0.25)
+      if (this.bgmEl) this.bgmEl.loop = true
+    }
+    if (!this.bgmEl) return
+    this.bgmEl.play().catch(() => {})
+  }
+
+  stopBgm() {
+    if (!this.bgmEl) return
+    this.bgmEl.pause()
   }
 }
 

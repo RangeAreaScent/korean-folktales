@@ -49,5 +49,8 @@ next-env.d.ts
 !src/**/*.png
 .backups/
 
+# Working folder for raw sound source files (compressed copies live in public/sounds/)
+/sound/
+
 # Stray root PNGs (defense in depth — should never sneak back)
 /*.png

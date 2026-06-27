@@ -26,23 +26,33 @@
 
 ---
 
-## 2. 현재 버전 · v0.9
+## 2. 현재 버전 · v1.0 — UI 재정비 완료
 
 | 분야 | 상태 |
 |---|---|
-| **콘텐츠 — 8 스토리 모두 V2.5 라이브** ⭐ | 8 스토리 전부 V2.5 Y구조 5장면 + 풍부 narration + minhwa 스타일 PNG가 production. Story 2가 testbed였고 이제 1·3-8도 합류 (commit e4fa327) |
-| **앱 코어** | 클릭 wavefront · 그라데이션 3종 · undo · 줌(휠+버튼+핀치) · pan(Space/2손가락) · 풀스크린 · 누출 감지 · 2048×2048 캔버스 |
-| **Scene 진행** | Y구조 3-state — `nextId`(linear, 단일 "Continue →" 버튼) · `choices`(branching, 2개 카드) · `endingLabel`(ending, Complete 버튼) |
-| **사운드** | water-droplet plop (5음 펜타토닉 랜덤) · page turn · chime + 한국어 발음 + 음소거 토글 |
-| **출력 (PDF — v0.9 완전 재디자인)** | **US Letter** (8.5×11", A4에서 전환) · cover Option C (커스텀 아이콘 + tagline + 글로서리 미리보기 + origin) · narration 자동 페이지네이션 (paragraph 단위, "다음 장에 계속…") · isEnding은 `endingLabel`로 판정 (V2.5 회귀 fix) |
-| **출력 (PNG)** | Instagram 4:5 표지/장면별 + Web Share |
+| **콘텐츠 — 8 스토리 모두 V2.5 라이브** ⭐ | 8 스토리 V2.5 Y구조 5장면 + 풍부 narration + minhwa 스타일 PNG production. 모든 40 scene PNG가 **2048×2048** (waifu2x cunet으로 1024→2048 업스케일) |
+| **앱 코어** | 클릭 wavefront · 그라데이션 3종 · undo · **줌 1-8x** · **erase mode** · pan(Space/한 손가락) · 풀스크린 · 누출 감지 |
+| **캔버스 줌 (v1.0 핀치 개선)** | **두 손가락 핀치**: midpoint anchor + 1% step + rAF coalesce (zigzag 제거). **한 손가락 드래그**: zoom > 1 일 때 pan으로 동작 |
+| **Erase 기능 (v1.0 신규)** | `floodfill.eraseRegion()` — line-art boundary, color tolerance 무시 → gradient/radial fill도 깨끗 erase. Desktop + Mobile control bar 모두 토글 버튼 |
+| **Scene 진행** | Y구조 3-state — `nextId` linear · `choices` branching (모바일: Continue 후 reveal) · `endingLabel` ending |
+| **사운드** | water-droplet plop · page turn · chime + 한국어 발음 + **flat SVG 음소거 토글** (emoji에서 교체) |
+| **PDF export** | US Letter · cover Option C (커스텀 아이콘 + tagline + 글로서리 + origin) · narration paragraph 자동 페이지네이션 · isEnding = `!!endingLabel` |
+| **PNG export** | Instagram 4:5 표지/장면별 + Web Share |
 | **갤러리** | localStorage 12권 cap, 픽커 상단 carousel, 재공유/삭제 |
-| **최종 뷰** | 플립북 캐러셀 (표지 + 각 장면 좌우 슬라이드 0.5s ease-out, 키보드 ←/→, 도트 인디케이터, 페이지별 share) |
-| **Narration 박스** | 스크롤형 max-h 36vh, 상/하 페이드 마스킹, 멀티-paragraph (\\n\\n split) |
-| **모바일** | 좌우 풀폭 캔버스 + bottom sheet 팔레트 (peek + 확장) — **iPad/모바일 팔레트 개선 트랙 진행 중 (§11)** |
-| **타이포** | Gowun Batang display tier (60px+) · Geist sans · Geist mono |
+| **최종 뷰** | 플립북 캐러셀 (표지 + 각 장면 좌우 슬라이드, 키보드 ←/→, 페이지별 share) |
+| **Narration** | Desktop: 스크롤형 max-h 36vh inline. Mobile: **NarrationModal** 자동 열림 (per scene) + listen-in-Korean + locale toggle |
+| **데스크탑 레이아웃 (v1.0 재정비)** | max-w **1700px** (이전 7xl = 1280) · canvas max-w **960px** (이전 720) · sidebar **360px** (이전 320) · canvas image **rounded border 제거 → shadow only** · max zoom **8x** (이전 4x) |
+| **DesktopControlBar (v1.0 신규)** | 캔버스 바로 아래 inline strip — `[↶ Undo][🗑 Erase]    [⊖ 100% ⊕]    [⛶ Fullscreen]` |
+| **MobileControlBar (v1.0 재정비)** | `[↶][1/N][🗑]    [📖][🔊][Continue/Choose →]` — undo·페이지 인디케이터 분리, primary action 우측 끝 (엄지 위치), locale toggle은 NarrationModal로 이동 |
+| **ColorPalette desktop (v1.0 재구성)** | **More 토글 제거**, always-expanded. 새 순서: themes → grid → fill (작은 직사각형 + 캡션) → recent → harmony → contrast → **current 맨 아래** (color + L slider + custom picker) |
+| **MobilePaletteSheet** | always-expanded inline panel · chip row right-edge scroll fade · 8×3 grid · fill chips · recent/harmony/contrast/L+picker 순 |
+| **배경 톤** | **Cool minimal white** `#fafbfc → #f3f5f7 → #e7eaee` — 여러 후보 반복(한지→기와→백자→달항아리→청자→안개→슬레이트→warm paper) 끝에 결정. amber-100/200 박스 borders → **gray-400/500 (진한 회색)**. hover에 amber 액센트 유지 |
+| **팔레트 테마명 IP-safe** | Ghibli 4종 (Totoro/Spirited/Howl/Mononoke) → **Sunlit Forest / Lantern Night / Cloud Garden / Deep Forest** |
+| **키보드 단축키** | `⌘Z` undo · `+/-/0` zoom (Shift 없이) · `F` fullscreen · `Space` pan · `Cmd+/-`는 브라우저가 reserved (override 불가) |
+| **타이포** | Gowun Batang display tier · Geist sans · Geist mono |
 | **인프라** | Next.js 16, React 19, Tailwind 4 (Turbopack), Vercel 자동 배포 |
-| **분석/SEO (v0.9 신규)** | Vercel Analytics · GSC verified · sitemap.xml · robots.txt · **multi-size favicon.ico (16/32/48)** + **icon.png 192px** · **정적 hero OG** (1200×630 landscape + 1200×1200 square, half-line-art/half-colored minhwa 일러스트) · 8 SEO 페이지 · 타이틀 "Korean Folktales — Coloring Storybook for Kids" |
+| **SEO** | Vercel Analytics · GSC verified · sitemap.xml · robots.txt · multi-size favicon.ico + icon.png 192px · 정적 hero OG (landscape + square) · 8 SEO 페이지 · 타이틀 "Korean Folktales — Coloring Storybook for Kids" |
+| **iOS Safari fix** | viewport meta (`maximumScale: 1, userScalable: false`) · `touch-action: manipulation` body · StoryPicker sibling-button 패턴 (nested interactive 회피) · `allowedDevOrigins` in next.config.ts (LAN dev) |
 
 ---
 
@@ -77,13 +87,16 @@ src/
 │   └── gallery.ts                  localStorage 12 책 저장 + 포맷
 ├── components/
 │   ├── StoryPicker.tsx             픽커 (갤러리 carousel + 8 카드 + trust pills + About/Privacy 푸터)
-│   ├── ColoringCanvas.tsx          캔버스 + 플로팅 툴바 + 줌/팬/핀치/풀스크린
-│   ├── ColorPalette.tsx            데스크탑 사이드바 팔레트
-│   ├── MobilePaletteSheet.tsx      모바일 bottom sheet (peek + 확장)
+│   ├── ColoringCanvas.tsx          캔버스 — 줌/팬/핀치(midpoint anchor)/풀스크린/erase mode. `hideToolbar` 항상 true (외부 control bar 사용)
+│   ├── ColorPalette.tsx            데스크탑 사이드바 (v1.0: always-expanded, themes→grid→fill→recent→harmony→contrast→current)
+│   ├── MobilePaletteSheet.tsx      모바일 inline panel (always-expanded, chip row + 8×3 grid + fill chips + recent/harmony/contrast/L+picker)
+│   ├── DesktopControlBar.tsx       ⭐ v1.0 — 데스크탑 캔버스 아래 control strip (undo / erase / zoom / fullscreen)
+│   ├── MobileControlBar.tsx        모바일 캔버스 아래 control strip (undo + page indicator + erase + 📖 story + 🔊 + primary action)
+│   ├── NarrationModal.tsx          ⭐ 모바일 narration 모달 — 매 scene 자동 열림. LocaleToggle + listen-in-Korean 버튼 footer
 │   ├── OriginalTaleModal.tsx       원작 모달 (Web Speech 발음 + Start coloring + View as page)
 │   ├── SavedBookViewer.tsx         갤러리 책 보기 (재공유·삭제)
-│   ├── LocaleToggle.tsx            한/ENG
-│   └── SoundToggle.tsx             🔊/🔇
+│   ├── LocaleToggle.tsx            한/ENG — desktop floating cluster + NarrationModal footer
+│   └── SoundToggle.tsx             flat SVG 흑백 (v1.0: emoji에서 교체)
 
 public/
 └── coloring/
@@ -101,14 +114,24 @@ public/
     ├── icons/                      8 라인아트 카드 아이콘 (storyId.png, 투명 배경)
     └── Backup_v1/                  v0.6 시점 모든 도안 백업 (git tag v0.6-scenes-original 와 동일)
 
+scripts/ (개발 편의 — v1.0)
+├── dev-lan.js                  `npm run dev:lan` — 0.0.0.0 바인딩 + LAN IP + QR 코드 출력 (iPhone/iPad 테스트)
+└── upscale-2x.js               sharp Lanczos3 batch upscaler (대체로 waifu2x 사용)
+
 루트 (꼭 알 것):
 HANDOFF.md                       이 문서
 PINTEREST_PLAYBOOK.md            Pinterest 마케팅 전략 (11 섹션)
 README.md                        Next.js 기본
 AGENTS.md / CLAUDE.md            프로젝트 메타
 Start.command                    Mac 더블클릭 → dev + 브라우저
+next.config.ts                   ⭐ `allowedDevOrigins` (10.0.0.*, 192.168.*.*, 172.16.*.*) — LAN dev access
 .screenshots/                    🔻 모든 스크린샷/디버그 PNG는 여기로 (gitignore)
 .backups/coloring-v0.6/          v0.6 도안 로컬 백업 (gitignore)
+.backups/coloring-NN-storyId-1024/  각 스토리 1024 원본 백업 (waifu2x 업스케일 전, 롤백용)
+.backups/coloring-04-dokkaebi-prev/  Story 4 prompt 강화 전 버전 (혹부리)
+
+외부 도구 (Mac local):
+~/Tools/waifu2x/waifu2x-ncnn-vulkan-20250915-macos/  — Apple Silicon 바이너리. line-art 1024→2048 cunet 모델
 ```
 
 ---
@@ -180,9 +203,47 @@ V2 기본은 "한국적 요소가 있는 깔끔한 색칠 도안"이지만, V2.5
 
 V2.5는 옵트인 레이어 — 각 스토리 PROMPTS_V2.md 상단에 "V2.5 적용 중" 마커가 있으면 베이스 + V2.5 레이어 + 스토리 체크리스트 + Subject 블록을 합쳐 Gemini 입력.
 
-**현재 V2.5 적용 상태:**
-- ⭐ Story 2 (haenyeo) — production 라이브
-- 🔄 Stories 1, 3-8 — 프롬프트 준비됨, PNG 생성 대기
+**현재 V2.5 적용 상태 (v1.0):**
+- ⭐ 8 스토리 전부 V2.5 production 라이브
+- 모든 40 PNG가 2048×2048 (waifu2x cunet 업스케일)
+- Story 4 (혹부리) prompt 강화 — 혹 위치/크기/silhouette anchor 명시 (Mickey-ears 비유)
+
+### 4.13 UI 컴포넌트 분리 패턴 (v1.0)
+캔버스의 줌/undo/erase 같은 컨트롤이 ColoringCanvas 내부에 있으면 외부 layout 자유도가 떨어짐. v1.0에서:
+- ColoringCanvas는 `hideToolbar` 항상 true → 내부 floating toolbar 비활성
+- 외부 컴포넌트 두 개로 분리:
+  - **DesktopControlBar** (`hidden lg:flex`) — 캔버스 아래 inline strip
+  - **MobileControlBar** (`lg:hidden`) — 캔버스 아래 + primary action 내장
+- ColoringCanvas는 `onZoomChange`/`onHistoryChange` callback과 imperative handle (`zoomBy`/`resetZoom`/`undo`/`setEraseMode`/`toggleFullscreen`)로 외부 toolbar와 통신
+- 단일 source of truth는 캔버스 내부 state, 외부 bar는 reactive mirror
+
+### 4.14 Erase 기능 (v1.0)
+`floodfill.ts`의 `eraseRegion()`:
+- 클릭한 픽셀에서 시작
+- **line-art (검은 픽셀) 경계까지** flood
+- 색 tolerance 무시 → gradient/radial fill 영역도 깨끗하게 white로 복구
+- prior snapshot return → undo 스택에 push
+ColoringCanvas는 `eraseModeRef` ref + click handler 분기. Mode toggle은 imperative `setEraseMode()`.
+
+### 4.15 핀치 zoom anchor + smoothness (v1.0)
+이전: midpoint 계산 없이 단순 setZoom → 항상 좌상단 anchor + 5% step → zigzag.
+지금:
+- 매 touchmove마다 midpoint local 좌표 기준 scrollLeft/Top 보정 (`(scroll + local) * ratio - local`)
+- 1% step (was 5%)
+- React state 업데이트는 rAF coalesce — DOM scroll 즉시 반영, setZoom은 다음 프레임 1회
+- 한 손가락 드래그 (zoom > 1)에서 자동 pan 모드 진입 (`touchPanRef`)
+
+### 4.16 배경 톤 결정 — Cool minimal white
+초기: amber-50/rose-50 그라데이션 (cake-ivory). v1.0에서 사용자 피드백으로 여러 번 iterate:
+1. 한지 (#faf6ea→#f3ecd5) — amber와 너무 비슷
+2. 진한 hanji (#f3ecd5→#d8c89a) — 노란 hue 과함
+3. 기와 (#c8d3df→#566677) — 너무 어두움
+4. 백자 / 달항아리 / 청자 / 안개 — cream 계열 거부됨
+5. 연한 슬레이트 (#eef1f5→#c3cdd8) — 살짝 차가움
+6. Warm museum paper (#fbfaf6→#ebeae0) — cream 흔적 남음
+7. **Cool minimal white (#fafbfc → #f3f5f7 → #e7eaee)** — 최종. 색칠 art가 warmth 담당, 배경은 neutral 무대
+
+박스 borders도 동시에 amber-100/200 → gray-400/500 으로 (차가운 배경에 따뜻 amber 액센트는 hover 시에만 등장).
 
 ---
 
@@ -411,23 +472,57 @@ URL prefix property가 인증된 시점의 favicon이 GSC 대시보드에 남음
 ### 10.18 OG image 정적 PNG vs 동적 (v0.9)
 `src/app/opengraph-image.tsx` (동적 ImageResponse) → `src/app/opengraph-image.png` (정적 PNG) 로 전환. 정적이 우선됨. `.alt.txt` 파일도 같이 둘 것. 만약 둘 다 있으면 정적 PNG 우선이지만 빌드 경고 가능 — 한 가지만 둘 것.
 
+### 10.19 LAN dev access — allowedDevOrigins (v1.0) ★
+Next.js 16의 **새 보안 정책**이 LAN IP에서의 `/_next/webpack-hmr` + RSC payload stream 차단. 증상: iPhone/iPad에서 페이지는 로드되지만 클릭 → React state update 안 됨 (silent hydration 실패). 콘솔에 경고 1줄만 뜨고 클라이언트엔 에러 안 보임. `next.config.ts`의 `allowedDevOrigins` 에 LAN 범위 등록 필수. 이게 v1.0에서 가장 디버깅 어려웠던 이슈 — 클릭 핸들러나 viewport meta 같은 게 아니라 dev server 자체였음.
+
+### 10.20 iOS Safari nested interactive (v1.0)
+StoryPicker 카드를 `<button>` 안에 About `<span role="button">` nested 했더니 iOS가 outer button의 click handler를 비활성화. Chrome 모바일 에뮬레이션에선 정상. HTML 명세상 button 안 interactive descendant 금지인데 iOS만 strict. 해결: **sibling 패턴** — 카드 wrapper는 `<div>`, 안에 (a) 콘텐츠 클릭 `<button>` + (b) About `<button>` 두 sibling.
+
+### 10.21 핀치 zoom anchor + smoothness (v1.0)
+초기 구현은 단순 `setZoom()` 만 호출 → React 매 touchmove 재렌더 + scrollLeft/Top 보정 없음 → 항상 좌상단 anchor + 매끄럽지 못함. 해결책: scrollLeft/Top 보정 `(scroll + localMid) * ratio - localMid` + step 1% + rAF coalesce. 한 손가락 pan은 별도 `touchPanRef` 로 zoom > 1 일 때만 진입.
+
+### 10.22 키보드 단축키 — Cmd 안 됨 (v1.0)
+브라우저가 OS 레벨에서 `Cmd/Ctrl + +/-/0` 을 native page-zoom으로 가로채서 웹앱에서 `preventDefault`로도 못 막음. 우리 단축키는 **bare `+/-/0`** (no modifier, no Shift). 입력 포커스는 `isTypingTarget()`으로 제외.
+
+### 10.23 Canvas image container border 제거 (v1.0)
+이전: `rounded-2xl border` — V2.5 line-art에 이미 corner-bracket decorative border가 그려져 있어서 외부 둥근 border와 시각 충돌. 해결: border + rounded 모두 제거, `shadow-lg`로만 정의. canvas 컨테이너만 사각, 다른 박스들은 rounded 유지.
+
+### 10.24 Erase mode 사용 패턴 (v1.0)
+컨트롤 strip의 🗑 버튼 토글로 진입. 활성 시 다음 클릭은 fill 대신 `eraseRegion()` 호출 — 클릭한 region 전체를 white로 복구. Line-art boundary로 stop, color tolerance 무시. 한 번 erase 후 모드는 유지 (사용자가 다시 토글로 끔). 작동 안 보이면: 1) 클릭이 line 위 (검은 픽셀)인지 2) 이미 white인 region인지 확인.
+
+### 10.25 배경 톤 hex 직접 관리 (v1.0)
+amber-50/rose-50 같은 Tailwind 토큰 안 쓰고 hex로 직접 (`from-[#fafbfc] via-[#f3f5f7]/50 to-[#e7eaee]`). 사용자 피드백으로 톤 iterate 많이 했고, hex가 정확한 컨트롤을 줌. 변경 시 9개 파일 일괄 sed 패턴: `for f in <files>; do sed -i '' -e 's|OLD|NEW|g' "$f"; done` (zsh 단일 변수 split 주의 — explicit list 사용).
+
 ---
 
 ## 11. 미완 / 다음 후보
 
-### 🔥 모바일/iPad 팔레트 개선 (현재 진행 트랙)
-**문제**: Tailwind `lg:hidden` 기준이 1024px — iPad portrait (768-1023px) 가 모바일 bottom sheet에 떨어짐. 색칠 시 캔버스 50% 가림. Swatch 30px (peek 28px) 는 Apple HIG 44pt 미달.
+### ✅ v1.0에서 완료된 UI 트랙
+- ✅ 모바일 팔레트 always-expanded (peek/expand 제거)
+- ✅ Mobile control strip 재배치 (undo + page + erase + 📖 + 🔊 + primary action)
+- ✅ NarrationModal 자동 열림 + locale toggle 내장
+- ✅ Desktop control bar (캔버스 아래 inline)
+- ✅ Erase 기능 (gradient 영역 깨끗 erase)
+- ✅ 핀치 zoom anchor + 1% step + rAF coalesce, 한 손가락 pan
+- ✅ Max zoom 4 → 8
+- ✅ 캔버스 image border 제거, shadow only
+- ✅ Desktop width 1700px, canvas 960px, sidebar 360px
+- ✅ Cool minimal white 배경 + dark gray box borders
+- ✅ Theme명 IP-safe (Ghibli 4개 → atmospheric)
+- ✅ Keyboard `+/-/0` (Shift 제거)
+- ✅ Flat SVG SoundToggle
+- ✅ ColorPalette 데스크탑 재구성 (always expanded, 새 순서, 작은 fill chips)
+- ✅ iOS Safari fixes (viewport + allowedDevOrigins + sibling button)
 
-**개선 후보** (우선순위 순):
-1. **iPad portrait — side palette mode** (md: 768px+ 에서 sidebar로): 캔버스 안 가리고 늘 보임. lg→md breakpoint 조정
-2. **Touch tap target 44pt 이상** (`@media (pointer: coarse)`): swatch 30 → 44, peek 28 → 44
-3. **Peek bar redesign**: current(52) + 4-5 quick colors(44) + fill-mode 토글 1개 + 핸들. 6 recent는 expanded 안에
-4. **Fill-mode 토글 peek 진입**: 자주 쓰는 결정인데 expanded 가야 함 — peek에 cycle button
-5. **Smart palette per scene**: `Scene` 타입에 `suggestedColors?: Hsl[]` 추가 → "For this page" 탭이 default. 각 도안 분석해 6-8색 큐레이트 (별도 작업)
-6. **Apple Pencil double-tap**: fill mode 순환 (solid → linear → radial)
-7. **Haptic feedback**: swatch tap에 `navigator.vibrate(10)` (iOS Safari 일부)
-8. **Expanded sheet max-h 85vh → 60vh**: 캔버스 일부 보이도록
-9. **Keyboard shortcuts** (iPad keyboard): 1-8 = 테마 pills, C = 팔레트 토글, arrow keys = swatch 네비
+### 🔥 다음 트랙 — 후속 UX 개선 후보
+1. **Touch tap target 44pt** (`@media (pointer: coarse)`): swatch 30 → 44 (현재 모바일도 30, Apple HIG 미달)
+2. **Smart palette per scene**: `Scene` 타입에 `suggestedColors?: Hsl[]` 추가 → 각 도안에 어울리는 6-8색 큐레이션
+3. **iPad portrait 전용 layout** 검토 — 현재 모바일 layout 그대로 (lg: 1024px 기준). 768-1023px (iPad portrait) 사용감 확인 후 결정
+4. **즐겨찾는 색** (별 토글, recent보다 영구적)
+5. **장면 진행 미니맵** (헤더 ●→●→○)
+6. **a11y 감사** (`design:accessibility-review`)
+7. **Apple Pencil double-tap** → fill mode 순환
+8. **Haptic feedback** (`navigator.vibrate(10)`)
 
 ### 🟢 콘텐츠 / 시각
 - **랜딩 페이지 hero 강화** (선택) — picker 상단 마케팅 카피 다듬기 (현재 trust pills + arrow 적용)
@@ -489,6 +584,22 @@ URL prefix property가 인증된 시점의 favicon이 GSC 대시보드에 남음
 | **정적 OG image (1200×630 + 1200×1200)** | v0.9 | 동적 ImageResponse의 emoji 8개는 brand 정체성 약함. 사용자가 Gemini로 만든 half-line-art/half-colored 일러스트가 즉시 "coloring book" 인식 신호 |
 | **multi-size favicon.ico + icon.png 192px** | v0.9 | Google 검색결과 generic K fallback 원인 = /favicon.ico 404 + 1024×1024 icon은 Google skip. 16/32/48 ICO + 192 PNG = 표준 SEO 권장 |
 | **Site title softened ("Coloring Storybook for Kids")** | v0.9 | "A Bilingual..." 어색 + bilingual 과 강조. bilingual은 description에 유지, 타이틀은 활동+오디언스 시그널 |
+| **DesktopControlBar 분리 (캔버스 내부 toolbar → 외부)** | v1.0 | 캔버스 내부 floating toolbar는 desktop에 비효율. 외부 inline strip이 layout 자유도 ↑, undo/zoom/erase/fullscreen 한 줄에 명확. ColoringCanvas는 imperative handle + callback으로 통신 |
+| **MobileControlBar 재배치 — primary action 우측 끝** | v1.0 | Continue/Choose path 별도 row가 column 차지. 같은 strip 우측 끝으로 합치면서 엄지 자연 위치 활용. utility icons (📖, 🔊) 가운데, primary CTA rightmost |
+| **Erase 기능 — line-art boundary** | v1.0 | 기존 fill은 color-tolerance 기반이라 gradient 영역 지우기 불가. boundary 검출 모드(`eraseRegion`)는 line만 멈추므로 gradient/radial fill도 깨끗 white로. 기존 fill과 모드 토글로 공존 |
+| **핀치 zoom anchor + smoothness** | v1.0 | 좌상단 고정 anchor + 5% step 으로 zigzag. midpoint 기반 scroll 보정 + 1% step + rAF coalesce로 부드러운 줌 + 정확한 anchor. 한 손가락 pan은 zoom > 1 자동 진입 |
+| **Cool minimal white 배경 (수많은 후보 끝)** | v1.0 | 한지→기와→백자→달항아리→청자→안개→슬레이트→warm paper 거쳐 결정. 색칠 art가 warmth 담당, 배경은 neutral 무대. 박스 borders도 amber → dark gray 동시 변경 |
+| **Always-expanded palette** | v1.0 | More 토글 = 추가 클릭 = 친구지지 않음. Desktop 사이드바는 항상 모든 섹션 표시 (themes → grid → fill → recent → harmony → contrast → current). Mobile도 always-expanded inline panel |
+| **ColorPalette 순서 — current 맨 아래** | v1.0 | current는 직접 조작 (slider/picker)이 메인. 빈도가 가장 적은 섹션이라 맨 아래. recent/harmony/contrast는 swatch 단순 클릭 픽이라 위쪽 |
+| **Fill style — 작은 직사각형 + 캡션** | v1.0 | 큰 원형 preview는 사이드바 공간 낭비. 직사각형 mini preview + 작은 캡션이 정보 밀도 ↑ |
+| **Theme명 IP-safe** | v1.0 | Ghibli 4종 (Totoro/Spirited/Howl/Mononoke) → atmospheric (Sunlit Forest/Lantern Night/Cloud Garden/Deep Forest). SEO+상업 안전, 색감 그대로 |
+| **Keyboard `+/-/0` (Shift 제거)** | v1.0 | Shift+/-/0 비표준. bare 키가 직관적. Cmd+/-는 브라우저 reserved (override 불가) — bare 키로 충돌 회피 |
+| **NarrationModal — auto-open per scene (mobile)** | v1.0 | V2.5 long narration 모바일에선 inline 표시 어려움. 매 scene 진입 시 자동 모달 → 사용자가 닫으면 색칠. 📖 버튼으로 재오픈. Locale toggle은 footer에 내장 |
+| **Canvas image border 제거 (shadow only)** | v1.0 | V2.5 line-art에 이미 corner-bracket decorative border 그려져 있어 외부 rounded border와 충돌. shadow-lg로만 정의 → 사각 컨테이너가 art와 일관 |
+| **Desktop width 1700px + canvas 960px** | v1.0 | 7xl=1280 + canvas 720은 wide monitor에서 자투리 공간. 1700+960으로 캔버스가 viewport 주도 |
+| **waifu2x cunet 1024→2048 일괄** | v1.0 | Gemini가 2048 요청해도 1024 반환하는 경우 많음. waifu2x cunet은 line-art 전용 모델이라 edge 손실 거의 없음. 40 scene 일괄 처리 + .backups로 원본 보존 |
+| **Story 4 (혹부리) prompt — 혹 = silhouette anchor** | v1.0 | "lump on jaw" 한 줄로는 Gemini 무시. character spec에 위치/크기/모양/fill region 명시 + "Mickey ears처럼 silhouette 정체성" 비유. scene별 Subject block에 3/4 angle 강제. Scene 4는 두 영감 시각 구분 (선한=clean jaw + shimmer / 욕심쟁이=merchant 한복 + 양쪽 혹) |
+| **`allowedDevOrigins` next.config.ts** | v1.0 | Next.js 16 새 정책 — LAN IP에서 HMR/RSC 차단. 모바일 테스트 시 클릭은 되는데 state update 안 되는 silent failure. LAN 범위 (10.0.0.* / 192.168.*.* / 172.16.*.*) 허용 필수 |
 
 ---
 
@@ -521,22 +632,75 @@ URL prefix property가 인증된 시점의 favicon이 GSC 대시보드에 남음
 
 ## 15. 연락 (지난 세션과의 교신)
 
-- 마지막 작업 (v0.9, commits e4fa327 + bdcc424):
-  1. **8 스토리 모두 V2.5 production 라이브** — story.ts Y-structure 마이그레이션 + 35 신규 PNG 배치
-  2. **PDF 완전 재디자인** — Letter format, cover Option C (커스텀 아이콘 + 글로서리 + origin), narration paragraph 페이지네이션, isEnding V2.5 회귀 fix
-  3. **SEO 인프라 강화** — multi-size favicon.ico, icon.png 192px, 정적 OG hero 일러스트 (landscape 1200×630 + square 1200×1200, half-line-art/half-colored minhwa 컨셉)
-  4. **Site title softening** — "A Bilingual Coloring Storybook" → "Coloring Storybook for Kids"
-  5. **Story 1·7·8 Scene 4 narrative emphasis 재구성** — day/night 좌우, 박씨 focal anchor, 3-beat 시간 arc
-- 현재 진행 트랙: **모바일/iPad 팔레트 개선 분석** (§11) — iPad portrait이 모바일 bottom sheet에 떨어지는 문제 + tap target 44pt 미달 등
-- 다음 자연스러운 후보:
-  1. **iPad portrait — side palette mode** (md: 768px+ sidebar)
-  2. **Touch tap target 44pt** (`@media (pointer: coarse)`)
-  3. **Peek bar redesign** (current + 4-5 swatches + fill-mode 토글)
-  4. **Pinterest 첫 푸시** — 8 V2.5 production이라 한 번에 30 핀 가능
-  5. Smart palette per scene (suggestedColors per scene)
-- 사용자 톤: 빠른 결정, 깔끔한 시각, 디테일 신경, 안정성 우선
-- 사용자 응답 패턴: "응 가자", "잘된다", "이거 해줘" — 명확한 짧은 신호. 한국어로 토론 + 영어 검색.
+### 마지막 작업 (v1.0, commits 9cfc30f + 이전 925c625 등)
+
+**UI 대규모 재정비 트랙 — 한 세션에 모바일 + 데스크탑 모두 손봄**:
+
+1. **모바일 UX 일괄 재배치**
+   - MobileControlBar 재배치 — undo + page indicator 분리, primary action (Continue/Choose) 우측 끝, locale toggle은 NarrationModal로 이동
+   - NarrationModal 신규 — 매 scene 자동 열림 (모바일), listen-in-Korean 발음 + LocaleToggle footer
+   - MobilePaletteSheet always-expanded — chip row + 8×3 grid + fill chips + recent/harmony/contrast/L+picker
+   - SoundToggle flat SVG (emoji → monochrome)
+   - 핀치 zoom anchor + 1% step + rAF coalesce (zigzag 제거) + 한 손가락 pan (zoom > 1)
+   - Max zoom 4 → 8
+
+2. **데스크탑 UI 재정비**
+   - DesktopControlBar 신규 (캔버스 아래 inline: undo / erase / zoom / fullscreen)
+   - ColoringCanvas의 `hideToolbar` 항상 true → 외부 control bar 일관
+   - Canvas image 컨테이너 rounded border 제거, shadow-lg only
+   - max-w 7xl → 1700px, canvas 720 → 960px, sidebar 320 → 360px
+   - ColorPalette 재구성 — always-expanded, themes → grid → fill (작은 직사각형 + 캡션) → recent → harmony → contrast → current 맨 아래
+   - 일관 spacing (`<Row>` 헬퍼)
+
+3. **배경 톤 — Cool minimal white**
+   - 사용자 피드백으로 한지 → 기와 → 백자 → 달항아리 → 청자 → 안개 → 슬레이트 → warm paper → cool minimal 까지 iterate
+   - 최종: `#fafbfc → #f3f5f7 → #e7eaee`
+   - 동시에 amber-100/200 박스 borders → gray-400/500 (진한 회색)
+   - hover에 amber 액센트는 유지
+
+4. **Erase 기능 신규**
+   - `floodfill.eraseRegion()` — line-art boundary, color tolerance 무시
+   - Gradient / radial fill 영역도 깨끗 white로 복구
+   - Desktop + Mobile control bar 모두 토글 버튼
+
+5. **Theme명 IP-safe**
+   - Ghibli 4종 → Sunlit Forest / Lantern Night / Cloud Garden / Deep Forest
+
+6. **Keyboard `+/-/0`** — Shift 없이 (Cmd는 브라우저 reserved)
+
+7. **iOS Safari fixes**
+   - viewport meta (no native zoom, no double-tap zoom)
+   - StoryPicker nested interactive 제거 → sibling button 패턴
+   - **★ `allowedDevOrigins`** — LAN dev에서 click 안 되는 silent failure 핵심 원인. Next.js 16 새 정책
+
+8. **Story 4 (혹부리) prompt 강화**
+   - 캐릭터 spec에 혹 위치/크기/모양/silhouette anchor 명시 (Mickey ears 비유)
+   - Scenes 2/3a/3b/4 Subject block — 3/4 head angle 강제
+   - Scene 4 — 선한 영감 (clean jaw + shimmer) vs 욕심쟁이 (merchant 한복 + 양쪽 혹) 시각 구분
+   - Scenes 2/3a/3b/4 PNG 재생성 + waifu2x 업스케일
+
+9. **40 PNG 전체 waifu2x 1024 → 2048** — cunet 모델, .backups/coloring-NN-storyId-1024/ 백업
+
+10. **개발 편의**
+    - `scripts/dev-lan.js` — `npm run dev:lan` (0.0.0.0 + QR 코드)
+    - `scripts/upscale-2x.js` — sharp 기반 배치 업스케일러
+
+### 현재 진행 트랙
+없음 (v1.0 UI 트랙 완료). 다음 자연스러운 후보:
+1. **Pinterest 첫 푸시** — 8 V2.5 production이라 한 번에 30 핀 가능 (PINTEREST_PLAYBOOK.md §10)
+2. **Touch tap target 44pt** (`@media (pointer: coarse)`)
+3. **Smart palette per scene** — `Scene.suggestedColors?: Hsl[]` (각 도안에 어울리는 6-8색 큐레이션)
+4. **즐겨찾는 색** 별 토글
+5. **a11y 감사**
+6. **GA / Plausible 추가** + GSC Request Indexing
+
+### 사용자 톤 / 워크스타일
+- 빠른 결정, 깔끔한 시각, 디테일 신경, 안정성 우선
+- 응답 패턴: "응 가자" / "잘된다" / "이거 해줘" — 명확한 짧은 신호
+- 한국어로 토론 + 영어 검색
+- **Root cause 지적 선호** — surface 증상만 보지 말고 (모바일 클릭 안 됨 → viewport meta? button overlay? 결국 next.config.ts의 `allowedDevOrigins` 였음 — 이 디버깅 패턴이 v1.0의 가장 큰 학습)
+- 시각 디자인 iteration 즐김 — 배경 톤만 9번 바꿈
 
 ---
 
-*마지막 갱신: v0.9 · 8 스토리 V2.5 일괄 production + PDF Letter 재디자인 + SEO 인프라 (favicon multi-size + 정적 hero OG) + 타이틀 softening 시점. 다음 트랙: 모바일/iPad 팔레트 개선.*
+*마지막 갱신: v1.0 · UI 대규모 재정비 (mobile/desktop control bar, palette restructure, erase mode, cool-white background, pinch zoom smoothness, IP-safe theme names, iOS Safari fixes, Story 4 lump prompt). 다음 트랙: 미정 (Pinterest 또는 후속 polish).*

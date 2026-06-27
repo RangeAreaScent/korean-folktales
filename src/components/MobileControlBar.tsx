@@ -3,6 +3,7 @@
 import { useLocale } from "@/lib/i18n"
 import { UI } from "@/lib/strings"
 import { SoundToggle } from "./SoundToggle"
+import { BgmToggle } from "./BgmToggle"
 
 type PrimaryAction =
   | null
@@ -116,6 +117,7 @@ export function MobileControlBar({
         >
           📖
         </button>
+        <BgmToggle />
         <SoundToggle />
         {primaryAction && (
           <button
