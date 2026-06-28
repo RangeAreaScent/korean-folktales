@@ -49,14 +49,23 @@ class SoundEngine {
     return this.paintBank
   }
 
-  /** Brush/marker stroke — cycles paint1 → paint2 → paint3 per fill. */
+  /** Brush/marker stroke — cycles paint1 → paint2 → paint3 per fill.
+   *  Reuses the preloaded element (rewinding with currentTime = 0) instead of
+   *  cloneNode, because clones of very short audio files were silently failing
+   *  to play in production builds. The 3-way cycle keeps fast clicks from
+   *  cutting off the same element. */
   plop() {
     if (this.muted) return
     const bank = this.ensurePaintBank()
     if (!bank || !bank.length) return
-    const base = bank[this.paintIndex % bank.length]
+    const el = bank[this.paintIndex % bank.length]
     this.paintIndex++
-    this.play(base)
+    try {
+      el.currentTime = 0
+    } catch {
+      // ignore — some browsers throw before metadata loads
+    }
+    el.play().catch(() => {})
   }
 
   /** Page-turn whoosh — played on scene change / continue. */
