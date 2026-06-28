@@ -395,6 +395,9 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
         if (onError) onError(t(leaked ? UI.fillLeakHint : UI.fillFailHint))
         return
       }
+      // Play the brush sound the instant the fill starts — waiting for the
+      // 320ms fill animation to complete makes the audio feel laggy.
+      sound.plop()
       activeFillRef.current = { handle, snapshot }
       handle.done.then((status) => {
         // Only commit to undo stack if the animation ran to completion
@@ -404,7 +407,6 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
             undoStackRef.current.shift()
           }
           notifyHistory()
-          sound.plop()
         }
         // Clear the active ref only if it still points to this handle
         if (activeFillRef.current?.handle === handle) {
