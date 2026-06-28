@@ -5,7 +5,7 @@
  * cloneNode so overlapping plays don't cut each other off).
  */
 
-const PAINT_SRC = ["/sounds/paint1.mp3", "/sounds/paint2.mp3", "/sounds/paint3.mp3"]
+const PAINT_SRC = ["/sounds/paint1.m4a", "/sounds/paint2.m4a", "/sounds/paint3.m4a"]
 const PAGE_TURN_SRC = "/sounds/page-turn.mp3"
 const CHIME_SRC = "/sounds/chime.m4a"
 const BGM_SRC = "/sounds/bgm.m4a"
