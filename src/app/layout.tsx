@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Gowun_Batang } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { LocaleProvider } from "@/lib/i18n";
@@ -106,6 +107,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${gowunBatang.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2376980284402579"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <LocaleProvider>
           <SoundProvider>
             {children}
