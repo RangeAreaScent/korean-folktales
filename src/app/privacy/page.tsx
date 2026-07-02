@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useLocale } from "@/lib/i18n"
 
-const LAST_UPDATED = "2026-06-18"
+const LAST_UPDATED = "2026-07-02"
 
 export default function PrivacyPage() {
   const { locale } = useLocale()
@@ -36,8 +36,8 @@ export default function PrivacyPage() {
           }
         >
           {locale === "ko"
-            ? "이 사이트는 어떤 개인정보도 서버로 보내지 않습니다. 회원가입이 없고, 추적용 쿠키도 사용하지 않습니다. 모든 색칠 데이터와 갤러리는 사용자의 브라우저(localStorage) 안에만 저장됩니다."
-            : "We don't send any personal information to a server. No sign-up, no tracking cookies. All your coloring and gallery data stays on your device in your browser's localStorage."}
+            ? "이 사이트는 회원가입이 없고, 색칠 데이터와 갤러리는 사용자의 브라우저(localStorage) 안에만 저장됩니다. 다만 사이트 운영을 위해 Google AdSense 광고와 방문 통계 도구를 사용하며, 이들은 자체적으로 쿠키를 사용할 수 있습니다 — 자세한 내용은 아래 '제3자 도구' 항목을 확인해 주세요."
+            : "There's no sign-up, and your coloring and gallery data stays on your device in your browser's localStorage. We do run Google AdSense ads and a visit-stats tool to support the site, which may set their own cookies — see 'Third-party services' below for details."}
         </Section>
 
         <Section
@@ -126,10 +126,15 @@ export default function PrivacyPage() {
             locale === "ko" ? "제3자 도구" : "Third-party services"
           }
         >
+          <p className="mb-3">
+            {locale === "ko"
+              ? "사이트 운영 비용을 충당하기 위해 Google AdSense로 광고를 게재하며, 방문 통계를 위해 Vercel Analytics를 사용합니다. 두 서비스 모두 광고 개인화나 사용 패턴 분석을 위해 쿠키 또는 이와 유사한 기술을 사용할 수 있습니다."
+              : "We show ads via Google AdSense to help cover hosting costs, and use Vercel Analytics to see basic visit statistics. Both may use cookies or similar technologies for ad personalization or usage analysis."}
+          </p>
           <p>
             {locale === "ko"
-              ? "현재 분석 도구, 광고, 추적기를 사용하지 않습니다. 앞으로 사이트 운영을 위해 광고(Google AdSense 등)나 분석 도구를 도입할 가능성이 있으며, 그 경우 이 문서를 갱신하고 명확히 안내하겠습니다."
-              : "We currently use no analytics, ads, or trackers. We may add ads (e.g., Google AdSense) or analytics in the future to support the site; if so, we'll update this policy and disclose it clearly."}
+              ? "Google의 광고 관련 개인정보 처리 방식은 Google 광고 정책 페이지에서 확인할 수 있으며, google.com/settings/ads 에서 맞춤 광고를 관리하거나 해제할 수 있습니다."
+              : "You can learn how Google uses ad data at Google's Ads Privacy page, and manage or opt out of personalized ads at google.com/settings/ads."}
           </p>
         </Section>
 
