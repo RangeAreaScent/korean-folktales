@@ -22,7 +22,7 @@ import { UI } from "@/lib/strings"
 
 // Internal canvas resolution. 2048 = print-quality (315 DPI for 6.5" print).
 // 4× more pixels than 1024, so undo + fill timing are tuned below.
-// Display size is CSS-controlled (max-w-[960px] aspect-square — the
+// Display size is CSS-controlled (max-w-[768px] aspect-square — the
 // canvas now stretches to fill the desktop main column up to that cap).
 const CANVAS_SIZE = 2048
 // Undo stack holds full ImageData snapshots (CANVAS_SIZE² × 4 bytes each).
@@ -147,6 +147,11 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
     } | null>(null)
     const recentPinchEndRef = useRef<number>(0)
     const pinchRafRef = useRef<number | null>(null)
+    // Trackpad pinch (macOS Safari/Chrome synthesize it as wheel + ctrlKey).
+    // Tracks zoom outside React state so rapid wheel events compound
+    // correctly without waiting on a render between each one.
+    const wheelZoomRef = useRef(1)
+    const wheelRafRef = useRef<number | null>(null)
     // Single-finger pan when zoomed in (mobile-only) — distinct from
     // pinch (two fingers) and from desktop space-held drag.
     const touchPanRef = useRef<{
@@ -350,6 +355,51 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
         window.removeEventListener("keyup", handleKeyUp)
       }
     }, [undo, zoomBy, resetZoom, toggleFullscreen])
+
+    // Keep the wheel-zoom ref in sync with the committed zoom state so a
+    // trackpad pinch that starts after a button/keyboard/touch zoom change
+    // continues from the right value instead of an earlier snapshot.
+    useEffect(() => {
+      wheelZoomRef.current = zoom
+    }, [zoom])
+
+    function handleWheel(e: React.WheelEvent<HTMLDivElement>) {
+      // Trackpad pinch-to-zoom is reported by the browser as a wheel event
+      // with ctrlKey set (this is true even though the user never touched
+      // an actual Ctrl key). Plain two-finger scroll (no ctrlKey) is left
+      // alone so normal panning/scrolling still works.
+      if (!e.ctrlKey) return
+      e.preventDefault()
+      const s = scrollRef.current
+      if (!s) return
+
+      const z = wheelZoomRef.current
+      // Negative deltaY = fingers spreading apart = zoom in (matches the
+      // native browser pinch-zoom convention).
+      const factor = Math.exp(-e.deltaY * 0.008)
+      const rawZoom = z * factor
+      const nextZoom = Math.max(
+        MIN_ZOOM,
+        Math.min(MAX_ZOOM, Math.round(rawZoom * 100) / 100),
+      )
+
+      // Anchor the zoom at the cursor position, same math as the touch
+      // pinch handler below.
+      const rect = s.getBoundingClientRect()
+      const localX = e.clientX - rect.left
+      const localY = e.clientY - rect.top
+      const ratio = nextZoom / z
+      s.scrollLeft = (s.scrollLeft + localX) * ratio - localX
+      s.scrollTop = (s.scrollTop + localY) * ratio - localY
+
+      wheelZoomRef.current = nextZoom
+      if (wheelRafRef.current == null) {
+        wheelRafRef.current = requestAnimationFrame(() => {
+          setZoom(wheelZoomRef.current)
+          wheelRafRef.current = null
+        })
+      }
+    }
 
     function handleCanvasClick(e: React.MouseEvent<HTMLCanvasElement>) {
       if (spaceHeld) return
@@ -582,7 +632,7 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
     return (
       <div
         ref={containerRef}
-        className="relative aspect-square w-full max-w-[960px]"
+        className="relative aspect-square w-full max-w-[768px]"
       >
         <div
           ref={scrollRef}
@@ -594,6 +644,7 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           onTouchCancel={handleTouchEnd}
+          onWheel={handleWheel}
           className="absolute inset-0 touch-none overflow-auto bg-white shadow-lg"
         >
           <div

@@ -614,7 +614,7 @@ export default function Home() {
             {/* Inline narration — DESKTOP ONLY. On mobile, narration lives
                 in the NarrationModal opened by 📖 in MobileControlBar so
                 the canvas + palette get full vertical space. */}
-            <article className="hidden w-full max-w-[960px] overflow-hidden rounded-2xl border border-gray-400/60 bg-white/70 shadow-sm backdrop-blur lg:block">
+            <article className="hidden w-full max-w-[768px] overflow-hidden rounded-2xl border border-gray-400/60 bg-white/70 shadow-sm backdrop-blur lg:block">
               <div className="narration-scroll max-h-[36vh] space-y-3 overflow-y-auto px-6 py-5 font-serif text-[16px] leading-relaxed text-gray-800 md:text-[17px]">
                 {t(currentScene.narration)
                   .split(/\n{2,}/)
@@ -626,7 +626,7 @@ export default function Home() {
 
             {currentScene.choices ? (
               showChoices ? (
-                <div className="grid w-full max-w-[960px] grid-cols-1 gap-3 sm:grid-cols-2">
+                <div className="grid w-full max-w-[768px] grid-cols-1 gap-3 sm:grid-cols-2">
                   {currentScene.choices.map((choice) => (
                     <button
                       key={choice.nextId}
@@ -650,7 +650,7 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() => setShowChoices(true)}
-                  className="group hidden w-full max-w-[960px] items-center justify-center gap-2 rounded-full border border-gray-900/80 bg-white/85 px-5 py-2.5 text-[14px] font-medium text-gray-900 shadow-sm transition hover:bg-gray-900 hover:text-white lg:flex"
+                  className="group hidden w-full max-w-[768px] items-center justify-center gap-2 rounded-full border border-gray-900/80 bg-white/85 px-5 py-2.5 text-[14px] font-medium text-gray-900 shadow-sm transition hover:bg-gray-900 hover:text-white lg:flex"
                 >
                   <span>{t(UI.makeAChoice)}</span>
                 </button>
@@ -661,7 +661,7 @@ export default function Home() {
                 type="button"
                 onClick={() => handleChoice(currentScene.nextId!)}
                 disabled={transitioning}
-                className="group hidden w-full max-w-[960px] items-center justify-center gap-2 rounded-full border border-gray-900/80 bg-white/85 px-5 py-2.5 text-[14px] font-medium text-gray-900 shadow-sm transition hover:bg-gray-900 hover:text-white disabled:cursor-wait disabled:opacity-60 lg:flex"
+                className="group hidden w-full max-w-[768px] items-center justify-center gap-2 rounded-full border border-gray-900/80 bg-white/85 px-5 py-2.5 text-[14px] font-medium text-gray-900 shadow-sm transition hover:bg-gray-900 hover:text-white disabled:cursor-wait disabled:opacity-60 lg:flex"
               >
                 <span>{t(UI.continueScene)}</span>
                 <span className="transition-transform group-hover:translate-x-1">
@@ -669,7 +669,7 @@ export default function Home() {
                 </span>
               </button>
             ) : (
-              <div className="w-full max-w-[960px] rounded-2xl border border-gray-500/60 bg-gradient-to-br from-[#fafbfc] to-[#e7eaee] px-6 py-5 shadow-sm">
+              <div className="w-full max-w-[768px] rounded-2xl border border-gray-500/60 bg-gradient-to-br from-[#fafbfc] to-[#e7eaee] px-6 py-5 shadow-sm">
                 <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-amber-700">
                   {currentScene.endingLabel
                     ? t(currentScene.endingLabel)

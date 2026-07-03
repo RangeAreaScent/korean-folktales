@@ -41,7 +41,7 @@ export function DesktopControlBar({
 }: Props) {
   const { t } = useLocale()
   return (
-    <div className="hidden w-full max-w-[960px] items-center justify-between gap-3 lg:flex">
+    <div className="hidden w-full max-w-[768px] items-center justify-between gap-3 lg:flex">
       {/* LEFT: undo + erase */}
       <div className="flex items-center gap-2">
         <button
