@@ -192,7 +192,10 @@ export const UI = {
   // ─── Floating toolbar ───
   ttUndo: { ko: "되돌리기 (⌘Z)", en: "Undo (⌘Z)" },
   ttZoomOut: { ko: "축소 (-)", en: "Zoom out (-)" },
-  tt100: { ko: "100% (0)", en: "100% (0)" },
+  tt100: {
+    ko: "100% (0) · 트랙패드 핀치 또는 Ctrl+휠로도 확대/축소돼요",
+    en: "100% (0) · Trackpad pinch or Ctrl+scroll also zooms",
+  },
   ttZoomIn: { ko: "확대 (+)", en: "Zoom in (+)" },
   ttFullscreen: { ko: "전체화면 (F)", en: "Fullscreen (F)" },
   ttStory: { ko: "이야기 보기", en: "Read story" },
