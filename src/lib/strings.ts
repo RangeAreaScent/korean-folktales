@@ -230,6 +230,7 @@ export const UI = {
   scZoom100: { ko: "100%", en: "100%" },
   scPan: { ko: "이동", en: "Pan" },
   scFullscreen: { ko: "전체화면", en: "Fullscreen" },
+  scPinch: { ko: "트랙패드 확대", en: "Trackpad zoom" },
 
   // ─── Palette ───
   palCurrent: { ko: "지금 색", en: "Current" },

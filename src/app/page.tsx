@@ -723,12 +723,14 @@ export default function Home() {
 
       <footer className="hidden border-t border-gray-400/40 bg-white/50 backdrop-blur-md md:block">
         <div className="mx-auto max-w-7xl px-5 py-2.5 md:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[11px] text-gray-500">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] text-gray-500">
             <ShortcutHint k="⌘Z">{t(UI.scUndo)}</ShortcutHint>
             <Sep />
             <ShortcutHint k="+ / −">{t(UI.scZoom)}</ShortcutHint>
             <Sep />
             <ShortcutHint k="0">{t(UI.scZoom100)}</ShortcutHint>
+            <Sep />
+            <ShortcutHint k="⌃ + Scroll">{t(UI.scPinch)}</ShortcutHint>
             <Sep />
             <ShortcutHint k="Space">{t(UI.scPan)}</ShortcutHint>
             <Sep />
