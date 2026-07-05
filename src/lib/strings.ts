@@ -11,16 +11,16 @@ export const UI = {
     en: "✦ COLORING STORYBOOK ✦",
   },
   pickerTitle: {
-    ko: "나만의 이야기책을 만들어요",
-    en: "Create your own storybook",
+    ko: "색칠하며 만나는 한국 옛이야기",
+    en: "Color your way through a Korean folktale",
   },
   pickerSubtitle1: {
-    ko: "진짜 한국 옛이야기 8편 · 색칠하고 분기 선택 · 한/영 이중언어.",
-    en: "Eight real Korean folktales · color each scene · pick your own ending · 한/EN.",
+    ko: "한국 옛이야기 여덟 편을 색칠하며 다시 만나요 — 이야기마다 결말을 직접 고르고, 한국어와 영어로 읽을 수 있어요.",
+    en: "Eight Korean folktales, retold for coloring — choose how each one ends, in Korean or English.",
   },
   pickerSubtitle2: {
-    ko: "다 색칠하면 PDF와 인스타 공유 이미지로 받아갈 수 있어요.",
-    en: "When you finish, take it home as a PDF or share it as an Instagram-ready image.",
+    ko: "책을 다 완성하면 PDF로 간직하거나, 마음에 드는 페이지를 공유해보세요.",
+    en: "Finish the book, then keep it as a PDF or share a page you're proud of.",
   },
   trustFree: {
     ko: "무료",
@@ -31,12 +31,12 @@ export const UI = {
     en: "No sign-up",
   },
   trustBilingual: {
-    ko: "한/영 이중언어",
-    en: "Bilingual",
+    ko: "한국어 & English",
+    en: "한국어 & English",
   },
   trustPrintable: {
-    ko: "PDF 인쇄 가능",
-    en: "Printable PDF",
+    ko: "인쇄 가능",
+    en: "Printable",
   },
   pickATale: {
     ko: "이야기를 골라보세요",
