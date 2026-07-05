@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useCallback, useEffect, useState } from "react"
+import { useSessionBackground } from "@/lib/backgrounds"
 import { useLocale } from "@/lib/i18n"
 import {
   deleteBook,
@@ -20,6 +21,7 @@ type Props = {
 
 export function StoryPicker({ onPick }: Props) {
   const { t, locale } = useLocale()
+  const bg = useSessionBackground()
   const [aboutStory, setAboutStory] = useState<Story | null>(null)
   const [savedBooks, setSavedBooks] = useState<SavedBook[]>([])
   const [viewingBook, setViewingBook] = useState<SavedBook | null>(null)
@@ -70,7 +72,10 @@ export function StoryPicker({ onPick }: Props) {
   )
 
   return (
-    <main className="flex min-h-screen flex-col bg-gradient-to-b from-[#fafbfc] via-[#f3f5f7]/50 to-[#e7eaee]">
+    <main
+      className="flex min-h-screen flex-col"
+      style={{ background: `linear-gradient(to bottom, ${bg.from}, ${bg.to})` }}
+    >
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col items-center justify-center px-6 py-12 md:py-16">
         <div className="mb-3 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.32em] text-amber-700/80">
           <span className="h-px w-8 bg-amber-700/40" />

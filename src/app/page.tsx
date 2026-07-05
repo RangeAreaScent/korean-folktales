@@ -7,6 +7,7 @@ import {
   type FillMode,
 } from "@/components/ColoringCanvas"
 import { ColorPalette } from "@/components/ColorPalette"
+import { useSessionBackground } from "@/lib/backgrounds"
 import { DesktopControlBar } from "@/components/DesktopControlBar"
 import { MobileControlBar } from "@/components/MobileControlBar"
 import { MobilePaletteSheet } from "@/components/MobilePaletteSheet"
@@ -40,6 +41,7 @@ const INITIAL_COLOR: Hsl = themeColors(PALETTE_THEMES[0])[2]
 
 export default function Home() {
   const { t, locale } = useLocale()
+  const bg = useSessionBackground()
   const canvasRef = useRef<ColoringCanvasHandle>(null)
   const [storyId, setStoryId] = useState<StoryId | null>(null)
   const [history, setHistory] = useState<SceneId[]>([])
@@ -318,7 +320,10 @@ export default function Home() {
       : null
 
     return (
-      <main className="min-h-screen bg-gradient-to-b from-[#fafbfc] via-[#f3f5f7]/60 to-[#e7eaee] p-4 md:p-10">
+      <main
+        className="min-h-screen p-4 md:p-10"
+        style={{ background: `linear-gradient(to bottom, ${bg.from}, ${bg.to})` }}
+      >
         <div className="mx-auto max-w-3xl">
           <p className="mb-2 text-center text-[11px] font-medium uppercase tracking-[0.22em] text-amber-700/80">
             {t(UI.finalEyebrow)}
@@ -500,7 +505,10 @@ export default function Home() {
   if (!currentScene) return null
 
   return (
-    <main className="flex min-h-screen flex-col bg-gradient-to-b from-[#fafbfc] via-[#f3f5f7]/50 to-[#e7eaee]">
+    <main
+      className="flex min-h-screen flex-col"
+      style={{ background: `linear-gradient(to bottom, ${bg.from}, ${bg.to})` }}
+    >
       {/* ─── Slim header — tightened on mobile (smaller padding, page
             indicator moved into the MobileControlBar below the canvas) ─── */}
       <header className="border-b border-gray-400/40 bg-white/50 backdrop-blur-md">
@@ -669,7 +677,10 @@ export default function Home() {
                 </span>
               </button>
             ) : (
-              <div className="w-full max-w-[768px] rounded-2xl border border-gray-500/60 bg-gradient-to-br from-[#fafbfc] to-[#e7eaee] px-6 py-5 shadow-sm">
+              <div
+                className="w-full max-w-[768px] rounded-2xl border border-gray-500/60 px-6 py-5 shadow-sm"
+                style={{ background: `linear-gradient(to bottom right, ${bg.from}, ${bg.to})` }}
+              >
                 <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-amber-700">
                   {currentScene.endingLabel
                     ? t(currentScene.endingLabel)
