@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useCallback, useEffect, useState } from "react"
-import { useSessionBackground } from "@/lib/backgrounds"
+import { accentAlpha, useSessionBackground } from "@/lib/backgrounds"
 import { useLocale } from "@/lib/i18n"
 import {
   deleteBook,
@@ -77,10 +77,19 @@ export function StoryPicker({ onPick }: Props) {
       style={{ background: `linear-gradient(to bottom, ${bg.from}, ${bg.to})` }}
     >
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col items-center justify-center px-6 py-12 md:py-16">
-        <div className="mb-3 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.32em] text-amber-700/80">
-          <span className="h-px w-8 bg-amber-700/40" />
+        <div
+          className="mb-3 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.32em]"
+          style={{ color: accentAlpha(bg.accent, 0.85) }}
+        >
+          <span
+            className="h-px w-8"
+            style={{ backgroundColor: accentAlpha(bg.accent, 0.4) }}
+          />
           {t(UI.brandTagline).replace(/^✦\s*|\s*✦$/g, "")}
-          <span className="h-px w-8 bg-amber-700/40" />
+          <span
+            className="h-px w-8"
+            style={{ backgroundColor: accentAlpha(bg.accent, 0.4) }}
+          />
         </div>
         <h1
           className="mb-5 text-center font-display text-[44px] font-bold leading-[1.05] text-gray-900 md:text-[64px]"
@@ -97,17 +106,20 @@ export function StoryPicker({ onPick }: Props) {
 
         {/* ─── Trust pills ─── */}
         <div className="mb-10 flex flex-wrap items-center justify-center gap-2 md:mb-14">
-          <TrustPill icon="🆓">{t(UI.trustFree)}</TrustPill>
-          <TrustPill icon="👶">{t(UI.trustNoSignup)}</TrustPill>
-          <TrustPill icon="🌏">{t(UI.trustBilingual)}</TrustPill>
-          <TrustPill icon="🖨️">{t(UI.trustPrintable)}</TrustPill>
+          <TrustPill icon="🆓" accent={bg.accent}>{t(UI.trustFree)}</TrustPill>
+          <TrustPill icon="👶" accent={bg.accent}>{t(UI.trustNoSignup)}</TrustPill>
+          <TrustPill icon="🌏" accent={bg.accent}>{t(UI.trustBilingual)}</TrustPill>
+          <TrustPill icon="🖨️" accent={bg.accent}>{t(UI.trustPrintable)}</TrustPill>
         </div>
 
         {/* ─── Gallery (only when books saved) ─── */}
         {savedBooks.length > 0 && (
           <section className="mb-12 w-full">
             <div className="mb-4 flex items-baseline justify-between px-1">
-              <h2 className="text-[13px] font-semibold uppercase tracking-[0.2em] text-amber-800/80">
+              <h2
+                className="text-[13px] font-semibold uppercase tracking-[0.2em]"
+                style={{ color: accentAlpha(bg.accent, 0.85) }}
+              >
                 {t(UI.galleryHeading)}
               </h2>
               <span className="text-[11px] text-gray-500">
@@ -127,10 +139,16 @@ export function StoryPicker({ onPick }: Props) {
         )}
 
         {/* ─── Picker guide ─── */}
-        <div className="mb-5 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-amber-700/70">
-          <span className="h-px w-6 bg-amber-700/30" />
+        <div
+          className="mb-5 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em]"
+          style={{ color: accentAlpha(bg.accent, 0.7) }}
+        >
+          <span
+            className="h-px w-6"
+            style={{ backgroundColor: accentAlpha(bg.accent, 0.3) }}
+          />
           {t(UI.pickATale)}
-          <span className="text-amber-700/60">↓</span>
+          <span style={{ color: accentAlpha(bg.accent, 0.6) }}>↓</span>
         </div>
 
         {/* ─── Tales grid ─── */}
@@ -221,13 +239,18 @@ function SavedBookThumb({
 
 function TrustPill({
   icon,
+  accent,
   children,
 }: {
   icon: string
+  accent: string
   children: React.ReactNode
 }) {
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-500/60 bg-white/70 px-3 py-1.5 text-[12px] font-medium text-amber-900/80 shadow-sm backdrop-blur md:text-[13px]">
+    <span
+      className="inline-flex items-center gap-1.5 rounded-full border border-gray-500/60 bg-white/70 px-3 py-1.5 text-[12px] font-medium shadow-sm backdrop-blur md:text-[13px]"
+      style={{ color: accentAlpha(accent, 0.85) }}
+    >
       <span aria-hidden>{icon}</span>
       {children}
     </span>

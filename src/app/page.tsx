@@ -7,7 +7,7 @@ import {
   type FillMode,
 } from "@/components/ColoringCanvas"
 import { ColorPalette } from "@/components/ColorPalette"
-import { useSessionBackground } from "@/lib/backgrounds"
+import { accentAlpha, useSessionBackground } from "@/lib/backgrounds"
 import { DesktopControlBar } from "@/components/DesktopControlBar"
 import { MobileControlBar } from "@/components/MobileControlBar"
 import { MobilePaletteSheet } from "@/components/MobilePaletteSheet"
@@ -325,7 +325,10 @@ export default function Home() {
         style={{ background: `linear-gradient(to bottom, ${bg.from}, ${bg.to})` }}
       >
         <div className="mx-auto max-w-3xl">
-          <p className="mb-2 text-center text-[11px] font-medium uppercase tracking-[0.22em] text-amber-700/80">
+          <p
+            className="mb-2 text-center text-[11px] font-medium uppercase tracking-[0.22em]"
+            style={{ color: accentAlpha(bg.accent, 0.85) }}
+          >
             {t(UI.finalEyebrow)}
           </p>
           <h1

@@ -9,16 +9,31 @@ export type PageBackground = {
   name: string
   from: string
   to: string
+  /** Accent color tuned to sit legibly on this palette's gradient — used
+   *  for eyebrow labels, dividers, and trust pills so they read as
+   *  designed-together instead of a leftover fixed amber. */
+  accent: string
 }
 
 export const BACKGROUNDS: PageBackground[] = [
-  { name: "dancheong", from: "#f8ece7", to: "#e8bfae" },
-  { name: "lantern", from: "#f3eef3", to: "#ddc9dd" },
-  { name: "celadon", from: "#f1f5ee", to: "#d7e4d0" },
-  { name: "persimmon", from: "#f8ede3", to: "#e8c39b" },
-  { name: "amethyst", from: "#f6eef2", to: "#dcb8c8" },
-  { name: "indigo-sky", from: "#eef2f6", to: "#cddce8" },
+  { name: "dancheong", from: "#f8ece7", to: "#e8bfae", accent: "#a8543a" },
+  { name: "lantern", from: "#f3eef3", to: "#ddc9dd", accent: "#8a5a86" },
+  { name: "celadon", from: "#f1f5ee", to: "#d7e4d0", accent: "#5b7256" },
+  { name: "persimmon", from: "#f8ede3", to: "#e8c39b", accent: "#a8663a" },
+  { name: "amethyst", from: "#f6eef2", to: "#dcb8c8", accent: "#8a3f60" },
+  { name: "indigo-sky", from: "#eef2f6", to: "#cddce8", accent: "#3f6688" },
 ]
+
+/** Hex → rgba() string, for the partial-opacity accent uses (dividers,
+ *  soft backgrounds) that Tailwind's color/opacity utilities can't express
+ *  for a runtime-computed color. */
+export function accentAlpha(hex: string, alpha: number): string {
+  const clean = hex.replace("#", "")
+  const r = parseInt(clean.slice(0, 2), 16)
+  const g = parseInt(clean.slice(2, 4), 16)
+  const b = parseInt(clean.slice(4, 6), 16)
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+}
 
 const BG_KEY = "coloring-storybook:bg"
 
