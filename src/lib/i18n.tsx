@@ -46,6 +46,10 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
+    // Synchronizing with an external system (localStorage / navigator.language)
+    // that isn't available during SSR — must run post-mount, so the one-time
+    // extra render here is the intended hydration-safe tradeoff.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLocaleState(detectInitialLocale())
     setHydrated(true)
   }, [])

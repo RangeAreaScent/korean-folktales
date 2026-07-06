@@ -207,7 +207,7 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
       }
       undoStackRef.current = []
       notifyHistory()
-    }, [notifyHistory])
+    }, [notifyHistory, t])
 
     const undo = useCallback(() => {
       const canvas = canvasRef.current

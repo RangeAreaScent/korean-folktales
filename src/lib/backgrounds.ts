@@ -44,10 +44,14 @@ export function useSessionBackground(): PageBackground {
   const [bg, setBg] = useState<PageBackground>(BACKGROUNDS[0])
 
   useEffect(() => {
+    // Synchronizing with sessionStorage (unavailable during SSR) and, on a
+    // fresh session, picking a random palette — neither can happen before
+    // mount, so the one-time extra render here is the intended tradeoff.
     try {
       const stored = window.sessionStorage.getItem(BG_KEY)
       const found = BACKGROUNDS.find((b) => b.name === stored)
       if (found) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setBg(found)
         return
       }

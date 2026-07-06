@@ -108,6 +108,8 @@ export default function Home() {
     if (!startParam) return
     const candidate = STORIES[startParam as StoryId]
     if (!candidate) return
+    // Reads window.location, unavailable during SSR — must run post-mount.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     handlePickStory(candidate.id)
     const url = new URL(window.location.href)
     url.searchParams.delete("start")
@@ -119,6 +121,10 @@ export default function Home() {
   // Desktop already shows narration inline.
   useEffect(() => {
     if (!currentSceneId) return
+    // Resets UI state for the new scene and, on mobile, checks matchMedia
+    // (unavailable during SSR) to decide whether to auto-open narration —
+    // both must run post-mount.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setShowChoices(false)
     if (typeof window === "undefined") return
     const isMobile = window.matchMedia("(max-width: 1023px)").matches

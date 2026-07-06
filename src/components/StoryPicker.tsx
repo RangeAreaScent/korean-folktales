@@ -27,6 +27,9 @@ export function StoryPicker({ onPick }: Props) {
   const [viewingBook, setViewingBook] = useState<SavedBook | null>(null)
 
   useEffect(() => {
+    // listBooks() reads localStorage, unavailable during SSR — must run
+    // post-mount. Intentional one-time extra render on hydration.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSavedBooks(listBooks())
   }, [])
 

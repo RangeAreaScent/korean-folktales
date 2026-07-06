@@ -134,6 +134,29 @@ function FillStyleChip({
   )
 }
 
+// Reusable section row — section label + content with consistent spacing so
+// Recent matches Harmony/Contrast/Current visually. Declared at module scope
+// (not per-render) so its identity is stable across ColorPalette re-renders.
+function Row({
+  label,
+  hint,
+  children,
+}: {
+  label: string
+  hint?: string
+  children: React.ReactNode
+}) {
+  return (
+    <section className="space-y-2">
+      <div className="flex items-baseline gap-1.5">
+        <SectionLabel>{label}</SectionLabel>
+        {hint && <span className="text-[10px] text-gray-400">{hint}</span>}
+      </div>
+      {children}
+    </section>
+  )
+}
+
 export function ColorPalette({
   current,
   recent,
@@ -162,28 +185,6 @@ export function ColorPalette({
     l: Math.max(12, current.l - 18),
   })
   const currentCss = hslToCss(current)
-
-  // Reusable section row — section label + content with consistent
-  // spacing so Recent matches Harmony/Contrast/Current visually.
-  function Row({
-    label,
-    hint,
-    children,
-  }: {
-    label: string
-    hint?: string
-    children: React.ReactNode
-  }) {
-    return (
-      <section className="space-y-2">
-        <div className="flex items-baseline gap-1.5">
-          <SectionLabel>{label}</SectionLabel>
-          {hint && <span className="text-[10px] text-gray-400">{hint}</span>}
-        </div>
-        {children}
-      </section>
-    )
-  }
 
   return (
     <div className="flex flex-col gap-4 rounded-2xl border border-gray-400/60 bg-white/75 p-4 shadow-sm backdrop-blur">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { BackgroundShell } from "@/components/BackgroundShell"
 import {
   getStoryBySlug,
   STORIES,
@@ -61,10 +62,13 @@ export default async function FolktalePage({
   const otherStories = STORY_LIST.filter((s) => s.id !== story.id).slice(0, 4)
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#fafbfc] via-[#f3f5f7]/50 to-[#e7eaee] px-5 py-12 md:py-16">
+    <BackgroundShell className="min-h-screen px-5 py-12 md:py-16">
       <article className="mx-auto max-w-3xl">
         {/* ─── Hero ─── */}
-        <p className="mb-3 text-center text-[11px] font-medium uppercase tracking-[0.32em] text-amber-700/80">
+        <p
+          className="mb-3 text-center text-[11px] font-medium uppercase tracking-[0.32em]"
+          style={{ color: "color-mix(in srgb, var(--accent) 85%, transparent)" }}
+        >
           ✦ A Korean Folktale ✦
         </p>
         <h1
@@ -78,7 +82,10 @@ export default async function FolktalePage({
           style={{ fontFamily: "var(--font-display)" }}
         >
           {story.originalTale.koreanTitle}{" "}
-          <span className="font-mono text-sm tracking-wide text-amber-700/70">
+          <span
+            className="font-mono text-sm tracking-wide"
+            style={{ color: "color-mix(in srgb, var(--accent) 70%, transparent)" }}
+          >
             · {story.originalTale.romanized}
           </span>
         </p>
@@ -122,7 +129,10 @@ export default async function FolktalePage({
             {story.originalTale.summary.en}
           </p>
           <details className="mt-5 rounded-lg border border-gray-400/60 bg-white/60 p-4 text-[13px] text-gray-600">
-            <summary className="cursor-pointer font-medium text-amber-800">
+            <summary
+              className="cursor-pointer font-medium"
+              style={{ color: "color-mix(in srgb, var(--accent) 90%, black)" }}
+            >
               한국어로 읽기
             </summary>
             <p className="mt-3 leading-relaxed">
@@ -152,7 +162,10 @@ export default async function FolktalePage({
                   >
                     {g.korean}
                   </span>
-                  <span className="ml-auto font-mono text-[10px] italic text-amber-800/60">
+                  <span
+                    className="ml-auto font-mono text-[10px] italic"
+                    style={{ color: "color-mix(in srgb, var(--accent) 60%, black)" }}
+                  >
                     {g.romanized}
                   </span>
                 </div>
@@ -170,13 +183,19 @@ export default async function FolktalePage({
         {/* ─── Our version (footer-style, matches modal) ─── */}
         <div className="border-t border-gray-400 pt-5">
           <p className="text-[13px] leading-relaxed text-gray-600">
-            <span className="font-semibold text-amber-800/80">
+            <span
+              className="font-semibold"
+              style={{ color: "color-mix(in srgb, var(--accent) 80%, black)" }}
+            >
               Our version —{" "}
             </span>
             {story.originalTale.ourVersion.en}
           </p>
           <p className="mt-2 text-[12px] leading-relaxed text-gray-500">
-            <span className="font-semibold text-amber-800/60">
+            <span
+              className="font-semibold"
+              style={{ color: "color-mix(in srgb, var(--accent) 60%, black)" }}
+            >
               우리 버전 —{" "}
             </span>
             {story.originalTale.ourVersion.ko}
@@ -184,7 +203,10 @@ export default async function FolktalePage({
         </div>
 
         {/* ─── CTA bottom ─── */}
-        <div className="my-14 rounded-3xl border border-gray-400/50 bg-gradient-to-br from-[#fafbfc] to-[#e7eaee] p-8 text-center shadow-sm md:p-10">
+        <div
+          className="my-14 rounded-3xl border border-gray-400/50 p-8 text-center shadow-sm md:p-10"
+          style={{ background: "linear-gradient(to bottom right, var(--bg-from), var(--bg-to))" }}
+        >
           <h2
             className="mb-3 font-display text-2xl font-bold text-gray-900 md:text-3xl"
             style={{ fontFamily: "var(--font-display)" }}
@@ -205,7 +227,10 @@ export default async function FolktalePage({
 
         {/* ─── Other folktales ─── */}
         <section className="mt-16">
-          <h2 className="mb-6 text-center font-mono text-[11px] uppercase tracking-[0.22em] text-amber-700/80">
+          <h2
+            className="mb-6 text-center font-mono text-[11px] uppercase tracking-[0.22em]"
+            style={{ color: "color-mix(in srgb, var(--accent) 85%, transparent)" }}
+          >
             ✦ Explore more Korean folktales ✦
           </h2>
           <ul className="grid grid-cols-2 gap-3 md:grid-cols-4">
@@ -226,7 +251,7 @@ export default async function FolktalePage({
           </Link>
         </div>
       </article>
-    </main>
+    </BackgroundShell>
   )
 }
 
@@ -241,7 +266,10 @@ function Section({
 }) {
   return (
     <section className="mb-10">
-      <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.22em] text-amber-700/70">
+      <p
+        className="mb-2 font-mono text-[10px] uppercase tracking-[0.22em]"
+        style={{ color: "color-mix(in srgb, var(--accent) 70%, transparent)" }}
+      >
         {eyebrow}
       </p>
       <h2

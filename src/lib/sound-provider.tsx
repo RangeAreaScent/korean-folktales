@@ -28,7 +28,10 @@ export function SoundProvider({ children }: { children: ReactNode }) {
   const [bgmOn, setBgmOn] = useState(false)
 
   useEffect(() => {
+    // Synchronizing with localStorage, which isn't available during SSR —
+    // must run post-mount. Intentional one-time extra render on hydration.
     try {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (window.localStorage.getItem(STORAGE_KEY) === "true") setMutedState(true)
       if (window.localStorage.getItem(BGM_KEY) === "true") setBgmOn(true)
     } catch {

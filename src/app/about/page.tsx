@@ -1,15 +1,23 @@
 "use client"
 
 import Link from "next/link"
+import { accentAlpha, useSessionBackground } from "@/lib/backgrounds"
 import { useLocale } from "@/lib/i18n"
 
 export default function AboutPage() {
   const { locale } = useLocale()
+  const bg = useSessionBackground()
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#fafbfc] via-[#f3f5f7]/50 to-[#e7eaee] px-6 py-14 md:py-20">
+    <main
+      className="min-h-screen px-6 py-14 md:py-20"
+      style={{ background: `linear-gradient(to bottom, ${bg.from}, ${bg.to})` }}
+    >
       <article className="mx-auto max-w-2xl">
-        <p className="mb-3 text-center text-[11px] font-medium uppercase tracking-[0.32em] text-amber-700/80">
+        <p
+          className="mb-3 text-center text-[11px] font-medium uppercase tracking-[0.32em]"
+          style={{ color: accentAlpha(bg.accent, 0.85) }}
+        >
           {locale === "ko" ? "✦ 소개 ✦" : "✦ About ✦"}
         </p>
         <h1
