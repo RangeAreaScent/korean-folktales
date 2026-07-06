@@ -569,7 +569,7 @@ export default function Home() {
       {/* ─── Main work area — wider on desktop so the canvas owns more
             of the viewport instead of floating inside narrow margins ─── */}
       <div className="mx-auto w-full max-w-[1700px] flex-1 px-2 py-2 md:px-6 md:py-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-3 lg:grid-cols-[1fr_360px] lg:gap-8">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-[minmax(0,768px)_360px] lg:justify-center lg:gap-8">
           <div
             className={`flex flex-col items-center gap-2 transition-opacity duration-200 ease-out lg:items-stretch lg:gap-5 ${
               transitioning ? "opacity-0" : "opacity-100"
