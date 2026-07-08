@@ -549,9 +549,9 @@ export default function Home() {
             >
               📖
             </button>
-            {/* Page indicator desktop-only — on mobile it's in the
-                MobileFloatingToolbar to keep the header a single tight row. */}
-            <span className="hidden font-mono text-[11px] tabular-nums text-gray-500 sm:inline">
+            {/* Scene progress — shown here (title row, top-right) on all
+                sizes so it reads as status, not a tool. */}
+            <span className="rounded-full bg-white/60 px-2 py-0.5 font-mono text-[11px] tabular-nums text-gray-500 ring-1 ring-gray-400/40">
               {completed.length + 1} / {history.length}
             </span>
             <button
@@ -703,7 +703,6 @@ export default function Home() {
       <div className="fixed inset-x-0 bottom-0 z-30 lg:hidden">
         <MobileToolbar
           hasHistory={canvasHasHistory}
-          pageLabel={`${completed.length + 1} / ${history.length}`}
           eraseActive={eraseMode}
           primaryAction={
             currentScene.choices

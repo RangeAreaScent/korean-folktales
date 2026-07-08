@@ -11,7 +11,6 @@ type PrimaryAction =
 
 type Props = {
   hasHistory: boolean
-  pageLabel: string // e.g. "1 / 4"
   primaryAction: PrimaryAction
   eraseActive?: boolean
   onUndo: () => void
@@ -29,7 +28,6 @@ const GLASS =
  */
 export function MobileToolbar({
   hasHistory,
-  pageLabel,
   primaryAction,
   eraseActive,
   onUndo,
@@ -39,8 +37,8 @@ export function MobileToolbar({
   const { t } = useLocale()
   return (
     <div className="flex items-center justify-between gap-2 px-3 py-2 lg:hidden">
-      {/* LEFT — undo · page indicator · erase, grouped in one glass capsule */}
-      <div className={`flex items-center gap-0.5 rounded-full py-1 pl-1 pr-2 ${GLASS}`}>
+      {/* LEFT — undo + erase, grouped in one glass capsule */}
+      <div className={`flex items-center gap-0.5 rounded-full p-1 ${GLASS}`}>
         <button
           type="button"
           onClick={onUndo}
@@ -54,12 +52,6 @@ export function MobileToolbar({
             <path d="M4 9h11a5 5 0 0 1 5 5v0a5 5 0 0 1-5 5H9" />
           </svg>
         </button>
-        <span
-          className="select-none px-1 font-mono text-[11px] tabular-nums text-gray-600"
-          aria-label="Scene progress"
-        >
-          {pageLabel}
-        </span>
         {onErase && (
           <button
             type="button"
