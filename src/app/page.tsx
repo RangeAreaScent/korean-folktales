@@ -9,7 +9,7 @@ import {
 import { ColorPalette } from "@/components/ColorPalette"
 import { accentAlpha, useSessionBackground } from "@/lib/backgrounds"
 import { DesktopControlBar } from "@/components/DesktopControlBar"
-import { MobileControlBar } from "@/components/MobileControlBar"
+import { MobileFloatingToolbar } from "@/components/MobileFloatingToolbar"
 import { MobilePaletteSheet } from "@/components/MobilePaletteSheet"
 import { NarrationModal } from "@/components/NarrationModal"
 import { OriginalTaleModal } from "@/components/OriginalTaleModal"
@@ -519,7 +519,7 @@ export default function Home() {
       style={{ background: `linear-gradient(to bottom, ${bg.from}, ${bg.to})` }}
     >
       {/* ─── Slim header — tightened on mobile (smaller padding, page
-            indicator moved into the MobileControlBar below the canvas) ─── */}
+            indicator moved into the MobileFloatingToolbar below the canvas) ─── */}
       <header className="border-b border-gray-400/40 bg-white/50 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-1.5 md:px-8 md:py-3">
           <div className="flex items-baseline gap-3 overflow-hidden">
@@ -550,7 +550,7 @@ export default function Home() {
               📖
             </button>
             {/* Page indicator desktop-only — on mobile it's in the
-                MobileControlBar to keep the header a single tight row. */}
+                MobileFloatingToolbar to keep the header a single tight row. */}
             <span className="hidden font-mono text-[11px] tabular-nums text-gray-500 sm:inline">
               {completed.length + 1} / {history.length}
             </span>
@@ -568,50 +568,52 @@ export default function Home() {
 
       {/* ─── Main work area — wider on desktop so the canvas owns more
             of the viewport instead of floating inside narrow margins ─── */}
-      <div className="mx-auto w-full max-w-[1700px] flex-1 px-2 py-2 md:px-6 md:py-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1700px] px-2 pt-2 pb-0 md:px-6 md:py-6 lg:flex-1 lg:px-8">
         <div className="grid grid-cols-1 gap-3 lg:grid-cols-[minmax(0,768px)_360px] lg:justify-center lg:gap-8">
           <div
             className={`flex flex-col items-center gap-2 transition-opacity duration-200 ease-out lg:items-stretch lg:gap-5 ${
               transitioning ? "opacity-0" : "opacity-100"
             }`}
           >
-            <ColoringCanvas
-              ref={canvasRef}
-              imageSrc={currentScene.image}
-              fillColor={color}
-              fillMode={fillMode}
-              hideToolbar
-              onZoomChange={setCanvasZoom}
-              onHistoryChange={setCanvasHasHistory}
-            />
-
-            {/* Mobile control strip — directly under the canvas. The
-                story-progression primary action (Continue / Choose path)
-                lives INSIDE this strip so the palette can rise one row. */}
-            <MobileControlBar
-              hasHistory={canvasHasHistory}
-              pageLabel={`${completed.length + 1} / ${history.length}`}
-              eraseActive={eraseMode}
-              primaryAction={
-                currentScene.choices
-                  ? showChoices
-                    ? null
-                    : {
-                        label: t(UI.makeAChoice),
-                        onClick: () => setShowChoices(true),
-                      }
-                  : currentScene.nextId
-                    ? {
-                        label: t(UI.continueScene),
-                        onClick: () => handleChoice(currentScene.nextId!),
-                        disabled: transitioning,
-                      }
-                    : null
-              }
-              onUndo={() => canvasRef.current?.undo()}
-              onErase={toggleErase}
-              onOpenNarration={() => setShowNarration(true)}
-            />
+            {/* Canvas + floating glass toolbar (mobile only) — the toolbar
+                is absolutely positioned over the canvas's bottom edge
+                instead of consuming its own row, so the palette sheet can
+                sit flush against the canvas below (iOS-native feel). */}
+            <div className="relative w-full max-w-[768px]">
+              <ColoringCanvas
+                ref={canvasRef}
+                imageSrc={currentScene.image}
+                fillColor={color}
+                fillMode={fillMode}
+                hideToolbar
+                onZoomChange={setCanvasZoom}
+                onHistoryChange={setCanvasHasHistory}
+              />
+              <MobileFloatingToolbar
+                hasHistory={canvasHasHistory}
+                pageLabel={`${completed.length + 1} / ${history.length}`}
+                eraseActive={eraseMode}
+                primaryAction={
+                  currentScene.choices
+                    ? showChoices
+                      ? null
+                      : {
+                          label: t(UI.makeAChoice),
+                          onClick: () => setShowChoices(true),
+                        }
+                    : currentScene.nextId
+                      ? {
+                          label: t(UI.continueScene),
+                          onClick: () => handleChoice(currentScene.nextId!),
+                          disabled: transitioning,
+                        }
+                      : null
+                }
+                onUndo={() => canvasRef.current?.undo()}
+                onErase={toggleErase}
+                onOpenNarration={() => setShowNarration(true)}
+              />
+            </div>
 
             {/* Desktop control bar — directly below canvas */}
             <DesktopControlBar
@@ -629,7 +631,7 @@ export default function Home() {
             />
 
             {/* Inline narration — DESKTOP ONLY. On mobile, narration lives
-                in the NarrationModal opened by 📖 in MobileControlBar so
+                in the NarrationModal opened by 📖 in MobileFloatingToolbar so
                 the canvas + palette get full vertical space. */}
             <article className="hidden w-full max-w-[768px] overflow-hidden rounded-2xl border border-gray-400/60 bg-white/70 shadow-sm backdrop-blur lg:block">
               <div className="narration-scroll max-h-[36vh] space-y-3 overflow-y-auto px-6 py-5 font-serif text-[16px] leading-relaxed text-gray-800 md:text-[17px]">
@@ -663,7 +665,7 @@ export default function Home() {
                 </div>
               ) : (
                 // Desktop fallback — on mobile the "Choose path" button
-                // lives inside MobileControlBar so we don't render this row.
+                // lives inside MobileFloatingToolbar so we don't render this row.
                 <button
                   type="button"
                   onClick={() => setShowChoices(true)}
@@ -673,7 +675,7 @@ export default function Home() {
                 </button>
               )
             ) : currentScene.nextId ? (
-              // Desktop-only Continue button (mobile uses MobileControlBar).
+              // Desktop-only Continue button (mobile uses MobileFloatingToolbar).
               <button
                 type="button"
                 onClick={() => handleChoice(currentScene.nextId!)}

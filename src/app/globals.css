@@ -91,3 +91,36 @@ canvas {
   background: transparent;
 }
 
+/* iOS-native-style range slider — thin track (set inline per-instance via
+   background gradient), large white circular thumb with a soft shadow,
+   matching UISlider instead of the browser default. */
+.ios-native-slider {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.ios-native-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  margin-top: 0;
+}
+.ios-native-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+}
+.ios-native-slider::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: transparent;
+}
+

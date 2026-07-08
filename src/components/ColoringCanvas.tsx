@@ -37,6 +37,23 @@ const ZOOM_STEP = 0.5
 // at the 2048 resolution.
 const FILL_ANIMATE_MS = 320
 
+// How much a pinch can stretch past MIN_ZOOM/MAX_ZOOM before resistance
+// makes further stretching nearly imperceptible — matches the "rubber band"
+// feel of native iOS scroll/zoom views. Springs back on release (see
+// handleTouchEnd).
+const ZOOM_ELASTIC_RANGE = 0.6
+function applyZoomElasticity(rawZoom: number): number {
+  if (rawZoom < MIN_ZOOM) {
+    const overshoot = MIN_ZOOM - rawZoom
+    return MIN_ZOOM - ZOOM_ELASTIC_RANGE * (1 - Math.exp(-overshoot / ZOOM_ELASTIC_RANGE))
+  }
+  if (rawZoom > MAX_ZOOM) {
+    const overshoot = rawZoom - MAX_ZOOM
+    return MAX_ZOOM + ZOOM_ELASTIC_RANGE * (1 - Math.exp(-overshoot / ZOOM_ELASTIC_RANGE))
+  }
+  return rawZoom
+}
+
 export type FillMode = "solid" | "linear" | "radial"
 
 export type ColoringCanvasHandle = {
@@ -147,11 +164,14 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
     } | null>(null)
     const recentPinchEndRef = useRef<number>(0)
     const pinchRafRef = useRef<number | null>(null)
-    // Trackpad pinch (macOS Safari/Chrome synthesize it as wheel + ctrlKey).
-    // Tracks zoom outside React state so rapid wheel events compound
-    // correctly without waiting on a render between each one.
-    const wheelZoomRef = useRef(1)
+    // Latest zoom, tracked outside React state so rapid gesture events (wheel,
+    // touch, animated snap-back) can compound correctly without waiting on a
+    // render between each one. Kept in sync with the `zoom` state via effect.
+    const zoomRef = useRef(1)
     const wheelRafRef = useRef<number | null>(null)
+    // In-flight animated zoom (elastic snap-back). Cancelled if a new
+    // gesture starts mid-animation.
+    const zoomAnimRef = useRef<number | null>(null)
     // Single-finger pan when zoomed in (mobile-only) — distinct from
     // pinch (two fingers) and from desktop space-held drag.
     const touchPanRef = useRef<{
@@ -236,6 +256,54 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
     }, [])
 
     const resetZoom = useCallback(() => setZoom(1), [])
+
+    // Animates zoom to a target value, anchored at a client-space point, so
+    // the same image point stays fixed under the anchor as it scales. Used
+    // for the elastic snap-back after a pinch that overshoots the zoom
+    // bounds (see handleTouchEnd).
+    const animateZoomTo = useCallback(
+      (targetZoom: number, anchorClientX: number, anchorClientY: number, duration = 300) => {
+        const s = scrollRef.current
+        if (!s) {
+          setZoom(targetZoom)
+          return
+        }
+        if (zoomAnimRef.current != null) {
+          cancelAnimationFrame(zoomAnimRef.current)
+          zoomAnimRef.current = null
+        }
+        const rect = s.getBoundingClientRect()
+        const localX = anchorClientX - rect.left
+        const localY = anchorClientY - rect.top
+        const startZoom = zoomRef.current
+        // Anchor point in unzoomed content coordinates — invariant across
+        // the animation, so we can recompute scroll at any intermediate zoom.
+        const contentX = (s.scrollLeft + localX) / startZoom
+        const contentY = (s.scrollTop + localY) / startZoom
+        const startTime = performance.now()
+
+        function tick(now: number) {
+          const elapsed = now - startTime
+          const t = Math.min(1, elapsed / duration)
+          const eased = 1 - Math.pow(1 - t, 3) // ease-out-cubic
+          const z = startZoom + (targetZoom - startZoom) * eased
+          const sc = scrollRef.current
+          if (sc) {
+            sc.scrollLeft = contentX * z - localX
+            sc.scrollTop = contentY * z - localY
+          }
+          zoomRef.current = z
+          setZoom(z)
+          if (t < 1) {
+            zoomAnimRef.current = requestAnimationFrame(tick)
+          } else {
+            zoomAnimRef.current = null
+          }
+        }
+        zoomAnimRef.current = requestAnimationFrame(tick)
+      },
+      [],
+    )
 
     const toggleFullscreen = useCallback(async () => {
       try {
@@ -360,7 +428,7 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
     // trackpad pinch that starts after a button/keyboard/touch zoom change
     // continues from the right value instead of an earlier snapshot.
     useEffect(() => {
-      wheelZoomRef.current = zoom
+      zoomRef.current = zoom
     }, [zoom])
 
     function handleWheel(e: React.WheelEvent<HTMLDivElement>) {
@@ -373,7 +441,7 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
       const s = scrollRef.current
       if (!s) return
 
-      const z = wheelZoomRef.current
+      const z = zoomRef.current
       // Negative deltaY = fingers spreading apart = zoom in (matches the
       // native browser pinch-zoom convention).
       const factor = Math.exp(-e.deltaY * 0.008)
@@ -392,10 +460,10 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
       s.scrollLeft = (s.scrollLeft + localX) * ratio - localX
       s.scrollTop = (s.scrollTop + localY) * ratio - localY
 
-      wheelZoomRef.current = nextZoom
+      zoomRef.current = nextZoom
       if (wheelRafRef.current == null) {
         wheelRafRef.current = requestAnimationFrame(() => {
-          setZoom(wheelZoomRef.current)
+          setZoom(zoomRef.current)
           wheelRafRef.current = null
         })
       }
@@ -546,8 +614,10 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
         // Compute target zoom — 1% steps (was 5%) so the gesture reads as
         // continuous instead of stair-stepped.
         const rawZoom = pinch.initialZoom * (distance / pinch.initialDistance)
-        const nextZoom =
-          Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, Math.round(rawZoom * 100) / 100))
+        // Elastic bounds: let the gesture stretch a bit past MIN/MAX with
+        // resistance (like iOS Photos) instead of hard-stopping, then spring
+        // back to the real bound on release (see handleTouchEnd below).
+        const nextZoom = Math.round(applyZoomElasticity(rawZoom) * 100) / 100
 
         const s = scrollRef.current
         if (s) {
@@ -604,13 +674,22 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
     function handleTouchEnd(e: React.TouchEvent<HTMLDivElement>) {
       if (pinchRef.current && e.touches.length < 2) {
         recentPinchEndRef.current = performance.now()
-        // Make sure the final zoom state lands in React.
-        const finalZoom = pinchRef.current.lastZoom
+        const pinch = pinchRef.current
+        const finalZoom = pinch.lastZoom
         if (pinchRafRef.current != null) {
           cancelAnimationFrame(pinchRafRef.current)
           pinchRafRef.current = null
         }
-        setZoom(finalZoom)
+        const clamped = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, finalZoom))
+        if (clamped !== finalZoom) {
+          // The gesture ended past a zoom bound (elastic overshoot) —
+          // spring back to the real limit, anchored at the last pinch
+          // midpoint so the same content stays under the fingers.
+          zoomRef.current = finalZoom
+          animateZoomTo(clamped, pinch.initialMidX, pinch.initialMidY, 260)
+        } else {
+          setZoom(finalZoom)
+        }
         pinchRef.current = null
       }
       // If a single-finger pan moved, prevent the trailing synthetic click

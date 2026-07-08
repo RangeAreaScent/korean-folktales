@@ -248,6 +248,8 @@ export const UI = {
   palContrastLabel: { ko: "⚡ 대비", en: "⚡ Contrast" },
   palContrastHint: { ko: "눈에 띄는", en: "Standout colors" },
   palRecent: { ko: "🕘 최근", en: "🕘 Recent" },
+  palExpandHint: { ko: "더 보기", en: "More colors" },
+  palCollapseHint: { ko: "접기", en: "Show less" },
 
   // ─── Theme names + descriptions ───
   themeTraditional1: { ko: "전통색 I", en: "Traditional I" },

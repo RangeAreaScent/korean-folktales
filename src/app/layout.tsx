@@ -120,7 +120,7 @@ export default function RootLayout({
           <SoundProvider>
             {children}
             {/* Floating cluster — desktop only. On mobile, these toggles
-                live inside MobileControlBar so they don't cover the title. */}
+                live inside MobileFloatingToolbar so they don't cover the title. */}
             <div className="pointer-events-none fixed bottom-4 right-4 z-50 hidden items-center gap-2 lg:flex">
               <BgmToggle className="pointer-events-auto" />
               <SoundToggle className="pointer-events-auto" />
