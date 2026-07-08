@@ -54,3 +54,10 @@ next-env.d.ts
 
 # Stray root PNGs (defense in depth — should never sneak back)
 /*.png
+
+# iOS (Capacitor) — Xcode user-specific / build artifacts
+ios/App/Pods/
+ios/App/output/
+ios/App/App/public/
+**/xcuserdata/
+**/*.xcuserstate
