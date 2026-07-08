@@ -568,10 +568,13 @@ export default function Home() {
 
       {/* ─── Main work area — wider on desktop so the canvas owns more
             of the viewport instead of floating inside narrow margins ─── */}
-      <div className="mx-auto w-full max-w-[1700px] px-2 pt-2 pb-[264px] md:px-6 md:py-6 lg:flex-1 lg:px-8">
-        <div className="grid grid-cols-1 gap-3 lg:grid-cols-[minmax(0,768px)_360px] lg:justify-center lg:gap-8">
+      {/* Mobile: flex-1 fills the space between header and the fixed bottom
+          sheet; pb reserves the collapsed sheet's height so the vertically-
+          centered canvas never slides under it. */}
+      <div className="mx-auto flex w-full max-w-[1700px] flex-1 flex-col px-2 pt-2 pb-[15.5rem] md:px-6 md:py-6 lg:block lg:pb-0">
+        <div className="grid grid-cols-1 gap-3 max-lg:flex-1 max-lg:grid-rows-[1fr] lg:grid-cols-[minmax(0,768px)_360px] lg:justify-center lg:gap-8">
           <div
-            className={`flex flex-col items-center gap-2 transition-opacity duration-200 ease-out lg:items-stretch lg:gap-5 ${
+            className={`flex flex-col items-center gap-2 transition-opacity duration-200 ease-out max-lg:min-h-0 max-lg:justify-center lg:items-stretch lg:gap-5 ${
               transitioning ? "opacity-0" : "opacity-100"
             }`}
           >

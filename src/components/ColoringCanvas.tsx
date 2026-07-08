@@ -711,7 +711,14 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
     return (
       <div
         ref={containerRef}
-        className="relative aspect-square w-full max-w-[768px]"
+        // Mobile: the viewport fills the available vertical space (taller than
+        // the square artwork) so a zoomed-in image uses much more of the
+        // screen, and the square sits centered with letterbox above/below.
+        // Desktop: plain square. `container-type: size` lets the inner canvas
+        // size itself to `cqmin` (the shorter viewport edge) so it stays
+        // square regardless of the viewport's aspect ratio.
+        className="relative h-full max-h-[560px] w-full max-w-[768px] lg:aspect-square lg:h-auto lg:max-h-none"
+        style={{ containerType: "size" }}
       >
         <div
           ref={scrollRef}
@@ -724,13 +731,15 @@ export const ColoringCanvas = forwardRef<ColoringCanvasHandle, Props>(
           onTouchEnd={handleTouchEnd}
           onTouchCancel={handleTouchEnd}
           onWheel={handleWheel}
-          className="absolute inset-0 touch-none overflow-auto bg-white shadow-lg"
+          className="absolute inset-0 flex touch-none overflow-auto bg-white shadow-lg"
         >
+          {/* Square content, sized to the shorter viewport edge × zoom. `m-auto`
+              centers it when it fits and collapses to a top-left origin when it
+              overflows — keeping the pinch/pan scroll math (which assumes a
+              top-left origin) correct while still centering at zoom 1. */}
           <div
-            style={{
-              width: `${100 * zoom}%`,
-              height: `${100 * zoom}%`,
-            }}
+            className="m-auto aspect-square shrink-0"
+            style={{ width: `calc(100cqmin * ${zoom})` }}
           >
             <canvas
               ref={canvasRef}
