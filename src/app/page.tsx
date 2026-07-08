@@ -9,7 +9,7 @@ import {
 import { ColorPalette } from "@/components/ColorPalette"
 import { accentAlpha, useSessionBackground } from "@/lib/backgrounds"
 import { DesktopControlBar } from "@/components/DesktopControlBar"
-import { MobileFloatingToolbar } from "@/components/MobileFloatingToolbar"
+import { MobileToolbar } from "@/components/MobileToolbar"
 import { MobilePaletteSheet } from "@/components/MobilePaletteSheet"
 import { NarrationModal } from "@/components/NarrationModal"
 import { OriginalTaleModal } from "@/components/OriginalTaleModal"
@@ -568,52 +568,22 @@ export default function Home() {
 
       {/* ─── Main work area — wider on desktop so the canvas owns more
             of the viewport instead of floating inside narrow margins ─── */}
-      <div className="mx-auto w-full max-w-[1700px] px-2 pt-2 pb-0 md:px-6 md:py-6 lg:flex-1 lg:px-8">
+      <div className="mx-auto w-full max-w-[1700px] px-2 pt-2 pb-[264px] md:px-6 md:py-6 lg:flex-1 lg:px-8">
         <div className="grid grid-cols-1 gap-3 lg:grid-cols-[minmax(0,768px)_360px] lg:justify-center lg:gap-8">
           <div
             className={`flex flex-col items-center gap-2 transition-opacity duration-200 ease-out lg:items-stretch lg:gap-5 ${
               transitioning ? "opacity-0" : "opacity-100"
             }`}
           >
-            {/* Canvas + floating glass toolbar (mobile only) — the toolbar
-                is absolutely positioned over the canvas's bottom edge
-                instead of consuming its own row, so the palette sheet can
-                sit flush against the canvas below (iOS-native feel). */}
-            <div className="relative w-full max-w-[768px]">
-              <ColoringCanvas
-                ref={canvasRef}
-                imageSrc={currentScene.image}
-                fillColor={color}
-                fillMode={fillMode}
-                hideToolbar
-                onZoomChange={setCanvasZoom}
-                onHistoryChange={setCanvasHasHistory}
-              />
-              <MobileFloatingToolbar
-                hasHistory={canvasHasHistory}
-                pageLabel={`${completed.length + 1} / ${history.length}`}
-                eraseActive={eraseMode}
-                primaryAction={
-                  currentScene.choices
-                    ? showChoices
-                      ? null
-                      : {
-                          label: t(UI.makeAChoice),
-                          onClick: () => setShowChoices(true),
-                        }
-                    : currentScene.nextId
-                      ? {
-                          label: t(UI.continueScene),
-                          onClick: () => handleChoice(currentScene.nextId!),
-                          disabled: transitioning,
-                        }
-                      : null
-                }
-                onUndo={() => canvasRef.current?.undo()}
-                onErase={toggleErase}
-                onOpenNarration={() => setShowNarration(true)}
-              />
-            </div>
+            <ColoringCanvas
+              ref={canvasRef}
+              imageSrc={currentScene.image}
+              fillColor={color}
+              fillMode={fillMode}
+              hideToolbar
+              onZoomChange={setCanvasZoom}
+              onHistoryChange={setCanvasHasHistory}
+            />
 
             {/* Desktop control bar — directly below canvas */}
             <DesktopControlBar
@@ -721,9 +691,37 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Mobile palette — always-visible panel below the control strip,
-          choices area, etc. Sits inline (not fixed). */}
-      <div className="px-2 lg:hidden">
+      {/* Mobile bottom cluster (mobile only) — fixed to the bottom of the
+          screen. The toolbar sits directly ABOVE the palette so the tools
+          never overlap the artwork, and the palette stays anchored at the
+          bottom edge. Being fixed, expanding the palette grows the sheet
+          UPWARD (like a native bottom sheet) instead of pushing content
+          below the fold. */}
+      <div className="fixed inset-x-0 bottom-0 z-30 lg:hidden">
+        <MobileToolbar
+          hasHistory={canvasHasHistory}
+          pageLabel={`${completed.length + 1} / ${history.length}`}
+          eraseActive={eraseMode}
+          primaryAction={
+            currentScene.choices
+              ? showChoices
+                ? null
+                : {
+                    label: t(UI.makeAChoice),
+                    onClick: () => setShowChoices(true),
+                  }
+              : currentScene.nextId
+                ? {
+                    label: t(UI.continueScene),
+                    onClick: () => handleChoice(currentScene.nextId!),
+                    disabled: transitioning,
+                  }
+                : null
+          }
+          onUndo={() => canvasRef.current?.undo()}
+          onErase={toggleErase}
+          onOpenNarration={() => setShowNarration(true)}
+        />
         <MobilePaletteSheet
           current={color}
           recent={recent}

@@ -20,16 +20,14 @@ type Props = {
 }
 
 const GLASS =
-  "bg-white/55 backdrop-blur-xl backdrop-saturate-150 border border-white/60 shadow-[0_1px_2px_rgba(0,0,0,0.08)]"
+  "bg-white/70 backdrop-blur-xl backdrop-saturate-150 ring-1 ring-black/5 shadow-[0_1px_2px_rgba(0,0,0,0.08)]"
 
 /**
- * Floats OVER the bottom edge of the canvas (rendered as an absolutely-
- * positioned sibling inside the canvas's relative wrapper in page.tsx) so
- * the palette sheet can sit flush against the canvas below it — no separate
- * control-strip row eating vertical space. Mirrors iOS's floating glass
- * toolbar convention (e.g. Photos markup, Maps).
+ * Mobile control bar rendered as a normal row that sits BETWEEN the canvas
+ * and the palette sheet — never overlapping the artwork. Grouped as glass
+ * capsules so it reads as an iOS toolbar on the page background.
  */
-export function MobileFloatingToolbar({
+export function MobileToolbar({
   hasHistory,
   pageLabel,
   primaryAction,
@@ -40,9 +38,9 @@ export function MobileFloatingToolbar({
 }: Props) {
   const { t } = useLocale()
   return (
-    <div className="pointer-events-none absolute inset-x-3 bottom-3 z-10 flex items-center justify-between gap-2 lg:hidden">
+    <div className="flex items-center justify-between gap-2 px-3 py-2 lg:hidden">
       {/* LEFT — undo · page indicator · erase, grouped in one glass capsule */}
-      <div className={`pointer-events-auto flex items-center gap-0.5 rounded-full py-1 pl-1 pr-2 ${GLASS}`}>
+      <div className={`flex items-center gap-0.5 rounded-full py-1 pl-1 pr-2 ${GLASS}`}>
         <button
           type="button"
           onClick={onUndo}
@@ -82,8 +80,8 @@ export function MobileFloatingToolbar({
       </div>
 
       {/* RIGHT — narration · sound · bgm (glass circles) + primary action
-          (solid, so the main CTA keeps full contrast against the canvas) */}
-      <div className="pointer-events-auto flex items-center gap-1.5">
+          (solid, so the main CTA keeps full contrast) */}
+      <div className="flex items-center gap-1.5">
         <button
           type="button"
           onClick={onOpenNarration}
@@ -93,8 +91,8 @@ export function MobileFloatingToolbar({
         >
           📖
         </button>
-        <BgmToggle className={`${GLASS} !shadow-[0_1px_2px_rgba(0,0,0,0.08)]`} />
-        <SoundToggle className={`${GLASS} !shadow-[0_1px_2px_rgba(0,0,0,0.08)]`} />
+        <BgmToggle className={GLASS} />
+        <SoundToggle className={GLASS} />
         {primaryAction && (
           <button
             type="button"
