@@ -107,15 +107,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${gowunBatang.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {/* Plain <script> on purpose — AdSense's verification crawler looks
-            for a literal <script src="..."> tag in the raw server HTML.
-            next/script never emits that; it queues the load via an inline
-            bootstrap script instead, which the crawler doesn't recognize. */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2376980284402579"
-          crossOrigin="anonymous"
-        />
         <LocaleProvider>
           <SoundProvider>
             {children}
