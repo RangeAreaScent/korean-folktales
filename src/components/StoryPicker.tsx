@@ -11,7 +11,13 @@ import {
   type SavedBook,
 } from "@/lib/gallery"
 import { UI } from "@/lib/strings"
-import { getStory, STORY_LIST, type Story, type StoryId } from "@/lib/story"
+import {
+  getStory,
+  STORY_LIST,
+  STORY_SLUGS,
+  type Story,
+  type StoryId,
+} from "@/lib/story"
 import { OriginalTaleModal } from "./OriginalTaleModal"
 import { SavedBookViewer } from "./SavedBookViewer"
 
@@ -166,6 +172,32 @@ export function StoryPicker({ onPick }: Props) {
           ))}
         </div>
 
+        {/* ─── Origins — real folklore content, always server-rendered
+             (not gated behind a click/modal) so the picker screen reads
+             as more than a pure navigation menu. §11 AdSense follow-up. ─── */}
+        <section className="mt-16 w-full border-t border-gray-400/50 pt-12">
+          <p
+            className="mb-2 text-center font-mono text-[11px] uppercase tracking-[0.22em]"
+            style={{ color: accentAlpha(bg.accent, 0.85) }}
+          >
+            {t(UI.originsEyebrow)}
+          </p>
+          <h2
+            className="mb-3 text-center font-display text-2xl font-bold text-gray-900 md:text-[28px]"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            {t(UI.originsTitle)}
+          </h2>
+          <p className="mx-auto mb-10 max-w-2xl text-center text-sm leading-relaxed text-gray-600 md:text-base">
+            {t(UI.originsIntro)}
+          </p>
+          <div className="grid gap-x-8 gap-y-8 md:grid-cols-2">
+            {STORY_LIST.map((story) => (
+              <OriginBlurb key={story.id} story={story} />
+            ))}
+          </div>
+        </section>
+
         <p className="mt-12 text-center text-[11px] text-gray-400">
           {t(UI.pickerMoreSoon)} · <span className="font-mono">v0.6</span>
         </p>
@@ -237,6 +269,34 @@ function SavedBookThumb({
         <p className="font-mono text-[10px] text-gray-500">{dateStr}</p>
       </div>
     </button>
+  )
+}
+
+function OriginBlurb({ story }: { story: Story }) {
+  const { t, locale } = useLocale()
+  return (
+    <article>
+      <h3 className="flex items-baseline gap-2">
+        <span
+          className="font-display text-lg font-bold leading-tight text-gray-900"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
+          {t(story.title)}
+        </span>
+        <span className="font-mono text-[11px] italic text-gray-500">
+          {story.originalTale.koreanTitle} · {story.originalTale.romanized}
+        </span>
+      </h3>
+      <p className="mt-2 text-[13px] leading-relaxed text-gray-700 md:text-sm">
+        {story.originalTale.origin[locale]}
+      </p>
+      <Link
+        href={`/folktales/${STORY_SLUGS[story.id]}`}
+        className="mt-2 inline-block text-[12px] font-medium text-amber-900/80 underline-offset-4 transition hover:text-amber-900 hover:underline"
+      >
+        {t(UI.originsReadMore)}
+      </Link>
+    </article>
   )
 }
 

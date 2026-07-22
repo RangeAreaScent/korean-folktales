@@ -58,6 +58,22 @@ export const UI = {
     ko: "📖 원작 옛이야기",
     en: "📖 About this folktale",
   },
+  originsEyebrow: {
+    ko: "✦ 원작 이야기 ✦",
+    en: "✦ Where these tales come from ✦",
+  },
+  originsTitle: {
+    ko: "한국 옛이야기, 그 뿌리를 찾아서",
+    en: "The folk tradition behind this coloring book",
+  },
+  originsIntro: {
+    ko: "여기 여덟 편은 모두 여러 세대에 걸쳐 입에서 입으로 전해진 실제 한국 옛이야기예요. 색칠판으로 다시 꾸미기 전, 각 이야기가 어디서 왔는지 먼저 만나보세요.",
+    en: "Each of these eight tales is a real Korean folktale, passed down by word of mouth for generations before it was ever written. Before you pick up a color, meet the story behind the story.",
+  },
+  originsReadMore: {
+    ko: "전체 이야기와 단어 읽기 →",
+    en: "Read the full story & glossary →",
+  },
 
   // ─── Gallery / Saved books ───
   galleryHeading: {
