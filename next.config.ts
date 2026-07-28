@@ -15,6 +15,19 @@ const nextConfig: NextConfig = {
     "localhost",
     "*.local",
   ],
+
+  // www has no canonical purpose here — redirect it to the apex domain so
+  // Google indexes one URL instead of two identical copies (§7.1 HANDOFF).
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.koreanfolktales.ink" }],
+        destination: "https://koreanfolktales.ink/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
