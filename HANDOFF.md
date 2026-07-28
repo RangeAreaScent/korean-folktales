@@ -376,6 +376,8 @@ App Store 버전의 1단계. SwiftUI 재작성 대신 **Capacitor로 라이브 �
 - `koreanfolktales.ink` — Namecheap 등록, Vercel A record (76.76.21.21)
 - `www.koreanfolktales.ink` — CNAME → cname.vercel-dns.com.
 - TLS 자동 (Vercel)
+- **⚠️ 발견/수정 (2026-07-28)**: `www`는 DNS CNAME만 있고 정작 Vercel 프로젝트에 도메인으로 등록된 적이 없어서 `https://www.koreanfolktales.ink`가 **TLS 핸드셰이크 자체가 실패**하고 있었음(인증서가 apex만 커버). `npx vercel domains add www.koreanfolktales.ink korean-folktales`로 등록해 해결 — DNS는 이미 맞게 잡혀있어서 인증서가 곧바로 발급됨(수십 초 내). `www`는 apex로 리다이렉트되지 않고 **동일 콘텐츠를 그대로 서빙** — 다만 `layout.tsx`의 `metadataBase`/`canonical`이 이미 apex(`https://koreanfolktales.ink`)로 고정돼 있어 중복 콘텐츠로 색인될 위험은 낮음. 확실한 리다이렉트를 원하면 Vercel 대시보드 → Project Settings → Domains → www 항목의 "Redirect to" 토글 설정 (CLI로는 미확인, 대시보드 전용일 가능성)
+- Google Search Console에서 "Page with redirect"로 일부 페이지 미색인 알림을 받았을 때 발견 — 코드/사이트맵 자체엔 리다이렉트 문제 없음(http→https 308만 정상 존재), GSC 알림은 아마 http:// 버전을 가리킨 것으로 추정(정상 동작, 수정 불필요)
 
 ### 7.2 GitHub
 - `RangeAreaScent/korean-folktales` (public)
